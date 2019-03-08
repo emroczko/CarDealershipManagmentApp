@@ -1,1 +1,1 @@
-Projekt SKLEP będzie zawierał 
+Projekt SKLEP będzie zawierał klasy lokalizacje, magazyny, wyposazenie, regały

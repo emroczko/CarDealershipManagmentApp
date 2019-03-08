@@ -1,0 +1,1 @@
+Projekt SKLEP będzie zawierał 

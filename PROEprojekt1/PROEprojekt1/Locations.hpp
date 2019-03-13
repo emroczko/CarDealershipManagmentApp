@@ -20,5 +20,5 @@ public:
     Location(string="Warszawa", string="Marszalkowska", int=1);
     void showLocations();
     void getAdress();
-    
+    void addLocation();
 };

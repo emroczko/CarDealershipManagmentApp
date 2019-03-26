@@ -21,4 +21,5 @@ public:
     void showLocations();
     void getAdress();
     void addLocation();
+    ~Location();
 };

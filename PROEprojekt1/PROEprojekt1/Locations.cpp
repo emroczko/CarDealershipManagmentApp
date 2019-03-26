@@ -38,3 +38,6 @@ void Location::addLocation(){
     getline(cin, street);
     cout<<"Brawo, utworzyles sklep w miescie "<<city<<", ulica "<<street<<endl;
 }
+Location::~Location(){
+    
+}

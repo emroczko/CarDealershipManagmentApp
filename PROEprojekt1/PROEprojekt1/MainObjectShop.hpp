@@ -6,9 +6,25 @@
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
 
-#ifndef MainObjectShop_hpp
-#define MainObjectShop_hpp
 
-#include <stdio.h>
+#pragma once
+#include <iostream>
+#include <string>
+#include "Locations.hpp"
+#include "Staff.hpp"
+#include "Assortment.hpp"
+#include "TempOffer.hpp"
+using namespace std;
 
-#endif /* MainObjectShop_hpp */
+class Shop
+{
+private:
+    Location Location1;
+    Staff Personnel;
+    Assortment Assortment1;
+    TempOffer TemporaryOffer;
+public:
+    Shop();
+    Shop(Location,  Staff, Assortment, TempOffer);
+    
+};

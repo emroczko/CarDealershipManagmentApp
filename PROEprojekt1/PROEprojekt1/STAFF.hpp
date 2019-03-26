@@ -29,6 +29,7 @@ public:
     void showStaff();
     void addEmployee();
     void removeEmployee();
+    ~Staff();
     
     
     

@@ -16,3 +16,6 @@ Staff::Staff(string n, string s, string p){
 void Staff::showStaff(){
     cout<<"Pierwszy pracownik i jego funkcja: "<<name<<" "<<surname<<" "<<profession<<endl;
 }
+Staff::~Staff(){
+    
+}

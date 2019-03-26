@@ -8,8 +8,13 @@
 
 #include "TempOffer.hpp"
 
-TempOffer::TempOffer(string name, float price, int id){
+TempOffer::TempOffer(string name, float price, int id, int time){
     productName = name;
     productPrice = price;
     productID = id;
+    offerTime = time;
+    
+}
+TempOffer::~TempOffer(){
+    
 }

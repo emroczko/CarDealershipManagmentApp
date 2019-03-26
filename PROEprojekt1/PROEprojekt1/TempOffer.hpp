@@ -9,20 +9,16 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Assortment.hpp"
 
 using namespace std;
 
-class TempOffer{
+class TempOffer: public Assortment{
 private:
-    string productName;
-    float productPrice;
-    int productID;
+    int offerTime;
 public:
-    TempOffer(string = "Woda", float = 1.00, int = 1);
-    int findProduct(string);
-    string addProduct();
-    void deleteProduct();
+    TempOffer(string = "Woda", float = 1.00, int = 1, int =7);
     void showTempOffer();
-    
+    ~TempOffer();
     
 };

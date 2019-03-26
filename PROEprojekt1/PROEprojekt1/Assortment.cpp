@@ -13,3 +13,6 @@ Assortment::Assortment(string prodName, float prodPrice, int prodID){
     productPrice = prodPrice;
     productID = prodID;
 }
+Assortment::~Assortment(){
+    
+}

@@ -12,7 +12,7 @@
 using namespace std;
 
 class Assortment{
-private:
+protected:
     string productName;
     float productPrice;
     int productID;
@@ -22,5 +22,6 @@ public:
     void showAssortment();
     void addProduct();
     void deleteProduct();
-    
+    int findProduct(string);
+    ~Assortment();
 };

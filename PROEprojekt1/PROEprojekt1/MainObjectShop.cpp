@@ -7,3 +7,15 @@
 //
 
 #include "MainObjectShop.hpp"
+
+Shop::Shop()
+{
+    Location1 = Location();
+    Personnel = Staff();
+    Assortment1 = Assortment();
+    TemporaryOffer = TempOffer();
+}
+Shop::Shop(Location adress, Staff personnel, Assortment assortment, TempOffer To)
+{
+    
+}

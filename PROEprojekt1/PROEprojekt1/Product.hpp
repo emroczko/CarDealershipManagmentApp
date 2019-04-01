@@ -11,17 +11,17 @@
 
 using namespace std;
 
-class Assortment{
+class Product{
 protected:
     string productName;
     float productPrice;
     int productID;
     
 public:
-    Assortment(string="Przedmiot", float=10.0, int=1);
+    Product(string="Przedmiot", float=10.0, int=1);
     void showAssortment();
     void addProduct();
     void deleteProduct();
     int findProduct(string);
-    ~Assortment();
+    ~Product();
 };

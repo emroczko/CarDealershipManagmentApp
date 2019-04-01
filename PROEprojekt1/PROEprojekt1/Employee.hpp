@@ -17,7 +17,7 @@ using namespace std;
     Magazynier = 3
 }; */
 
-class Staff{
+class Employee{
 private:
     string name;
     string surname;
@@ -25,11 +25,11 @@ private:
     string profession;
     
 public:
-    Staff(string="Jan", string = "Kowalski", string="Kierownik");
-    void showStaff();
+    Employee(string="Jan", string = "Kowalski", string="Kierownik");
+    void showEmployees();
     void addEmployee();
     void removeEmployee();
-    ~Staff();
+    ~Employee();
     
     
     

@@ -8,14 +8,14 @@
 
 #include "Staff.hpp"
 
-Staff::Staff(string n, string s, string p){
+Employee::Employee(string n, string s, string p){
     name = n;
     surname = s;
     profession = p;
 }
-void Staff::showStaff(){
+void Employee::showEmployees(){
     cout<<"Pierwszy pracownik i jego funkcja: "<<name<<" "<<surname<<" "<<profession<<endl;
 }
-Staff::~Staff(){
+Employee::~Employee(){
     
 }

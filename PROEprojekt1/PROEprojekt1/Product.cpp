@@ -8,11 +8,11 @@
 
 #include "Assortment.hpp"
 
-Assortment::Assortment(string prodName, float prodPrice, int prodID){
+Product::Product(string prodName, float prodPrice, int prodID){
     productName = prodName;
     productPrice = prodPrice;
     productID = prodID;
 }
-Assortment::~Assortment(){
+Product::~Product(){
     
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		521E78DF2239AC1900BCA71B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 521E78DE2239AC1900BCA71B /* main.cpp */; };
+		521E78E72239AC5100BCA71B /* Locations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 521E78E52239AC5100BCA71B /* Locations.cpp */; };
+		521E78EA2239B97700BCA71B /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 521E78E82239B97700BCA71B /* Employee.cpp */; };
+		521E78ED2239BA3A00BCA71B /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 521E78EB2239BA3A00BCA71B /* Product.cpp */; };
+		521E78F02239BA6F00BCA71B /* TempOffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 521E78EE2239BA6F00BCA71B /* TempOffer.cpp */; };
+		52FD0DCD2243BDDB00336857 /* MainObjectShop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52FD0DCB2243BDDB00336857 /* MainObjectShop.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,17 @@
 /* Begin PBXFileReference section */
 		521E78DB2239AC1900BCA71B /* PROEprojekt1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PROEprojekt1; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E78DE2239AC1900BCA71B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		521E78E52239AC5100BCA71B /* Locations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Locations.cpp; sourceTree = "<group>"; };
+		521E78E62239AC5100BCA71B /* Locations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Locations.hpp; sourceTree = "<group>"; };
+		521E78E82239B97700BCA71B /* Employee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Employee.cpp; sourceTree = "<group>"; };
+		521E78E92239B97700BCA71B /* Employee.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Employee.hpp; sourceTree = "<group>"; };
+		521E78EB2239BA3A00BCA71B /* Product.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
+		521E78EC2239BA3A00BCA71B /* Product.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Product.hpp; sourceTree = "<group>"; };
+		521E78EE2239BA6F00BCA71B /* TempOffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TempOffer.cpp; sourceTree = "<group>"; };
+		521E78EF2239BA6F00BCA71B /* TempOffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TempOffer.hpp; sourceTree = "<group>"; };
+		527F1D63226397950009E873 /* Debug.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Debug.hh; sourceTree = "<group>"; };
+		52FD0DCB2243BDDB00336857 /* MainObjectShop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainObjectShop.cpp; sourceTree = "<group>"; };
+		52FD0DCC2243BDDB00336857 /* MainObjectShop.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainObjectShop.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,17 @@
 			isa = PBXGroup;
 			children = (
 				521E78DE2239AC1900BCA71B /* main.cpp */,
+				52FD0DCC2243BDDB00336857 /* MainObjectShop.hpp */,
+				52FD0DCB2243BDDB00336857 /* MainObjectShop.cpp */,
+				521E78E82239B97700BCA71B /* Employee.cpp */,
+				521E78E92239B97700BCA71B /* Employee.hpp */,
+				521E78EB2239BA3A00BCA71B /* Product.cpp */,
+				521E78EC2239BA3A00BCA71B /* Product.hpp */,
+				521E78EE2239BA6F00BCA71B /* TempOffer.cpp */,
+				521E78EF2239BA6F00BCA71B /* TempOffer.hpp */,
+				521E78E52239AC5100BCA71B /* Locations.cpp */,
+				521E78E62239AC5100BCA71B /* Locations.hpp */,
+				527F1D63226397950009E873 /* Debug.hh */,
 			);
 			path = PROEprojekt1;
 			sourceTree = "<group>";
@@ -118,7 +145,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521E78EA2239B97700BCA71B /* Employee.cpp in Sources */,
+				521E78E72239AC5100BCA71B /* Locations.cpp in Sources */,
 				521E78DF2239AC1900BCA71B /* main.cpp in Sources */,
+				52FD0DCD2243BDDB00336857 /* MainObjectShop.cpp in Sources */,
+				521E78ED2239BA3A00BCA71B /* Product.cpp in Sources */,
+				521E78F02239BA6F00BCA71B /* TempOffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

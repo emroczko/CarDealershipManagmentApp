@@ -10,21 +10,29 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Locations.hpp"
-#include "Staff.hpp"
-#include "Assortment.hpp"
+#include "Employee.hpp"
+#include "Product.hpp"
 #include "TempOffer.hpp"
+
 using namespace std;
 
 class Shop
 {
 private:
     Location Location1;
-    Staff Personnel;
-    Assortment Assortment1;
-    TempOffer TemporaryOffer;
+    vector < Employee > Personnel;
+    int NumOfPersonel;
+    vector < Product > Assortment1;
+    int NumOfAssortment;
+    TempOffer * TemporaryOffer;
+    
+
 public:
     Shop();
-    Shop(Location,  Staff, Assortment, TempOffer);
-    
+    Shop(int=3, int=3, int=3);
+    ~Shop();
+    friend ostream& operator<< (ostream& ,const Shop&);
+    friend Shop& operator+=(Shop& a, const Employee& b);
 };

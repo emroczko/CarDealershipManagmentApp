@@ -21,7 +21,7 @@ class Employee{
 private:
     string name;
     string surname;
-  //  Proffesion profession;
+  //Proffesion profession;
     string profession;
     
 public:
@@ -30,7 +30,8 @@ public:
     void addEmployee();
     void removeEmployee();
     ~Employee();
-    
+    friend Employee operator+=(const Employee& a,const Employee& b);
+    friend ostream& operator<< (ostream& ,const Employee&);
     
     
 };

@@ -18,10 +18,11 @@ protected:
     int productID;
     
 public:
-    Product(string="Przedmiot", float=10.0, int=1);
+    Product(string="Przedmiot", int=1, float=10.0);
     void showAssortment();
     void addProduct();
     void deleteProduct();
     int findProduct(string);
     ~Product();
+    friend ostream& operator<< (ostream& ,const Product&);
 };

@@ -6,13 +6,18 @@
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
 
-#include "Assortment.hpp"
+#include "Product.hpp"
 
-Product::Product(string prodName, float prodPrice, int prodID){
+Product::Product(string prodName, int prodID, float prodPrice){
     productName = prodName;
     productPrice = prodPrice;
     productID = prodID;
 }
 Product::~Product(){
     
+}
+ostream& operator<<(ostream& os,const Product& p)
+{
+    os<<p.productName<<" - numer katalogowy: "<<p.productID<<", cena: "<<p.productPrice<<"zł"<<endl;
+    return os;
 }

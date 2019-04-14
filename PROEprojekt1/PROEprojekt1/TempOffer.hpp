@@ -9,11 +9,11 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Assortment.hpp"
+#include "Product.hpp"
 
 using namespace std;
 
-class TempOffer: public Assortment{
+class TempOffer: public Product{
 private:
     int offerTime;
 public:

@@ -28,11 +28,24 @@ Car::Car(string model, double price, int ID, condition condition_, engine engine
 Car::~Car(){
     // DEBUG_LOG("Car - destruktor");
 }
+void Car::makeACar(string model, double price, int ID, condition condition, engine engine)
+{
+    carModel = model;
+    carPrice = price;
+    carID = ID;
+    condition_ = condition;
+    engine_ = engine;
+}
 void Car::setNewPrice(unsigned int price)
 {
     carPrice = price;
 }
-
+double Car::getPrice(){
+    return carPrice;
+}
+string Car::getModel(){
+    return carModel;
+}
 string Car::getModelAndPrice(){
     
     string modelAndPrice;

@@ -11,6 +11,7 @@
 #include <string>
 #include "Debug.hh"
 
+
 #define _DEBUG
 
 using namespace std;
@@ -26,17 +27,11 @@ public:
     Customer(const Customer& customer);
     ~Customer();
     
+    int getWallet() const;
     void giveCustomerMoney(unsigned int);
-    
     Customer &operator += (unsigned int moreMoney);
     Customer &operator -= (unsigned int lessMoney);
-    
     friend ostream& operator<< (ostream& ,const Customer&);
-    
-    
-    
-    //Jeśli stworozny obiekt klient ma więcej niż najtansze auto w sklepie wtedy moze je kupic,
-    
     
     
 };

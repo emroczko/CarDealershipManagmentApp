@@ -32,6 +32,10 @@ Customer::~Customer()
    // DEBUG_LOG("Customer - destruktor");
 }
 
+int Customer::getWallet() const
+{
+    return money;
+}
 void Customer::giveCustomerMoney(unsigned int Money)
 {
     money = Money;
@@ -58,6 +62,7 @@ Customer& Customer::operator -= (unsigned int lessMoney)
         return *this;
     }
 }
+
 
 ostream& operator<<(ostream& os,const Customer& customer)
 {

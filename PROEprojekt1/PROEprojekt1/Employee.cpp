@@ -1,5 +1,5 @@
 //
-//  STAFF.cpp
+//  Employee.cpp
 //  PROEprojekt1
 //
 //  Created by Eryk Mroczko on 13/03/2019.
@@ -7,21 +7,48 @@
 //
 #include <iostream>
 #include "Employee.hpp"
-#include "Debug.hh"
+
 
 using namespace std;
 
-Employee::Employee(string n, string p, int s){
+
+Employee::Employee():name("Eryk Mroczko"), profession("Szef"), salary(50000){
+   // DEBUG_LOG("Employee - k. domyslny");
+}
+
+Employee::Employee(string n, string p, unsigned int s){
     name = n;
     profession = p;
     salary = s;
-    DEBUG_LOG("Employee - k. z parametrami");
+   // DEBUG_LOG("Employee - k. z parametrami");
     
 }
 Employee::Employee(const Employee &employee) : name(employee.name), profession(employee.profession), salary(employee.salary)
 {
-   DEBUG_LOG("Employee - k. kopiujacy");
+   //DEBUG_LOG("Employee - k. kopiujacy");
 }
+
+Employee::~Employee()
+{
+  //  DEBUG_LOG("Employee - destruktor");
+}
+
+bool Employee::operator == (const Employee &employee)
+{
+    if(name != employee.name)
+        return false;
+    if(profession != employee.profession)
+        return false;
+    if(salary != employee.salary)
+        return false;
+    return true;
+}
+
+bool Employee::operator != (const Employee &employee)
+{
+    return !(*this == employee);
+}
+
 Employee & Employee::operator += (unsigned int salaryRaise)
 {
     salary += salaryRaise;
@@ -41,13 +68,10 @@ Employee & Employee::operator -= (unsigned int salaryReduction)
         return *this;
     }
 }
-Employee::~Employee()
-{
-    
-}
+
 
 ostream& operator<<(ostream& os,const Employee& e)
 {
-    os<<e.name<<" - "<<e.profession<<endl;
+    os<<e.name<<" - "<<e.profession<<" - Zarobki: "<<e.salary<<endl;
     return os;
 }

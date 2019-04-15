@@ -1,19 +1,16 @@
 //
-//  STAFF.hpp
+//  Employee.hpp
 //  PROEprojekt1
 //
 //  Created by Eryk Mroczko on 13/03/2019.
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
-#ifdef _DEBUG
-#define DEBUG_LOG(a) std::cout << __FILE__ << "(" << __LINE__ << "): " << a << std::endl;
-#else
-#define DEBUG_LOG(a)
-#endif
 
 #pragma once
 #include <iostream>
 #include <string>
+#include "Debug.hh"
+
 
 using namespace std;
 
@@ -25,18 +22,16 @@ private:
     unsigned int salary;
     
 public:
-    Employee(string="Jan Kowalski", string="Kierownik", int = 2000);
+    Employee();
+    Employee(string name_, string proffesion_, unsigned int salary_);
     Employee(const Employee &employee);
-    
-    void showEmployees();
-    void addEmployee();
-    void removeEmployee();
     ~Employee();
     
-    friend Employee operator+=(const Employee& a,const Employee& b);
-    friend ostream& operator<< (ostream& ,const Employee&);
+    bool operator == (const Employee &employee);
+    bool operator != (const Employee &employee);
     Employee &operator += (unsigned int salaryRaise);
-    Employee &operator -= (unsigned int salaryReduction);        
+    Employee &operator -= (unsigned int salaryReduction);
+    friend ostream& operator<< (ostream& ,const Employee&);
     
 };
 

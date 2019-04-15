@@ -6,26 +6,37 @@
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
 
-#ifndef Customer_hpp
-#define Customer_hpp
-
+#pragma once
 #include <stdio.h>
 #include <string>
+#include "Debug.hh"
+
+#define _DEBUG
 
 using namespace std;
 
 class Customer {
 private:
     string name;
-    int money;
+    unsigned int money;
     
 public:
     Customer();
-    Customer(string Name, int wallet);
+    Customer(string name_, unsigned int wallet);
     Customer(const Customer& customer);
+    ~Customer();
+    
+    void giveCustomerMoney(unsigned int);
+    
+    Customer &operator += (unsigned int moreMoney);
+    Customer &operator -= (unsigned int lessMoney);
+    
+    friend ostream& operator<< (ostream& ,const Customer&);
+    
+    
+    
+    //Jeśli stworozny obiekt klient ma więcej niż najtansze auto w sklepie wtedy moze je kupic,
     
     
     
 };
-
-#endif /* Customer_hpp */

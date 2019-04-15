@@ -35,7 +35,6 @@
 		521E78E62239AC5100BCA71B /* Locations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Locations.hpp; sourceTree = "<group>"; };
 		521E78E82239B97700BCA71B /* Employee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Employee.cpp; sourceTree = "<group>"; };
 		521E78E92239B97700BCA71B /* Employee.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Employee.hpp; sourceTree = "<group>"; };
-		5243F81F2264E5E000D70436 /* catch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 		5261E0752264CD2200D2C205 /* Customer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Customer.cpp; sourceTree = "<group>"; };
 		5261E0762264CD2200D2C205 /* Customer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Customer.hpp; sourceTree = "<group>"; };
 		5261E0782264E18400D2C205 /* libboost_unit_test_framework-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_unit_test_framework-mt.dylib"; sourceTree = "<group>"; };
@@ -90,7 +89,6 @@
 				521E78E62239AC5100BCA71B /* Locations.hpp */,
 				521E78E52239AC5100BCA71B /* Locations.cpp */,
 				527F1D63226397950009E873 /* Debug.hh */,
-				5243F81F2264E5E000D70436 /* catch.hpp */,
 			);
 			path = PROEprojekt1;
 			sourceTree = "<group>";

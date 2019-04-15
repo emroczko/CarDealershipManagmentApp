@@ -9,21 +9,26 @@
 #include "Car.hpp"
 #include <string>
 
+
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
 {
-    
+  //  DEBUG_LOG("Car - k. domyslny");
 }
 Car::Car(const Car &car) : carModel(car.carModel), carPrice(car.carPrice), carID(car.carID), condition_(car.condition_), engine_(car.engine_)
 {
-    
+   // DEBUG_LOG("Car - k. kopiujacy");
 }
 
 Car::Car(string model, double price, int ID, condition condition_, engine engine_) : carModel(model), carPrice(price), carID(ID), condition_(condition_), engine_(engine_)
 {
-    
+    //DEBUG_LOG("Car - k. z parametrami");
 }
 Car::~Car(){
-    
+    // DEBUG_LOG("Car - destruktor");
+}
+void Car::setNewPrice(unsigned int price)
+{
+    carPrice = price;
 }
 
 string Car::getCondition() const
@@ -54,7 +59,25 @@ bool Car::operator != (const Car &car)
 {
     return !(*this == car);
 }
+Car& Car::operator += (unsigned int raisePrice)
+{
+    carPrice += raisePrice;
+    return *this;
+}
 
+Car & Car::operator -= (unsigned int lowerPrice)
+{
+    if(carPrice - lowerPrice < 0)
+    {
+        cout<< "Blad! Cena nie moze byc mniejsza od 0" <<endl;
+        return *this;
+    }
+    else
+    {
+        carPrice -= lowerPrice;
+        return *this;
+    }
+}
 
 ostream& operator<<(ostream& os,const Car& car)
 {

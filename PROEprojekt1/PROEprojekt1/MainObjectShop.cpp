@@ -27,11 +27,10 @@ Shop::Shop()
 {
     
 }
-Shop::Shop(int income_)
+Shop::Shop(int income_, Location location)
 {
     income = income_;
-   // Location location;
-    //log_debug(__FILE__, __LINE__, "konstruktor klasy XYZ")
+    Location1 = location;
     
     Personnel.emplace_back("Jan Jankowski", "Mechanik", 4000);
     Personnel.emplace_back("Anna Bratkowska", "Sekretarka", 3000);
@@ -46,7 +45,7 @@ Shop::Shop(int income_)
     Assortment1.emplace_back("BMW 428i", 190000, 4, condition::NEW, engine::GASOLINE);
     Assortment1.emplace_back("BMW 316d", 142000, 5, condition::NEW, engine::DIESEL);
     
-
+  DEBUG_LOG("Shop Default Constructor");
 }
 
 Shop::Shop(const Shop& shop):income(shop.income),Personnel(shop.Personnel),Assortment1(shop.Assortment1){}
@@ -65,6 +64,7 @@ void Shop::saveToFile(const Shop& shop)
 Shop& operator+=(Shop &a, const Employee &b)
 {
     a.Personnel.push_back( b );
+    
    // a.numberOfEmployees++;
     return a;
 }

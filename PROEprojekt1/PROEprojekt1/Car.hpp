@@ -8,21 +8,15 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Debug.hh"
+
+#define _DEBUG
 
 using namespace std;
 
 enum class condition {NEW, USED};
 enum class engine {DIESEL, GASOLINE};
 
-/*
-struct CarInfo
-{
-    string carModel;
-    double carPrice;
-    int carID;
-    condition condition_;
-    engine engine_;
-};*/
 
 class Car{
 private:
@@ -32,17 +26,19 @@ private:
     int carID;
     condition condition_;
     engine engine_;
-    //CarInfo info;
+ 
 public:
     Car();
     Car(const Car &car);
-   // Car(CarInfo info);
     Car(string model, double price, int ID, condition condition_, engine engine_);
     ~Car();
     
     string getCondition() const;
+    void setNewPrice(unsigned int price);
     bool operator == (const Car &car);
     bool operator != (const Car &car);
+    Car &operator += (unsigned int raisePrice);
+    Car &operator -= (unsigned int lowerPrice);
     
     friend ostream& operator<< (ostream& ,const Car&);
 };

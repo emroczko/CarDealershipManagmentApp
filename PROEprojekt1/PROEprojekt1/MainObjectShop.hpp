@@ -6,13 +6,6 @@
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
 
-/*
-#ifndef _DEBUG
- #define DEBUG_LOG(a) std::cout << __FILE__ << "(" << __LINE__ << "): " << a << std::endl;
-#else
- #define DEBUG_LOG(a)
-#endif                                                  // _DEBUG
-*/
 
 
 #pragma once
@@ -22,6 +15,7 @@
 #include "Locations.hpp"
 #include "Employee.hpp"
 #include "Car.hpp"
+#include "Debug.hh"
 
 
 using namespace std;
@@ -37,17 +31,17 @@ private:
     
 public:
     Shop();
-    Shop(int income_);
+    Shop(int income_, Location location);
     Shop(const Shop& shop);
     ~Shop();
     
     void saveToFile(const Shop & shop);
     friend ostream& operator<< (ostream& ,const Shop&);
     friend Shop& operator+=(Shop& a, const Employee& b);
-    bool operator == (const Shop &shop);
-    bool operator > (const Shop &shop);
-    bool operator < (const Shop &shop);
-    Shop & operator ++ (); // adds a car
-    Shop & operator -- (); // removes a car
+    bool operator == (const Shop &shop); //porownuje przychod placowki
+    bool operator > (const Shop &shop); //porownuje przychod placowki
+    bool operator < (const Shop &shop); //porownuje przychod placowki
+    Shop & operator ++ (); // dodaje auto
+    Shop & operator -- (); // usuwa auto
   
 };

@@ -24,8 +24,8 @@ Shop::Shop()
 }
 Shop::Shop(int a, int b, int c)
 {
-    NumOfPersonel = a;
-    NumOfAssortment = b;
+    numberOfEmployees = a;
+    numberOfProducts = b;
     
     Employee employee;
     Product product;
@@ -43,28 +43,42 @@ Shop::Shop(int a, int b, int c)
     Assortment1.emplace_back("jajka", 3,23  );
     Assortment1.emplace_back("mieso", 4,11  );
     Assortment1.emplace_back("ryba", 5,10 );
-    
-    
-   
-    
-    
-    
-    
+
 }
+
+Shop::Shop(const Shop& shop):income(shop.income),Personnel(shop.Personnel),numberOfEmployees(shop.numberOfEmployees),Assortment1(shop.Assortment1),numberOfProducts(shop.numberOfProducts){}
 
 Shop& operator+=(Shop &a, const Employee &b)
 {
     a.Personnel.push_back( b );
-    a.NumOfPersonel+=1;
+    a.numberOfEmployees++;
     return a;
 }
-/*
-Shop& operator=(Shop &a, Shop &b)
+
+bool Shop::operator == (const Shop &shop)
 {
-    a.Personnel=b.Personnel;
-    a.NumOfPersonel+=1;
-    return a;
-}*/
+    if(income!= shop.income)
+        return false;
+    if(Location1 != shop.Location1)
+        return false;
+    if(numberOfEmployees != shop.numberOfEmployees)
+        return false;
+    if(numberOfProducts != shop.numberOfProducts)
+        return false;
+    
+    return true;
+}
+
+bool Shop::operator > (const Shop &shop)
+{
+    return income > shop.income;
+}
+
+bool Shop::operator < (const Shop &shop)
+{
+    return !(*this > shop);
+}
+
 
 ostream& operator<<(ostream& os,const Shop& S)
 {
@@ -72,12 +86,12 @@ ostream& operator<<(ostream& os,const Shop& S)
     //os<<"miejscowosc: "<<S.Location1<<endl;
     os<<"Sklep"<<endl;
     os<<"Personel: "<<endl;
-    for(int i=0;i<S.NumOfPersonel;i++)
+    for(int i=0;i<S.numberOfEmployees;i++)
     {
     os<<S.Personnel[i];
     }
     os<<"produkty: "<<endl;
-    for(int i=0;i<S.NumOfAssortment;i++)
+    for(int i=0;i<S.numberOfProducts;i++)
     {
         os<<S.Assortment1[i];
     }
@@ -86,8 +100,4 @@ ostream& operator<<(ostream& os,const Shop& S)
 Shop::~Shop()
 {
    
-//    delete [] Personnel;
-    cout<<"destruktor per"<<endl;
-    //delete [] Assortment1;
-    cout<<"destruktor ass"<<endl;
 }

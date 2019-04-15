@@ -14,23 +14,15 @@
 #include "TempOffer.hpp"
 #include "MainObjectShop.hpp"
 
-#define M 5
-
-
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
 
-    
-    time_t result = 0;
-    time( & result );
-    
-    cout<<"Czas lokalny: "<<asctime( localtime( & result ) )<<endl;
    
     Shop shop(5,5,5);
     cout<<shop;
-    Employee manager("Julia", "Stanislawska", "Manager");
+    Employee manager("Julia Stanislawska", "Manager");
 
     shop+=manager;
     cout<<shop;

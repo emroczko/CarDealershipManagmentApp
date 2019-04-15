@@ -5,8 +5,7 @@
 //  Created by Eryk Mroczko on 13/03/2019.
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
-#ifndef BUILDING_H_
-#define BUILDING_H_
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -32,4 +31,4 @@ public:
 };
 
 
-#endif // LOCATION_H_
+

@@ -11,27 +11,26 @@
 
 using namespace std;
 
-/*enum class Proffesion {
-    Kasjer = 1,
-    Kierownik = 2,
-    Magazynier = 3
-}; */
 
 class Employee{
 private:
     string name;
-    string surname;
-  //Proffesion profession;
     string profession;
+    unsigned int salary;
     
 public:
-    Employee(string="Jan", string = "Kowalski", string="Kierownik");
+    Employee(string="Jan Kowalski", string="Kierownik", int = 2000);
+    Employee(const Employee &employee);
+    
     void showEmployees();
     void addEmployee();
     void removeEmployee();
     ~Employee();
+    
     friend Employee operator+=(const Employee& a,const Employee& b);
     friend ostream& operator<< (ostream& ,const Employee&);
-    
+    Employee &operator += (unsigned int salaryRaise);
+    Employee &operator -= (unsigned int salaryReduction);        
     
 };
+

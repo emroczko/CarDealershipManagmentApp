@@ -1,10 +1,9 @@
-#ifndef DEBUG_H_
-#define DEBUG_H_
+#pragma once
 
 #ifdef _DEBUG
-    #define DEBUG_LOG(a) std::cout << __FILE__ << "(" << __LINE__ << "): " << a << std::endl;
+#define _DEBUG(x) { cout << FILE << "(" << LINE << "): " << x << endl;
 #else
-    #define DEBUG_LOG(a)
+    #define _DEBUG(x)
 #endif                                                  // _DEBUG
 
-#endif                                                  // DEBUG_H_
+

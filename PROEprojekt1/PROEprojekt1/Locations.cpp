@@ -13,20 +13,20 @@ std::size_t Location::numberOfLocations = 0;
 
 Location::Location() : city("Warszawa"), street("Marszalkowska"), number(1)
 {
-    DEBUG_LOG("Location - k. domyslny");
+    _DEBUG("Location - k. domyslny");
     ++numberOfLocations;
 }
 
 Location::Location(string cityName, string streetName, int Number) :
 city(cityName), street(streetName), number(Number)
 {
-    DEBUG_LOG("Location - k. z parametrami");
+    _DEBUG("Location - k. z parametrami");
     ++numberOfLocations;
 }
 
 Location::Location(const Location &location)
 {
-    DEBUG_LOG("Location - k. kopiujacy");
+    _DEBUG("Location - k. kopiujacy");
     ++numberOfLocations;
     city = location.city;
     street = location.street;
@@ -34,7 +34,7 @@ Location::Location(const Location &location)
 
 Location::~Location()
 {
-    DEBUG_LOG("Location - destrukutor");
+    _DEBUG("Location - destrukutor");
     --numberOfLocations;
 }
 

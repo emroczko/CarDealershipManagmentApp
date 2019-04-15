@@ -21,18 +21,25 @@ using namespace std;
 class Shop
 {
 private:
+    int income;
     Location Location1;
     vector < Employee > Personnel;
-    int NumOfPersonel;
+    unsigned int numberOfEmployees;
     vector < Product > Assortment1;
-    int NumOfAssortment;
-    TempOffer * TemporaryOffer;
+    unsigned int numberOfProducts;
+   // TempOffer * TemporaryOffer;
     
-
+    
+    
 public:
     Shop();
     Shop(int=3, int=3, int=3);
+    Shop(const Shop& shop);
     ~Shop();
     friend ostream& operator<< (ostream& ,const Shop&);
     friend Shop& operator+=(Shop& a, const Employee& b);
+    bool operator == (const Shop &shop);
+    bool operator > (const Shop &shop);
+    bool operator < (const Shop &shop);
+  
 };

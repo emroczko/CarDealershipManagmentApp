@@ -16,57 +16,69 @@
 #include "Locations.hpp"
 #include "Employee.hpp"
 #include "Car.hpp"
+#include "Debug.hh"
 
 
-//#include "Debug.hh"
-
-#define M 3
 using namespace std;
 
-Shop::Shop()
+Shop::Shop():income(1000), Location1("Warszawa", "Przy Agorze", 1)
 {
-    
+    DEBUG_LOG("Shop - k. domyslny");
 }
 Shop::Shop(int income_, Location location)
 {
     income = income_;
     Location1 = location;
-    
     Personnel.emplace_back("Jan Jankowski", "Mechanik", 4000);
     Personnel.emplace_back("Anna Bratkowska", "Sekretarka", 3000);
     Personnel.emplace_back("Adam Mazowiecki", "Blacharz", 4200);
     Personnel.emplace_back("Juliusz Marski", "Sprzedawca", 3500);
     Personnel.emplace_back("Dariusz Markowski", "Mechanik", 5000);
-   
-    
-    Assortment1.emplace_back("BMW 340i", 340000, 1, condition::NEW, engine::GASOLINE);
-    Assortment1.emplace_back("BMW 550i", 340000, 2, condition::USED, engine::GASOLINE);
-    Assortment1.emplace_back("BMW 730d", 340000, 3, condition::USED, engine::DIESEL);
+    Assortment1.emplace_back("BMW 340i", 320000, 1, condition::NEW, engine::GASOLINE);
+    Assortment1.emplace_back("BMW 550i", 440000, 2, condition::USED, engine::GASOLINE);
+    Assortment1.emplace_back("BMW 730d", 370000, 3, condition::USED, engine::DIESEL);
     Assortment1.emplace_back("BMW 428i", 190000, 4, condition::NEW, engine::GASOLINE);
     Assortment1.emplace_back("BMW 316d", 142000, 5, condition::NEW, engine::DIESEL);
     
-  DEBUG_LOG("Shop Default Constructor");
+    DEBUG_LOG("Shop - k. z parametrami");
 }
 
-Shop::Shop(const Shop& shop):income(shop.income),Personnel(shop.Personnel),Assortment1(shop.Assortment1){}
+Shop::Shop(const Shop& shop):income(shop.income),Location1(shop.Location1), Personnel(shop.Personnel),Assortment1(shop.Assortment1)
+{
+    DEBUG_LOG("Shop - k. kopiujacy");
+}
 
 
 void Shop::saveToFile(const Shop& shop)
 {
     string filename="save.txt";
-    fstream Filetxt;
+    fstream file;
    
-    Filetxt.open(filename.c_str(), ios::ate | ios::out);
-    Filetxt << shop;
-    Filetxt.close();
+    file.open(filename.c_str(), ios::ate | ios::out);
+    file << shop;
+    file.close();
+}
+void Shop::loadFromFile()
+{
+    string filename="save.txt";
+    fstream file;
+    file.open(filename.c_str(), ios::in);
+    string file1;
+    string line;
+    while(getline(file, line))
+    {
+        file1+=line;
+        file1+="\n";
+    }
+    cout<<endl<<endl<<endl<<"################"<<endl<<endl;
+    cout<<"ODCZYT Z PLIKU:"<<endl<<file1<<endl;
 }
 
-Shop& operator+=(Shop &a, const Employee &b)
+Shop& Shop::operator+=(const Employee & employee)
 {
-    a.Personnel.push_back( b );
+    Personnel.push_back( employee );
     
-   // a.numberOfEmployees++;
-    return a;
+    return *this;
 }
 
 bool Shop::operator == (const Shop &shop)
@@ -92,10 +104,22 @@ bool Shop::operator < (const Shop &shop)
 {
     return !(*this > shop);
 }
-
-Shop & Shop::operator ++ ()
+Shop & Shop::operator += (const Shop &shop)
 {
-    Assortment1.emplace_back(Car());
+    income += shop.income;
+    Location1=shop.Location1;
+    
+    for(int i = 0; i< shop.Personnel.size(); ++i)
+        Personnel.emplace_back(shop.Personnel[i]);
+    
+    for(int i = 0; i< shop.Assortment1.size(); ++i)
+        Assortment1.emplace_back(shop.Assortment1[i]);
+    
+    return *this;
+}
+Shop & Shop::operator += (const Car &car)
+{
+    Assortment1.emplace_back(car);
     return *this;
 }
 
@@ -103,7 +127,6 @@ Shop & Shop::operator -- ()
 {
     if(Assortment1.size() != 0)
     {
-       // number_of_computers_ -= 1;
         Assortment1.pop_back();
     }
     return *this;
@@ -134,6 +157,15 @@ ostream& operator<<(ostream& os,const Shop& S)
     }
     os<<endl;
     return os;
+}
+string Shop::operator [] (unsigned int number)
+{
+    if(number >= Assortment1.size())
+        return "U tego dealera nie ma tylu aut";
+    else if(number == 0)
+        return "Podano zla liczbe!";
+    else
+        return Assortment1[number - 1].getModelAndPrice();
 }
 Shop::~Shop()
 {

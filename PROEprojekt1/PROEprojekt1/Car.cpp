@@ -8,6 +8,8 @@
 
 #include "Car.hpp"
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
@@ -31,6 +33,17 @@ void Car::setNewPrice(unsigned int price)
     carPrice = price;
 }
 
+string Car::getModelAndPrice(){
+    
+    string modelAndPrice;
+    //string s = to_string(carPrice);
+    stringstream s;
+    string price;
+    s << fixed << setprecision( 0 ) << carPrice;
+    s >> price;
+    modelAndPrice = carModel + " - Cena: "+ price;
+    return modelAndPrice;
+}
 string Car::getCondition() const
 {
     if(condition_ == condition::USED)

@@ -32,7 +32,7 @@ public:
     Car(const Car &car);
     Car(string model, double price, int ID, condition condition_, engine engine_);
     ~Car();
-    
+    string getModelAndPrice();
     string getCondition() const;
     void setNewPrice(unsigned int price);
     bool operator == (const Car &car);

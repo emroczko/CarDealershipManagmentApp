@@ -41,11 +41,11 @@ int main(int argc, const char * argv[]) {
     else{cout<<"Są takie same"<<endl;}
     cout<<"przypisuje lokalizacje 2 do 1"<<endl;
     location1=location2;
-    cout<<"Lokalizacja nr 1 po przypisaniu do niej lokalizacji nr 2: "<<location1<<endl<<endl;
+    cout<<"Lokalizacja nr 1 po przypisaniu do niej lokalizacji nr 2: "<<location1<<endl;
     
     cout<<"TEST Locations end"<<endl;
     
-    cout<<endl;
+    cout<<"#####################################"<<endl<<endl;
     
     cout<<"TEST Employee start"<<endl;
     
@@ -72,7 +72,7 @@ int main(int argc, const char * argv[]) {
     
     cout<<"TEST Employee end"<<endl;
     
-    cout<<endl;
+    cout<<"#####################################"<<endl<<endl;
     
     cout<<"TEST Car start"<<endl;
     
@@ -94,7 +94,7 @@ int main(int argc, const char * argv[]) {
     else {cout<<"Różne samochody"<<endl;}
     
     cout<<"TEST Car end"<<endl<<endl;
-    
+    cout<<"#####################################"<<endl<<endl;
     cout<<"TEST Customer start"<<endl;
     
     Customer customer1;
@@ -116,20 +116,41 @@ int main(int argc, const char * argv[]) {
     cout<<"TEST Customer end"<<endl<<endl;
     
     
-    cout<<"TEST Customer start"<<endl;
+    cout<<"#####################################"<<endl<<endl;
+    cout<<"TEST MainObjectShop start"<<endl;
     
     Shop shop1;
     Shop shop2(20000, location1);
+    Shop shop3(shop2);
+    Shop shop4(34000, location2);
     
-    cout<<"Usuwam samochód"<<endl;
+    cout<<"Czy sklepy 2 i 3 maja taki sam przychód?"<<endl;
+    if(shop2==shop1)
+        cout<<"tak"<<endl;
+    else
+        cout<<"nie"<<endl;
     
-    --shop2;
-    
+    shop2+=car2;
+    shop2+=employee2;
     cout<<shop2;
+    
+    shop2+=shop4;
+    
+    cout<<"Sklepy 1 i 2 po połączeniu"<<endl;
+    cout<<shop2;
+    
+    
+    cout<<"Piąte auto z salonu 2"<<endl;
+    cout<<shop2[5]<<endl;
+    
+    cout<<"Usuwam ostatni samochód ze sklepu 4"<<endl;
+    --shop4;
+    
+  
     
     shop2.saveToFile(shop2);
     
-    
+    shop2.loadFromFile();
     
     return 0;
 }

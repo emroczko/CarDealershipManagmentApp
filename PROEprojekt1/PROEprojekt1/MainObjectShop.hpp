@@ -36,12 +36,15 @@ public:
     ~Shop();
     
     void saveToFile(const Shop & shop);
+    void loadFromFile();
     friend ostream& operator<< (ostream& ,const Shop&);
-    friend Shop& operator+=(Shop& a, const Employee& b);
+    
     bool operator == (const Shop &shop); //porownuje przychod placowki
     bool operator > (const Shop &shop); //porownuje przychod placowki
     bool operator < (const Shop &shop); //porownuje przychod placowki
-    Shop & operator ++ (); // dodaje auto
-    Shop & operator -- (); // usuwa auto
-  
+    Shop & operator += (const Employee& employee); // dodaje pracownika do sklepu
+    Shop & operator += (const Shop &shop); //łączy dwie placówki
+    Shop & operator += (const Car &car_); // dodaje auto
+    Shop & operator -- (); // usuwa ostatnie auto
+    string operator [] (unsigned int number); //pokazuje wybrane (po indeksie) auto z placowki 
 };

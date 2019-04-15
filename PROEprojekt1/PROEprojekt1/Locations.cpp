@@ -13,20 +13,20 @@ std::size_t Location::numberOfLocations = 0;
 
 Location::Location() : city("Warszawa"), street("Marszalkowska"), number(1)
 {
-    _DEBUG("Location - k. domyslny");
+   // DEBUG_LOG("Location - k. domyslny");
     ++numberOfLocations;
 }
 
 Location::Location(string cityName, string streetName, int Number) :
 city(cityName), street(streetName), number(Number)
 {
-    _DEBUG("Location - k. z parametrami");
+    //DEBUG_LOG("Location - k. z parametrami");
     ++numberOfLocations;
 }
 
 Location::Location(const Location &location)
 {
-    _DEBUG("Location - k. kopiujacy");
+   // DEBUG_LOG("Location - k. kopiujacy");
     ++numberOfLocations;
     city = location.city;
     street = location.street;
@@ -34,7 +34,7 @@ Location::Location(const Location &location)
 
 Location::~Location()
 {
-    _DEBUG("Location - destrukutor");
+   // DEBUG_LOG("Location - destrukutor");
     --numberOfLocations;
 }
 
@@ -62,8 +62,8 @@ std::istream & operator >> (std::istream &is, Location &location)
 
 std::ostream & operator << (std::ostream &os, const Location &location)
 {
-    os <<"Miasto: "<< location.city<<endl <<
-    "Ulica: " <<location.street <<endl<<" "<<location.number<<endl;
+    os << location.city <<
+    "ul. " <<location.street<<" "<<location.number<<endl;
     return os;
 }
 

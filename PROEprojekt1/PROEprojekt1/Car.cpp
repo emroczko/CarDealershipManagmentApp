@@ -1,0 +1,63 @@
+//
+//  Car.cpp
+//  PROEprojekt1
+//
+//  Created by Eryk Mroczko on 13/03/2019.
+//  Copyright © 2019 Eryk Mroczko. All rights reserved.
+//
+
+#include "Car.hpp"
+#include <string>
+
+Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
+{
+    
+}
+Car::Car(const Car &car) : carModel(car.carModel), carPrice(car.carPrice), carID(car.carID), condition_(car.condition_), engine_(car.engine_)
+{
+    
+}
+
+Car::Car(string model, double price, int ID, condition condition_, engine engine_) : carModel(model), carPrice(price), carID(ID), condition_(condition_), engine_(engine_)
+{
+    
+}
+Car::~Car(){
+    
+}
+
+string Car::getCondition() const
+{
+    if(condition_ == condition::USED)
+        return "Uzywany";
+    else
+        return "Nowy";
+}
+
+bool Car::operator == (const Car &car)
+{
+    if(carModel != car.carModel)
+        return false;
+    if(carPrice != car.carPrice)
+        return false;
+    if(carID != car.carID)
+        return false;
+    if(condition_ != car.condition_)
+        return false;
+    if(engine_ != car.engine_)
+        return false;
+    
+    return true;
+}
+
+bool Car::operator != (const Car &car)
+{
+    return !(*this == car);
+}
+
+
+ostream& operator<<(ostream& os,const Car& car)
+{
+    os<<car.carModel<<" Stan: "<<car.getCondition()<<" Cena: "<<car.carPrice<<"zł ID:"<<car.carID<<endl;
+    return os;
+}

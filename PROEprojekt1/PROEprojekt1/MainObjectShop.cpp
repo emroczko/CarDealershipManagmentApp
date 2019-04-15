@@ -6,15 +6,20 @@
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
 
+
 #include "MainObjectShop.hpp"
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
 #include "Locations.hpp"
 #include "Employee.hpp"
-#include "Product.hpp"
-#include "TempOffer.hpp"
+#include "Car.hpp"
+
+
+//#include "Debug.hh"
+
 #define M 3
 using namespace std;
 
@@ -22,36 +27,45 @@ Shop::Shop()
 {
     
 }
-Shop::Shop(int a, int b, int c)
+Shop::Shop(int income_)
 {
-    numberOfEmployees = a;
-    numberOfProducts = b;
+    income = income_;
+   // Location location;
+    //log_debug(__FILE__, __LINE__, "konstruktor klasy XYZ")
     
-    Employee employee;
-    Product product;
-    TempOffer tempO;
-    Location base;
+    Personnel.emplace_back("Jan Jankowski", "Mechanik", 4000);
+    Personnel.emplace_back("Anna Bratkowska", "Sekretarka", 3000);
+    Personnel.emplace_back("Adam Mazowiecki", "Blacharz", 4200);
+    Personnel.emplace_back("Juliusz Marski", "Sprzedawca", 3500);
+    Personnel.emplace_back("Dariusz Markowski", "Mechanik", 5000);
+   
     
+    Assortment1.emplace_back("BMW 340i", 340000, 1, condition::NEW, engine::GASOLINE);
+    Assortment1.emplace_back("BMW 550i", 340000, 2, condition::USED, engine::GASOLINE);
+    Assortment1.emplace_back("BMW 730d", 340000, 3, condition::USED, engine::DIESEL);
+    Assortment1.emplace_back("BMW 428i", 190000, 4, condition::NEW, engine::GASOLINE);
+    Assortment1.emplace_back("BMW 316d", 142000, 5, condition::NEW, engine::DIESEL);
     
-    for( int i = 0; i < a; i++ )
-    {
-        Personnel.push_back( employee );
-    }
-    
-    Assortment1.emplace_back("woda", 1,2 );
-    Assortment1.emplace_back("chleb", 2,20  );
-    Assortment1.emplace_back("jajka", 3,23  );
-    Assortment1.emplace_back("mieso", 4,11  );
-    Assortment1.emplace_back("ryba", 5,10 );
 
 }
 
-Shop::Shop(const Shop& shop):income(shop.income),Personnel(shop.Personnel),numberOfEmployees(shop.numberOfEmployees),Assortment1(shop.Assortment1),numberOfProducts(shop.numberOfProducts){}
+Shop::Shop(const Shop& shop):income(shop.income),Personnel(shop.Personnel),Assortment1(shop.Assortment1){}
+
+
+void Shop::saveToFile(const Shop& shop)
+{
+    string filename="save.txt";
+    fstream Filetxt;
+   
+    Filetxt.open(filename.c_str(), ios::ate | ios::out);
+    Filetxt << shop;
+    Filetxt.close();
+}
 
 Shop& operator+=(Shop &a, const Employee &b)
 {
     a.Personnel.push_back( b );
-    a.numberOfEmployees++;
+   // a.numberOfEmployees++;
     return a;
 }
 
@@ -61,9 +75,9 @@ bool Shop::operator == (const Shop &shop)
         return false;
     if(Location1 != shop.Location1)
         return false;
-    if(numberOfEmployees != shop.numberOfEmployees)
+    if(Personnel.size() != shop.Personnel.size())
         return false;
-    if(numberOfProducts != shop.numberOfProducts)
+    if(Assortment1.size()!= shop.Assortment1.size())
         return false;
     
     return true;
@@ -79,22 +93,46 @@ bool Shop::operator < (const Shop &shop)
     return !(*this > shop);
 }
 
+Shop & Shop::operator ++ ()
+{
+    Assortment1.emplace_back(Car());
+    return *this;
+}
 
+Shop & Shop::operator -- ()
+{
+    if(Assortment1.size() != 0)
+    {
+       // number_of_computers_ -= 1;
+        Assortment1.pop_back();
+    }
+    return *this;
+}
 ostream& operator<<(ostream& os,const Shop& S)
 {
-    
-    //os<<"miejscowosc: "<<S.Location1<<endl;
-    os<<"Sklep"<<endl;
-    os<<"Personel: "<<endl;
-    for(int i=0;i<S.numberOfEmployees;i++)
+    os << "Informacje o sklepie:" << endl <<
+    "Lokalizacja: " << S.Location1
+    << "Liczba aut u Dealera: " << S.Assortment1.size() <<endl
+    << "Liczba pracownikow placówki: " << S.Personnel.size() << endl
+    << "Przychody: " << S.income<< " zl" <<endl<<endl;
+    if(S.Assortment1.size()!= 0)
     {
-    os<<S.Personnel[i];
+        os << "Informacje o autach znajdujących się u Dealera: " <<endl;
+        for(int i = 0; i < S.Assortment1.size(); ++i)
+        {
+            os <<S.Assortment1[i];
+        }
     }
-    os<<"produkty: "<<endl;
-    for(int i=0;i<S.numberOfProducts;i++)
+    os<<endl;
+    if(S.Personnel.size()!= 0)
     {
-        os<<S.Assortment1[i];
+        os << "Informacje o pracownikach placowki: " << endl << endl;
+        for(int i = 0; i < S.Personnel.size(); ++i)
+        {
+            os<<S.Personnel[i];
+        }
     }
+    os<<endl;
     return os;
 }
 Shop::~Shop()

@@ -5,6 +5,12 @@
 //  Created by Eryk Mroczko on 13/03/2019.
 //  Copyright © 2019 Eryk Mroczko. All rights reserved.
 //
+#ifdef _DEBUG
+#define DEBUG_LOG(a) std::cout << __FILE__ << "(" << __LINE__ << "): " << a << std::endl;
+#else
+#define DEBUG_LOG(a)
+#endif
+
 #pragma once
 #include <iostream>
 #include <string>

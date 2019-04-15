@@ -10,22 +10,34 @@
 #include <iostream>
 #include "Locations.hpp"
 #include "Employee.hpp"
-#include "Product.hpp"
-#include "TempOffer.hpp"
+#include "Car.hpp"
 #include "MainObjectShop.hpp"
-
+#include "Debug.hh"
+#include "catch.hpp"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
 
    
-    Shop shop(5,5,5);
-    cout<<shop;
+    Shop shop(20000);
+    Location("Lomza", "Dluga", 50);
     Employee manager("Julia Stanislawska", "Manager");
 
     shop+=manager;
+    
+    
+    cout<<"Usuwam samochód"<<endl;
+    
+    --shop;
+    
     cout<<shop;
+    
+    shop.saveToFile(shop);
+    
+    
     
     return 0;
 }
+
+

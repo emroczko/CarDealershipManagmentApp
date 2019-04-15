@@ -15,11 +15,12 @@ Employee::Employee(string n, string p, int s){
     name = n;
     profession = p;
     salary = s;
+    DEBUG_LOG("Employee - k. z parametrami");
     
 }
 Employee::Employee(const Employee &employee) : name(employee.name), profession(employee.profession), salary(employee.salary)
 {
-    _DEBUG("Employee - k. kopiujacy");
+   DEBUG_LOG("Employee - k. kopiujacy");
 }
 Employee & Employee::operator += (unsigned int salaryRaise)
 {

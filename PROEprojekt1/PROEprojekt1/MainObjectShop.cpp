@@ -59,9 +59,12 @@ void Shop::saveToFile(const Shop& shop)
 {
     string filename="save.txt";
     fstream file;
-   
     file.open(filename.c_str(), ios::ate | ios::out);
-    file << shop;
+    
+    if (file.is_open()) {
+        file << shop;
+    }
+    
     file.close();
 }
 void Shop::loadFromFile()
@@ -71,11 +74,14 @@ void Shop::loadFromFile()
     file.open(filename.c_str(), ios::in);
     string file1;
     string line;
-    while(getline(file, line))
-    {
-        file1+=line;
-        file1+="\n";
+    if (file.is_open()) {
+        while(getline(file, line))
+        {
+            file1+=line;
+            file1+="\n";
+        }
     }
+   
     cout<<endl<<endl<<endl<<"################"<<endl<<endl;
     cout<<"ODCZYT Z PLIKU:"<<endl<<endl<<file1<<endl;
 }

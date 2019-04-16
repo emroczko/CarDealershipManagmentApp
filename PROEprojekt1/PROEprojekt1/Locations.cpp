@@ -44,7 +44,10 @@ void Location::saveToFile(Location & location)
     fstream file;
     
     file.open(filename.c_str(), ios::ate | ios::out);
-    file <<location.city<<" "<< location.street<<" "<<location.number<<endl;
+    if (file.is_open()) {
+        file <<location.city<<" "<< location.street<<" "<<location.number<<endl;
+    }
+   
     file.close();
 }
 

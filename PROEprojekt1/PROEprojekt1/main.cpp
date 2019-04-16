@@ -27,6 +27,7 @@ int main(int argc, const char * argv[]) {
     Location location2("Lomza", "Dluga", 50);
     Location location3(location2);
     
+    cout<<"Lokalizacja nr 2: "<<location2;
     cout<<"Lokalizacja nr 3: "<<location3;
     cout<<"Czy lokalizacja 3 i 2 są takie same?"<<endl;
     
@@ -50,8 +51,13 @@ int main(int argc, const char * argv[]) {
     Location location5;
     cout<<"Wczytanie z pliku obiektu Location"<<endl;
     ifstream fp;
+    
     fp.open("saveLocation.txt");
-    fp >> location5;
+   
+    if (fp.is_open()) {
+        fp >> location5;
+    }
+   
     fp.close();
     
     cout<<location5;

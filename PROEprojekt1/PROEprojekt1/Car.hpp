@@ -34,9 +34,11 @@ public:
     ~Car();
     double getPrice();
     void makeACar(string model, double price, int ID, condition condition_, engine engine_);
+    void saveToFile();
     string getModel();
     string getModelAndPrice();
     string getCondition() const;
+    string getEngine() const;
     void setNewPrice(unsigned int price);
     bool operator == (const Car &car);
     bool operator != (const Car &car);

@@ -12,6 +12,7 @@
 #include <iomanip>
 
 
+
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
 {
   //  DEBUG_LOG("Car - k. domyslny");
@@ -49,7 +50,6 @@ string Car::getModel(){
 string Car::getModelAndPrice(){
     
     string modelAndPrice;
-    //string s = to_string(carPrice);
     stringstream s;
     string price;
     s << fixed << setprecision( 0 ) << carPrice;
@@ -63,6 +63,13 @@ string Car::getCondition() const
         return "Uzywany";
     else
         return "Nowy";
+}
+string Car::getEngine() const
+{
+    if(engine_ == engine::DIESEL)
+        return "DIESEL";
+    else
+        return "GASOLINE";
 }
 
 bool Car::operator == (const Car &car)

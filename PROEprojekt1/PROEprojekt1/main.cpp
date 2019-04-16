@@ -8,6 +8,7 @@
 
 #include <stdint.h>
 #include <iostream>
+#include <fstream>
 #include "Locations.hpp"
 #include "Employee.hpp"
 #include "Car.hpp"
@@ -42,6 +43,18 @@ int main(int argc, const char * argv[]) {
     cout<<"przypisuje lokalizacje 2 do 1"<<endl;
     location1=location2;
     cout<<"Lokalizacja nr 1 po przypisaniu do niej lokalizacji nr 2: "<<location1<<endl;
+    
+    cout<<"Zapis location2 do pliku"<<endl;
+    location2.saveToFile(location2);
+    
+    Location location5;
+    cout<<"Wczytanie z pliku obiektu Location"<<endl;
+    ifstream fp;
+    fp.open("saveLocation.txt");
+    fp >> location5;
+    fp.close();
+    
+    cout<<location5;
     
     cout<<"TEST Locations end"<<endl;
     
@@ -187,6 +200,7 @@ int main(int argc, const char * argv[]) {
     shop2(customer1, 6);
     
     shop2(customer1, "BMW 550i");
+    cout<<endl;
     cout<<shop2;
     
     shop2.saveToFile(shop2);

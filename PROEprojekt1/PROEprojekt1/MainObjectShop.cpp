@@ -77,7 +77,7 @@ void Shop::loadFromFile()
         file1+="\n";
     }
     cout<<endl<<endl<<endl<<"################"<<endl<<endl;
-    cout<<"ODCZYT Z PLIKU:"<<endl<<file1<<endl;
+    cout<<"ODCZYT Z PLIKU:"<<endl<<endl<<file1<<endl;
 }
 
 Shop& Shop::operator+=(const Employee & employee)

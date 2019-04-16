@@ -7,6 +7,7 @@
 //
 #include <iomanip>
 #include "Locations.hpp"
+#include <fstream>
 
 
 
@@ -37,6 +38,15 @@ Location::~Location()
     //DEBUG_LOG("Location - destrukutor");
 
 }
+void Location::saveToFile(Location & location)
+{
+    string filename="saveLocation.txt";
+    fstream file;
+    
+    file.open(filename.c_str(), ios::ate | ios::out);
+    file <<location.city<<" "<< location.street<<" "<<location.number<<endl;
+    file.close();
+}
 
 bool Location::operator != (const Location &location)
 {
@@ -57,13 +67,18 @@ Location & Location::operator = (const Location &location)
     return *this;
 }
 
-std::ostream & operator << (std::ostream &os, const Location &location)
+ostream & operator << (ostream &os, const Location &location)
 {
     os << location.city <<
     " ul. " <<location.street<<" "<<location.number<<endl;
     return os;
 }
 
+istream & operator >> (istream &is, Location &location)
+{
+    is >> location.city >> location.street >>location.number;
+    return is;
+}
 
 
 

@@ -2,7 +2,19 @@
 #include <sstream>
 #include <iomanip>
 
+using namespace std;
 
+Vehicle* Vehicle::makeCar(int prod, double price)
+{
+    random_device rd;
+    uniform_int_distribution<int> distID(1000, 10000);
+    switch(prod)
+    {
+    case(1): return new Car(price, distID(rd), condition::NEW); break;
+    default: return NULL;
+    }
+}
+/*
 
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
 {
@@ -108,3 +120,5 @@ ostream& operator<<(ostream& os,const Car& car)
     os<<car.carModel<<" Stan: "<<car.getCondition()<<" Cena: "<<car.carPrice<<"zł ID:"<<car.carID<<endl;
     return os;
 }
+
+*/

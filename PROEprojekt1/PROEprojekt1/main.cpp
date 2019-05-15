@@ -56,9 +56,11 @@ int main(int argc, const char * argv[]) {
    
     if (fp.is_open()) {
         fp >> location5;
+        fp.close();
     }
+    else{ cout<<"Nie udało sie otworzyc pliku"<<endl;}
    
-    fp.close();
+   
     
     cout<<location5;
     

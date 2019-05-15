@@ -63,9 +63,11 @@ void Shop::saveToFile(const Shop& shop)
     
     if (file.is_open()) {
         file << shop;
+        file.close();
     }
+    else { cout<<"Nie udało sie otworzyc pliku"<<endl;}
     
-    file.close();
+  
 }
 void Shop::loadFromFile()
 {
@@ -80,7 +82,9 @@ void Shop::loadFromFile()
             file1+=line;
             file1+="\n";
         }
+        file.close();
     }
+    else { cout<<"Nie udało sie otworzyc pliku"<<endl;}
    
     cout<<endl<<endl<<endl<<"################"<<endl<<endl;
     cout<<"ODCZYT Z PLIKU:"<<endl<<endl<<file1<<endl;

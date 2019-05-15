@@ -46,9 +46,11 @@ void Location::saveToFile(Location & location)
     file.open(filename.c_str(), ios::ate | ios::out);
     if (file.is_open()) {
         file <<location.city<<" "<< location.street<<" "<<location.number<<endl;
+        file.close();
     }
+    else { cout<<"Nie udało sie otworzyc pliku"<<endl;}
    
-    file.close();
+    
 }
 
 bool Location::operator != (const Location &location)

@@ -30,7 +30,8 @@ SOURCES += \
     customer.cpp \
     employee.cpp \
     locations.cpp \
-    mainobjectshop.cpp
+    mainobjectshop.cpp \
+    mainwindow2.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,7 +40,18 @@ HEADERS += \
     debug.h \
     employee.h \
     locations.h \
-    mainobjectshop.h
+    mainobjectshop.h \
+    mainwindow2.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        mainwindow2.ui
+
+OTHER_FILES += \
+        117682899_37k1L8Im.jpg⁩
+
+DISTFILES +=
+
+RESOURCES += \
+    pics.qrc
+

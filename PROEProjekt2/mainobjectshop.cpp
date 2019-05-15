@@ -1,4 +1,4 @@
-#include "mainobjectshop.h"
+/*#include "mainobjectshop.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -220,4 +220,4 @@ Shop::~Shop()
 {
 
 }
-
+*/

@@ -15,11 +15,11 @@ AddVehicle::~AddVehicle()
 
 void AddVehicle::on_Akceptuj_clicked()
 {
-    //QString Model;
-    //Model = ui->Model;
-    //qint32 value, ID;
-    //value = ui->Cena;
-    //ID = ui->ID;
+    string Model;
+    Model = ui->Model->text().toStdString();
+    int value, ID;
+    value = ui->Cena->text().toInt();
+    ID = ui->ID->text().toInt();
     //engine take_eng = ui->Paliw_wybierz->;
     //condition take_cond = ui->Stan_wybierz;
 }

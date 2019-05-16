@@ -17,12 +17,12 @@ Shop::Shop():income(1000), Location1("Warszawa", "Przy Agorze", 1)
 }
 Shop::Shop(int income_, Location location): income(income_), Location1(location)
 {
-    Personnel.emplace_back("Jan Jankowski", "Mechanik", 4000);
-    Personnel.emplace_back("Anna Bratkowska", "Sekretarka", 3000);
-    Personnel.emplace_back("Adam Mazowiecki", "Blacharz", 4200);
-    Personnel.emplace_back("Juliusz Marski", "Sprzedawca", 3500);
-    Personnel.emplace_back("Dariusz Markowski", "Mechanik", 5000);
-    Assortment.emplace_back("BMW 340i", 320000, 1, condition::NEW, engine::GASOLINE);
+    Personnel.emplace_back(Employee("Jan Jankowski", "Mechanik", 4000));
+    Personnel.emplace_back(Employee("Anna Bratkowska", "Sekretarka", 3000));
+    Personnel.emplace_back(Employee("Adam Mazowiecki", "Blacharz", 4200));
+    Personnel.emplace_back(Employee("Juliusz Marski", "Sprzedawca", 3500));
+    Personnel.emplace_back(Employee("Dariusz Markowski", "Mechanik", 5000));
+    Assortment.emplace_back(("BMW 340i", 320000, 1, condition::NEW, engine::GASOLINE);
     Assortment.emplace_back("BMW 550i", 440000, 2, condition::USED, engine::GASOLINE);
     Assortment.emplace_back("BMW 730d", 370000, 3, condition::USED, engine::DIESEL);
     Assortment.emplace_back("BMW 428i", 190000, 4, condition::NEW, engine::GASOLINE);
@@ -159,7 +159,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     os<<endl;
     return os;
 }
-/*
+
 string Shop::operator [] (unsigned int number)
 {
     if(number >= Assortment.size())

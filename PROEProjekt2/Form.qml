@@ -9,4 +9,4 @@ header: Label{
 text: qsTr("Samochody")
 font.pixelSize: Qr.application.font.pixelSize *2
 padding: 10
-}
+}}

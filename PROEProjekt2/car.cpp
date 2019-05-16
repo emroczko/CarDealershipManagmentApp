@@ -4,24 +4,19 @@
 
 using namespace std;
 
-Vehicle* Vehicle::makeCar(int prod, double price, condition condition_, int id)
+Vehicle* Vehicle::makeVehicle(int decision, string mod, double price, int ID, condition cond, engine eng)
 {
-    random_device rd;
-    uniform_int_distribution<int> distID(1000, 10000);
-    switch(prod)
+    switch(decision)
     {
-   case(1): return new Car("525i", engine::DIESEL, double price_, condition::NEW, int id_); break;
-   default: return NULL;
+    case(1): return new Car(mod, price, ID, cond, eng); break;
+    default: return NULL;
     }
 }
-double Car::Get_Price(){return price_;}
-int Car::Get_ID(){return ID_;}
-string Car::Get_Model(){return model;}
-
-Car::Car(string Model, engine engine_, ) : model(Model), engine_(engine_),
-{
-    //DEBUG_LOG("Car - k. z parametrami");
-}
+double Vehicle::Get_Price(){return price_;}
+int Vehicle::Get_ID(){return ID_;}
+condition Vehicle::Get_Condition(){return condition_;}
+engine Vehicle::Get_Engine(){return engine_;}
+string Car::Get_Model(){return model_;}
 /*
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
 {
@@ -85,13 +80,13 @@ string Car::Get_condition() const
 
 bool Car::operator == (const Car &car)
 {
-    if(model != car.model)
+    if(model_ != car.model_)
         return false;
     if(price_ != car.price_)
         return false;
     if(ID_ != car.ID_)
         return false;
-    if(Condition_!= car.Condition_)
+    if(condition_!= car.condition_)
         return false;
     if(engine_ != car.engine_)
         return false;

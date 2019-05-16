@@ -1,6 +1,6 @@
 #include "mainwindow2.h"
 #include "ui_mainwindow2.h"
-
+#include "addvehicle.h"
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow2)
@@ -12,4 +12,9 @@ MainWindow2::~MainWindow2()
 {
     delete ui;
 }
-
+void MainWindow2::on_Dodaj_samochod_clicked()
+{
+    AddVehicle addvehicle;
+    addvehicle.setModal(true);
+    addvehicle.exec();
+}

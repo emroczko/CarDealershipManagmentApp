@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>597</height>
+    <width>987</width>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,32 +15,57 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>Posiadane samochody</string>
-      </property>
-     </widget>
+    <item row="2" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QPushButton" name="Posiadane_motocykle">
+        <property name="text">
+         <string>Posiadane motocykle</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
-    <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Zatrudnieni pracownicy</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Posiadane motocykle</string>
-      </property>
-     </widget>
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="Zatrudnieni_pracownicy">
+        <property name="text">
+         <string>Zatrudnieni pracownicy</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="3" column="1">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>PushButton</string>
-      </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <widget class="QWidget" name="verticalWidget" native="true">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="0">
+        <widget class="QPushButton" name="Dodaj_samochod">
+         <property name="text">
+          <string>Dodaj Samochód</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="Posiadane_samochodu">
+         <property name="text">
+          <string>Posiadane samochody</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -50,8 +75,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>22</height>
+     <width>987</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>

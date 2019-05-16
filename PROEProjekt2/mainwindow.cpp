@@ -19,8 +19,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_push_continue_clicked()
 {
-
-
     mainWindow_2 = new MainWindow2(this);
     mainWindow_2->show();
     this->hide();

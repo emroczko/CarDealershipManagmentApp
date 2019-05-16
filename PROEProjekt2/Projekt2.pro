@@ -31,7 +31,8 @@ SOURCES += \
     employee.cpp \
     locations.cpp \
     mainobjectshop.cpp \
-    mainwindow2.cpp
+    mainwindow2.cpp \
+    addvehicle.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,11 +42,13 @@ HEADERS += \
     employee.h \
     locations.h \
     mainobjectshop.h \
-    mainwindow2.h
+    mainwindow2.h \
+    addvehicle.h
 
 FORMS += \
         mainwindow.ui \
-        mainwindow2.ui
+        mainwindow2.ui \
+    addvehicle.ui
 
 OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩

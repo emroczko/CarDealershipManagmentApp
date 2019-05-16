@@ -16,7 +16,7 @@ public:
     ~MainWindow2();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_Dodaj_samochod_clicked();
 
 private:
     Ui::MainWindow2 *ui;

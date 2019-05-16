@@ -12,3 +12,4 @@ MainWindow2::~MainWindow2()
 {
     delete ui;
 }
+

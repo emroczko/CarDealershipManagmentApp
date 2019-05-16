@@ -4,18 +4,25 @@
 
 using namespace std;
 
-Vehicle* Vehicle::makeCar(int prod, double price)
+Vehicle* Vehicle::makeCar(int prod, double price, condition condition_, int id)
 {
     random_device rd;
     uniform_int_distribution<int> distID(1000, 10000);
     switch(prod)
     {
-    case(1): return new Car(price, distID(rd), condition::NEW); break;
-    default: return NULL;
+   case(1): return new Car("525i", engine::DIESEL, double price_, condition::NEW, int id_); break;
+   default: return NULL;
     }
 }
-/*
+double Car::Get_Price(){return price_;}
+int Car::Get_ID(){return ID_;}
+string Car::Get_Model(){return model;}
 
+Car::Car(string Model, engine engine_, ) : model(Model), engine_(engine_),
+{
+    //DEBUG_LOG("Car - k. z parametrami");
+}
+/*
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
 {
   //  DEBUG_LOG("Car - k. domyslny");
@@ -60,13 +67,7 @@ string Car::getModelAndPrice(){
     modelAndPrice = carModel + " - Cena: "+ price;
     return modelAndPrice;
 }
-string Car::getCondition() const
-{
-    if(condition_ == condition::USED)
-        return "Uzywany";
-    else
-        return "Nowy";
-}
+
 string Car::getEngine() const
 {
     if(engine_ == engine::DIESEL)
@@ -74,16 +75,23 @@ string Car::getEngine() const
     else
         return "GASOLINE";
 }
+string Car::Get_condition() const
+{
+    if(Condition_ == condition::USED)
+        return "Uzywany";
+    else
+        return "Nowy";
+}*/
 
 bool Car::operator == (const Car &car)
 {
-    if(carModel != car.carModel)
+    if(model != car.model)
         return false;
-    if(carPrice != car.carPrice)
+    if(price_ != car.price_)
         return false;
-    if(carID != car.carID)
+    if(ID_ != car.ID_)
         return false;
-    if(condition_ != car.condition_)
+    if(Condition_!= car.Condition_)
         return false;
     if(engine_ != car.engine_)
         return false;
@@ -97,28 +105,28 @@ bool Car::operator != (const Car &car)
 }
 Car& Car::operator += (unsigned int raisePrice)
 {
-    carPrice += raisePrice;
+
+            price_ += raisePrice;
     return *this;
 }
 
 Car & Car::operator -= (unsigned int lowerPrice)
 {
-    if(carPrice - lowerPrice < 0)
+    if(price_ - lowerPrice < 0)
     {
         cout<< "Blad! Cena nie moze byc mniejsza od 0" <<endl;
         return *this;
     }
     else
     {
-        carPrice -= lowerPrice;
+        price_ -= lowerPrice;
         return *this;
     }
 }
-
+/*
 ostream& operator<<(ostream& os,const Car& car)
 {
-    os<<car.carModel<<" Stan: "<<car.getCondition()<<" Cena: "<<car.carPrice<<"zł ID:"<<car.carID<<endl;
+    os<<car.model<<" Stan: "<<car.Get_condition()<<" Cena: "<<car.Price_<<"zł ID:"<<car.ID_<<endl;
     return os;
-}
+}*/
 
-*/

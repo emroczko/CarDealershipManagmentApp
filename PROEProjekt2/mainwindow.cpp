@@ -19,9 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_push_continue_clicked()
 {
-    //MainWindow2 secWindow;
-    //secWindow.setModal(true);
-   // secWindow.exec();
+
 
     mainWindow_2 = new MainWindow2(this);
     mainWindow_2->show();

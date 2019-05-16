@@ -142,10 +142,10 @@ ostream& operator<<(ostream& os,const Shop& S)
     if(S.Assortment.size()!= 0)
     {
         os << "Informacje o autach znajdujących się u Dealera: " <<endl;
-        for(unsigned int i = 0; i < S.Assortment.size(); ++i)
-        {
-            os <<S.Assortment[i];
-        }
+        //for(unsigned int i = 0; i < S.Assortment.size(); ++i)
+       // {
+           // os <<S.Assortment[i];
+       // }
     }
     os<<endl;
     if(S.Personnel.size()!= 0)
@@ -159,6 +159,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     os<<endl;
     return os;
 }
+/*
 string Shop::operator [] (unsigned int number)
 {
     if(number >= Assortment.size())
@@ -215,7 +216,7 @@ Shop & Shop::operator ()(const Customer& customer, string model)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
-
+*
 Shop::~Shop()
 {
 

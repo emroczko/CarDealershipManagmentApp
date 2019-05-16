@@ -31,13 +31,9 @@ public:
     string getModelAndPrice();
     string getCondition() const;
     string getEngine() const;
-    void setNewPrice(unsigned int price);
-    bool operator == (const Car &car);
-    bool operator != (const Car &car);
-    Car &operator += (unsigned int raisePrice);
-    Car &operator -= (unsigned int lowerPrice);
 
-    friend ostream& operator<< (ostream& ,const Car&);
+
+
 };
 */
 
@@ -63,12 +59,12 @@ public:
 class Vehicle: public VehicleUI
 {
 protected:
-    double Price_;
-    condition Condition_;
+    double price_;
+    condition condition_;
     int ID_;
 public:
-    static Vehicle* makeCar(int , double);
-    Vehicle(int ID, double Price, condition Condition_){ID_=ID; Price_=Price; Condition_=condition::NEW;}
+    static Vehicle* makeCar(int , double, condition, int);
+    Vehicle(int ID, double Price, condition Condition_){ID_=ID; price_=Price; Condition_=condition::NEW;}
 };
 class Car: public Vehicle
 {
@@ -76,16 +72,21 @@ private:
     string model;
     engine engine_;
 public:
-    Car(double pr, int id, condition c) : Vehicle(id, pr, c){}
+    Car(string model, engine engine_, double price, condition Condition, int id);
+    //Car(double pr, int id, condition c) : Vehicle(id, pr, c){}
     double Get_Price();
     int Get_ID();
     string Get_Model();
-    condition Get_Engine();
+    string Get_condition();
+    void setNewPrice(unsigned int price);
+    bool operator == (const Car &car);
+    bool operator != (const Car &car);
+    Car &operator += (unsigned int raisePrice);
+    Car &operator -= (unsigned int lowerPrice);
+    friend ostream& operator<< (ostream& ,const Car&);
 };
 
-double Car::Get_Price(){return Price_;}
-int Car::Get_ID(){return ID_;}
-string Car::Get_Model(){return model;}
+
 /*int main()
 {
    Vehicle *bmw=Vehicle::makeCar(1, 500000);

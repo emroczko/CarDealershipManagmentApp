@@ -2,4 +2,9 @@
     <qresource prefix="/pics">
         <file>117682899_37k1L8Im.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>Form.qml</file>
+        <file>Page1form.ui.qml</file>
+        <file>main.qml</file>
+    </qresource>
 </RCC>

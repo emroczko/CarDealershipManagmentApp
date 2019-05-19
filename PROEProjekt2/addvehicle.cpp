@@ -16,12 +16,12 @@ AddVehicle::~AddVehicle()
 void AddVehicle::on_Akceptuj_clicked()
 {
     string Model, take_eng, take_cond;
-    //Model = ui->Model_wybierz->
-    //int value, ID;
-    //value = ui->Cena_pisz->
-    //ID = ui->ID_pisz
-    //take_eng = ui->Paliw_wybierz
-    //take_cond = ui->Stan_wybierz
+    Model = ui->Model_wybierz->currentText().toStdString();
+    int value, ID;
+    value = ui->Cena_pisz->toPlainText().toInt();
+    ID = ui->ID_pisz->toPlainText().toInt();
+    take_eng = ui->Paliw_wybierz->currentText().toStdString();
+    take_cond = ui->Stan_wybierz->currentText().toStdString();
 }
 
 void AddVehicle::on_Anuluj_clicked()

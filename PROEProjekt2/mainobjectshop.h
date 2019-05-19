@@ -19,8 +19,8 @@ private:
 
 public:
     Shop();
-    Shop(int income_, Location location);
-    Shop(int income_, Location location, vector < Vehicle* >Assortment, vector < Employee > Personnel);
+    Shop(int income_);
+    Shop(int income_, vector < Vehicle* >Assortment, vector < Employee > Personnel);
     Shop(const Shop& shop);
     ~Shop();
 

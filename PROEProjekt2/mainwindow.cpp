@@ -17,9 +17,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_push_continue_clicked()
+
+void MainWindow::on_pushButton_clicked()
 {
     mainWindow_2 = new MainWindow2(this);
     mainWindow_2->show();
     this->hide();
+    mainWindow_2->setAttribute(Qt::WA_DeleteOnClose);
 }

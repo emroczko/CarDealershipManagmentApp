@@ -52,17 +52,25 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../PROEProjekt2/main.cpp \
+SOURCES       = ../PROEProjekt2/addvehicle.cpp \
+		../PROEProjekt2/dialog1.cpp \
+		../PROEProjekt2/main.cpp \
 		../PROEProjekt2/mainwindow.cpp \
 		../PROEProjekt2/car.cpp \
 		../PROEProjekt2/customer.cpp \
 		../PROEProjekt2/employee.cpp \
 		../PROEProjekt2/locations.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
-		../PROEProjekt2/mainwindow2.cpp qrc_pics.cpp \
+		../PROEProjekt2/mainwindow2.cpp \
+		../PROEProjekt2/showcarswindow.cpp qrc_pics.cpp \
+		moc_addvehicle.cpp \
+		moc_dialog1.cpp \
 		moc_mainwindow.cpp \
-		moc_mainwindow2.cpp
-OBJECTS       = main.o \
+		moc_mainwindow2.cpp \
+		moc_showcarswindow.cpp
+OBJECTS       = addvehicle.o \
+		dialog1.o \
+		main.o \
 		mainwindow.o \
 		car.o \
 		customer.o \
@@ -70,9 +78,13 @@ OBJECTS       = main.o \
 		locations.o \
 		mainobjectshop.o \
 		mainwindow2.o \
+		showcarswindow.o \
 		qrc_pics.o \
+		moc_addvehicle.o \
+		moc_dialog1.o \
 		moc_mainwindow.o \
-		moc_mainwindow2.o
+		moc_mainwindow2.o \
+		moc_showcarswindow.o
 DIST          = ../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/qdevice.pri \
 		../../Qt/5.12.3/clang_64/mkspecs/features/device_config.prf \
@@ -245,21 +257,27 @@ DIST          = ../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/features/exceptions.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/features/yacc.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/features/lex.prf \
-		../PROEProjekt2/Projekt2.pro ../PROEProjekt2/mainwindow.h \
+		../PROEProjekt2/Projekt2.pro ../PROEProjekt2/addvehicle.h \
+		../PROEProjekt2/dialog1.h \
+		../PROEProjekt2/mainwindow.h \
 		../PROEProjekt2/car.h \
 		../PROEProjekt2/customer.h \
 		../PROEProjekt2/debug.h \
 		../PROEProjekt2/employee.h \
 		../PROEProjekt2/locations.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/mainwindow2.h ../PROEProjekt2/main.cpp \
+		../PROEProjekt2/mainwindow2.h \
+		../PROEProjekt2/showcarswindow.h ../PROEProjekt2/addvehicle.cpp \
+		../PROEProjekt2/dialog1.cpp \
+		../PROEProjekt2/main.cpp \
 		../PROEProjekt2/mainwindow.cpp \
 		../PROEProjekt2/car.cpp \
 		../PROEProjekt2/customer.cpp \
 		../PROEProjekt2/employee.cpp \
 		../PROEProjekt2/locations.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
-		../PROEProjekt2/mainwindow2.cpp
+		../PROEProjekt2/mainwindow2.cpp \
+		../PROEProjekt2/showcarswindow.cpp
 QMAKE_TARGET  = Projekt2
 DESTDIR       = 
 TARGET        = Projekt2.app/Contents/MacOS/Projekt2
@@ -278,7 +296,7 @@ include /Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-Projekt2.app/Contents/MacOS/Projekt2: ui_mainwindow.h ui_mainwindow2.h $(OBJECTS)  
+Projekt2.app/Contents/MacOS/Projekt2: ui_addvehicle.h ui_dialog1.h ui_mainwindow.h ui_mainwindow2.h ui_showcarswindow.h $(OBJECTS)  
 	@test -d Projekt2.app/Contents/MacOS/ || mkdir -p Projekt2.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -668,9 +686,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/pics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.12.3/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/mainwindow.h ../PROEProjekt2/car.h ../PROEProjekt2/customer.h ../PROEProjekt2/debug.h ../PROEProjekt2/employee.h ../PROEProjekt2/locations.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/main.cpp ../PROEProjekt2/mainwindow.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/customer.cpp ../PROEProjekt2/employee.cpp ../PROEProjekt2/locations.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/mainwindow.ui ../PROEProjekt2/mainwindow2.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/dialog1.h ../PROEProjekt2/mainwindow.h ../PROEProjekt2/car.h ../PROEProjekt2/customer.h ../PROEProjekt2/debug.h ../PROEProjekt2/employee.h ../PROEProjekt2/locations.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showcarswindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/dialog1.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/mainwindow.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/customer.cpp ../PROEProjekt2/employee.cpp ../PROEProjekt2/locations.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showcarswindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.ui ../PROEProjekt2/dialog1.ui ../PROEProjekt2/mainwindow.ui ../PROEProjekt2/mainwindow2.ui ../PROEProjekt2/showcarswindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -714,9 +732,30 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../Qt/5.12.3/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.12 -Wall -W -dM -E -o moc_predefs.h ../../Qt/5.12.3/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_mainwindow2.cpp
+compiler_moc_header_make_all: moc_addvehicle.cpp moc_dialog1.cpp moc_mainwindow.cpp moc_mainwindow2.cpp moc_showcarswindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_mainwindow2.cpp
+	-$(DEL_FILE) moc_addvehicle.cpp moc_dialog1.cpp moc_mainwindow.cpp moc_mainwindow2.cpp moc_showcarswindow.cpp
+moc_addvehicle.cpp: ../PROEProjekt2/addvehicle.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../PROEProjekt2/car.h \
+		../PROEProjekt2/mainwindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../PROEProjekt2/mainwindow2.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		moc_predefs.h \
+		../../Qt/5.12.3/clang_64/bin/moc
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/addvehicle.h -o moc_addvehicle.cpp
+
+moc_dialog1.cpp: ../PROEProjekt2/dialog1.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		moc_predefs.h \
+		../../Qt/5.12.3/clang_64/bin/moc
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/dialog1.h -o moc_dialog1.cpp
+
 moc_mainwindow.cpp: ../PROEProjekt2/mainwindow.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -732,13 +771,28 @@ moc_mainwindow2.cpp: ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/bin/moc
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/mainwindow2.h -o moc_mainwindow2.cpp
 
+moc_showcarswindow.cpp: ../PROEProjekt2/showcarswindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		moc_predefs.h \
+		../../Qt/5.12.3/clang_64/bin/moc
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/showcarswindow.h -o moc_showcarswindow.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_mainwindow2.h
+compiler_uic_make_all: ui_addvehicle.h ui_dialog1.h ui_mainwindow.h ui_mainwindow2.h ui_showcarswindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_mainwindow2.h
+	-$(DEL_FILE) ui_addvehicle.h ui_dialog1.h ui_mainwindow.h ui_mainwindow2.h ui_showcarswindow.h
+ui_addvehicle.h: ../PROEProjekt2/addvehicle.ui \
+		../../Qt/5.12.3/clang_64/bin/uic
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/addvehicle.ui -o ui_addvehicle.h
+
+ui_dialog1.h: ../PROEProjekt2/dialog1.ui \
+		../../Qt/5.12.3/clang_64/bin/uic
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/dialog1.ui -o ui_dialog1.h
+
 ui_mainwindow.h: ../PROEProjekt2/mainwindow.ui \
 		../../Qt/5.12.3/clang_64/bin/uic
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/mainwindow.ui -o ui_mainwindow.h
@@ -746,6 +800,10 @@ ui_mainwindow.h: ../PROEProjekt2/mainwindow.ui \
 ui_mainwindow2.h: ../PROEProjekt2/mainwindow2.ui \
 		../../Qt/5.12.3/clang_64/bin/uic
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/mainwindow2.ui -o ui_mainwindow2.h
+
+ui_showcarswindow.h: ../PROEProjekt2/showcarswindow.ui \
+		../../Qt/5.12.3/clang_64/bin/uic
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/showcarswindow.ui -o ui_showcarswindow.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -759,12 +817,47 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
+addvehicle.o: ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/addvehicle.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../PROEProjekt2/car.h \
+		../PROEProjekt2/mainwindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../PROEProjekt2/mainwindow2.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		ui_addvehicle.h \
+		../PROEProjekt2/mainobjectshop.h \
+		../PROEProjekt2/locations.h \
+		../PROEProjekt2/debug.h \
+		../PROEProjekt2/employee.h \
+		../PROEProjekt2/customer.h \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/QGuiApplication \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/qguiapplication.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addvehicle.o ../PROEProjekt2/addvehicle.cpp
+
+dialog1.o: ../PROEProjekt2/dialog1.cpp ../PROEProjekt2/dialog1.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_dialog1.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog1.o ../PROEProjekt2/dialog1.cpp
+
 main.o: ../PROEProjekt2/main.cpp ../PROEProjekt2/mainwindow.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../PROEProjekt2/car.h \
+		../PROEProjekt2/mainobjectshop.h \
+		../PROEProjekt2/locations.h \
+		../PROEProjekt2/debug.h \
+		../PROEProjekt2/employee.h \
+		../PROEProjekt2/customer.h \
+		../PROEProjekt2/addvehicle.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../PROEProjekt2/main.cpp
 
 mainwindow.o: ../PROEProjekt2/mainwindow.cpp ../PROEProjekt2/mainwindow.h \
@@ -797,23 +890,57 @@ locations.o: ../PROEProjekt2/locations.cpp ../PROEProjekt2/locations.h \
 		../PROEProjekt2/debug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o locations.o ../PROEProjekt2/locations.cpp
 
-mainobjectshop.o: ../PROEProjekt2/mainobjectshop.cpp 
+mainobjectshop.o: ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainobjectshop.h \
+		../PROEProjekt2/locations.h \
+		../PROEProjekt2/debug.h \
+		../PROEProjekt2/employee.h \
+		../PROEProjekt2/car.h \
+		../PROEProjekt2/mainwindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../PROEProjekt2/mainwindow2.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../PROEProjekt2/customer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainobjectshop.o ../PROEProjekt2/mainobjectshop.cpp
 
 mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow2.h
+		ui_mainwindow2.h \
+		../PROEProjekt2/addvehicle.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../PROEProjekt2/car.h \
+		../PROEProjekt2/mainwindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../PROEProjekt2/dialog1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow2.o ../PROEProjekt2/mainwindow2.cpp
+
+showcarswindow.o: ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/showcarswindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_showcarswindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o showcarswindow.o ../PROEProjekt2/showcarswindow.cpp
 
 qrc_pics.o: qrc_pics.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_pics.o qrc_pics.cpp
+
+moc_addvehicle.o: moc_addvehicle.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addvehicle.o moc_addvehicle.cpp
+
+moc_dialog1.o: moc_dialog1.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dialog1.o moc_dialog1.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
 moc_mainwindow2.o: moc_mainwindow2.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow2.o moc_mainwindow2.cpp
+
+moc_showcarswindow.o: moc_showcarswindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_showcarswindow.o moc_showcarswindow.cpp
 
 ####### Install
 

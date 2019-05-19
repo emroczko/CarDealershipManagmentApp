@@ -1,4 +1,4 @@
-/*#include "mainobjectshop.h"
+#include "mainobjectshop.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -11,6 +11,7 @@ Shop::Shop():income_(1000), Location1("Warszawa", "Przy Agorze", 1)
 {
     DEBUG_LOG("Shop - k. domyslny");
 }
+<<<<<<< Updated upstream
 Shop::Shop(int income, Location location): income_(income), Location1(location)
 {
     Personnel_.emplace_back(Employee("Jan Jankowski", "Mechanik", 4000));
@@ -23,6 +24,20 @@ Shop::Shop(int income, Location location): income_(income), Location1(location)
     Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 730d", 370000, 3, "USED", "DIESEL"));
     Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 428i", 190000, 4, "NEW", "GASOLINE"));
     Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 316d", 142000, 5, "NEW", "DIESEL"));
+=======
+Shop::Shop(int income_, Location location): income(income_), Location1(location)
+{
+    Personnel.emplace_back(Employee("Jan Jankowski", "Mechanik", 4000));
+    Personnel.emplace_back(Employee("Anna Bratkowska", "Sekretarka", 3000));
+    Personnel.emplace_back(Employee("Adam Mazowiecki", "Blacharz", 4200));
+    Personnel.emplace_back(Employee("Juliusz Marski", "Sprzedawca", 3500));
+    Personnel.emplace_back(Employee("Dariusz Markowski", "Mechanik", 5000));
+    Assortment.emplace_back("BMW 340i", 320000, 1, condition::NEW, engine::GASOLINE);
+    Assortment.emplace_back("BMW 550i", 440000, 2, condition::USED, engine::GASOLINE);
+    Assortment.emplace_back("BMW 730d", 370000, 3, condition::USED, engine::DIESEL);
+    Assortment.emplace_back("BMW 428i", 190000, 4, condition::NEW, engine::GASOLINE);
+    Assortment.emplace_back("BMW 316d", 142000, 5, condition::NEW, engine::DIESEL);
+>>>>>>> Stashed changes
     DEBUG_LOG("Shop - k. z parametrami");
 }
 Shop::Shop(int income, Location location, vector < Vehicle* > assortment, vector < Employee > personnel): income_(income), Location1(location)
@@ -138,10 +153,17 @@ ostream& operator<<(ostream& os,const Shop& S)
     if(S.Assortment_.size()!= 0)
     {
         os << "Informacje o autach znajdujących się u Dealera: " <<endl;
+<<<<<<< Updated upstream
         //for(unsigned int i = 0; i < S.Assortment_.size(); ++i)
        // {
            // os <<S.Assortment_[i];
        // }
+=======
+        for(unsigned int i = 0; i < S.Assortment.size(); ++i)
+        {
+          os <<S.Assortment[i];
+       }
+>>>>>>> Stashed changes
     }
     os<<endl;
     if(S.Personnel_.size()!= 0)
@@ -155,7 +177,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     os<<endl;
     return os;
 }
-
+/*
 string Shop::operator [] (unsigned int number)
 {
     if(number >= Assortment_.size())
@@ -212,7 +234,16 @@ Shop & Shop::operator ()(const Customer& customer, string model)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
+<<<<<<< Updated upstream
 Shop::~Shop()
 {
 
 }*/
+=======
+*/
+Shop::~Shop()
+{
+
+}
+
+>>>>>>> Stashed changes

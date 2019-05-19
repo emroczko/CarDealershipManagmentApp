@@ -118,10 +118,10 @@ Car & Car::operator -= (unsigned int lowerPrice)
         return *this;
     }
 }
-/*
+
 ostream& operator<<(ostream& os,const Car& car)
 {
-    os<<car.model<<" Stan: "<<car.Get_condition()<<" Cena: "<<car.Price_<<"zł ID:"<<car.ID_<<endl;
+    os<<car.model_<<" Cena: "<<car.price_<<"zł ID:"<<car.ID_<<endl;
     return os;
-}*/
+}
 

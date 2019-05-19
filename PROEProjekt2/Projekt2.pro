@@ -24,6 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    addvehicle.cpp \
+    dialog1.cpp \
         main.cpp \
         mainwindow.cpp \
     car.cpp \
@@ -31,9 +33,11 @@ SOURCES += \
     employee.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
-    addvehicle.cpp
+    showcarswindow.cpp
 
 HEADERS += \
+    addvehicle.h \
+    dialog1.h \
         mainwindow.h \
     car.h \
     customer.h \
@@ -41,12 +45,14 @@ HEADERS += \
     employee.h \
     mainobjectshop.h \
     mainwindow2.h \
-    addvehicle.h
+    showcarswindow.h
 
 FORMS += \
+        addvehicle.ui \
+        dialog1.ui \
         mainwindow.ui \
         mainwindow2.ui \
-    addvehicle.ui
+        showcarswindow.ui
 
 OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩

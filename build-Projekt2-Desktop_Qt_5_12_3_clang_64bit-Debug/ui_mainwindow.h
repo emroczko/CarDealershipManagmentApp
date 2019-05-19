@@ -28,11 +28,11 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QLabel *label1;
     QLabel *label;
-    QPushButton *push_continue;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QMenuBar *menuBar;
     QMenu *menuBMW_Dealer_Manager;
     QToolBar *mainToolBar;
@@ -45,12 +45,9 @@ public:
         MainWindow->resize(1382, 867);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        verticalLayout_2 = new QVBoxLayout(centralWidget);
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout = new QVBoxLayout();
+        verticalLayout = new QVBoxLayout(centralWidget);
         verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         label1 = new QLabel(centralWidget);
         label1->setObjectName(QString::fromUtf8("label1"));
@@ -67,13 +64,15 @@ public:
 
         verticalLayout->addWidget(label);
 
-        push_continue = new QPushButton(centralWidget);
-        push_continue->setObjectName(QString::fromUtf8("push_continue"));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
-        verticalLayout->addWidget(push_continue);
+        verticalLayout->addWidget(pushButton);
 
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
-        verticalLayout_2->addLayout(verticalLayout);
+        verticalLayout->addWidget(pushButton_2);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -101,7 +100,8 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         label1->setText(QString());
         label->setText(QApplication::translate("MainWindow", "Witamy w programie BMW Dealer Manager!", nullptr));
-        push_continue->setText(QApplication::translate("MainWindow", "Kontynuuj", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Zacznij od nowa...", nullptr));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Wczytaj poprzedni stan...", nullptr));
         menuBMW_Dealer_Manager->setTitle(QApplication::translate("MainWindow", "BMW Dealer Manager", nullptr));
     } // retranslateUi
 

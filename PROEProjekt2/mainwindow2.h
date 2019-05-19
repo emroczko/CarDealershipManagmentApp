@@ -18,6 +18,10 @@ public:
 private slots:
     void on_Dodaj_samochod_clicked();
 
+   // void on_pushButton_clicked();
+
+    void on_Posiadane_samochodu_clicked();
+
 private:
     Ui::MainWindow2 *ui;
 };

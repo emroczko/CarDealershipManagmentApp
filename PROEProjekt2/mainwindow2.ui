@@ -65,14 +65,14 @@
     <item row="3" column="0">
      <widget class="QWidget" name="verticalWidget" native="true">
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="2" column="0">
+       <item row="1" column="0">
         <widget class="QPushButton" name="Dodaj_samochod">
          <property name="text">
           <string>Dodaj Samochód</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="0" column="0">
         <widget class="QPushButton" name="Posiadane_samochodu">
          <property name="text">
           <string>Posiadane samochody</string>
@@ -97,7 +97,7 @@
      <x>0</x>
      <y>0</y>
      <width>987</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

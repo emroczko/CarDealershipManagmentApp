@@ -24,6 +24,20 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Dodaj motocykl</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>Usuń samochód</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item row="2" column="0">
@@ -62,6 +76,13 @@
         <widget class="QPushButton" name="Posiadane_samochodu">
          <property name="text">
           <string>Posiadane samochody</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>Usuń samochód</string>
          </property>
         </widget>
        </item>

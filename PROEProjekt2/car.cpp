@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Vehicle* Vehicle::makeVehicle(int decision, string mod, double price, int ID, condition cond, engine eng)
+Vehicle* Vehicle::makeVehicle(int decision, string mod, double price, int ID, string cond, string eng)
 {
     switch(decision)
     {
@@ -14,8 +14,8 @@ Vehicle* Vehicle::makeVehicle(int decision, string mod, double price, int ID, co
 }
 double Vehicle::Get_Price(){return price_;}
 int Vehicle::Get_ID(){return ID_;}
-condition Vehicle::Get_Condition(){return condition_;}
-engine Vehicle::Get_Engine(){return engine_;}
+string Vehicle::Get_Condition(){return condition_;}
+string Vehicle::Get_Engine(){return engine_;}
 string Car::Get_Model(){return model_;}
 /*
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)

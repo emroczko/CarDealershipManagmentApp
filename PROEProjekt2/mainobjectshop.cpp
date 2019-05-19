@@ -1,4 +1,4 @@
-/*#include "mainobjectshop.h"
+#include "mainobjectshop.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -7,11 +7,11 @@
 
 using namespace std;
 
-Shop::Shop():income_(1000), Location1("Warszawa", "Przy Agorze", 1)
+Shop::Shop():income_(1000)
 {
     DEBUG_LOG("Shop - k. domyslny");
 }
-Shop::Shop(int income, Location location): income_(income), Location1(location)
+Shop::Shop(int income): income_(income)
 {
     Personnel_.emplace_back(Employee("Jan Jankowski", "Mechanik", 4000));
     Personnel_.emplace_back(Employee("Anna Bratkowska", "Sekretarka", 3000));
@@ -25,7 +25,8 @@ Shop::Shop(int income, Location location): income_(income), Location1(location)
     Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 316d", 142000, 5, "NEW", "DIESEL"));
     DEBUG_LOG("Shop - k. z parametrami");
 }
-Shop::Shop(int income, Location location, vector < Vehicle* > assortment, vector < Employee > personnel): income_(income), Location1(location)
+
+Shop::Shop(int income, vector < Vehicle* > assortment, vector < Employee > personnel): income_(income)
 {
     for(unsigned int i = 0; i < assortment.size(); i++)
         Assortment_.emplace_back(assortment[i]);
@@ -34,12 +35,12 @@ Shop::Shop(int income, Location location, vector < Vehicle* > assortment, vector
 
 }
 
-Shop::Shop(const Shop& shop):income_(shop.income_),Location1(shop.Location1), Personnel_(shop.Personnel_),Assortment_(shop.Assortment_)
+Shop::Shop(const Shop& shop):income_(shop.income_), Personnel_(shop.Personnel_),Assortment_(shop.Assortment_)
 {
     DEBUG_LOG("Shop - k. kopiujacy");
 }
 
-
+/*
 void Shop::saveToFile(const Shop& shop)
 {
     string filename="save.txt";
@@ -69,7 +70,7 @@ void Shop::loadFromFile()
 
     cout<<endl<<endl<<endl<<"################"<<endl<<endl;
     cout<<"ODCZYT Z PLIKU:"<<endl<<endl<<file1<<endl;
-}
+}*/
 
 Shop& Shop::operator+=(const Employee & employee)
 {
@@ -81,8 +82,6 @@ Shop& Shop::operator+=(const Employee & employee)
 bool Shop::operator == (const Shop &shop)
 {
     if(income_!= shop.income_)
-        return false;
-    if(Location1 != shop.Location1)
         return false;
     if(Personnel_.size() != shop.Personnel_.size())
         return false;
@@ -104,7 +103,6 @@ bool Shop::operator < (const Shop &shop)
 Shop & Shop::operator += (const Shop &shop)
 {
     income_ += shop.income_;
-    Location1=shop.Location1;
 
     for(unsigned int i = 0; i< shop.Personnel_.size(); ++i)
         Personnel_.emplace_back(shop.Personnel_[i]);
@@ -114,7 +112,7 @@ Shop & Shop::operator += (const Shop &shop)
 
     return *this;
 }
-Shop & Shop::operator += (const Vehicle *car)
+Shop & Shop::operator += (Vehicle *car)
 {
     Assortment_.emplace_back(car);
     return *this;
@@ -130,8 +128,7 @@ Shop & Shop::operator -- ()
 }
 ostream& operator<<(ostream& os,const Shop& S)
 {
-    os << "Informacje o sklepie:" << endl <<
-    "Lokalizacja: " << S.Location1
+    os << "Informacje o sklepie:" << endl
     << "Liczba aut u Dealera: " << S.Assortment_.size() <<endl
     << "Liczba pracownikow placówki: " << S.Personnel_.size() << endl
     << "Przychody: " << S.income_<< " zl" <<endl<<endl;
@@ -155,7 +152,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     os<<endl;
     return os;
 }
-
+/*
 string Shop::operator [] (unsigned int number)
 {
     if(number >= Assortment_.size())
@@ -164,7 +161,7 @@ string Shop::operator [] (unsigned int number)
         return "Podano zla liczbe!";
     else
         return Assortment_[number - 1]->getModelAndPrice();
-}
+}*/
 Shop & Shop::operator ()(const Customer& customer, int number)
 {
     unsigned int whichCar=number-1;
@@ -212,7 +209,8 @@ Shop & Shop::operator ()(const Customer& customer, string model)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
+
 Shop::~Shop()
 {
 
-}*/
+}

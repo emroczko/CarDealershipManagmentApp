@@ -14,7 +14,7 @@ MainWindow2::~MainWindow2()
 }
 void MainWindow2::on_Dodaj_samochod_clicked()
 {
-    AddVehicle addvehicle;
-    addvehicle.setModal(true);
-    addvehicle.exec();
+    AddVehicle add;
+    add.setModal(true);
+    add.exec();
 }

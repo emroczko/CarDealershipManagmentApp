@@ -29,7 +29,6 @@ SOURCES += \
     car.cpp \
     customer.cpp \
     employee.cpp \
-    locations.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
     addvehicle.cpp
@@ -40,7 +39,6 @@ HEADERS += \
     customer.h \
     debug.h \
     employee.h \
-    locations.h \
     mainobjectshop.h \
     mainwindow2.h \
     addvehicle.h

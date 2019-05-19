@@ -12,7 +12,7 @@ class MainWindow2 : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow2(QWidget *parent = nullptr);
+    explicit MainWindow2(QWidget *parent = 0);
     ~MainWindow2();
 
 private slots:

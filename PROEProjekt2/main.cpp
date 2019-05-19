@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     vehicles.emplace_back(Vehicle::makeVehicle(1,"mkfdvnf", 500000, 439327, condition::NEW, engine::DIESEL));
     cout<<vehicles.at(1)->Get_Model()<<endl<<vehicles.at(1)->Get_Price()<<endl<<vehicles.at(1)->Get_ID()<<endl<<endl;*/         //a z tąd można wziąć operator <<
     QApplication a(argc, argv);
+    a.setQuitOnLastWindowClosed(false);
     MainWindow w;
     w.show();
 

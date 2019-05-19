@@ -135,10 +135,10 @@ ostream& operator<<(ostream& os,const Shop& S)
     if(S.Assortment_.size()!= 0)
     {
         os << "Informacje o autach znajdujących się u Dealera: " <<endl;
-        //for(unsigned int i = 0; i < S.Assortment_.size(); ++i)
-       // {
-           // os <<S.Assortment_[i];
-       // }
+        for(unsigned int i = 0; i < S.Assortment_.size(); ++i)
+        {
+          os <<S.Assortment_[i];
+        }
     }
     os<<endl;
     if(S.Personnel_.size()!= 0)

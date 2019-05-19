@@ -28,7 +28,7 @@ AddVehicle::~AddVehicle()
 
 }
 
-void AddVehicle::on_Akceptuj_clicked()
+Car AddVehicle::on_Akceptuj_clicked()
 {
     string Model, take_eng, take_cond;
     Model = ui->Model_wybierz->currentText().toStdString();
@@ -37,9 +37,19 @@ void AddVehicle::on_Akceptuj_clicked()
     ID = ui->ID_pisz->toPlainText().toInt();
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
+    Car samochod(Model, value, ID, take_cond, take_eng);
+    AddVehicle::hide();
+    return samochod;
+
 }
 
 void AddVehicle::on_Anuluj_clicked()
 {
     AddVehicle::close();
+}
+
+Car AddVehicle::getVehicle()
+{
+    Car samochod = on_Akceptuj_clicked();
+    return samochod;
 }

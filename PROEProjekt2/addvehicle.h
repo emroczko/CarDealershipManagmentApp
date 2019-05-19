@@ -2,8 +2,8 @@
 #define ADDVEHICLE_H
 
 #include <QDialog>
+#include <QString>
 #include "car.h"
-
 
 namespace Ui {
 class AddVehicle;
@@ -16,16 +16,13 @@ class AddVehicle : public QDialog
 public:
     explicit AddVehicle(QWidget *parent = 0);
     ~AddVehicle();
-
-public slots:
+    Car getVehicle();
+private slots:
     Car on_Akceptuj_clicked();
 
-    //void on_AddVehicle_finished(int result);
-
-private slots:
     void on_Anuluj_clicked();
 
-    void on_Anuluj_clicked();
+    //void on_Stan_wybierz_activated(const QString &arg1);
 
 private:
     Ui::AddVehicle *ui;

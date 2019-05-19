@@ -6,8 +6,8 @@
 
 int main(int argc, char *argv[])
 {
-   Shop salon;
-   cout<<salon;
+    QApplication a(argc, argv);
+
     /*
     vector<Vehicle*> vehicles;
     vehicles.emplace_back(Vehicle::makeVehicle(1, "dsjcns", 7597494, 43287529, condition::USED, engine::GASOLINE ));       // Taki test czy to działa jakoś sensownie
@@ -19,14 +19,20 @@ int main(int argc, char *argv[])
     //a z tąd można wziąć operator <<
 
    // salon+=
-    //Car car2;
 
+    //salon+=car2;
 
-    //salon+=AddVehicle::on_Akceptuj_clicked();
-    QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
     MainWindow w;
     w.show();
+
+    Shop salon;
+    cout<<salon;
+    AddVehicle add;
+    Car car2 = add.getVehicle();
+    cout<<car2;
+
+
 
     return a.exec();
 }

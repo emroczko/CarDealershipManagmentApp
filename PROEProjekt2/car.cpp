@@ -118,7 +118,11 @@ Car & Car::operator -= (unsigned int lowerPrice)
 
 ostream& operator<<(ostream& os, Vehicle *vehicle)
 {
+<<<<<<< Updated upstream
     os<<vehicle->Get_Model()<<" Cena: "<<vehicle->Get_Price()<<"zł ID:"<<vehicle->Get_ID()<<endl;
+=======
+    os<<&car.model_<<" Cena: "<<car.price_<<"zł ID:"<<car.ID_<<endl;
+>>>>>>> Stashed changes
     return os;
 }
 

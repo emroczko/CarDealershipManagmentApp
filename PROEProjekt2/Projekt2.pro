@@ -27,25 +27,25 @@ SOURCES += \
     addvehicle.cpp \
     dialog1.cpp \
         main.cpp \
-        mainwindow.cpp \
     car.cpp \
     customer.cpp \
     employee.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
-    showcarswindow.cpp
+    showcarswindow.cpp \
+    welcomeWindow.cpp
 
 HEADERS += \
     addvehicle.h \
     dialog1.h \
-        mainwindow.h \
     car.h \
     customer.h \
     debug.h \
     employee.h \
     mainobjectshop.h \
     mainwindow2.h \
-    showcarswindow.h
+    showcarswindow.h \
+    welcomeWindow.h
 
 FORMS += \
         addvehicle.ui \

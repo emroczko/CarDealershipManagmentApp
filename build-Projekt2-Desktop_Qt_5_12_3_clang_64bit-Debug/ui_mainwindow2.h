@@ -28,6 +28,8 @@ public:
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_4;
     QPushButton *Posiadane_motocykle;
+    QPushButton *pushButton;
+    QPushButton *pushButton_4;
     QVBoxLayout *verticalLayout_2;
     QPushButton *Zatrudnieni_pracownicy;
     QVBoxLayout *verticalLayout_3;
@@ -36,6 +38,7 @@ public:
     QGridLayout *gridLayout_2;
     QPushButton *Dodaj_samochod;
     QPushButton *Posiadane_samochodu;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -54,6 +57,16 @@ public:
         Posiadane_motocykle->setObjectName(QString::fromUtf8("Posiadane_motocykle"));
 
         verticalLayout_4->addWidget(Posiadane_motocykle);
+
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        verticalLayout_4->addWidget(pushButton);
+
+        pushButton_4 = new QPushButton(centralwidget);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+
+        verticalLayout_4->addWidget(pushButton_4);
 
 
         gridLayout->addLayout(verticalLayout_4, 2, 1, 1, 1);
@@ -92,6 +105,11 @@ public:
 
         gridLayout_2->addWidget(Posiadane_samochodu, 0, 0, 1, 1);
 
+        pushButton_2 = new QPushButton(verticalWidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+
+        gridLayout_2->addWidget(pushButton_2, 3, 0, 1, 1);
+
 
         gridLayout->addWidget(verticalWidget, 3, 0, 1, 1);
 
@@ -113,10 +131,13 @@ public:
     {
         MainWindow2->setWindowTitle(QApplication::translate("MainWindow2", "MainWindow", nullptr));
         Posiadane_motocykle->setText(QApplication::translate("MainWindow2", "Posiadane motocykle", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow2", "Dodaj motocykl", nullptr));
+        pushButton_4->setText(QApplication::translate("MainWindow2", "Usu\305\204 samoch\303\263d", nullptr));
         Zatrudnieni_pracownicy->setText(QApplication::translate("MainWindow2", "Zatrudnieni pracownicy", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow2", "PushButton", nullptr));
         Dodaj_samochod->setText(QApplication::translate("MainWindow2", "Dodaj Samoch\303\263d", nullptr));
         Posiadane_samochodu->setText(QApplication::translate("MainWindow2", "Posiadane samochody", nullptr));
+        pushButton_2->setText(QApplication::translate("MainWindow2", "Usu\305\204 samoch\303\263d", nullptr));
     } // retranslateUi
 
 };

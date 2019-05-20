@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "welcomeWindow.h"
 #include "ui_mainwindow.h"
 #include "mainwindow2.h"
 #include <QPixmap>
@@ -20,8 +20,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    mainWindow_2 = new MainWindow2(this);
-    mainWindow_2->show();
-    this->hide();
-    mainWindow_2->setAttribute(Qt::WA_DeleteOnClose);
+  this->hide();
 }

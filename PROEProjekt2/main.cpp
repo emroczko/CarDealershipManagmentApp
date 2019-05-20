@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "mainwindow2.h"
 #include <QApplication>
 #include "car.h"
 #include "mainobjectshop.h"
@@ -6,6 +6,9 @@
 
 int main(int argc, char *argv[])
 {
+
+    Shop sklep(4);
+
     QApplication a(argc, argv);
    //Shop salon;
    //cout<<salon;
@@ -24,11 +27,24 @@ int main(int argc, char *argv[])
     //salon+=car2;
 
     a.setQuitOnLastWindowClosed(false);
-    MainWindow w;
+    MainWindow2 w;
     w.show();
+<<<<<<< Updated upstream
     a.exec();
 
 
 
     return 0;
+=======
+
+
+
+    //Car car2 = add.getVehicle();
+
+    //cout<<car2;
+
+
+
+    return a.exec();;
+>>>>>>> Stashed changes
 }

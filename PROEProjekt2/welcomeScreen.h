@@ -15,9 +15,9 @@ public:
     explicit welcomeScreen(QWidget *parent = nullptr);
     ~welcomeScreen();
 
-public slots:
+private slots:
 
-   bool on_zacznijOdNowa_clicked();
+   void  on_zacznijOdNowa_clicked();
 
 private:
     Ui::welcomeScreen *ui;

@@ -16,28 +16,13 @@ MainWindow2::MainWindow2(QWidget *parent) :
     welcome.setModal(true);
     welcome.exec();
 
-
-
-    //Shop salon(1000);
-   /* if(mainWindow->on_pushButton_pressed()){
-        mainWindow->hide();
-
-    }*/
-    if(welcome.on_zacznijOdNowa_clicked()){
-         this->show();
-    }
-
-
-
-
-
+    this->show();
 
 }
 
 MainWindow2::~MainWindow2()
 {
     delete ui;
-    //delete mainWindow;
 }
 Shop getShop(){
     Shop shop2;

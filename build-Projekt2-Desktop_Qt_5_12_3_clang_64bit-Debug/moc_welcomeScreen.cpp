@@ -55,10 +55,10 @@ static const uint qt_meta_data_welcomeScreen[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    0,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Bool,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -69,11 +69,11 @@ void welcomeScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<welcomeScreen *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { bool _r = _t->on_zacznijOdNowa_clicked();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 0: _t->on_zacznijOdNowa_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject welcomeScreen::staticMetaObject = { {

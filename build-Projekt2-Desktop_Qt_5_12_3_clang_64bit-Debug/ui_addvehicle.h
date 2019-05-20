@@ -127,7 +127,7 @@ public:
 
     void retranslateUi(QDialog *AddVehicle)
     {
-        AddVehicle->setWindowTitle(QApplication::translate("AddVehicle", "Dialog", nullptr));
+        AddVehicle->setWindowTitle(QApplication::translate("AddVehicle", "Kup samoch\303\263d", nullptr));
         ID->setText(QApplication::translate("AddVehicle", "ID:", nullptr));
         Stan->setText(QApplication::translate("AddVehicle", "Stan:", nullptr));
         Model->setText(QApplication::translate("AddVehicle", "Model:", nullptr));

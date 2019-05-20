@@ -61,7 +61,8 @@ SOURCES       = ../PROEProjekt2/addvehicle.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
 		../PROEProjekt2/mainwindow2.cpp \
 		../PROEProjekt2/showcarswindow.cpp \
-		../PROEProjekt2/welcomeScreen.cpp qrc_pics.cpp \
+		../PROEProjekt2/welcomeScreen.cpp \
+		../PROEProjekt2/person.cpp qrc_pics.cpp \
 		moc_addvehicle.cpp \
 		moc_dialog1.cpp \
 		moc_mainwindow2.cpp \
@@ -77,6 +78,7 @@ OBJECTS       = addvehicle.o \
 		mainwindow2.o \
 		showcarswindow.o \
 		welcomeScreen.o \
+		person.o \
 		qrc_pics.o \
 		moc_addvehicle.o \
 		moc_dialog1.o \
@@ -264,7 +266,8 @@ DIST          = ../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../PROEProjekt2/mainobjectshop.h \
 		../PROEProjekt2/mainwindow2.h \
 		../PROEProjekt2/showcarswindow.h \
-		../PROEProjekt2/welcomeScreen.h ../PROEProjekt2/addvehicle.cpp \
+		../PROEProjekt2/welcomeScreen.h \
+		../PROEProjekt2/person.h ../PROEProjekt2/addvehicle.cpp \
 		../PROEProjekt2/dialog1.cpp \
 		../PROEProjekt2/main.cpp \
 		../PROEProjekt2/car.cpp \
@@ -273,7 +276,8 @@ DIST          = ../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../PROEProjekt2/mainobjectshop.cpp \
 		../PROEProjekt2/mainwindow2.cpp \
 		../PROEProjekt2/showcarswindow.cpp \
-		../PROEProjekt2/welcomeScreen.cpp
+		../PROEProjekt2/welcomeScreen.cpp \
+		../PROEProjekt2/person.cpp
 QMAKE_TARGET  = Projekt2
 DESTDIR       = 
 TARGET        = Projekt2.app/Contents/MacOS/Projekt2
@@ -682,8 +686,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/pics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.12.3/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/dialog1.h ../PROEProjekt2/car.h ../PROEProjekt2/customer.h ../PROEProjekt2/debug.h ../PROEProjekt2/employee.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showcarswindow.h ../PROEProjekt2/welcomeScreen.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/dialog1.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/customer.cpp ../PROEProjekt2/employee.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/welcomeScreen.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/dialog1.h ../PROEProjekt2/car.h ../PROEProjekt2/customer.h ../PROEProjekt2/debug.h ../PROEProjekt2/employee.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showcarswindow.h ../PROEProjekt2/welcomeScreen.h ../PROEProjekt2/person.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/dialog1.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/customer.cpp ../PROEProjekt2/employee.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/person.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.ui ../PROEProjekt2/dialog1.ui ../PROEProjekt2/mainwindow2.ui ../PROEProjekt2/showcarswindow.ui ../PROEProjekt2/welcomeScreen.ui $(DISTDIR)/
 
 
@@ -918,8 +922,7 @@ mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		../PROEProjekt2/dialog1.h \
-		../PROEProjekt2/welcomescreen.h
+		../PROEProjekt2/dialog1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow2.o ../PROEProjekt2/mainwindow2.cpp
 
 showcarswindow.o: ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/showcarswindow.h \
@@ -937,6 +940,9 @@ welcomeScreen.o: ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/welcomeScreen
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o welcomeScreen.o ../PROEProjekt2/welcomeScreen.cpp
+
+person.o: ../PROEProjekt2/person.cpp ../PROEProjekt2/person.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o person.o ../PROEProjekt2/person.cpp
 
 qrc_pics.o: qrc_pics.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_pics.o qrc_pics.cpp

@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1037</width>
-    <height>828</height>
+    <width>1433</width>
+    <height>925</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>BMW Dealer Manager</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -40,8 +40,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>450</y>
-             <width>991</width>
+             <y>610</y>
+             <width>1391</width>
              <height>81</height>
             </rect>
            </property>
@@ -53,8 +53,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>570</y>
-             <width>991</width>
+             <y>710</y>
+             <width>1391</width>
              <height>91</height>
             </rect>
            </property>
@@ -67,8 +67,8 @@
             <rect>
              <x>10</x>
              <y>10</y>
-             <width>981</width>
-             <height>401</height>
+             <width>1361</width>
+             <height>551</height>
             </rect>
            </property>
            <property name="text">
@@ -90,21 +90,21 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>660</y>
-             <width>991</width>
+             <y>760</y>
+             <width>1391</width>
              <height>41</height>
             </rect>
            </property>
            <property name="text">
-            <string>Usuń samochód</string>
+            <string>Sprzedaj samochód</string>
            </property>
           </widget>
           <widget class="QPushButton" name="Posiadane_samochodu">
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>580</y>
-             <width>991</width>
+             <y>680</y>
+             <width>1391</width>
              <height>41</height>
             </rect>
            </property>
@@ -116,22 +116,22 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>620</y>
-             <width>991</width>
+             <y>720</y>
+             <width>1391</width>
              <height>41</height>
             </rect>
            </property>
            <property name="text">
-            <string>Dodaj Samochód</string>
+            <string>Kup Samochód</string>
            </property>
           </widget>
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>10</x>
+             <x>90</x>
              <y>10</y>
-             <width>971</width>
-             <height>561</height>
+             <width>1201</width>
+             <height>661</height>
             </rect>
            </property>
            <property name="text">
@@ -153,8 +153,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>580</y>
-             <width>991</width>
+             <y>680</y>
+             <width>1391</width>
              <height>41</height>
             </rect>
            </property>
@@ -166,8 +166,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>620</y>
-             <width>991</width>
+             <y>720</y>
+             <width>1391</width>
              <height>41</height>
             </rect>
            </property>
@@ -179,8 +179,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>660</y>
-             <width>991</width>
+             <y>760</y>
+             <width>1391</width>
              <height>41</height>
             </rect>
            </property>
@@ -191,10 +191,10 @@
           <widget class="QLabel" name="label_2">
            <property name="geometry">
             <rect>
-             <x>10</x>
+             <x>130</x>
              <y>10</y>
-             <width>971</width>
-             <height>561</height>
+             <width>1141</width>
+             <height>661</height>
             </rect>
            </property>
            <property name="text">
@@ -220,7 +220,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1037</width>
+     <width>1433</width>
      <height>22</height>
     </rect>
    </property>

@@ -66,7 +66,7 @@ public:
 
     void retranslateUi(QDialog *welcomeScreen)
     {
-        welcomeScreen->setWindowTitle(QApplication::translate("welcomeScreen", "Dialog", nullptr));
+        welcomeScreen->setWindowTitle(QApplication::translate("welcomeScreen", "BMW Dealer Manager", nullptr));
         zacznijOdNowa->setText(QApplication::translate("welcomeScreen", "Zacznij od nowa...", nullptr));
         pushButton->setText(QApplication::translate("welcomeScreen", "Wczytaj stan z pliku...", nullptr));
         label->setText(QApplication::translate("welcomeScreen", "Witamy w programie BMW Dealer Manager!", nullptr));

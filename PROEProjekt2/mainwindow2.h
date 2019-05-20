@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "mainobjectshop.h"
-#include "welcomeScreen.h"
+#include "welcomescreen.h"
 
 namespace Ui {
 class MainWindow2;

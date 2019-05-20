@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Kup samochód</string>
   </property>
   <widget class="QGroupBox" name="formGroupBox">
    <property name="geometry">

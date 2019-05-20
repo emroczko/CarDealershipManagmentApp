@@ -12,8 +12,10 @@ MainWindow2::MainWindow2(QWidget *parent) :
     this->hide();
     ui->setupUi(this);
     welcomeScreen welcome;
+    welcome.setWindowState(Qt::WindowFullScreen);
     welcome.setModal(true);
     welcome.exec();
+    QMainWindow::showFullScreen();
     this->show();
 }
 

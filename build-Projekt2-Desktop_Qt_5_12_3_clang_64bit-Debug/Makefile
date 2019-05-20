@@ -292,7 +292,7 @@ include /Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-Projekt2.app/Contents/MacOS/Projekt2: ui_addvehicle.h ui_dialog1.h ui_mainwindow.h ui_mainwindow2.h ui_showcarswindow.h $(OBJECTS)  
+Projekt2.app/Contents/MacOS/Projekt2: ui_addvehicle.h ui_dialog1.h ui_mainwindow2.h ui_showcarswindow.h ui_welcomeWindow.h $(OBJECTS)  
 	@test -d Projekt2.app/Contents/MacOS/ || mkdir -p Projekt2.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -684,7 +684,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../../Qt/5.12.3/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/dialog1.h ../PROEProjekt2/car.h ../PROEProjekt2/customer.h ../PROEProjekt2/debug.h ../PROEProjekt2/employee.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showcarswindow.h ../PROEProjekt2/welcomeWindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/dialog1.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/customer.cpp ../PROEProjekt2/employee.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/welcomeWindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.ui ../PROEProjekt2/dialog1.ui ../PROEProjekt2/mainwindow.ui ../PROEProjekt2/mainwindow2.ui ../PROEProjekt2/showcarswindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.ui ../PROEProjekt2/dialog1.ui ../PROEProjekt2/mainwindow2.ui ../PROEProjekt2/showcarswindow.ui ../PROEProjekt2/welcomeWindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -779,9 +779,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_addvehicle.h ui_dialog1.h ui_mainwindow.h ui_mainwindow2.h ui_showcarswindow.h
+compiler_uic_make_all: ui_addvehicle.h ui_dialog1.h ui_mainwindow2.h ui_showcarswindow.h ui_welcomeWindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_addvehicle.h ui_dialog1.h ui_mainwindow.h ui_mainwindow2.h ui_showcarswindow.h
+	-$(DEL_FILE) ui_addvehicle.h ui_dialog1.h ui_mainwindow2.h ui_showcarswindow.h ui_welcomeWindow.h
 ui_addvehicle.h: ../PROEProjekt2/addvehicle.ui \
 		../../Qt/5.12.3/clang_64/bin/uic
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/addvehicle.ui -o ui_addvehicle.h
@@ -790,10 +790,6 @@ ui_dialog1.h: ../PROEProjekt2/dialog1.ui \
 		../../Qt/5.12.3/clang_64/bin/uic
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/dialog1.ui -o ui_dialog1.h
 
-ui_mainwindow.h: ../PROEProjekt2/mainwindow.ui \
-		../../Qt/5.12.3/clang_64/bin/uic
-	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/mainwindow.ui -o ui_mainwindow.h
-
 ui_mainwindow2.h: ../PROEProjekt2/mainwindow2.ui \
 		../../Qt/5.12.3/clang_64/bin/uic
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/mainwindow2.ui -o ui_mainwindow2.h
@@ -801,6 +797,10 @@ ui_mainwindow2.h: ../PROEProjekt2/mainwindow2.ui \
 ui_showcarswindow.h: ../PROEProjekt2/showcarswindow.ui \
 		../../Qt/5.12.3/clang_64/bin/uic
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/showcarswindow.ui -o ui_showcarswindow.h
+
+ui_welcomeWindow.h: ../PROEProjekt2/welcomeWindow.ui \
+		../../Qt/5.12.3/clang_64/bin/uic
+	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/uic ../PROEProjekt2/welcomeWindow.ui -o ui_welcomeWindow.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -895,7 +895,12 @@ mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/dialog1.h
+		../PROEProjekt2/dialog1.h \
+		../PROEProjekt2/mainobjectshop.h \
+		../PROEProjekt2/locations.h \
+		../PROEProjekt2/debug.h \
+		../PROEProjekt2/employee.h \
+		../PROEProjekt2/customer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow2.o ../PROEProjekt2/mainwindow2.cpp
 
 showcarswindow.o: ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/showcarswindow.h \

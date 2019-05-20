@@ -9,11 +9,11 @@ shared_ptr<Vehicle> Vehicle::makeVehicle(Vehicle_Type type, string mod, double p
     if(type==Vehicle_Type::Car)  {return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng));}
     else return 0;
 }
-double Vehicle::Get_Price(){return price_;}
+double Vehicle::Get_Price() {return price_;}
 int Vehicle::Get_ID(){return ID_;}
 string Vehicle::Get_Condition(){return condition_;}
-string Vehicle::Get_Engine(){return engine_;}
-string Car::Get_Model(){return model_;}
+string Vehicle::Get_Engine() {return engine_;}
+string Car::Get_Model() const {return model_;}
 /*
 Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
 {
@@ -99,9 +99,9 @@ Car & Car::operator -= (unsigned int lowerPrice)
     }
 }
 
-ostream& operator<<(ostream& os, Vehicle *vehicle)
+std::ostream& Car::print(std::ostream& os) const
 {
-    os<<vehicle->Get_Model()<<" Cena: "<<vehicle->Get_Price()<<"zł ID:"<<vehicle->Get_ID()<<endl;
+    os<<Get_Model()<<endl;
     //os<<vehicle.model_<<" Cena: "<<car.price_<<"zł ID:"<<car.ID_<<endl;
     return os;
 }

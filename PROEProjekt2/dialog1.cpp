@@ -2,7 +2,7 @@
 #include "ui_dialog1.h"
 #include <sstream>
 
-Dialog1::Dialog1(Shop& sklep, QWidget *parent) :
+Dialog1::Dialog1(const Shop& sklep, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog1)
 {

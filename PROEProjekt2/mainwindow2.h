@@ -13,7 +13,7 @@ class MainWindow2 : public QMainWindow
 {
     Q_OBJECT
 private:
-    //Shop salon;
+    Shop salon;
 public:
     explicit MainWindow2(QWidget *parent = nullptr);
     Shop getShop();

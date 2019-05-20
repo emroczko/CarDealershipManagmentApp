@@ -12,7 +12,7 @@ class Dialog1 : public QDialog
     Q_OBJECT
 
 public:
-    explicit Dialog1(Shop& sklep, QWidget *parent = nullptr);
+    explicit Dialog1(const Shop& sklep, QWidget *parent = nullptr);
     ~Dialog1();
 
 private slots:

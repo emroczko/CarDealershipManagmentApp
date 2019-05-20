@@ -18,11 +18,11 @@ Shop::Shop(int income): income_(income)
     Personnel_.emplace_back(Employee("Adam Mazowiecki", "Blacharz", 4200));
     Personnel_.emplace_back(Employee("Juliusz Marski", "Sprzedawca", 3500));
     Personnel_.emplace_back(Employee("Dariusz Markowski", "Mechanik", 5000));
-    Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 340i", 320000, 1, "NEW", "GASOLINE"));
-    Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 550i", 440000, 2, "USED", "DIESEL"));
-    Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 730d", 370000, 3, "USED", "DIESEL"));
-    Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 428i", 190000, 4, "NEW", "GASOLINE"));
-    Assortment_.emplace_back(Vehicle::makeVehicle(1, "BMW 316d", 142000, 5, "NEW", "DIESEL"));
+    Assortment_.emplace_back(Vehicle::makeVehicle(Vehicle_Type::Car, "BMW 340i", 320000, 1, "NEW", "GASOLINE"));
+    Assortment_.emplace_back(Vehicle::makeVehicle(Vehicle_Type::Car, "BMW 550i", 440000, 2, "USED", "DIESEL"));
+    Assortment_.emplace_back(Vehicle::makeVehicle(Vehicle_Type::Car, "BMW 730d", 370000, 3, "USED", "DIESEL"));
+    Assortment_.emplace_back(Vehicle::makeVehicle(Vehicle_Type::Car, "BMW 428i", 190000, 4, "NEW", "GASOLINE"));
+    Assortment_.emplace_back(Vehicle::makeVehicle(Vehicle_Type::Car, "BMW 316d", 142000, 5, "NEW", "DIESEL"));
     DEBUG_LOG("Shop - k. z parametrami");
 }
 

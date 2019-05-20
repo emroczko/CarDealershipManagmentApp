@@ -7,7 +7,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
+   //Shop salon;
+   //cout<<salon;
     /*
     vector<Vehicle*> vehicles;
     vehicles.emplace_back(Vehicle::makeVehicle(1, "dsjcns", 7597494, 43287529, condition::USED, engine::GASOLINE ));       // Taki test czy to działa jakoś sensownie
@@ -25,14 +26,9 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
     MainWindow w;
     w.show();
-
-    Shop salon;
-    cout<<salon;
-    AddVehicle add;
-    Car car2 = add.getVehicle();
-    cout<<car2;
+    a.exec();
 
 
 
-    return a.exec();
+    return 0;
 }

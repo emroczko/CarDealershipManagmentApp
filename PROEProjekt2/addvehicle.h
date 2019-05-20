@@ -21,6 +21,12 @@ private slots:
     Car on_Akceptuj_clicked();
 
     void on_Anuluj_clicked();
+public slots:
+    //Car on_Akceptuj_clicked();
+    //void on_Akceptuj_clicked();
+    //void on_AddVehicle_finished(int result);
+
+private slots:
 
     //void on_Stan_wybierz_activated(const QString &arg1);
 
@@ -29,3 +35,4 @@ private:
 };
 
 #endif // ADDVEHICLE_H
+

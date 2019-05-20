@@ -5,11 +5,11 @@
 #include <iomanip>
 #include <string>
 #include <random>
-
 using namespace std;
 
 //enum class engine {DIESEL, GASOLINE};
 //enum class condition {NEW, USED};
+enum class Vehicle_Type{Car, Motor};
 
 class VehicleUI
 {
@@ -28,7 +28,7 @@ protected:
     int ID_;
     string engine_;
 public:
-    static Vehicle* makeVehicle(int , string, double, int, string, string);
+    static Vehicle* makeVehicle(Vehicle_Type , string, double, int, string, string);
     Vehicle(double price, int ID, string cond, string eng)  {price_=price; ID_=ID; condition_=cond; engine_=eng;}
     virtual double Get_Price();
     virtual int Get_ID();

@@ -4,13 +4,10 @@
 
 using namespace std;
 
-Vehicle* Vehicle::makeVehicle(int decision, string mod, double price, int ID, string cond, string eng)
+Vehicle* Vehicle::makeVehicle(Vehicle_Type type, string mod, double price, int ID, string cond, string eng)
 {
-    switch(decision)
-    {
-    case(1): return new Car(mod, price, ID, cond, eng); break;
-    default: return NULL;
-    }
+    if(type==Vehicle_Type::Car)  {return new Car(mod, price, ID, cond, eng);}
+    else return 0;
 }
 double Vehicle::Get_Price(){return price_;}
 int Vehicle::Get_ID(){return ID_;}
@@ -119,9 +116,9 @@ Car & Car::operator -= (unsigned int lowerPrice)
     }
 }
 
-ostream& operator<<(ostream& os,const Car& car)
+ostream& operator<<(ostream& os, Vehicle *vehicle)
 {
-    os<<car.model_<<" Cena: "<<car.price_<<"zł ID:"<<car.ID_<<endl;
+    os<<vehicle->Get_Model()<<" Cena: "<<vehicle->Get_Price()<<"zł ID:"<<vehicle->Get_ID()<<endl;
     return os;
 }
 

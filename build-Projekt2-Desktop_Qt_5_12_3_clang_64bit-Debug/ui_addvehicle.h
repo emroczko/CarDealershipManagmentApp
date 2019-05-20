@@ -46,10 +46,10 @@ public:
     {
         if (AddVehicle->objectName().isEmpty())
             AddVehicle->setObjectName(QString::fromUtf8("AddVehicle"));
-        AddVehicle->resize(389, 341);
+        AddVehicle->resize(583, 423);
         formGroupBox = new QGroupBox(AddVehicle);
         formGroupBox->setObjectName(QString::fromUtf8("formGroupBox"));
-        formGroupBox->setGeometry(QRect(9, 10, 371, 231));
+        formGroupBox->setGeometry(QRect(9, 10, 561, 231));
         gridLayout = new QGridLayout(formGroupBox);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         ID = new QLabel(formGroupBox);
@@ -106,7 +106,7 @@ public:
 
         horizontalGroupBox = new QGroupBox(AddVehicle);
         horizontalGroupBox->setObjectName(QString::fromUtf8("horizontalGroupBox"));
-        horizontalGroupBox->setGeometry(QRect(29, 260, 341, 71));
+        horizontalGroupBox->setGeometry(QRect(29, 260, 501, 71));
         horizontalLayout = new QHBoxLayout(horizontalGroupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         Akceptuj = new QPushButton(horizontalGroupBox);

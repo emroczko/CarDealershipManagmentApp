@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AddVehicle_t {
     QByteArrayData data[5];
-    char stringdata0[54];
+    char stringdata0[70];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,13 +33,13 @@ static const qt_meta_stringdata_AddVehicle_t qt_meta_stringdata_AddVehicle = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "AddVehicle"
 QT_MOC_LITERAL(1, 11, 19), // "on_Akceptuj_clicked"
-QT_MOC_LITERAL(2, 31, 3), // "Car"
-QT_MOC_LITERAL(3, 35, 0), // ""
-QT_MOC_LITERAL(4, 36, 17) // "on_Anuluj_clicked"
+QT_MOC_LITERAL(2, 31, 19), // "shared_ptr<Vehicle>"
+QT_MOC_LITERAL(3, 51, 0), // ""
+QT_MOC_LITERAL(4, 52, 17) // "on_Anuluj_clicked"
 
     },
-    "AddVehicle\0on_Akceptuj_clicked\0Car\0\0"
-    "on_Anuluj_clicked"
+    "AddVehicle\0on_Akceptuj_clicked\0"
+    "shared_ptr<Vehicle>\0\0on_Anuluj_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,8 +57,8 @@ static const uint qt_meta_data_AddVehicle[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    3, 0x08 /* Private */,
-       4,    0,   25,    3, 0x08 /* Private */,
+       1,    0,   24,    3, 0x0a /* Public */,
+       4,    0,   25,    3, 0x0a /* Public */,
 
  // slots: parameters
     0x80000000 | 2,
@@ -73,8 +73,8 @@ void AddVehicle::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<AddVehicle *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { Car _r = _t->on_Akceptuj_clicked();
-            if (_a[0]) *reinterpret_cast< Car*>(_a[0]) = std::move(_r); }  break;
+        case 0: { shared_ptr<Vehicle> _r = _t->on_Akceptuj_clicked();
+            if (_a[0]) *reinterpret_cast< shared_ptr<Vehicle>*>(_a[0]) = std::move(_r); }  break;
         case 1: _t->on_Anuluj_clicked(); break;
         default: ;
         }

@@ -16,7 +16,6 @@ private:
     Shop salon;
 public:
     explicit MainWindow2(QWidget *parent = nullptr);
-    Shop getShop();
     ~MainWindow2();
 
 private slots:
@@ -27,7 +26,6 @@ private slots:
 private:
 
     Ui::MainWindow2 *ui;
-    welcomeScreen * welcomeScreen_;
 
 };
 

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 
 using namespace std;
@@ -126,6 +127,18 @@ Shop & Shop::operator -- ()
     }
     return *this;
 }
+string Shop::getAss(const Shop& S) const
+{
+    std::stringstream buffer;
+    string auta;
+    if(S.Assortment_.size()!= 0)
+    {
+        for(auto & i : S.Assortment_)
+                buffer << *i;
+    }
+    auta = buffer.str();
+    return auta;
+}
 ostream& operator<<(ostream& os,const Shop& S)
 {
     os << "Informacje o sklepie:" << endl
@@ -150,7 +163,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     os<<endl;
     return os;
 }
-/*
+
 string Shop::operator [] (unsigned int number)
 {
     if(number >= Assortment_.size())
@@ -158,8 +171,8 @@ string Shop::operator [] (unsigned int number)
     else if(number == 0)
         return "Podano zla liczbe!";
     else
-        return Assortment_[number - 1]->getModelAndPrice();
-}*/
+        return Assortment_[number - 1]->Get_Model();
+}
 Shop & Shop::operator ()(const Customer& customer, int number)
 {
     unsigned int whichCar=number-1;

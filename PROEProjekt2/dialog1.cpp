@@ -1,21 +1,21 @@
 #include "dialog1.h"
 #include "ui_dialog1.h"
 #include <sstream>
+#include <mainobjectshop.h>
 
-Dialog1::Dialog1(const Shop& sklep, QWidget *parent) :
+Dialog1::Dialog1(const Shop& salon, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog1)
 {
 
 
+       string auta = salon.getAss(salon);
 
-    std::stringstream buffer;
-    buffer << sklep<< std::endl;
+       QString qstr = QString::fromStdString(auta);
 
-    QString qstr = QString::fromStdString(buffer.str());
+       ui->setupUi(this);
+       ui->listWidget->addItem(qstr);
 
-    ui->setupUi(this);
-    ui->listWidget->addItem(qstr);
 }
 
 Dialog1::~Dialog1()

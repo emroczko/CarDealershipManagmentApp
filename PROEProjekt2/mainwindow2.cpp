@@ -21,21 +21,19 @@ MainWindow2::~MainWindow2()
 {
     delete ui;
 }
-Shop getShop(){
-    Shop shop2;
-    return shop2;
-}
+
 void MainWindow2::on_Dodaj_samochod_clicked()
 {
     AddVehicle add;
     add.setModal(true);
     add.exec();
+    salon+=add.on_Akceptuj_clicked();
 
 }
 
 void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-    //Shop sklep;
+
     Dialog1 dial(salon);
     dial.setModal(true);
     dial.exec();

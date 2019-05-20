@@ -17,8 +17,8 @@ public:
     explicit AddVehicle(QWidget *parent = 0);
     ~AddVehicle();
     Car getVehicle();
-private slots:
-    Car on_Akceptuj_clicked();
+public slots:
+    shared_ptr<Vehicle> on_Akceptuj_clicked();
 
     void on_Anuluj_clicked();
 public slots:

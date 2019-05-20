@@ -25,10 +25,10 @@ public:
     {
         if (Dialog1->objectName().isEmpty())
             Dialog1->setObjectName(QString::fromUtf8("Dialog1"));
-        Dialog1->resize(400, 300);
+        Dialog1->resize(600, 407);
         listWidget = new QListWidget(Dialog1);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(70, 60, 256, 192));
+        listWidget->setGeometry(QRect(40, 60, 511, 301));
 
         retranslateUi(Dialog1);
 

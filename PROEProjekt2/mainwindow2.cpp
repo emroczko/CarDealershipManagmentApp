@@ -40,7 +40,8 @@ MainWindow2::~MainWindow2()
     delete mainWindow;
 }
 Shop getShop(){
-    return salon;
+    Shop shop2;
+    return shop2;
 }
 void MainWindow2::on_Dodaj_samochod_clicked()
 {
@@ -50,9 +51,9 @@ void MainWindow2::on_Dodaj_samochod_clicked()
 
 }
 
-void MainWindow2::on_Posiadane_samochodu_clicked(Shop& sklep)
+void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-
+    Shop sklep;
     Dialog1 dial(sklep);
     dial.setModal(true);
     dial.exec();

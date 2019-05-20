@@ -27,7 +27,6 @@ public:
             Dialog1->setObjectName(QString::fromUtf8("Dialog1"));
         Dialog1->resize(400, 300);
         listWidget = new QListWidget(Dialog1);
-        new QListWidgetItem(listWidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(70, 60, 256, 192));
 
@@ -39,13 +38,6 @@ public:
     void retranslateUi(QDialog *Dialog1)
     {
         Dialog1->setWindowTitle(QApplication::translate("Dialog1", "Dialog", nullptr));
-
-        const bool __sortingEnabled = listWidget->isSortingEnabled();
-        listWidget->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("Dialog1", "CHUJ", nullptr));
-        listWidget->setSortingEnabled(__sortingEnabled);
-
     } // retranslateUi
 
 };

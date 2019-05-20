@@ -2,8 +2,8 @@
 #define MAINWINDOW2_H
 
 #include <QMainWindow>
-#include "welcomeWindow.h"
 #include "mainobjectshop.h"
+#include "welcomeScreen.h"
 
 namespace Ui {
 class MainWindow2;
@@ -27,7 +27,7 @@ private slots:
 private:
 
     Ui::MainWindow2 *ui;
-    MainWindow* mainWindow;
+    welcomeScreen * welcomeScreen_;
 
 };
 

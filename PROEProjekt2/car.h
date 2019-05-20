@@ -1,5 +1,4 @@
 #pragma once
-#include "welcomeWindow.h"
 #include <QApplication>
 #include <iostream>
 #include <iomanip>

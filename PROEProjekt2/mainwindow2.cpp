@@ -2,41 +2,24 @@
 #include "ui_mainwindow2.h"
 #include "addvehicle.h"
 #include "dialog1.h"
-#include "welcomeWindow.h"
+#include "welcomeScreen.h"
 #include "mainobjectshop.h"
+#include "welcomeScreen.h"
 MainWindow2::MainWindow2(QWidget *parent) :
-     salon(1000), QMainWindow(parent),
+    QMainWindow(parent), salon(1000),
     ui(new Ui::MainWindow2)
 {
     this->hide();
     ui->setupUi(this);
-    mainWindow = new MainWindow(this);
-    mainWindow->show();
-    mainWindow->setAttribute(Qt::WA_DeleteOnClose);
-
-
-    /*MainWindow mainWindow;
-    mainWindow.setModal(true);
-    mainWindow.exec();*/
-
-
-    //Shop salon(1000);
-   /* if(mainWindow->on_pushButton_pressed()){
-        mainWindow->hide();
-
-    }*/
-this->show();
-
-
-
-
-
+    welcomeScreen welcome;
+    welcome.setModal(true);
+    welcome.exec();
+    this->show();
 }
 
 MainWindow2::~MainWindow2()
 {
     delete ui;
-    delete mainWindow;
 }
 Shop getShop(){
     Shop shop2;

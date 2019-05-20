@@ -8,13 +8,8 @@ MainWindow2::MainWindow2(QWidget *parent) :
      salon(1000), QMainWindow(parent),
     ui(new Ui::MainWindow2)
 {
-<<<<<<< HEAD
     this->hide();
-=======
-
     ui->setupUi(this);
-
->>>>>>> 9cf888ebb115f179d1fd1ea9630e673d8440cc34
     mainWindow = new MainWindow(this);
     mainWindow->show();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);

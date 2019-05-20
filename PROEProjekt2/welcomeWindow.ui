@@ -45,22 +45,14 @@
      </widget>
     </item>
     <item>
-<<<<<<< HEAD
-     <widget class="QPushButton" name="Zacznij_od_nowa">
-=======
      <widget class="QPushButton" name="pushButton">
->>>>>>> 9cf888ebb115f179d1fd1ea9630e673d8440cc34
       <property name="text">
        <string>Zacznij od nowa...</string>
       </property>
      </widget>
     </item>
     <item>
-<<<<<<< HEAD
-     <widget class="QPushButton" name="Wczytaj_poprzedni_stan">
-=======
      <widget class="QPushButton" name="pushButton_2">
->>>>>>> 9cf888ebb115f179d1fd1ea9630e673d8440cc34
       <property name="text">
        <string>Wczytaj poprzedni stan...</string>
       </property>
@@ -74,11 +66,8 @@
      <x>0</x>
      <y>0</y>
      <width>1382</width>
-<<<<<<< HEAD
      <height>23</height>
-=======
      <height>22</height>
->>>>>>> 9cf888ebb115f179d1fd1ea9630e673d8440cc34
     </rect>
    </property>
    <widget class="QMenu" name="menuBMW_Dealer_Manager">

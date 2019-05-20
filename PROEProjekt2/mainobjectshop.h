@@ -27,7 +27,7 @@ public:
     void saveToFile(const Shop & shop);
     void loadFromFile();
     friend ostream& operator<< (ostream& ,const Shop&);
-
+    string getAss(const Shop&) const;
     bool operator == (const Shop &shop); //porownuje przychod placowki
     bool operator > (const Shop &shop); //porownuje przychod placowki
     bool operator < (const Shop &shop); //porownuje przychod placowki

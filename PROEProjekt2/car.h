@@ -25,8 +25,11 @@ public:
     virtual string Get_Condition() const =0;
     virtual string Get_Engine() const =0;
     virtual std::ostream& print(std::ostream& os) const = 0;
-    friend
-    std::ostream& operator<< (std::ostream& os, const Vehicle& v)
+
+    friend std::ostream& operator<< (std::ostream& os, const Vehicle& v);
+
+
+    friend std::ostream& operator<< (std::ostream& os, const Vehicle& v)
     {
         return v.print(os);
     }

@@ -105,7 +105,7 @@ Car & Car::operator -= (unsigned int lowerPrice)
     }
 }
 
-std::ostream& Car::print(std::ostream& os) const
+ostream& Car::print(ostream& os) const
 {
     os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<endl;
     return os;
@@ -147,8 +147,7 @@ Motorcycle& Motorcycle::operator -= (unsigned int lowerPrice)
         return *this;
     }
 }
-
-std::ostream& Motorcycle::print(std::ostream& os) const
+ostream& Motorcycle::print(ostream& os) const
 {
     os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<endl;
     return os;

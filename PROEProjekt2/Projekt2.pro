@@ -33,7 +33,8 @@ SOURCES += \
     mainobjectshop.cpp \
     mainwindow2.cpp \
     showcarswindow.cpp \
-    welcomeScreen.cpp
+    welcomeScreen.cpp \
+    person.cpp
 
 HEADERS += \
     addvehicle.h \
@@ -45,7 +46,8 @@ HEADERS += \
     mainobjectshop.h \
     mainwindow2.h \
     showcarswindow.h \
-    welcomeScreen.h
+    welcomeScreen.h \
+    person.h
 
 FORMS += \
         addvehicle.ui \

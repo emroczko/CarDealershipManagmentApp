@@ -4,7 +4,7 @@
 #include "dialog1.h"
 #include "welcomeScreen.h"
 #include "mainobjectshop.h"
-#include "welcomescreen.h"
+#include "welcomeScreen.h"
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000),
     ui(new Ui::MainWindow2)

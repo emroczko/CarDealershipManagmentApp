@@ -14,9 +14,11 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_Zacznij_od_nowa_clicked()
 {
   this->hide();
+}
+void MainWindow::on_Wczytaj_poprzedni_stan_clicked()
+{
+
 }

@@ -18,9 +18,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_push_continue_clicked();
+    void on_Zacznij_od_nowa_clicked();
 
-    void on_pushButton_clicked();
+    void on_Wczytaj_poprzedni_stan_clicked();
 
 private:
     Ui::MainWindow *ui;

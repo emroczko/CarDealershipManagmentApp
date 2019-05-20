@@ -5,7 +5,7 @@
 #include "welcomeWindow.h"
 #include "mainobjectshop.h"
 MainWindow2::MainWindow2(QWidget *parent) :
-    QMainWindow(parent),
+     salon(1000), QMainWindow(parent),
     ui(new Ui::MainWindow2)
 {
 <<<<<<< HEAD
@@ -30,8 +30,8 @@ MainWindow2::MainWindow2(QWidget *parent) :
         mainWindow->hide();
 
     }*/
+this->show();
 
-     this->show();
 
 
 
@@ -44,7 +44,8 @@ MainWindow2::~MainWindow2()
     delete mainWindow;
 }
 Shop getShop(){
-    return salon;
+    Shop shop2;
+    return shop2;
 }
 void MainWindow2::on_Dodaj_samochod_clicked()
 {
@@ -54,10 +55,10 @@ void MainWindow2::on_Dodaj_samochod_clicked()
 
 }
 
-void MainWindow2::on_Posiadane_samochodu_clicked(Shop& sklep)
+void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-
-    Dialog1 dial(sklep);
+    //Shop sklep;
+    Dialog1 dial(salon);
     dial.setModal(true);
     dial.exec();
 }

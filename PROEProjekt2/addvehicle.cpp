@@ -40,7 +40,6 @@ Car AddVehicle::on_Akceptuj_clicked()
     Car samochod(Model, value, ID, take_cond, take_eng);
     AddVehicle::hide();
     return samochod;
-
 }
 
 void AddVehicle::on_Anuluj_clicked()

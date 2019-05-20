@@ -12,7 +12,8 @@ class MainWindow2;
 class MainWindow2 : public QMainWindow
 {
     Q_OBJECT
-
+private:
+    Shop salon;
 public:
     explicit MainWindow2(QWidget *parent = nullptr);
     Shop getShop();
@@ -21,12 +22,13 @@ public:
 private slots:
     void on_Dodaj_samochod_clicked();
 
-    void on_Posiadane_samochodu_clicked(Shop& sklep);
+    void on_Posiadane_samochodu_clicked();
 
 private:
+
     Ui::MainWindow2 *ui;
     MainWindow* mainWindow;
-    Shop salon;
+
 };
 
 #endif // MAINWINDOW2_H

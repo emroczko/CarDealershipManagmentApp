@@ -12,29 +12,26 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QListWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Dialog1
 {
 public:
-    QDialogButtonBox *buttonBox;
+    QListWidget *listWidget;
 
     void setupUi(QDialog *Dialog1)
     {
         if (Dialog1->objectName().isEmpty())
             Dialog1->setObjectName(QString::fromUtf8("Dialog1"));
         Dialog1->resize(400, 300);
-        buttonBox = new QDialogButtonBox(Dialog1);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(30, 240, 341, 32));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        listWidget = new QListWidget(Dialog1);
+        new QListWidgetItem(listWidget);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(70, 60, 256, 192));
 
         retranslateUi(Dialog1);
-        QObject::connect(buttonBox, SIGNAL(accepted()), Dialog1, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), Dialog1, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(Dialog1);
     } // setupUi
@@ -42,6 +39,13 @@ public:
     void retranslateUi(QDialog *Dialog1)
     {
         Dialog1->setWindowTitle(QApplication::translate("Dialog1", "Dialog", nullptr));
+
+        const bool __sortingEnabled = listWidget->isSortingEnabled();
+        listWidget->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
+        ___qlistwidgetitem->setText(QApplication::translate("Dialog1", "CHUJ", nullptr));
+        listWidget->setSortingEnabled(__sortingEnabled);
+
     } // retranslateUi
 
 };

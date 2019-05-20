@@ -8,8 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //QPixmap pix("Macintosh HD⁩/⁨Users⁩/⁨erykmroczko⁩/Downloads/117682899_37k1L8Im.jpg⁩");
-   // ui->label1->setPixmap(pix);
 }
 
 MainWindow::~MainWindow()
@@ -21,10 +19,10 @@ MainWindow::~MainWindow()
 bool MainWindow::on_pushButton_clicked()
 {
 
-
 }
 
 bool MainWindow::on_pushButton_pressed()
 {
+    this->hide();
     return true;
 }

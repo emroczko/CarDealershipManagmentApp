@@ -50,9 +50,9 @@ HEADERS += \
 FORMS += \
         addvehicle.ui \
         dialog1.ui \
-        mainwindow.ui \
         mainwindow2.ui \
-        showcarswindow.ui
+        showcarswindow.ui \
+    welcomeWindow.ui
 
 OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩

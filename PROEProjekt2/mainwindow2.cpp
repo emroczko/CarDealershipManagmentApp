@@ -10,20 +10,25 @@ MainWindow2::MainWindow2(QWidget *parent) :
 {
 
     ui->setupUi(this);
+
     mainWindow = new MainWindow(this);
     mainWindow->show();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
+
 
     /*MainWindow mainWindow;
     mainWindow.setModal(true);
     mainWindow.exec();*/
 
 
-    Shop salon(1000);
-    if(mainWindow->on_pushButton_pressed()==true){
+    //Shop salon(1000);
+   /* if(mainWindow->on_pushButton_pressed()){
         mainWindow->hide();
-        this->show();
-    }
+
+    }*/
+
+     this->show();
+
 
 
 
@@ -34,6 +39,9 @@ MainWindow2::~MainWindow2()
     delete ui;
     delete mainWindow;
 }
+Shop getShop(){
+    return salon;
+}
 void MainWindow2::on_Dodaj_samochod_clicked()
 {
     AddVehicle add;
@@ -42,9 +50,10 @@ void MainWindow2::on_Dodaj_samochod_clicked()
 
 }
 
-void MainWindow2::on_Posiadane_samochodu_clicked()
+void MainWindow2::on_Posiadane_samochodu_clicked(Shop& sklep)
 {
-    Dialog1 dial;
+
+    Dialog1 dial(sklep);
     dial.setModal(true);
     dial.exec();
 }

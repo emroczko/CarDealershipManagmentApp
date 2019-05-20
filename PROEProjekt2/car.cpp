@@ -4,10 +4,10 @@
 
 using namespace std;
 
-Vehicle* Vehicle::makeVehicle(Vehicle_Type type, string mod, double price, int ID, string cond, string eng)
+shared_ptr<Vehicle> Vehicle::makeVehicle(Vehicle_Type type, string mod, double price, int ID, string cond, string eng)
 {
-    if(type==Vehicle_Type::Car)  {return new Car(mod, price, ID, cond, eng);}
-    else return nullptr;
+    if(type==Vehicle_Type::Car)  {return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng));}
+    else return 0;
 }
 double Vehicle::Get_Price(){return price_;}
 int Vehicle::Get_ID(){return ID_;}
@@ -46,9 +46,6 @@ void Car::setNewPrice(unsigned int price)
 double Car::getPrice(){
     return carPrice;
 }
-string Car::getModel(){
-    return carModel;
-}
 string Car::getModelAndPrice(){
 
     string modelAndPrice;
@@ -59,21 +56,7 @@ string Car::getModelAndPrice(){
     modelAndPrice = carModel + " - Cena: "+ price;
     return modelAndPrice;
 }
-
-string Car::getEngine() const
-{
-    if(engine_ == engine::DIESEL)
-        return "DIESEL";
-    else
-        return "GASOLINE";
-}
-string Car::Get_condition() const
-{
-    if(Condition_ == condition::USED)
-        return "Uzywany";
-    else
-        return "Nowy";
-}*/
+*/
 
 bool Car::operator == (const Car &car)
 {
@@ -118,11 +101,8 @@ Car & Car::operator -= (unsigned int lowerPrice)
 
 ostream& operator<<(ostream& os, Vehicle *vehicle)
 {
-
     os<<vehicle->Get_Model()<<" Cena: "<<vehicle->Get_Price()<<"zł ID:"<<vehicle->Get_ID()<<endl;
-
-   // os<<vehicle->model_<<" Cena: "<<vehicle->price_<<"zł ID:"<<vehicle->ID_<<endl;
-
+    //os<<vehicle.model_<<" Cena: "<<car.price_<<"zł ID:"<<car.ID_<<endl;
     return os;
 }
 

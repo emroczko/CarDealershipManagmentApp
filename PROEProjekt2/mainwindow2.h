@@ -18,10 +18,7 @@ public:
 
 private slots:
     void on_Dodaj_samochod_clicked();
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     void on_Posiadane_samochodu_clicked();
 
 private:

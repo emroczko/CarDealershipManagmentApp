@@ -20,7 +20,7 @@ MainWindow2::MainWindow2(QWidget *parent) :
 
 
     Shop salon(1000);
-    if(mainWindow->on_pushButton_pressed()==true){
+    if(mainWindow->on_pushButton_clicked()){
         mainWindow->hide();
         this->show();
     }

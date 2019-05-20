@@ -7,7 +7,7 @@ using namespace std;
 Vehicle* Vehicle::makeVehicle(Vehicle_Type type, string mod, double price, int ID, string cond, string eng)
 {
     if(type==Vehicle_Type::Car)  {return new Car(mod, price, ID, cond, eng);}
-    else return 0;
+    else return nullptr;
 }
 double Vehicle::Get_Price(){return price_;}
 int Vehicle::Get_ID(){return ID_;}
@@ -118,11 +118,11 @@ Car & Car::operator -= (unsigned int lowerPrice)
 
 ostream& operator<<(ostream& os, Vehicle *vehicle)
 {
-<<<<<<< Updated upstream
+
     os<<vehicle->Get_Model()<<" Cena: "<<vehicle->Get_Price()<<"zł ID:"<<vehicle->Get_ID()<<endl;
-=======
-    os<<&car.model_<<" Cena: "<<car.price_<<"zł ID:"<<car.ID_<<endl;
->>>>>>> Stashed changes
+
+   // os<<vehicle->model_<<" Cena: "<<vehicle->price_<<"zł ID:"<<vehicle->ID_<<endl;
+
     return os;
 }
 

@@ -18,7 +18,13 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+bool MainWindow::on_pushButton_clicked()
 {
-  this->hide();
+
+
+}
+
+bool MainWindow::on_pushButton_pressed()
+{
+    return true;
 }

@@ -7,12 +7,10 @@ MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow2)
 {
-
-    //this->hide();
     mainWindow = new MainWindow(this);
     mainWindow->show();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
-    //MainWindow::on_pushButton_clicked();
+
     ui->setupUi(this);
 
 }

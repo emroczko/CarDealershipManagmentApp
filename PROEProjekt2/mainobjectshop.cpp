@@ -26,7 +26,7 @@ Shop::Shop(int income): income_(income)
     DEBUG_LOG("Shop - k. z parametrami");
 }
 
-Shop::Shop(int income, vector < Vehicle* > assortment, vector < Employee > personnel): income_(income)
+Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector < Employee > personnel): income_(income)
 {
     for(unsigned int i = 0; i < assortment.size(); i++)
         Assortment_.emplace_back(assortment[i]);
@@ -112,7 +112,7 @@ Shop & Shop::operator += (const Shop &shop)
 
     return *this;
 }
-Shop & Shop::operator += (Vehicle *car)
+Shop & Shop::operator += (shared_ptr<Vehicle> car)
 {
     Assortment_.emplace_back(car);
     return *this;

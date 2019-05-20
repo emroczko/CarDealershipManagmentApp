@@ -56,6 +56,9 @@ FORMS += \
 
 OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩
+        2018-bmw-m2-competition-99gallery-1526572314.jpg
+        BMW-motorcycles-on-road-racing.jpg
+        bps_store_front.jpg
 
 DISTFILES +=
 

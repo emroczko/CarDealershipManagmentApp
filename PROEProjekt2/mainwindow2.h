@@ -23,17 +23,10 @@ public:
 
 private slots:
     void on_Dodaj_samochod_clicked();
-
     void on_Posiadane_samochodu_clicked();
-
-<<<<<<< Updated upstream
     void on_pushButton_clicked();
-
     void on_Wyjcie_clicked();
-=======
     void on_Sprzedaj_Auto_clicked();
->>>>>>> Stashed changes
-
 private:
 
     Ui::MainWindow2 *ui;

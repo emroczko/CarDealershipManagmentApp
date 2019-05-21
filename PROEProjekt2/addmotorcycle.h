@@ -16,20 +16,10 @@ class AddMotorcycle : public QDialog
 public:
     explicit AddMotorcycle(QWidget *parent = 0);
     ~AddMotorcycle();
-
-<<<<<<< Updated upstream
 public slots:
     void on_Anuluj_clicked();
 
     shared_ptr<Vehicle> on_Akceptuj_clicked();
-
-=======
-private slots:
-    void on_Anuluj_clicked();
-    
-    shared_ptr<Vehicle> on_Akceptuj_clicked();
-    
->>>>>>> Stashed changes
 private:
     Ui::AddMotorcycle *ui;
 };

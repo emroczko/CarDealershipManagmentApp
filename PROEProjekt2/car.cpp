@@ -4,10 +4,13 @@
 
 using namespace std;
 
-shared_ptr<Vehicle> Vehicle::makeVehicle(Vehicle_Type type, string mod, double price, int ID, string cond, string eng)
+shared_ptr<Vehicle> Vehicle::makeCar(string mod, double price, int ID, string cond, string eng, string trans)
 {
-    if(type==Vehicle_Type::Car)  {return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng));}
-    else if(type==Vehicle_Type::Motor) {return shared_ptr<Vehicle>(new Motorcycle(mod, price, ID, cond, eng));}
+    return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng, trans));
+}
+shared_ptr<Vehicle> Vehicle::makeMotorcycle(string mod, double price, int ID, string cond, string eng, string eng_type)
+{
+    return shared_ptr<Vehicle>(new Motorcycle(mod, price, ID, cond, eng, eng_type));
 }
 double Car::Get_Price() const {return price_;}
 int Car::Get_ID() const {return ID_;}

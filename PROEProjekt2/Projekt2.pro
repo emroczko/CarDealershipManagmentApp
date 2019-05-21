@@ -32,10 +32,10 @@ SOURCES += \
     employee.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
-    showcarswindow.cpp \
     welcomeScreen.cpp \
     person.cpp \
-    addmotorcycle.cpp
+    addmotorcycle.cpp \
+    showmotorcyclewindow.cpp
 
 HEADERS += \
     addvehicle.h \
@@ -46,18 +46,18 @@ HEADERS += \
     employee.h \
     mainobjectshop.h \
     mainwindow2.h \
-    showcarswindow.h \
     welcomeScreen.h \
     person.h \
-    addmotorcycle.h
+    addmotorcycle.h \
+    showmotorcyclewindow.h
 
 FORMS += \
         addvehicle.ui \
         dialog1.ui \
         mainwindow2.ui \
-        showcarswindow.ui \
     welcomeScreen.ui \
-    addmotorcycle.ui
+    addmotorcycle.ui \
+    showmotorcyclewindow.ui
 
 OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩ \

@@ -23,6 +23,12 @@ AddVehicle::AddVehicle(QWidget *parent) :
     ui->Stan_wybierz->addItem("Używany");
     ui->Paliw_wybierz->addItem("Benzyna");
     ui->Paliw_wybierz->addItem("Diesel");
+    ui->Paliw_wybierz->addItem("Elektryczny");
+    ui->Skrzynia_biegow_wybierz->addItem("Automatyczna hydrauliczna");
+    ui->Skrzynia_biegow_wybierz->addItem("Automatyczna bezstopniowa");
+    ui->Skrzynia_biegow_wybierz->addItem("Automatyczna dwusprzęgłowa");
+    ui->Skrzynia_biegow_wybierz->addItem("Manualna");
+    ui->Skrzynia_biegow_wybierz->addItem("Półautomatyczna");
 }
 
 AddVehicle::~AddVehicle()
@@ -33,7 +39,7 @@ AddVehicle::~AddVehicle()
 
 shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
 {
-    string Model, take_eng, take_cond;
+    string Model, take_eng, take_cond, take_transmission;
     Model = ui->Model_wybierz->currentText().toStdString();
     double value;
     int ID;
@@ -41,8 +47,9 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
     ID = ui->ID_pisz->toPlainText().toInt();
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
+    take_transmission = ui->Skrzynia_biegow_wybierz->currentText().toStdString();
     AddVehicle::close();
-    return Vehicle::makeVehicle(Vehicle_Type::Car, Model, value, ID, take_cond, take_eng);
+    return Vehicle::makeCar(Model, value, ID, take_cond, take_eng, take_transmission);
 }
 
 void AddVehicle::on_Anuluj_clicked()

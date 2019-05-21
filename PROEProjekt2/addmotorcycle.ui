@@ -19,10 +19,30 @@
      <x>9</x>
      <y>10</y>
      <width>561</width>
-     <height>231</height>
+     <height>261</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="1">
+     <widget class="QComboBox" name="Stan_wybierz"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="Model">
+      <property name="text">
+       <string>Model:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QTextEdit" name="ID_pisz">
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
     <item row="3" column="0">
      <widget class="QLabel" name="ID">
       <property name="text">
@@ -40,21 +60,17 @@
     <item row="0" column="1">
      <widget class="QComboBox" name="Model_wybierz"/>
     </item>
-    <item row="4" column="1">
-     <widget class="QComboBox" name="Stan_wybierz"/>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="Model">
-      <property name="text">
-       <string>Model:</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="1">
      <widget class="QTextEdit" name="Cena_pisz">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>16777215</width>
+        <width>500</width>
         <height>30</height>
        </size>
       </property>
@@ -64,16 +80,6 @@
      <widget class="QLabel" name="Cena">
       <property name="text">
        <string>Cena:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QTextEdit" name="ID_pisz">
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>30</height>
-       </size>
       </property>
      </widget>
     </item>
@@ -87,13 +93,30 @@
       </property>
      </widget>
     </item>
+    <item row="6" column="1">
+     <widget class="QComboBox" name="Typ_silnika_wybierz">
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="Typ_silnika">
+      <property name="text">
+       <string>Typ silnika</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QGroupBox" name="horizontalGroupBox">
    <property name="geometry">
     <rect>
-     <x>29</x>
-     <y>260</y>
+     <x>30</x>
+     <y>330</y>
      <width>501</width>
      <height>71</height>
     </rect>

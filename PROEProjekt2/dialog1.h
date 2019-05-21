@@ -14,10 +14,6 @@ class Dialog1 : public QDialog
 public:
     explicit Dialog1(const Shop& sklep, QWidget *parent = nullptr);
     ~Dialog1();
-
-private slots:
-   // void on_listView_indexesMoved(const QModelIndexList &indexes);
-
 private:
     Ui::Dialog1 *ui;
 };

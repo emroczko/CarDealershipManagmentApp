@@ -17,9 +17,9 @@ protected:
     int ID_;
     string engine_;
 public:
-    static shared_ptr<Vehicle> makeVehicle(Vehicle_Type , string, double, int, string, string);
+    static shared_ptr<Vehicle> makeCar(string, double, int, string, string, string);
+    static shared_ptr<Vehicle> makeMotorcycle(string, double, int, string, string, string);
     Vehicle(string mod, double price, int ID, string cond, string eng)  {model_=mod; price_=price; ID_=ID; condition_=cond; engine_=eng;}
-    //~Vehicle();
     virtual double Get_Price() const =0;
     virtual int Get_ID() const =0;
     virtual string Get_Model() const = 0;
@@ -31,8 +31,9 @@ public:
 class Car: public Vehicle
 {
 private:
+    string transmission_;
 public:
-    Car(string mod, double price, int ID, string cond, string eng): Vehicle(mod, price, ID, cond, eng) {}
+    Car(string mod, double price, int ID, string cond, string eng, string transmission): Vehicle(mod, price, ID, cond, eng) {transmission_=transmission;}
     //~Car();
     virtual string Get_Model() const override;
     virtual double Get_Price() const override;
@@ -49,9 +50,9 @@ public:
 class Motorcycle: public Vehicle
 {
 private:
-
+    string engine_type_;
 public:
-    Motorcycle(string mod, double price, int ID, string cond, string eng): Vehicle(mod, price, ID, cond, eng) {}
+    Motorcycle(string mod, double price, int ID, string cond, string eng, string engine_type): Vehicle(mod, price, ID, cond, eng) {engine_type_=engine_type;}
     //~Motorcycle();
     virtual string Get_Model() const override;
     virtual double Get_Price() const override;

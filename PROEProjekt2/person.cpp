@@ -19,3 +19,6 @@ ostream& Salesman::print(ostream &os) const
 }
 
 
+Salesman::~Salesman(){
+
+}

@@ -127,17 +127,9 @@ Shop & Shop::operator -- ()
     }
     return *this;
 }
-string Shop::getAss(const Shop& S) const
+vector < shared_ptr<Vehicle> > Shop::getAssortment() const
 {
-    std::stringstream buffer;
-    string auta;
-    if(S.Assortment_.size()!= 0)
-    {
-        for(auto & i : S.Assortment_)
-                buffer << *i;
-    }
-    auta = buffer.str();
-    return auta;
+    return Assortment_;
 }
 ostream& operator<<(ostream& os,const Shop& S)
 {

@@ -1,5 +1,6 @@
 #include "addmotorcycle.h"
 #include "ui_addmotorcycle.h"
+#include <string>
 
 AddMotorcycle::AddMotorcycle(QWidget *parent) :
     QDialog(parent),
@@ -23,10 +24,14 @@ AddMotorcycle::AddMotorcycle(QWidget *parent) :
     ui->Paliw_wybierz->addItem("Diesel");
     ui->Paliw_wybierz->addItem("Elektryczny");
     ui->Stan_wybierz->addItem("Nowy");
+<<<<<<< Updated upstream
     ui->Stan_wybierz->addItem("Urzywany");
     ui->Typ_silnika_wybierz->addItem("Dwusuwowy");
     ui->Typ_silnika_wybierz->addItem("Czterosuwowy");
     ui->Typ_silnika_wybierz->addItem("Elektryczny");
+=======
+    ui->Stan_wybierz->addItem("Uzywany");
+>>>>>>> Stashed changes
 }
 
 AddMotorcycle::~AddMotorcycle()
@@ -41,7 +46,11 @@ void AddMotorcycle::on_Anuluj_clicked()
 
 shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
 {
+<<<<<<< Updated upstream
     string Model, take_eng, take_cond, take_eng_type;
+=======
+    string Model, take_eng, take_cond;
+>>>>>>> Stashed changes
     Model = ui->Model_wybierz->currentText().toStdString();
     double value;
     int ID;
@@ -49,7 +58,12 @@ shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
     ID = ui->ID_pisz->toPlainText().toInt();
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
+<<<<<<< Updated upstream
     take_eng_type = ui->Typ_silnika_wybierz->currentText().toStdString();
     AddMotorcycle::close();
     return Vehicle::makeMotorcycle(Model, value, ID, take_cond, take_eng, take_eng_type);
+=======
+    AddMotorcycle::close();
+    return Vehicle::makeVehicle(Vehicle_Type::Motor, Model, value, ID, take_cond, take_eng);
+>>>>>>> Stashed changes
 }

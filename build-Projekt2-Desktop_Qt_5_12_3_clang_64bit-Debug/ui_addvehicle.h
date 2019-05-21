@@ -27,16 +27,18 @@ class Ui_AddVehicle
 public:
     QGroupBox *formGroupBox;
     QGridLayout *gridLayout;
-    QLabel *ID;
-    QLabel *Stan;
-    QComboBox *Model_wybierz;
-    QComboBox *Stan_wybierz;
     QLabel *Model;
-    QTextEdit *Cena_pisz;
     QLabel *Cena;
-    QTextEdit *ID_pisz;
     QComboBox *Paliw_wybierz;
+    QComboBox *Stan_wybierz;
     QLabel *Paliwo;
+    QComboBox *Model_wybierz;
+    QLabel *Stan;
+    QTextEdit *ID_pisz;
+    QLabel *ID;
+    QTextEdit *Cena_pisz;
+    QComboBox *Skrzynia_biegow_wybierz;
+    QLabel *Skrzyni_biegow;
     QGroupBox *horizontalGroupBox;
     QHBoxLayout *horizontalLayout;
     QPushButton *Akceptuj;
@@ -49,44 +51,43 @@ public:
         AddVehicle->resize(583, 423);
         formGroupBox = new QGroupBox(AddVehicle);
         formGroupBox->setObjectName(QString::fromUtf8("formGroupBox"));
-        formGroupBox->setGeometry(QRect(9, 10, 561, 231));
+        formGroupBox->setGeometry(QRect(9, 10, 561, 261));
         gridLayout = new QGridLayout(formGroupBox);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        ID = new QLabel(formGroupBox);
-        ID->setObjectName(QString::fromUtf8("ID"));
+        Model = new QLabel(formGroupBox);
+        Model->setObjectName(QString::fromUtf8("Model"));
 
-        gridLayout->addWidget(ID, 3, 0, 1, 1);
+        gridLayout->addWidget(Model, 0, 0, 1, 1);
 
-        Stan = new QLabel(formGroupBox);
-        Stan->setObjectName(QString::fromUtf8("Stan"));
+        Cena = new QLabel(formGroupBox);
+        Cena->setObjectName(QString::fromUtf8("Cena"));
 
-        gridLayout->addWidget(Stan, 4, 0, 1, 1);
+        gridLayout->addWidget(Cena, 2, 0, 1, 1);
 
-        Model_wybierz = new QComboBox(formGroupBox);
-        Model_wybierz->setObjectName(QString::fromUtf8("Model_wybierz"));
+        Paliw_wybierz = new QComboBox(formGroupBox);
+        Paliw_wybierz->setObjectName(QString::fromUtf8("Paliw_wybierz"));
 
-        gridLayout->addWidget(Model_wybierz, 0, 1, 1, 1);
+        gridLayout->addWidget(Paliw_wybierz, 5, 1, 1, 1);
 
         Stan_wybierz = new QComboBox(formGroupBox);
         Stan_wybierz->setObjectName(QString::fromUtf8("Stan_wybierz"));
 
         gridLayout->addWidget(Stan_wybierz, 4, 1, 1, 1);
 
-        Model = new QLabel(formGroupBox);
-        Model->setObjectName(QString::fromUtf8("Model"));
+        Paliwo = new QLabel(formGroupBox);
+        Paliwo->setObjectName(QString::fromUtf8("Paliwo"));
 
-        gridLayout->addWidget(Model, 0, 0, 1, 1);
+        gridLayout->addWidget(Paliwo, 5, 0, 1, 1);
 
-        Cena_pisz = new QTextEdit(formGroupBox);
-        Cena_pisz->setObjectName(QString::fromUtf8("Cena_pisz"));
-        Cena_pisz->setMaximumSize(QSize(16777215, 30));
+        Model_wybierz = new QComboBox(formGroupBox);
+        Model_wybierz->setObjectName(QString::fromUtf8("Model_wybierz"));
 
-        gridLayout->addWidget(Cena_pisz, 2, 1, 1, 1);
+        gridLayout->addWidget(Model_wybierz, 0, 1, 1, 1);
 
-        Cena = new QLabel(formGroupBox);
-        Cena->setObjectName(QString::fromUtf8("Cena"));
+        Stan = new QLabel(formGroupBox);
+        Stan->setObjectName(QString::fromUtf8("Stan"));
 
-        gridLayout->addWidget(Cena, 2, 0, 1, 1);
+        gridLayout->addWidget(Stan, 4, 0, 1, 1);
 
         ID_pisz = new QTextEdit(formGroupBox);
         ID_pisz->setObjectName(QString::fromUtf8("ID_pisz"));
@@ -94,19 +95,30 @@ public:
 
         gridLayout->addWidget(ID_pisz, 3, 1, 1, 1);
 
-        Paliw_wybierz = new QComboBox(formGroupBox);
-        Paliw_wybierz->setObjectName(QString::fromUtf8("Paliw_wybierz"));
+        ID = new QLabel(formGroupBox);
+        ID->setObjectName(QString::fromUtf8("ID"));
 
-        gridLayout->addWidget(Paliw_wybierz, 5, 1, 1, 1);
+        gridLayout->addWidget(ID, 3, 0, 1, 1);
 
-        Paliwo = new QLabel(formGroupBox);
-        Paliwo->setObjectName(QString::fromUtf8("Paliwo"));
+        Cena_pisz = new QTextEdit(formGroupBox);
+        Cena_pisz->setObjectName(QString::fromUtf8("Cena_pisz"));
+        Cena_pisz->setMaximumSize(QSize(16777215, 30));
 
-        gridLayout->addWidget(Paliwo, 5, 0, 1, 1);
+        gridLayout->addWidget(Cena_pisz, 2, 1, 1, 1);
+
+        Skrzynia_biegow_wybierz = new QComboBox(formGroupBox);
+        Skrzynia_biegow_wybierz->setObjectName(QString::fromUtf8("Skrzynia_biegow_wybierz"));
+
+        gridLayout->addWidget(Skrzynia_biegow_wybierz, 6, 1, 1, 1);
+
+        Skrzyni_biegow = new QLabel(formGroupBox);
+        Skrzyni_biegow->setObjectName(QString::fromUtf8("Skrzyni_biegow"));
+
+        gridLayout->addWidget(Skrzyni_biegow, 6, 0, 1, 1);
 
         horizontalGroupBox = new QGroupBox(AddVehicle);
         horizontalGroupBox->setObjectName(QString::fromUtf8("horizontalGroupBox"));
-        horizontalGroupBox->setGeometry(QRect(29, 260, 501, 71));
+        horizontalGroupBox->setGeometry(QRect(30, 330, 501, 71));
         horizontalLayout = new QHBoxLayout(horizontalGroupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         Akceptuj = new QPushButton(horizontalGroupBox);
@@ -128,11 +140,12 @@ public:
     void retranslateUi(QDialog *AddVehicle)
     {
         AddVehicle->setWindowTitle(QApplication::translate("AddVehicle", "Kup samoch\303\263d", nullptr));
-        ID->setText(QApplication::translate("AddVehicle", "ID:", nullptr));
-        Stan->setText(QApplication::translate("AddVehicle", "Stan:", nullptr));
         Model->setText(QApplication::translate("AddVehicle", "Model:", nullptr));
         Cena->setText(QApplication::translate("AddVehicle", "Cena:", nullptr));
         Paliwo->setText(QApplication::translate("AddVehicle", "Silnik:", nullptr));
+        Stan->setText(QApplication::translate("AddVehicle", "Stan:", nullptr));
+        ID->setText(QApplication::translate("AddVehicle", "ID:", nullptr));
+        Skrzyni_biegow->setText(QApplication::translate("AddVehicle", "Skrzynia bieg\303\263w:", nullptr));
         Akceptuj->setText(QApplication::translate("AddVehicle", "Akceptuj", nullptr));
         Anuluj->setText(QApplication::translate("AddVehicle", "Anuluj", nullptr));
     } // retranslateUi

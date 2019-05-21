@@ -27,7 +27,11 @@
        <item row="0" column="0">
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
+<<<<<<< Updated upstream
           <number>2</number>
+=======
+          <number>1</number>
+>>>>>>> Stashed changes
          </property>
          <property name="movable">
           <bool>false</bool>
@@ -99,7 +103,7 @@
           <attribute name="title">
            <string>Samochody</string>
           </attribute>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="Sprzedaj_Auto">
            <property name="geometry">
             <rect>
              <x>0</x>

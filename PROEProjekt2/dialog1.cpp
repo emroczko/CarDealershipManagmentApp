@@ -7,14 +7,25 @@ Dialog1::Dialog1(const Shop& salon, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog1)
 {
-
-
-       string auta = salon.getAss(salon);
-
-       QString qstr = QString::fromStdString(auta);
-
        ui->setupUi(this);
-       ui->listWidget->addItem(qstr);
+
+       auto motory = salon.getAssortment();
+       QString temp;
+       std::stringstream buffer;
+       string auta;
+       if(motory.size()!= 0)
+       {
+           for(auto & i : motory)
+           {
+           buffer << *i;
+           auta = buffer.str();
+           QString qstr = QString::fromStdString(auta);
+           ui->listWidget->addItem(qstr);
+           auta.clear();
+           buffer.str(std::string());
+           qstr.clear();
+           }
+       }
 
 }
 

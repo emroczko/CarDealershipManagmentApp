@@ -38,9 +38,9 @@ class Salesman: public Person
 private:
 public:
     Salesman(string name, unsigned int money): Person(name, money) {}
-    ~Salesman();
-    Salesman &operator += (unsigned int salaryRaise) {this->money_+=salaryRaise;}
-    Salesman &operator -= (unsigned int salaryReduction) {this->money_-=salaryReduction;}
+    //~Salesman();
+    Salesman &operator += (unsigned int salaryRaise) {this->money_+=salaryRaise; return *this;}
+    Salesman &operator -= (unsigned int salaryReduction) {this->money_-=salaryReduction; return *this;}
     virtual string Get_Name() const override;
     virtual unsigned int Get_Money() const override;
     virtual ostream& print(ostream& os) const override;

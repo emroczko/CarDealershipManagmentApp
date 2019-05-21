@@ -31,13 +31,14 @@ void MainWindow2::on_Dodaj_samochod_clicked()
     AddVehicle addCar;
     addCar.setModal(true);
     addCar.exec();
-    //if(addCar.on_Anuluj_clicked())
-    salon+=addCar.on_Akceptuj_clicked();
+    if(addCar.on_Anuluj_clicked()==false)
+    {
+        salon+=addCar.on_Akceptuj_clicked();
+    }
 }
 
 void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-
     Dialog1 dial(salon);
     dial.setModal(true);
     dial.exec();
@@ -47,7 +48,10 @@ void MainWindow2::on_pushButton_clicked()
     AddMotorcycle addMotor;
     addMotor.setModal(true);
     addMotor.exec();
-    salon+=addMotor.on_Akceptuj_clicked();
+    if(addMotor.on_Anuluj_clicked()==false)
+    {
+        salon+=addMotor.on_Akceptuj_clicked();
+    }
 }
 
 void MainWindow2::on_Wyjcie_clicked()

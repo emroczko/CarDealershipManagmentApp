@@ -33,7 +33,6 @@ Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector < Emplo
         Assortment_.emplace_back(assortment[i]);
     for(unsigned int i = 0; i < personnel.size(); i++)
         Personnel_.emplace_back(personnel[i]);
-
 }
 
 Shop::Shop(const Shop& shop):income_(shop.income_), Personnel_(shop.Personnel_),Assortment_(shop.Assortment_)

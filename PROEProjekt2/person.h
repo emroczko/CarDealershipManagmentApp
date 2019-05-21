@@ -4,7 +4,7 @@
 #include <memory>
 using namespace std;
 
-enum class Role{CUSTOMER, EMPLOYEE};
+enum class Role{Mechanic, Salesman};
 
 class Person
 {
@@ -23,25 +23,24 @@ public:
 };
 using namespace std;
 
-class Customer: public Person
+class Mechanic: public Person
 {
 private:
 public:
-    Customer(string name, unsigned int money): Person(name, money) {}
+    Mechanic(string name, unsigned int money): Person(name, money) {}
     virtual string Get_Name() const override;
     virtual unsigned int Get_Money() const override;
     virtual ostream& print(ostream& os) const override;
 };
 
-class Employee: public Person
+class Salesman: public Person
 {
 private:
-    //string profession_;       //Nie ma za bardzo jak to dodać na razie ale jak sie podzieli na konkretne zawody to będzie git
 public:
-    Employee(string name, unsigned int money): Person(name, money) {}
-    ~Employee();
-    Employee &operator += (unsigned int salaryRaise) {this->money_+=salaryRaise;}
-    Employee &operator -= (unsigned int salaryReduction) {this->money_-=salaryReduction;}
+    Salesman(string name, unsigned int money): Person(name, money) {}
+    ~Salesman();
+    Salesman &operator += (unsigned int salaryRaise) {this->money_+=salaryRaise;}
+    Salesman &operator -= (unsigned int salaryReduction) {this->money_-=salaryReduction;}
     virtual string Get_Name() const override;
     virtual unsigned int Get_Money() const override;
     virtual ostream& print(ostream& os) const override;

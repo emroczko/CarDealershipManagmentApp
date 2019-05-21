@@ -17,10 +17,10 @@ public:
     explicit AddMotorcycle(QWidget *parent = 0);
     ~AddMotorcycle();
 public slots:
-    void on_Anuluj_clicked();
-
+    bool on_Anuluj_clicked();
     shared_ptr<Vehicle> on_Akceptuj_clicked();
 private:
+    int Check;
     Ui::AddMotorcycle *ui;
 };
 

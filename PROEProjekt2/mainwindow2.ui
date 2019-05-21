@@ -23,7 +23,7 @@
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -117,7 +117,7 @@
            <string>Posiadane motocykle</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="Dodaj_motocykl">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -130,7 +130,7 @@
            <string>Dodaj motocykl</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="Usin_motocykl">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -161,7 +161,7 @@
      <x>0</x>
      <y>0</y>
      <width>987</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

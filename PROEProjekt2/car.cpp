@@ -8,6 +8,7 @@ shared_ptr<Vehicle> Vehicle::makeVehicle(Vehicle_Type type, string mod, double p
 {
     if(type==Vehicle_Type::Car)  {return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng));}
     else if(type==Vehicle_Type::Motor) {return shared_ptr<Vehicle>(new Motorcycle(mod, price, ID, cond, eng));}
+    else return NULL;
 }
 double Car::Get_Price() const {return price_;}
 int Car::Get_ID() const {return ID_;}

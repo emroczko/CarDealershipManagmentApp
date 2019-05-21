@@ -1,4 +1,4 @@
-#include "dialog1.h"
+#include "showCarsWindow.h"
 #include "ui_dialog1.h"
 #include <sstream>
 #include <mainobjectshop.h>

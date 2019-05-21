@@ -29,6 +29,8 @@ private slots:
     void on_Sprzedaj_Auto_clicked();
     void on_Posiadane_motocykle_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
 
     Ui::MainWindow2 *ui;

@@ -25,7 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     addvehicle.cpp \
-    deletecar.cpp \
+    deleteWindow.cpp \
         main.cpp \
     car.cpp \
     customer.cpp \
@@ -40,10 +40,10 @@ SOURCES += \
 
 HEADERS += \
     addvehicle.h \
-    deletecar.h \
     car.h \
     customer.h \
     debug.h \
+    deleteWindow.h \
     employee.h \
     mainobjectshop.h \
     mainwindow2.h \
@@ -55,7 +55,7 @@ HEADERS += \
 
 FORMS += \
         addvehicle.ui \
-    deletecar.ui \
+    deleteWindow.ui \
         mainwindow2.ui \
     showCarWindow.ui \
     welcomeScreen.ui \

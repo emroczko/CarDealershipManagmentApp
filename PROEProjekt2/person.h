@@ -21,6 +21,8 @@ public:
     friend ostream& operator<< (ostream& os, const Person& p) {return p.print(os);}
 
 };
+using namespace std;
+
 class Mechanic: public Person
 {
 private:
@@ -36,8 +38,9 @@ class Salesman: public Person
 private:
 public:
     Salesman(string name, unsigned int money): Person(name, money) {}
-    Salesman &operator += (unsigned int salaryRaise) {this->money_+=salaryRaise; return *this;}
-    Salesman &operator -= (unsigned int salaryReduction) {this->money_-=salaryReduction; return *this;}
+    ~Salesman();
+    Salesman &operator += (unsigned int salaryRaise) {this->money_+=salaryRaise;}
+    Salesman &operator -= (unsigned int salaryReduction) {this->money_-=salaryReduction;}
     virtual string Get_Name() const override;
     virtual unsigned int Get_Money() const override;
     virtual ostream& print(ostream& os) const override;

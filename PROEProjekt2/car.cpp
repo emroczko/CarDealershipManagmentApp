@@ -8,7 +8,6 @@ shared_ptr<Vehicle> Vehicle::makeVehicle(Vehicle_Type type, string mod, double p
 {
     if(type==Vehicle_Type::Car)  {return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng));}
     else if(type==Vehicle_Type::Motor) {return shared_ptr<Vehicle>(new Motorcycle(mod, price, ID, cond, eng));}
-    else return NULL;
 }
 double Car::Get_Price() const {return price_;}
 int Car::Get_ID() const {return ID_;}
@@ -108,7 +107,7 @@ Car & Car::operator -= (unsigned int lowerPrice)
 
 ostream& Car::print(ostream& os) const
 {
-    os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Condition: "<<Get_Condition()<<"  Engine:"<<Get_Engine()<<endl;
+    os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<endl;
     return os;
 }
 bool Motorcycle::operator == (const Motorcycle &motor)
@@ -150,7 +149,7 @@ Motorcycle& Motorcycle::operator -= (unsigned int lowerPrice)
 }
 ostream& Motorcycle::print(ostream& os) const
 {
-    os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Condition: "<<Get_Condition()<<"  Engine:"<<Get_Engine()<<endl;
+    os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<endl;
     return os;
 }
 

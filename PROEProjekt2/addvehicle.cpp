@@ -6,6 +6,7 @@ AddVehicle::AddVehicle(QWidget *parent) :
     ui(new Ui::AddVehicle)
 {
     ui->setupUi(this);
+  //  ui->comboBox->addItem("335D");
     ui->Model_wybierz->addItem("BMW 335d");
     ui->Model_wybierz->addItem("BMW 318d");
     ui->Model_wybierz->addItem("BMW 130i");
@@ -41,8 +42,12 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
     ID = ui->ID_pisz->toPlainText().toInt();
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
-    AddVehicle::close();
-    return Vehicle::makeVehicle(Vehicle_Type::Car, Model, value, ID, take_cond, take_eng);
+
+
+
+    AddVehicle::hide();
+
+    return Car::makeVehicle(Vehicle_Type::Car, Model, value, ID, take_cond, take_eng);
 }
 
 void AddVehicle::on_Anuluj_clicked()

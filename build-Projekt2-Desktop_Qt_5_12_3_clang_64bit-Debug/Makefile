@@ -719,7 +719,11 @@ qrc_pics.cpp: ../PROEProjekt2/pics.qrc \
 		../PROEProjekt2/Page1form.ui.qml \
 		../PROEProjekt2/Form.qml \
 		../PROEProjekt2/main.qml \
-		../PROEProjekt2/117682899_37k1L8Im.jpg
+		../../Downloads/DESERT.jpg \
+		../PROEProjekt2/117682899_37k1L8Im.jpg \
+		../../Downloads/BMW-motorcycles-on-road-racing.jpg \
+		../../Downloads/bps_store_front.jpg \
+		../../Downloads/2018-bmw-m2-competition-99gallery-1526572314.jpg
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/rcc -name pics ../PROEProjekt2/pics.qrc -o qrc_pics.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -769,6 +773,9 @@ moc_mainwindow2.cpp: ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../PROEProjekt2/customer.h \
+		../PROEProjekt2/welcomeScreen.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		moc_predefs.h \
 		../../Qt/5.12.3/clang_64/bin/moc
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/mainwindow2.h -o moc_mainwindow2.cpp
@@ -862,9 +869,10 @@ main.o: ../PROEProjekt2/main.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../PROEProjekt2/customer.h \
-		../PROEProjekt2/addvehicle.h \
+		../PROEProjekt2/welcomeScreen.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../PROEProjekt2/main.cpp
@@ -903,14 +911,15 @@ mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../PROEProjekt2/customer.h \
-		ui_mainwindow2.h \
-		../PROEProjekt2/addvehicle.h \
+		../PROEProjekt2/welcomeScreen.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_mainwindow2.h \
+		../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../PROEProjekt2/dialog1.h \
-		../PROEProjekt2/welcomeScreen.h
+		../PROEProjekt2/welcomescreen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow2.o ../PROEProjekt2/mainwindow2.cpp
 
 showcarswindow.o: ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/showcarswindow.h \
@@ -921,7 +930,12 @@ showcarswindow.o: ../PROEProjekt2/showcarswindow.cpp ../PROEProjekt2/showcarswin
 
 welcomeScreen.o: ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/welcomeScreen.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_welcomeScreen.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o welcomeScreen.o ../PROEProjekt2/welcomeScreen.cpp
 
 qrc_pics.o: qrc_pics.cpp 

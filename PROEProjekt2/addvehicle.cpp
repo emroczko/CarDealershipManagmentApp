@@ -47,9 +47,12 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
     ID = ui->ID_pisz->toPlainText().toInt();
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
+
     take_transmission = ui->Skrzynia_biegow_wybierz->currentText().toStdString();
     AddVehicle::close();
     return Vehicle::makeCar(Model, value, ID, take_cond, take_eng, take_transmission);
+
+
 }
 
 void AddVehicle::on_Anuluj_clicked()

@@ -19,7 +19,7 @@ public:
 public slots:
     shared_ptr<Vehicle> on_Akceptuj_clicked();
 
-    void on_Anuluj_clicked();
+    bool on_Anuluj_clicked();
 private:
     Ui::AddVehicle *ui;
 };

@@ -118,6 +118,11 @@ Shop & Shop::operator += (shared_ptr<Vehicle> car)
     Assortment_.emplace_back(car);
     return *this;
 }
+Shop & Shop::operator -= (int i)
+{
+    Assortment_.erase(Assortment_.begin()+i);
+    return *this;
+}
 
 Shop & Shop::operator -- ()
 {

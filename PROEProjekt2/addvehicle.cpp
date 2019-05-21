@@ -51,13 +51,13 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
     take_transmission = ui->Skrzynia_biegow_wybierz->currentText().toStdString();
     AddVehicle::close();
     return Vehicle::makeCar(Model, value, ID, take_cond, take_eng, take_transmission);
-
-
 }
 
-void AddVehicle::on_Anuluj_clicked()
+
+bool AddVehicle::on_Anuluj_clicked()
 {
-    AddVehicle::close();
+    AddVehicle::reject();
+    return false;
 }
 /*
 Car AddVehicle::getVehicle()

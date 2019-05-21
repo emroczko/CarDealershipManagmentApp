@@ -1,4 +1,4 @@
-#include "deletecar.h"
+#include "deleteWindow.h"
 #include "ui_deletecar.h"
 #include <sstream>
 #include <mainobjectshop.h>

@@ -1,13 +1,12 @@
 #include "mainwindow2.h"
 #include "ui_mainwindow2.h"
 #include "addvehicle.h"
-#include "showCarsWindow.h"
+#include "showVehicleWindow.h"
 #include "welcomeScreen.h"
 #include "mainobjectshop.h"
-#include "welcomeScreen.h"
-#include "deletecar.h"
+#include "deleteWindow.h"
 #include <sstream>
-#include "showmotorcyclewindow.h"
+
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000),
     ui(new Ui::MainWindow2)
@@ -39,7 +38,7 @@ void MainWindow2::on_Dodaj_samochod_clicked()
 
 void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-    Dialog1 dial(salon);
+    Dialog1 dial(salon, Vehicle_Type::Car);
     dial.setModal(true);
     dial.exec();
 }
@@ -84,7 +83,7 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
 
 void MainWindow2::on_Posiadane_motocykle_clicked()
 {
-    ShowMotorcycleWindow show(salon);
+    Dialog1 show(salon, Vehicle_Type::Motor);
     show.setModal(true);
     show.exec();
 }

@@ -15,7 +15,6 @@ class AddVehicle : public QDialog
 public:
     explicit AddVehicle(QWidget *parent = 0);
     ~AddVehicle();
-    Car getVehicle();
 public slots:
     shared_ptr<Vehicle> on_Akceptuj_clicked();
     bool on_Anuluj_clicked();

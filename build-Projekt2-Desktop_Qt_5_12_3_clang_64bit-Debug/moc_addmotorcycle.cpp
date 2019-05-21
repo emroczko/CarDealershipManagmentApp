@@ -61,7 +61,7 @@ static const uint qt_meta_data_AddMotorcycle[] = {
        3,    0,   25,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Bool,
     0x80000000 | 4,
 
        0        // eod
@@ -73,7 +73,8 @@ void AddMotorcycle::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<AddMotorcycle *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_Anuluj_clicked(); break;
+        case 0: { bool _r = _t->on_Anuluj_clicked();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 1: { shared_ptr<Vehicle> _r = _t->on_Akceptuj_clicked();
             if (_a[0]) *reinterpret_cast< shared_ptr<Vehicle>*>(_a[0]) = std::move(_r); }  break;
         default: ;

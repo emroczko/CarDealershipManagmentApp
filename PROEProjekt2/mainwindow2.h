@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "mainobjectshop.h"
 #include "addvehicle.h"
-#include "dialog1.h"
+#include "showCarsWindow.h"
 #include "welcomeScreen.h"
 #include "addmotorcycle.h"
 
@@ -27,6 +27,8 @@ private slots:
     void on_pushButton_clicked();
     void on_Wyjcie_clicked();
     void on_Sprzedaj_Auto_clicked();
+    void on_Posiadane_motocykle_clicked();
+
 private:
 
     Ui::MainWindow2 *ui;

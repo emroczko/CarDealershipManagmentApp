@@ -91,7 +91,7 @@ public:
 
         ID_pisz = new QTextEdit(formGroupBox);
         ID_pisz->setObjectName(QString::fromUtf8("ID_pisz"));
-        ID_pisz->setMaximumSize(QSize(300, 30));
+        ID_pisz->setMaximumSize(QSize(500, 30));
 
         gridLayout->addWidget(ID_pisz, 3, 1, 1, 1);
 

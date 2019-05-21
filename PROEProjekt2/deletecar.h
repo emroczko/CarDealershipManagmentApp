@@ -14,10 +14,10 @@ class deleteCar : public QDialog
     Q_OBJECT
 
 public:
-    explicit deleteCar(const Shop& salon, QWidget *parent = nullptr);
+    explicit deleteCar(Shop& salon, QWidget *parent = nullptr);
     ~deleteCar();
 
-private slots:
+public slots:
     string on_listWidget_itemClicked();
 
     void on_pushButton_clicked();
@@ -26,7 +26,13 @@ private slots:
 
 
 
-    void on_pushButton_2_clicked(Shop& salon);
+    string on_pushButton_2_clicked();
+
+
+
+
+
+   // void on_deleteCar_destroyed(Shop& shop, string whichToDelete);
 
 private:
     Ui::deleteCar *ui;

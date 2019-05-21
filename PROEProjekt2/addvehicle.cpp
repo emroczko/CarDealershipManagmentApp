@@ -53,7 +53,6 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
     AddVehicle::accept();
     return Vehicle::makeCar(Model, value, ID, take_cond, take_eng, take_transmission);
 }
-
 bool AddVehicle::on_Anuluj_clicked()
 {
     AddVehicle::reject();

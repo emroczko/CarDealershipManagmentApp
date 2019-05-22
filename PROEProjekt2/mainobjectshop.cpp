@@ -216,6 +216,9 @@ Shop & Shop::operator ()(const Customer& customer, string model)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
+int Shop::getIncome()const {
+   return income_;
+}
 
 Shop::~Shop()
 {

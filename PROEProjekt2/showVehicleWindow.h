@@ -12,7 +12,7 @@ class Dialog1 : public QDialog
     Q_OBJECT
 
 public:
-    explicit Dialog1(const Shop& sklep, Vehicle_Type typ, QWidget *parent = nullptr);
+    explicit Dialog1(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent=nullptr);
     ~Dialog1();
 private:
     Ui::Dialog1 *ui;

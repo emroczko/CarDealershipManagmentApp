@@ -6,9 +6,10 @@
 #include "mainobjectshop.h"
 #include "deleteWindow.h"
 #include <sstream>
+#include <QString>
 
 MainWindow2::MainWindow2(QWidget *parent) :
-    QMainWindow(parent), salon(1000),
+    QMainWindow(parent), salon(1000000),
     ui(new Ui::MainWindow2)
 {
     this->hide();
@@ -34,11 +35,20 @@ void MainWindow2::on_Dodaj_samochod_clicked()
     {
         salon+=addCar.on_Akceptuj_clicked();
     }
+    int kasa = salon.getIncome();
+    string kasa1 = std::to_string(kasa);
+    string stan = "Stan konta:\n";
+    QString konto = QString::fromStdString(stan+kasa1);
+    MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
 }
 
 void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-    Dialog1 dial(salon, Vehicle_Type::Car);
+    std::vector<shared_ptr<Vehicle>> samochody;
+    for(auto p : salon.getAssortment())
+        if (typeid (*p) == typeid(Car)) samochody.push_back((p));
+
+    Dialog1 dial(samochody);
     dial.setModal(true);
     dial.exec();
 }
@@ -83,7 +93,11 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
 
 void MainWindow2::on_Posiadane_motocykle_clicked()
 {
-    Dialog1 show(salon, Vehicle_Type::Motor);
+    std::vector<shared_ptr<Vehicle>> motocykle;
+    for(auto p : salon.getAssortment())
+        if (typeid (*p) == typeid(Motorcycle)) motocykle.push_back((p));
+
+    Dialog1 show(motocykle);
     show.setModal(true);
     show.exec();
 }
@@ -110,4 +124,17 @@ void MainWindow2::on_pushButton_2_clicked()
         }
 }
 
+}
+
+void MainWindow2::on_pushButton_3_clicked()
+{
+    Dialog1 dial(salon.getAssortment());
+    dial.setModal(true);
+    dial.exec();
+}
+
+
+void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
+{
+    ui->stanKontsa->setText(iconText);
 }

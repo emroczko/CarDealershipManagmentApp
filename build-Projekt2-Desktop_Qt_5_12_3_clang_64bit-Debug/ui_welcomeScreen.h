@@ -23,7 +23,7 @@ class Ui_welcomeScreen
 public:
     QGridLayout *gridLayout_2;
     QPushButton *zacznijOdNowa;
-    QPushButton *pushButton;
+    QPushButton *wczytajStan;
     QLabel *label;
     QLabel *label_2;
 
@@ -39,10 +39,10 @@ public:
 
         gridLayout_2->addWidget(zacznijOdNowa, 3, 0, 1, 1);
 
-        pushButton = new QPushButton(welcomeScreen);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        wczytajStan = new QPushButton(welcomeScreen);
+        wczytajStan->setObjectName(QString::fromUtf8("wczytajStan"));
 
-        gridLayout_2->addWidget(pushButton, 4, 0, 1, 1);
+        gridLayout_2->addWidget(wczytajStan, 4, 0, 1, 1);
 
         label = new QLabel(welcomeScreen);
         label->setObjectName(QString::fromUtf8("label"));
@@ -68,7 +68,7 @@ public:
     {
         welcomeScreen->setWindowTitle(QApplication::translate("welcomeScreen", "BMW Dealer Manager", nullptr));
         zacznijOdNowa->setText(QApplication::translate("welcomeScreen", "Zacznij od nowa...", nullptr));
-        pushButton->setText(QApplication::translate("welcomeScreen", "Wczytaj stan z pliku...", nullptr));
+        wczytajStan->setText(QApplication::translate("welcomeScreen", "Wczytaj stan z pliku...", nullptr));
         label->setText(QApplication::translate("welcomeScreen", "Witamy w programie BMW Dealer Manager!", nullptr));
         label_2->setText(QString());
     } // retranslateUi

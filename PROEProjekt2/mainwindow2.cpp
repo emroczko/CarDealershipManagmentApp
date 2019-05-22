@@ -9,6 +9,7 @@
 #include <QString>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QMessageBox>
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),
@@ -74,25 +75,28 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
     std::vector<shared_ptr<Vehicle>> samochody;
     for(auto p : salon.getVehicles())
     if (typeid (*p) == typeid(Car)) samochody.push_back((p));
-
     deleteCar deletecar(samochody);
     deletecar.setModal(true);
     deletecar.exec();
     std::stringstream buffer;
-    if(salon.getVehicles().size()!= 0)
-        for(int i=0; i<salon.getVehicles().size(); i++)
+    if(deletecar.on_pushButton_clicked()==false)
+    {
+        if(salon.getVehicles().size()!= 0)
         {
-        buffer << *salon.getVehicles()[i];
-        {
-        if(buffer.str()==deletecar.on_pushButton_2_clicked())
-        {
-        salon-=i;
-        }
-        buffer.str(std::string());
+            for(int i=0; i<salon.getVehicles().size(); i++)
+            {
+            buffer << *salon.getVehicles()[i];
+            {
+                if(buffer.str()==deletecar.on_pushButton_2_clicked())
+                {
+                    salon-=i;
+                }
+                buffer.str(std::string());
+            }
+            }
         }
     }
 }
-
 void MainWindow2::on_Posiadane_motocykle_clicked()
 {   
     std::vector<shared_ptr<Vehicle>> motory;
@@ -140,26 +144,31 @@ void MainWindow2::on_Savetofile_clicked()
 
 void MainWindow2::on_SprzedajMotocykl_clicked()
 {
+
     std::vector<shared_ptr<Vehicle>> motory;
     for(auto p : salon.getVehicles())
     if (typeid (*p) == typeid(Motorcycle)) motory.push_back((p));
-
     deleteCar deletecar(motory);
     deletecar.setModal(true);
-    deletecar.exec();
-    std::stringstream buffer;
+    if(motory.size()>0)
+    {
+        deletecar.exec();
+        std::stringstream buffer;
         if(salon.getVehicles().size()!= 0)
         {
-
-        //for(auto & i : samochody)
-        for(int i=0; i<salon.getVehicles().size(); i++)
-        {
-        buffer << *salon.getVehicles()[i];
-        if(buffer.str()==deletecar.on_pushButton_2_clicked())
-        {
-        salon-=i;
+            for(int i=0; i<salon.getVehicles().size(); i++)
+            {
+                buffer << *salon.getVehicles()[i];
+                if(buffer.str()==deletecar.on_pushButton_2_clicked())
+                {
+                    salon-=i;
+                }
+                buffer.str(std::string());
+            }
         }
-        buffer.str(std::string());
-        }
+    }
+    else
+    {
+        //QMessageBox::warning(this, tr("iiii"), tr("iiii"));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
     }
 }

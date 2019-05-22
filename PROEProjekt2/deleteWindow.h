@@ -25,7 +25,7 @@ public:
 public slots:
     string on_listWidget_itemClicked();
 
-    void on_pushButton_clicked();
+    bool on_pushButton_clicked();
 
     //void on_usun_clicked(const Shop& salon);
 
@@ -41,6 +41,7 @@ public slots:
 
 private:
     Ui::deleteCar *ui;
+    int Check;
 };
 
 #endif // DELETECAR_H

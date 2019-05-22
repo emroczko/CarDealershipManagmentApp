@@ -118,20 +118,29 @@ Shop & Shop::operator -= (int i)
 }*/
 vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
 
-/*ostream& operator<<(ostream& os,const Shop& S)
+ostream& operator<<(ostream& os,const Shop& S)
 {
-    os << "Informacje o sklepie:" << endl
-    << "Liczba aut u Dealera: " << S.Vehicles_.size() <<endl
-    //<< "Liczba motocykli u Dilera: " << S.Motorcycles_.size() <<endl
-    << "Liczba pracownikow placówki: " << S.Personnel_.size() << endl
-    << "Przychody: " << S.income_<< " zl" <<endl<<endl;
-    if(S.Cars_.size()!= 0)
+
+    if(S.Vehicles_.size()!= 0)
     {
-        os << "Informacje o autach znajdujących się u Dealera: " <<endl;
-        for(auto & i : S.Cars_)
-                os << *i;
+    os << "Samochody: " <<endl;
+        for(auto &p : S.Vehicles_){
+            if (typeid(*p) == typeid(Car)){
+            os << *p<<endl;
+            }
+        }
+    os<< "Motocykle: " <<endl;
+        for(auto &p : S.Vehicles_){
+            if (typeid(*p) == typeid(Motorcycle)){
+            os << *p << endl;
+            }
+        }
     }
     os<<endl;
+    //std::vector<shared_ptr<Vehicle>> motory;
+
+    // motory.push_back((p));
+    /*
     if(S.Motorcycles_.size()!= 0)
     {
         os<<"Informacje o motocyklach znajdujących się u Dealera: " <<endl;
@@ -146,9 +155,9 @@ vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
             os<<S.Personnel_[i];
         }
     }
-    os<<endl;
+    os<<endl;*/
     return os;
-} */
+}
 
 /*string Shop::operator [] (unsigned int number)
 {

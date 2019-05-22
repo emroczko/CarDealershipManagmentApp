@@ -9,6 +9,7 @@
 #include <QString>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QMessageBox>
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),
@@ -123,6 +124,7 @@ void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
 
 void MainWindow2::on_Savetofile_clicked()
 {
+    /*
     QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                      "/home",
                                                      QFileDialog::ShowDirsOnly);
@@ -134,10 +136,29 @@ void MainWindow2::on_Savetofile_clicked()
             file.open(QIODevice::WriteOnly | QIODevice::Text);
             QTextStream stream(&file);
             stream << "something" << endl;
+*/
+    QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Zapisz stan"), "",
+            tr("Obecny_stan (*.txt);;All Files (*)"));
 
+        if (fileName.isEmpty())
+            return;
+        else {
+            QFile file(fileName);
+            if (!file.open(QIODevice::WriteOnly)) {
+                QMessageBox::information(this, tr("Unable to open file"),
+                    file.errorString());
+                return;
+            }
+            std::stringstream buffer;
+            buffer << salon;
+            string auta = buffer.str();
+            QTextStream out(&file);
+            //out.setVersion(QTextStream::Qt_4_5);
+            QString qstr = QString::fromStdString(auta);
+            out << qstr;
 
-
-
+}
 }
 
 void MainWindow2::on_SprzedajMotocykl_clicked()

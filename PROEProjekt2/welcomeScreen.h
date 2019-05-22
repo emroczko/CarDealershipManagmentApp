@@ -19,6 +19,9 @@ private slots:
 
    void  on_zacznijOdNowa_clicked();
 
+
+   void on_wczytajStan_clicked();
+
 private:
     Ui::welcomeScreen *ui;
 };

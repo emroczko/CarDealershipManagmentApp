@@ -74,13 +74,11 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
     deletecar.setModal(true);
     deletecar.exec();
     std::stringstream buffer;
-
     if(salon.getVehicles().size()!= 0)
-    {
-        //for(auto & i : samochody)
         for(int i=0; i<salon.getVehicles().size(); i++)
         {
         buffer << *salon.getVehicles()[i];
+        {
         if(buffer.str()==deletecar.on_pushButton_2_clicked())
         {
         salon-=i;
@@ -140,6 +138,5 @@ void MainWindow2::on_SprzedajMotocykl_clicked()
         }
         buffer.str(std::string());
         }
-}
-
+    }
 }

@@ -23,49 +23,6 @@ int Motorcycle::Get_ID() const {return ID_;}
 string Motorcycle::Get_Condition() const {return condition_;}
 string Motorcycle::Get_Engine() const {return engine_;}
 string Motorcycle::Get_Model() const {return model_;}
-/*
-Car::Car() : carModel("BMW 335D"), carPrice(100000), carID(1), condition_(condition::NEW), engine_(engine::DIESEL)
-{
-  //  DEBUG_LOG("Car - k. domyslny");
-}
-Car::Car(const Car &car) : carModel(car.carModel), carPrice(car.carPrice), carID(car.carID), condition_(car.condition_), engine_(car.engine_)
-{
-   // DEBUG_LOG("Car - k. kopiujacy");
-}
-
-Car::Car(string model, double price, int ID, condition condition_, engine engine_) : carModel(model), carPrice(price), carID(ID), condition_(condition_), engine_(engine_)
-{
-    //DEBUG_LOG("Car - k. z parametrami");
-}
-Car::~Car(){
-    // DEBUG_LOG("Car - destruktor");
-}
-void Car::makeACar(string model, double price, int ID, condition condition, engine engine)
-{
-    carModel = model;
-    carPrice = price;
-    carID = ID;
-    condition_ = condition;
-    engine_ = engine;
-}
-void Car::setNewPrice(unsigned int price)
-{
-    carPrice = price;
-}
-double Car::getPrice(){
-    return carPrice;
-}
-string Car::getModelAndPrice(){
-
-    string modelAndPrice;
-    stringstream s;
-    string price;
-    s << fixed << setprecision( 0 ) << carPrice;
-    s >> price;
-    modelAndPrice = carModel + " - Cena: "+ price;
-    return modelAndPrice;
-}
-*/
 
 bool Car::operator == (const Car &car)
 {

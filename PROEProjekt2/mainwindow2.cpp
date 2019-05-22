@@ -2,7 +2,7 @@
 #include "ui_mainwindow2.h"
 #include "addvehicle.h"
 #include "showVehicleWindow.h"
-#include "welcomeScreen.h"
+#include "welcomescreen.h"
 #include "mainobjectshop.h"
 #include "deleteWindow.h"
 #include <sstream>
@@ -107,16 +107,6 @@ void MainWindow2::on_Posiadane_motocykle_clicked()
     show.exec();
 }
 
-
-
-void MainWindow2::on_pushButton_3_clicked()
-{
-    Dialog1 dial(salon.getVehicles());
-    dial.setModal(true);
-    dial.exec();
-}
-
-
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
 {
     ui->stanKontsa->setText(iconText);
@@ -124,19 +114,6 @@ void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
 
 void MainWindow2::on_Savetofile_clicked()
 {
-    /*
-    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-                                                     "/home",
-                                                     QFileDialog::ShowDirsOnly);
-
-
-
-    QFile file(dir);
-
-            file.open(QIODevice::WriteOnly | QIODevice::Text);
-            QTextStream stream(&file);
-            stream << "something" << endl;
-*/
     QString fileName = QFileDialog::getSaveFileName(this,
             tr("Zapisz stan"), "",
             tr("Obecny_stan (*.txt);;All Files (*)"));
@@ -186,4 +163,11 @@ void MainWindow2::on_SprzedajMotocykl_clicked()
         }
 }
 
+}
+
+void MainWindow2::on_SalonInfo_clicked()
+{
+    Dialog1 dial(salon.getVehicles());
+    dial.setModal(true);
+    dial.exec();
 }

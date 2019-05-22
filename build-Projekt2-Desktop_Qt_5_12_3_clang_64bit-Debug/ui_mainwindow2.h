@@ -37,7 +37,7 @@ public:
     QLabel *label_3;
     QPushButton *Wyjcie;
     QLabel *stanKontsa;
-    QPushButton *pushButton_4;
+    QPushButton *SalonInfo;
     QWidget *tab_6;
     QPushButton *Sprzedaj_Auto;
     QPushButton *Posiadane_samochodu;
@@ -89,9 +89,9 @@ public:
         stanKontsa = new QLabel(tab_5);
         stanKontsa->setObjectName(QString::fromUtf8("stanKontsa"));
         stanKontsa->setGeometry(QRect(1260, 580, 111, 31));
-        pushButton_4 = new QPushButton(tab_5);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(0, 640, 1391, 41));
+        SalonInfo = new QPushButton(tab_5);
+        SalonInfo->setObjectName(QString::fromUtf8("SalonInfo"));
+        SalonInfo->setGeometry(QRect(0, 640, 1391, 41));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
@@ -149,7 +149,7 @@ public:
 
         retranslateUi(MainWindow2);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow2);
@@ -163,7 +163,7 @@ public:
         label_3->setText(QString());
         Wyjcie->setText(QApplication::translate("MainWindow2", "Wyj\305\233cie", nullptr));
         stanKontsa->setText(QApplication::translate("MainWindow2", "TextLabel", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow2", "Wy\305\233wietl informacje o salonie", nullptr));
+        SalonInfo->setText(QApplication::translate("MainWindow2", "Wy\305\233wietl informacje o salonie", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow2", "Salon", nullptr));
         Sprzedaj_Auto->setText(QApplication::translate("MainWindow2", "Sprzedaj samoch\303\263d", nullptr));
         Posiadane_samochodu->setText(QApplication::translate("MainWindow2", "Posiadane samochody", nullptr));

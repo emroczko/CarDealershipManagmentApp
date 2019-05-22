@@ -30,7 +30,7 @@
        <item row="0" column="0">
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <property name="movable">
           <bool>false</bool>
@@ -110,7 +110,7 @@
             <string>TextLabel</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="SalonInfo">
            <property name="geometry">
             <rect>
              <x>0</x>

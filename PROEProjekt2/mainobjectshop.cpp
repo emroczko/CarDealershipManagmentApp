@@ -37,19 +37,7 @@ Shop::Shop(const Shop& shop):income_(shop.income_),Vehicles_(shop.Vehicles_) ,Pe
     DEBUG_LOG("Shop - k. kopiujacy");
 }
 
-/*
-void Shop::saveToFile(const Shop& shop)
-{
-    string filename="save.txt";
-    fstream file;
-    file.open(filename.c_str(), ios::ate | ios::out);
 
-    if (file.is_open()) {
-        file << shop;
-    }
-
-    file.close();
-}*/
 /*
 void Shop::loadFromFile()
 {
@@ -137,16 +125,7 @@ ostream& operator<<(ostream& os,const Shop& S)
         }
     }
     os<<endl;
-    //std::vector<shared_ptr<Vehicle>> motory;
-
-    // motory.push_back((p));
     /*
-    if(S.Motorcycles_.size()!= 0)
-    {
-        os<<"Informacje o motocyklach znajdujących się u Dealera: " <<endl;
-        for(auto & i : S.Motorcycles_)
-            os << *i;
-    }
     if(S.Personnel_.size()!= 0)
     {
         os << "Informacje o pracownikach placowki: " << endl << endl;

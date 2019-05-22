@@ -121,16 +121,23 @@ vector<shared_ptr<Vehicle>> Shop::getMotorcycles() const {return Motorcycles_;}
 ostream& operator<<(ostream& os,const Shop& S)
 {
     os << "Informacje o sklepie:" << endl
-    << "Liczba aut u Dealera: " << S.Assortment_.size() <<endl
+    << "Liczba aut u Dealera: " << S.Cars_.size() <<endl
+    << "Liczba motocykli u Dilera: " << S.Motorcycles_.size() <<endl
     << "Liczba pracownikow placówki: " << S.Personnel_.size() << endl
     << "Przychody: " << S.income_<< " zl" <<endl<<endl;
-    if(S.Assortment_.size()!= 0)
+    if(S.Cars_.size()!= 0)
     {
         os << "Informacje o autach znajdujących się u Dealera: " <<endl;
-        for(auto & i : S.Assortment_)
+        for(auto & i : S.Cars_)
                 os << *i;
     }
     os<<endl;
+    if(S.Motorcycles_.size()!= 0)
+    {
+        os<<"Informacje o motocyklach znajdujących się u Dealera: " <<endl;
+        for(auto & i : S.Motorcycles_)
+            os << *i;
+    }
     if(S.Personnel_.size()!= 0)
     {
         os << "Informacje o pracownikach placowki: " << endl << endl;
@@ -143,7 +150,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     return os;
 }
 
-string Shop::operator [] (unsigned int number)
+/*string Shop::operator [] (unsigned int number)
 {
     if(number >= Assortment_.size())
         return "U tego dealera nie ma tylu aut";
@@ -151,7 +158,7 @@ string Shop::operator [] (unsigned int number)
         return "Podano zla liczbe!";
     else
         return Assortment_[number - 1]->Get_Model();
-}
+}*/
 /*Shop & Shop::operator ()(vector, int number)
 {
     unsigned int whichCar=number-1;
@@ -199,14 +206,10 @@ string Shop::operator [] (unsigned int number)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
-<<<<<<< HEAD
 */
-=======
 int Shop::getIncome()const {
    return income_;
 }
-
->>>>>>> dfbf5e2557c1f8da0b2bf7d0152cedf4f589fe5b
 Shop::~Shop()
 {
 

@@ -34,19 +34,7 @@ Shop::Shop(const Shop& shop):income_(shop.income_),Vehicles_(shop.Vehicles_) ,Pe
     DEBUG_LOG("Shop - k. kopiujacy");
 }
 
-/*
-void Shop::saveToFile(const Shop& shop)
-{
-    string filename="save.txt";
-    fstream file;
-    file.open(filename.c_str(), ios::ate | ios::out);
 
-    if (file.is_open()) {
-        file << shop;
-    }
-
-    file.close();
-}*/
 /*
 void Shop::loadFromFile()
 {
@@ -81,6 +69,105 @@ Shop & Shop::operator -= (int i)
     Vehicles_.erase(Vehicles_.begin()+i);
     return *this;
 }
+/*Shop & Shop::operator -- ()
+{
+    if(Assortment_.size() != 0)
+    {
+        Assortment_.pop_back();
+    }
+    return *this;
+}*/
+vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
+
+ostream& operator<<(ostream& os,const Shop& S)
+{
+
+    if(S.Vehicles_.size()!= 0)
+    {
+    os << "Samochody: " <<endl;
+        for(auto &p : S.Vehicles_){
+            if (typeid(*p) == typeid(Car)){
+            os << *p<<endl;
+            }
+        }
+    os<< "Motocykle: " <<endl;
+        for(auto &p : S.Vehicles_){
+            if (typeid(*p) == typeid(Motorcycle)){
+            os << *p << endl;
+            }
+        }
+    }
+    os<<endl;
+    /*
+    if(S.Personnel_.size()!= 0)
+    {
+        os << "Informacje o pracownikach placowki: " << endl << endl;
+        for(unsigned int i = 0; i < S.Personnel_.size(); ++i)
+        {
+            os<<S.Personnel_[i];
+        }
+    }
+    os<<endl;*/
+    return os;
+}
+
+/*string Shop::operator [] (unsigned int number)
+{
+    if(number >= Assortment_.size())
+        return "U tego dealera nie ma tylu aut";
+    else if(number == 0)
+        return "Podano zla liczbe!";
+    else
+        return Assortment_[number - 1]->Get_Model();
+}*/
+/*Shop & Shop::operator ()(vector, int number)
+{
+    unsigned int whichCar=number-1;
+
+    if(whichCar>=Assortment_.size())
+    {
+        cout<<"Nie ma tylu aut w salonie"<<endl;
+        return *this;
+    }
+    if(customer.getWallet()>=Assortment_[whichCar]->Get_Price()){
+        cout<<"Klient kupuje "<<Assortment_[whichCar]->Get_Model()<<
+        " za cenę "<<Assortment_[whichCar]->Get_Price()<<" zl"<<endl;
+        Assortment_.erase(Assortment_.begin()+whichCar);
+         return *this;
+    }
+    else
+    {
+        cout<<"Klient nie ma pieniędzy na "<<Assortment_[whichCar]->Get_Model()<<endl;
+        return *this;
+    }
+
+
+}*/
+/*Shop & Shop::operator ()(const Customer& customer, string model)
+{
+    for(unsigned int i=0; i<Assortment_.size(); i++)
+    {
+    if(model==Assortment_[i]->Get_Model())
+    {
+        if(customer.getWallet()>=Assortment_[i]->Get_Price())
+        {
+            cout<<"Klient kupuje "<<Assortment_[i]->Get_Model()<<
+            " za cenę "<<Assortment_[i]->Get_Price()<<" zl"<<endl;
+            Assortment_.erase(Assortment_.begin()+i);
+        return *this;
+        }
+        else
+        {
+            cout<<"Klient nie ma pieniędzy na "<<Assortment_[i]->Get_Model()<<endl;
+            return *this;
+        }
+    }
+
+}
+    cout<<"Nie ma takiego auta w salonie"<<endl;
+    return *this;
+}
+*/
 int Shop::getIncome()const {
    return income_;
 }

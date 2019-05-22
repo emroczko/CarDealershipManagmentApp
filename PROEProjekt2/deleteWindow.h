@@ -27,17 +27,7 @@ public slots:
 
     bool on_pushButton_clicked();
 
-    //void on_usun_clicked(const Shop& salon);
-
-
-
     string on_pushButton_2_clicked();
-
-
-
-
-
-   // void on_deleteCar_destroyed(Shop& shop, string whichToDelete);
 
 private:
     Ui::deleteCar *ui;

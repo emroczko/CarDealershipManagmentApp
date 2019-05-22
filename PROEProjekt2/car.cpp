@@ -67,7 +67,7 @@ Car & Car::operator -= (unsigned int lowerPrice)
 
 ostream& Car::print(ostream& os) const
 {
-    os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<"  Skrzynia biegów:"<<transmission_;
+    os<<Get_Model()<<"  Cena: "<<Get_Price()<<" zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<"  Skrzynia biegów:"<<transmission_;
     return os;
 }
 bool Motorcycle::operator == (const Motorcycle &motor)
@@ -109,7 +109,7 @@ Motorcycle& Motorcycle::operator -= (unsigned int lowerPrice)
 }
 ostream& Motorcycle::print(ostream& os) const
 {
-    os<<Get_Model()<<"  Cena: "<<Get_Price()<<"zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<"  Rodzaj silnika:"<<engine_type_;
+    os<<Get_Model()<<"  Cena: "<<Get_Price()<<" zł  ID:"<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik:"<<Get_Engine()<<"  Rodzaj silnika:"<<engine_type_;
     return os;
 }
 

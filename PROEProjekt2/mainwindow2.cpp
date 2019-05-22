@@ -77,24 +77,26 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
     if (typeid (*p) == typeid(Car)) samochody.push_back((p));
     deleteCar deletecar(samochody);
     deletecar.setModal(true);
-    deletecar.exec();
-    std::stringstream buffer;
-    if(deletecar.on_pushButton_clicked()==false)
+    if(samochody.size()>0)
     {
-        if(salon.getVehicles().size()!= 0)
-        {
-            for(int i=0; i<salon.getVehicles().size(); i++)
+        deletecar.exec();
+        std::stringstream buffer;
+            if(salon.getVehicles().size()!= 0)
             {
-            buffer << *salon.getVehicles()[i];
-            {
-                if(buffer.str()==deletecar.on_pushButton_2_clicked())
+                for(int i=0; i<salon.getVehicles().size(); i++)
                 {
-                    salon-=i;
+                    buffer << *salon.getVehicles()[i];
+                    if(buffer.str()==deletecar.on_pushButton_2_clicked())
+                    {
+                        salon-=i;
+                    }
+                    buffer.str(std::string());
                 }
-                buffer.str(std::string());
             }
-            }
-        }
+    }
+    else
+    {
+        QMessageBox::warning(this, tr("Błąd"), tr("Brak samochodów do usunięcia."));
     }
 }
 void MainWindow2::on_Posiadane_motocykle_clicked()
@@ -108,16 +110,6 @@ void MainWindow2::on_Posiadane_motocykle_clicked()
     show.exec();
 }
 
-
-
-void MainWindow2::on_pushButton_3_clicked()
-{
-    Dialog1 dial(salon.getVehicles());
-    dial.setModal(true);
-    dial.exec();
-}
-
-
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
 {
     ui->stanKontsa->setText(iconText);
@@ -125,21 +117,28 @@ void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
 
 void MainWindow2::on_Savetofile_clicked()
 {
-    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-                                                     "/home",
-                                                     QFileDialog::ShowDirsOnly);
+    QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Zapisz stan"), "",
+            tr("Obecny_stan (*.txt);;All Files (*)"));
 
+        if (fileName.isEmpty())
+            return;
+        else {
+            QFile file(fileName);
+            if (!file.open(QIODevice::WriteOnly)) {
+                QMessageBox::information(this, tr("Unable to open file"),
+                    file.errorString());
+                return;
+            }
+            std::stringstream buffer;
+            buffer << salon;
+            string auta = buffer.str();
+            QTextStream out(&file);
+            //out.setVersion(QTextStream::Qt_4_5);
+            QString qstr = QString::fromStdString(auta);
+            out << qstr;
 
-
-    QFile file(dir);
-
-            file.open(QIODevice::WriteOnly | QIODevice::Text);
-            QTextStream stream(&file);
-            stream << "something" << endl;
-
-
-
-
+}
 }
 
 void MainWindow2::on_SprzedajMotocykl_clicked()
@@ -169,6 +168,13 @@ void MainWindow2::on_SprzedajMotocykl_clicked()
     }
     else
     {
-        //QMessageBox::warning(this, tr("iiii"), tr("iiii"));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
+        QMessageBox::warning(this, tr("Błąd"), tr("Brak motocykli do usunięcia."));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
     }
+}
+
+void MainWindow2::on_SalonInfo_clicked()
+{
+    Dialog1 dial(salon.getVehicles());
+    dial.setModal(true);
+    dial.exec();
 }

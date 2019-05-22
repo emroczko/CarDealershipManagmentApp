@@ -42,5 +42,6 @@ public:
     //Shop & operator ()(const Customer& customer, int whichCar);//klient kupuje auto o nr podanym indeksie wektora
     //Shop & operator ()(const Customer& customer, string whichCar);//klient kupuje auto danym modelu
     string operator [] (unsigned int number);//pokazuje wybrane (po indeksie) auto z placowki
+    int getIncome() const;
 
 };

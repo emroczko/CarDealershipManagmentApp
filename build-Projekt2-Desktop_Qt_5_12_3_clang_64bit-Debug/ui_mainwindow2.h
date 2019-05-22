@@ -28,7 +28,6 @@ class Ui_MainWindow2
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QVBoxLayout *verticalLayout_2;
     QWidget *verticalWidget;
     QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
@@ -37,6 +36,7 @@ public:
     QPushButton *pushButton_3;
     QLabel *label_3;
     QPushButton *Wyjcie;
+    QLabel *stanKontsa;
     QWidget *tab_6;
     QPushButton *Sprzedaj_Auto;
     QPushButton *Posiadane_samochodu;
@@ -47,6 +47,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLabel *label_2;
+    QVBoxLayout *verticalLayout_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,11 +62,6 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-
-        gridLayout->addLayout(verticalLayout_2, 0, 0, 1, 1);
-
         verticalWidget = new QWidget(centralwidget);
         verticalWidget->setObjectName(QString::fromUtf8("verticalWidget"));
         gridLayout_2 = new QGridLayout(verticalWidget);
@@ -89,6 +85,9 @@ public:
         Wyjcie = new QPushButton(tab_5);
         Wyjcie->setObjectName(QString::fromUtf8("Wyjcie"));
         Wyjcie->setGeometry(QRect(0, 760, 1391, 41));
+        stanKontsa = new QLabel(tab_5);
+        stanKontsa->setObjectName(QString::fromUtf8("stanKontsa"));
+        stanKontsa->setGeometry(QRect(1260, 610, 111, 31));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
@@ -130,6 +129,11 @@ public:
 
         gridLayout->addWidget(verticalWidget, 1, 0, 1, 1);
 
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+
+        gridLayout->addLayout(verticalLayout_2, 0, 0, 1, 1);
+
         MainWindow2->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow2);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -141,7 +145,7 @@ public:
 
         retranslateUi(MainWindow2);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow2);
@@ -154,6 +158,7 @@ public:
         pushButton_3->setText(QApplication::translate("MainWindow2", "Wy\305\233wietl informacje o salonie", nullptr));
         label_3->setText(QString());
         Wyjcie->setText(QApplication::translate("MainWindow2", "Wyj\305\233cie", nullptr));
+        stanKontsa->setText(QApplication::translate("MainWindow2", "TextLabel", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow2", "Salon", nullptr));
         Sprzedaj_Auto->setText(QApplication::translate("MainWindow2", "Sprzedaj samoch\303\263d", nullptr));
         Posiadane_samochodu->setText(QApplication::translate("MainWindow2", "Posiadane samochody", nullptr));

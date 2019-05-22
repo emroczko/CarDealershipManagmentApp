@@ -200,7 +200,14 @@ string Shop::operator [] (unsigned int number)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
+<<<<<<< HEAD
 */
+=======
+int Shop::getIncome()const {
+   return income_;
+}
+
+>>>>>>> dfbf5e2557c1f8da0b2bf7d0152cedf4f589fe5b
 Shop::~Shop()
 {
 

@@ -56,7 +56,5 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
 bool AddVehicle::on_Anuluj_clicked()
 {
     AddVehicle::reject();
-    if(AddVehicle::Check==1) return true;
-    else if(AddVehicle::Check==0) return false;
-    else return NULL;
+    return AddVehicle::Check;
 }

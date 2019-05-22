@@ -37,6 +37,8 @@ private slots:
 
     void on_stanKontsa_windowIconTextChanged(const QString &iconText);
 
+    void on_Savetofile_clicked();
+
 private:
 
     Ui::MainWindow2 *ui;

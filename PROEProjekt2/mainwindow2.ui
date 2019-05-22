@@ -52,7 +52,7 @@
             <string>Zatrudnieni pracownicy</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="Savetofile">
            <property name="geometry">
             <rect>
              <x>0</x>
@@ -62,7 +62,7 @@
             </rect>
            </property>
            <property name="text">
-            <string>Wyświetl informacje o salonie</string>
+            <string>Zapisz obecny stan salonu</string>
            </property>
           </widget>
           <widget class="QLabel" name="label_3">
@@ -101,13 +101,26 @@
            <property name="geometry">
             <rect>
              <x>1260</x>
-             <y>610</y>
+             <y>580</y>
              <width>111</width>
              <height>31</height>
             </rect>
            </property>
            <property name="text">
             <string>TextLabel</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>640</y>
+             <width>1391</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Wyświetl informacje o salonie</string>
            </property>
           </widget>
          </widget>

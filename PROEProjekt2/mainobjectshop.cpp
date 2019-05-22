@@ -37,7 +37,7 @@ Shop::Shop(const Shop& shop):income_(shop.income_), Personnel_(shop.Personnel_),
     DEBUG_LOG("Shop - k. kopiujacy");
 }
 
-/*
+
 void Shop::saveToFile(const Shop& shop)
 {
     string filename="save.txt";
@@ -50,6 +50,7 @@ void Shop::saveToFile(const Shop& shop)
 
     file.close();
 }
+/*
 void Shop::loadFromFile()
 {
     string filename="save.txt";
@@ -207,9 +208,18 @@ ostream& operator<<(ostream& os,const Shop& S)
     return *this;
 }
 */
+<<<<<<< Updated upstream
 int Shop::getIncome()const {
    return income_;
 }
+=======
+
+int Shop::getIncome()const {
+   return income_;
+}
+
+
+>>>>>>> Stashed changes
 Shop::~Shop()
 {
 

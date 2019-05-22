@@ -7,6 +7,7 @@
 #include "deleteWindow.h"
 #include <sstream>
 #include <QString>
+#include <QFileDialog>
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),
@@ -131,4 +132,13 @@ void MainWindow2::on_pushButton_3_clicked()
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText)
 {
     ui->stanKontsa->setText(iconText);
+}
+
+void MainWindow2::on_Savetofile_clicked()
+{
+    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                     "/home",
+                                                     QFileDialog::ShowDirsOnly
+                                                     | QFileDialog::DontResolveSymlinks);
+    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", );
 }

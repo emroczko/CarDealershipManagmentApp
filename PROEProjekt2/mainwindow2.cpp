@@ -8,6 +8,7 @@
 #include <sstream>
 #include <QString>
 #include <QFileDialog>
+#include <QTextStream>
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),
@@ -49,7 +50,7 @@ void MainWindow2::on_Posiadane_samochodu_clicked()
     std::vector<shared_ptr<Vehicle>> samochody;
     for(auto p : salon.getVehicles())
     if (typeid (*p) == typeid(Car)) samochody.push_back((p));
-    Dialog1 dial(salon.getVehicles());
+    Dialog1 dial(samochody);
     dial.setModal(true);
     dial.exec();
 }
@@ -70,7 +71,11 @@ void MainWindow2::on_Wyjcie_clicked()
 }
 void MainWindow2::on_Sprzedaj_Auto_clicked()
 {
-    deleteCar deletecar(salon.getVehicles());
+    std::vector<shared_ptr<Vehicle>> samochody;
+    for(auto p : salon.getVehicles())
+    if (typeid (*p) == typeid(Car)) samochody.push_back((p));
+
+    deleteCar deletecar(samochody);
     deletecar.setModal(true);
     deletecar.exec();
     std::stringstream buffer;
@@ -92,7 +97,11 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
 
 void MainWindow2::on_Posiadane_motocykle_clicked()
 {   
-    Dialog1 show(salon.getVehicles());
+    std::vector<shared_ptr<Vehicle>> motory;
+    for(auto p : salon.getVehicles())
+    if (typeid (*p) == typeid(Motorcycle)) motory.push_back((p));
+
+    Dialog1 show(motory);
     show.setModal(true);
     show.exec();
 }
@@ -116,14 +125,28 @@ void MainWindow2::on_Savetofile_clicked()
 {
     QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                      "/home",
-                                                     QFileDialog::ShowDirsOnly
-                                                     | QFileDialog::DontResolveSymlinks);
-   // QString file_name = QFileDialog::getOpenFileName(this, "Open a file", );
+                                                     QFileDialog::ShowDirsOnly);
+
+
+
+    QFile file(dir);
+
+            file.open(QIODevice::WriteOnly | QIODevice::Text);
+            QTextStream stream(&file);
+            stream << "something" << endl;
+
+
+
+
 }
 
 void MainWindow2::on_SprzedajMotocykl_clicked()
 {
-    deleteCar deletecar(salon.getVehicles());
+    std::vector<shared_ptr<Vehicle>> motory;
+    for(auto p : salon.getVehicles())
+    if (typeid (*p) == typeid(Motorcycle)) motory.push_back((p));
+
+    deleteCar deletecar(motory);
     deletecar.setModal(true);
     deletecar.exec();
     std::stringstream buffer;

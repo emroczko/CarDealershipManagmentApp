@@ -28,9 +28,6 @@ private slots:
     void on_Wyjcie_clicked();
     void on_Sprzedaj_Auto_clicked();
     void on_Posiadane_motocykle_clicked();
-
-    void on_pushButton_2_clicked();
-
     void on_pushButton_3_clicked();
 
 
@@ -38,6 +35,8 @@ private slots:
     void on_stanKontsa_windowIconTextChanged(const QString &iconText);
 
     void on_Savetofile_clicked();
+
+    void on_SprzedajMotocykl_clicked();
 
 private:
 

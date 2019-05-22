@@ -15,29 +15,29 @@ Shop::Shop(int income): income_(income)
     Personnel_.emplace_back(Person::makeMechanic("Adam Mazowiecki", 4200, "xxxxx"));
     Personnel_.emplace_back(Person::makeMechanic("Juliusz Marski", 3500, "xxxxxx"));
     Personnel_.emplace_back(Person::makeSalesman("Dariusz Markowski", 5000, 5));
-    Cars_.emplace_back(Vehicle::makeCar("BMW 340i", 320000, 1, "Nowy", "Benzyna", "Manualna"));
-    Cars_.emplace_back(Vehicle::makeCar("BMW 550i", 440000, 2, "Używany", "Diesel", "Automatyczna hydrauliczna"));
-    Motorcycles_.emplace_back(Vehicle::makeMotorcycle("BMW S 1000 RR", 370000, 3, "Benzyna", "Nowy", "Dwusuwowy"));
-    Motorcycles_.emplace_back(Vehicle::makeMotorcycle("BMW F 750 GS", 190000, 4, "Nowy", "Benzyna", "Czterosuwowy"));
+    Vehicles_.emplace_back(Vehicle::makeCar("BMW 340i", 320000, 1, "Nowy", "Benzyna", "Manualna"));
+    Vehicles_.emplace_back(Vehicle::makeCar("BMW 550i", 440000, 2, "Używany", "Diesel", "Automatyczna hydrauliczna"));
+    Vehicles_.emplace_back(Vehicle::makeCar("BMW 730d", 370000, 3, "Używany", "Diesel", "Automatyczna bezstopniowa"));
+    Vehicles_.emplace_back(Vehicle::makeCar("BMW 428i", 190000, 4, "Nowy", "Benzyna", "Manualna"));
+    Vehicles_.emplace_back(Vehicle::makeCar("BMW 316d", 142000, 5, "Nowy", "Diesel", "Manualna"));
+
     DEBUG_LOG("Shop - k. z parametrami");
 }
 
-Shop::Shop(int income, vector <shared_ptr<Person>> Personnel, vector<shared_ptr<Vehicle>> Cars, vector<shared_ptr<Vehicle>> Motorcycles): income_(income)
-{
-    for(auto p: Motorcycles)
-        Motorcycles_.emplace_back(p);
-    for(auto x: Cars)
-        Cars_.emplace_back(x);
+Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector <shared_ptr<Person>> Personnel): income_(income)
+ {
+    for(auto x: assortment)
+        Vehicles_.emplace_back(x);
     for(auto i: Personnel)
         Personnel_.emplace_back(i);
 }
 
-Shop::Shop(const Shop& shop):income_(shop.income_), Personnel_(shop.Personnel_), Cars_(shop.Cars_), Motorcycles_(shop.Motorcycles_)
+Shop::Shop(const Shop& shop):income_(shop.income_),Vehicles_(shop.Vehicles_) ,Personnel_(shop.Personnel_)
 {
     DEBUG_LOG("Shop - k. kopiujacy");
 }
 
-
+/*
 void Shop::saveToFile(const Shop& shop)
 {
     string filename="save.txt";
@@ -49,7 +49,7 @@ void Shop::saveToFile(const Shop& shop)
     }
 
     file.close();
-}
+}*/
 /*
 void Shop::loadFromFile()
 {
@@ -99,15 +99,14 @@ Shop & Shop::operator += (shared_ptr<Person> employee)
 }
 Shop & Shop::operator += (const shared_ptr<Vehicle> vehicle)
 {
-    if(typeid(vehicle) == typeid(Car)) Cars_.emplace_back(vehicle);
-    else Motorcycles_.emplace_back(vehicle);
+    Vehicles_.emplace_back(vehicle);
     return *this;
 }
-/*Shop & Shop::operator -= (int i)
+Shop & Shop::operator -= (int i)
 {
-    Assortment_.erase(Assortment_.begin()+i);
+    Vehicles_.erase(Vehicles_.begin()+i);
     return *this;
-}*/
+}
 
 /*Shop & Shop::operator -- ()
 {
@@ -117,13 +116,13 @@ Shop & Shop::operator += (const shared_ptr<Vehicle> vehicle)
     }
     return *this;
 }*/
-vector < shared_ptr<Vehicle> > Shop::getCars() const {return Cars_;}
-vector<shared_ptr<Vehicle>> Shop::getMotorcycles() const {return Motorcycles_;}
-ostream& operator<<(ostream& os,const Shop& S)
+vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
+
+/*ostream& operator<<(ostream& os,const Shop& S)
 {
     os << "Informacje o sklepie:" << endl
-    << "Liczba aut u Dealera: " << S.Cars_.size() <<endl
-    << "Liczba motocykli u Dilera: " << S.Motorcycles_.size() <<endl
+    << "Liczba aut u Dealera: " << S.Vehicles_.size() <<endl
+    //<< "Liczba motocykli u Dilera: " << S.Motorcycles_.size() <<endl
     << "Liczba pracownikow placówki: " << S.Personnel_.size() << endl
     << "Przychody: " << S.income_<< " zl" <<endl<<endl;
     if(S.Cars_.size()!= 0)
@@ -149,7 +148,7 @@ ostream& operator<<(ostream& os,const Shop& S)
     }
     os<<endl;
     return os;
-}
+} */
 
 /*string Shop::operator [] (unsigned int number)
 {
@@ -208,18 +207,13 @@ ostream& operator<<(ostream& os,const Shop& S)
     return *this;
 }
 */
-<<<<<<< Updated upstream
-int Shop::getIncome()const {
-   return income_;
-}
-=======
 
 int Shop::getIncome()const {
    return income_;
 }
 
 
->>>>>>> Stashed changes
+
 Shop::~Shop()
 {
 

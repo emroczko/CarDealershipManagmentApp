@@ -46,10 +46,10 @@ void MainWindow2::on_Dodaj_samochod_clicked()
 
 void MainWindow2::on_Posiadane_samochodu_clicked()
 {
-    //std::vector<shared_ptr<Vehicle>> samochody;
-    //for(auto p : salon.getAssortment())
-    //if (typeid (*p) == typeid(Car)) samochody.push_back((p));
-    Dialog1 dial(salon.getCars());
+    std::vector<shared_ptr<Vehicle>> samochody;
+    for(auto p : salon.getVehicles())
+    if (typeid (*p) == typeid(Car)) samochody.push_back((p));
+    Dialog1 dial(salon.getVehicles());
     dial.setModal(true);
     dial.exec();
 }
@@ -70,18 +70,17 @@ void MainWindow2::on_Wyjcie_clicked()
 }
 void MainWindow2::on_Sprzedaj_Auto_clicked()
 {
-    deleteCar deletecar(salon.getCars());
+    deleteCar deletecar(salon.getVehicles());
     deletecar.setModal(true);
     deletecar.exec();
     std::stringstream buffer;
 
-    if(salon.getAssortment().size()!= 0)
+    if(salon.getVehicles().size()!= 0)
     {
-
         //for(auto & i : samochody)
-        for(int i=0; i<salon.getAssortment().size(); i++)
+        for(int i=0; i<salon.getVehicles().size(); i++)
         {
-        buffer << *salon.getAssortment()[i];
+        buffer << *salon.getVehicles()[i];
         if(buffer.str()==deletecar.on_pushButton_2_clicked())
         {
         salon-=i;
@@ -93,37 +92,16 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
 
 void MainWindow2::on_Posiadane_motocykle_clicked()
 {   
-    Dialog1 show(salon.getMotorcycles());
+    Dialog1 show(salon.getVehicles());
     show.setModal(true);
     show.exec();
 }
 
-void MainWindow2::on_pushButton_2_clicked()
-{
-    deleteCar deletecar(salon.getCars());
-    deletecar.setModal(true);
-    deletecar.exec();
-    std::stringstream buffer;
-        if(salon.getCars().size()!= 0)
-        {
 
-        //for(auto & i : samochody)
-        for(int i=0; i<salon.getCars().size(); i++)
-        {
-        buffer << *salon.getAssortment()[i];
-        if(buffer.str()==deletecar.on_pushButton_2_clicked())
-        {
-        salon-=i;
-        }
-        buffer.str(std::string());
-        }
-}
-
-}
 
 void MainWindow2::on_pushButton_3_clicked()
 {
-    Dialog1 dial(salon.getAssortment());
+    Dialog1 dial(salon.getVehicles());
     dial.setModal(true);
     dial.exec();
 }
@@ -140,5 +118,28 @@ void MainWindow2::on_Savetofile_clicked()
                                                      "/home",
                                                      QFileDialog::ShowDirsOnly
                                                      | QFileDialog::DontResolveSymlinks);
-    QString file_name = QFileDialog::getOpenFileName(this, "Open a file", );
+   // QString file_name = QFileDialog::getOpenFileName(this, "Open a file", );
+}
+
+void MainWindow2::on_SprzedajMotocykl_clicked()
+{
+    deleteCar deletecar(salon.getVehicles());
+    deletecar.setModal(true);
+    deletecar.exec();
+    std::stringstream buffer;
+        if(salon.getVehicles().size()!= 0)
+        {
+
+        //for(auto & i : samochody)
+        for(int i=0; i<salon.getVehicles().size(); i++)
+        {
+        buffer << *salon.getVehicles()[i];
+        if(buffer.str()==deletecar.on_pushButton_2_clicked())
+        {
+        salon-=i;
+        }
+        buffer.str(std::string());
+        }
+}
+
 }

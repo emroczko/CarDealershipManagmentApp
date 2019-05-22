@@ -15,23 +15,20 @@ class Shop
 {
 private:
     int income_;
+    vector <shared_ptr<Vehicle>> Vehicles_;
     vector <shared_ptr <Person>> Personnel_;
-    vector <shared_ptr<Vehicle>> Cars_;
-    vector <shared_ptr<Vehicle>> Motorcycles_;
-
 
 public:
     Shop();
     Shop(int income_);
-    Shop(int income_, vector<shared_ptr<Person>>, vector<shared_ptr<Vehicle>>, vector<shared_ptr<Vehicle>>);
+    Shop(int income_, vector < shared_ptr<Vehicle> > vehicles, vector<shared_ptr<Person>>);
     Shop(const Shop& shop);
     ~Shop();
 
     void saveToFile(const Shop & shop);
     void loadFromFile();
     friend ostream& operator<< (ostream& ,const Shop&);
-    vector < shared_ptr<Vehicle> > getCars() const;
-    vector < shared_ptr<Vehicle> > getMotorcycles() const;
+    vector < shared_ptr<Vehicle> > getVehicles() const;
     bool operator == (const Shop &shop); //porownuje przychod placowki
     bool operator > (const Shop &shop); //porownuje przychod placowki
     bool operator < (const Shop &shop); //porownuje przychod placowki

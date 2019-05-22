@@ -17,11 +17,9 @@ class deleteCar : public QDialog
     Q_OBJECT
 
 public:
-<<<<<<< Updated upstream
+
     explicit deleteCar(const std::vector<std::shared_ptr<Vehicle>>&, QWidget *parent=nullptr);
-=======
-    explicit deleteCar(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent = nullptr);
->>>>>>> Stashed changes
+
     ~deleteCar();
 
 public slots:

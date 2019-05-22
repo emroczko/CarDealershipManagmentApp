@@ -33,10 +33,11 @@ public:
     QTabWidget *tabWidget;
     QWidget *tab_5;
     QPushButton *Zatrudnieni_pracownicy;
-    QPushButton *pushButton_3;
+    QPushButton *Savetofile;
     QLabel *label_3;
     QPushButton *Wyjcie;
     QLabel *stanKontsa;
+    QPushButton *pushButton_4;
     QWidget *tab_6;
     QPushButton *Sprzedaj_Auto;
     QPushButton *Posiadane_samochodu;
@@ -45,7 +46,7 @@ public:
     QWidget *tab_7;
     QPushButton *Posiadane_motocykle;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *SprzedajMotocykl;
     QLabel *label_2;
     QVBoxLayout *verticalLayout_2;
     QMenuBar *menubar;
@@ -74,9 +75,9 @@ public:
         Zatrudnieni_pracownicy = new QPushButton(tab_5);
         Zatrudnieni_pracownicy->setObjectName(QString::fromUtf8("Zatrudnieni_pracownicy"));
         Zatrudnieni_pracownicy->setGeometry(QRect(0, 680, 1391, 41));
-        pushButton_3 = new QPushButton(tab_5);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(0, 720, 1391, 41));
+        Savetofile = new QPushButton(tab_5);
+        Savetofile->setObjectName(QString::fromUtf8("Savetofile"));
+        Savetofile->setGeometry(QRect(0, 720, 1391, 41));
         label_3 = new QLabel(tab_5);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(10, 10, 1361, 551));
@@ -87,7 +88,10 @@ public:
         Wyjcie->setGeometry(QRect(0, 760, 1391, 41));
         stanKontsa = new QLabel(tab_5);
         stanKontsa->setObjectName(QString::fromUtf8("stanKontsa"));
-        stanKontsa->setGeometry(QRect(1260, 610, 111, 31));
+        stanKontsa->setGeometry(QRect(1260, 580, 111, 31));
+        pushButton_4 = new QPushButton(tab_5);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(0, 640, 1391, 41));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
@@ -114,9 +118,9 @@ public:
         pushButton = new QPushButton(tab_7);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(0, 720, 1391, 41));
-        pushButton_2 = new QPushButton(tab_7);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(0, 760, 1391, 41));
+        SprzedajMotocykl = new QPushButton(tab_7);
+        SprzedajMotocykl->setObjectName(QString::fromUtf8("SprzedajMotocykl"));
+        SprzedajMotocykl->setGeometry(QRect(0, 760, 1391, 41));
         label_2 = new QLabel(tab_7);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(130, 10, 1141, 661));
@@ -145,7 +149,7 @@ public:
 
         retranslateUi(MainWindow2);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow2);
@@ -155,10 +159,11 @@ public:
     {
         MainWindow2->setWindowTitle(QApplication::translate("MainWindow2", "BMW Dealer Manager", nullptr));
         Zatrudnieni_pracownicy->setText(QApplication::translate("MainWindow2", "Zatrudnieni pracownicy", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow2", "Wy\305\233wietl informacje o salonie", nullptr));
+        Savetofile->setText(QApplication::translate("MainWindow2", "Zapisz obecny stan salonu", nullptr));
         label_3->setText(QString());
         Wyjcie->setText(QApplication::translate("MainWindow2", "Wyj\305\233cie", nullptr));
         stanKontsa->setText(QApplication::translate("MainWindow2", "TextLabel", nullptr));
+        pushButton_4->setText(QApplication::translate("MainWindow2", "Wy\305\233wietl informacje o salonie", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow2", "Salon", nullptr));
         Sprzedaj_Auto->setText(QApplication::translate("MainWindow2", "Sprzedaj samoch\303\263d", nullptr));
         Posiadane_samochodu->setText(QApplication::translate("MainWindow2", "Posiadane samochody", nullptr));
@@ -167,7 +172,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow2", "Samochody", nullptr));
         Posiadane_motocykle->setText(QApplication::translate("MainWindow2", "Posiadane motocykle", nullptr));
         pushButton->setText(QApplication::translate("MainWindow2", "Dodaj motocykl", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow2", "Usu\305\204 motocykl", nullptr));
+        SprzedajMotocykl->setText(QApplication::translate("MainWindow2", "Usu\305\204 motocykl", nullptr));
         label_2->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow2", "Motocykle", nullptr));
     } // retranslateUi

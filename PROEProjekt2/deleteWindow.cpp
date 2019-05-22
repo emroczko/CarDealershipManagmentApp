@@ -3,42 +3,25 @@
 #include <sstream>
 #include <mainobjectshop.h>
 
-deleteCar::deleteCar(Shop& salon,Vehicle_Type typ, QWidget *parent):
+deleteCar::deleteCar(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent):
     QDialog(parent),
     ui(new Ui::deleteCar)
 {
-    ui->setupUi(this);
+  ui->setupUi(this);
 
-    //shared_ptr<Vehicle> motory;
-    auto motory = salon.getAssortment();
-    QString temp;
-    std::stringstream buffer;
-    string auta;
-    if(motory.size()!= 0)
-    {
-        for(auto & i : motory)
-        {
-
-            if(typ==Vehicle_Type::Car &&  typeid(*i)==typeid(Car)){
-        buffer << *i;
-        auta = buffer.str();
-        QString qstr = QString::fromStdString(auta);
-        ui->listWidget->addItem(qstr);
-        auta.clear();
-        buffer.str(std::string());
-        qstr.clear();
-        }
-            else if (typ==Vehicle_Type::Motor &&  typeid(*i)==typeid(Motorcycle)) {
-                buffer << *i;
-                auta = buffer.str();
-                QString qstr = QString::fromStdString(auta);
-                ui->listWidget->addItem(qstr);
-                auta.clear();
-                buffer.str(std::string());
-                qstr.clear();
-            }
-        }
-    }
+  QString temp;
+  std::stringstream buffer;
+  string auta;
+      for(auto & i : vehicles)
+      {
+      buffer << *i;
+      auta = buffer.str();
+      QString qstr = QString::fromStdString(auta);
+      ui->listWidget->addItem(qstr);
+      auta.clear();
+      buffer.str(std::string());
+      qstr.clear();
+      }
 }
 
 deleteCar::~deleteCar()

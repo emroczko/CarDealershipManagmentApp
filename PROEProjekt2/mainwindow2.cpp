@@ -46,7 +46,7 @@ void MainWindow2::on_Posiadane_samochodu_clicked()
 {
     std::vector<shared_ptr<Vehicle>> samochody;
     for(auto p : salon.getAssortment())
-        if (typeid (*p) == typeid(Car)) samochody.push_back((p));
+    if (typeid (*p) == typeid(Car)) samochody.push_back((p));
 
     Dialog1 dial(samochody);
     dial.setModal(true);
@@ -69,7 +69,7 @@ void MainWindow2::on_Wyjcie_clicked()
 }
 void MainWindow2::on_Sprzedaj_Auto_clicked()
 {
-    deleteCar deletecar(salon, Vehicle_Type::Car);
+    deleteCar deletecar();
     deletecar.setModal(true);
     deletecar.exec();
     std::stringstream buffer;
@@ -89,6 +89,7 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
         }
 }
 
+*/
 }
 
 void MainWindow2::on_Posiadane_motocykle_clicked()

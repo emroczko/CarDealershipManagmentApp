@@ -30,7 +30,8 @@ public:
     void saveToFile(const Shop & shop);
     void loadFromFile();
     friend ostream& operator<< (ostream& ,const Shop&);
-    vector < shared_ptr<Vehicle> > getAssortment() const;
+    vector < shared_ptr<Vehicle> > getCars() const;
+    vector < shared_ptr<Vehicle> > getMotorcycles() const;
     bool operator == (const Shop &shop); //porownuje przychod placowki
     bool operator > (const Shop &shop); //porownuje przychod placowki
     bool operator < (const Shop &shop); //porownuje przychod placowki

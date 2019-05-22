@@ -17,7 +17,7 @@ class deleteCar : public QDialog
     Q_OBJECT
 
 public:
-    explicit deleteCar(Shop& salon, Vehicle_Type typ ,QWidget *parent = nullptr);
+    explicit deleteCar(const std::vector<std::shared_ptr<Vehicle>>&, QWidget *parent=nullptr);
     ~deleteCar();
 
 public slots:

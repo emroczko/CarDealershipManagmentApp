@@ -28,8 +28,6 @@ SOURCES += \
     deleteWindow.cpp \
         main.cpp \
     car.cpp \
-    customer.cpp \
-    employee.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
     showVehicleWindow.cpp \
@@ -40,17 +38,14 @@ SOURCES += \
 HEADERS += \
     addvehicle.h \
     car.h \
-    customer.h \
     debug.h \
     deleteWindow.h \
-    employee.h \
     mainobjectshop.h \
     mainwindow2.h \
     showVehicleWindow.h \
     welcomeScreen.h \
     person.h \
-    addmotorcycle.h \
-    showmotorcyclewindow.h
+    addmotorcycle.h
 
 FORMS += \
         addvehicle.ui \

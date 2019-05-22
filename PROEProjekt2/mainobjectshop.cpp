@@ -1,9 +1,5 @@
 #include "mainobjectshop.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <sstream>
+
 
 
 using namespace std;
@@ -14,28 +10,29 @@ Shop::Shop():income_(1000)
 }
 Shop::Shop(int income): income_(income)
 {
-    Personnel_.emplace_back(Employee("Jan Jankowski", "Mechanik", 4000));
-    Personnel_.emplace_back(Employee("Anna Bratkowska", "Sekretarka", 3000));
-    Personnel_.emplace_back(Employee("Adam Mazowiecki", "Blacharz", 4200));
-    Personnel_.emplace_back(Employee("Juliusz Marski", "Sprzedawca", 3500));
-    Personnel_.emplace_back(Employee("Dariusz Markowski", "Mechanik", 5000));
-    Assortment_.emplace_back(Vehicle::makeCar("BMW 340i", 320000, 1, "Nowy", "Benzyna", "Manualna"));
-    Assortment_.emplace_back(Vehicle::makeCar("BMW 550i", 440000, 2, "Używany", "Diesel", "Automatyczna hydrauliczna"));
-    Assortment_.emplace_back(Vehicle::makeCar("BMW 730d", 370000, 3, "Używany", "Diesel", "Automatyczna bezstopniowa"));
-    Assortment_.emplace_back(Vehicle::makeCar("BMW 428i", 190000, 4, "Nowy", "Benzyna", "Manualna"));
-    Assortment_.emplace_back(Vehicle::makeCar("BMW 316d", 142000, 5, "Nowy", "Diesel", "Manualna"));
+    Personnel_.emplace_back(Person::makeSalesman("Jan Jankowski", 4000, 6));
+    Personnel_.emplace_back(Person::makeSalesman("Anna Bratkowska", 3000, 3));
+    Personnel_.emplace_back(Person::makeMechanic("Adam Mazowiecki", 4200, "xxxxx"));
+    Personnel_.emplace_back(Person::makeMechanic("Juliusz Marski", 3500, "xxxxxx"));
+    Personnel_.emplace_back(Person::makeSalesman("Dariusz Markowski", 5000, 5));
+    Cars_.emplace_back(Vehicle::makeCar("BMW 340i", 320000, 1, "Nowy", "Benzyna", "Manualna"));
+    Cars_.emplace_back(Vehicle::makeCar("BMW 550i", 440000, 2, "Używany", "Diesel", "Automatyczna hydrauliczna"));
+    Motorcycles_.emplace_back(Vehicle::makeCar("BMW 730d", 370000, 3, "Używany", "Diesel", "Automatyczna bezstopniowa"));
+    Motorcycles_.emplace_back(Vehicle::makeCar("BMW 428i", 190000, 4, "Nowy", "Benzyna", "Manualna"));
     DEBUG_LOG("Shop - k. z parametrami");
 }
 
-Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector < Employee > personnel): income_(income)
+Shop::Shop(int income, vector <shared_ptr<Person>> Personnel, vector<shared_ptr<Vehicle>> Cars, vector<shared_ptr<Vehicle>> Motorcycles): income_(income)
 {
-    for(unsigned int i = 0; i < assortment.size(); i++)
-        Assortment_.emplace_back(assortment[i]);
-    for(unsigned int i = 0; i < personnel.size(); i++)
-        Personnel_.emplace_back(personnel[i]);
+    for(auto p: Motorcycles)
+        Motorcycles_.emplace_back(p);
+    for(auto x: Cars)
+        Cars_.emplace_back(x);
+    for(auto i: Personnel)
+        Personnel_.emplace_back(i);
 }
 
-Shop::Shop(const Shop& shop):income_(shop.income_), Personnel_(shop.Personnel_),Assortment_(shop.Assortment_)
+Shop::Shop(const Shop& shop):income_(shop.income_), Personnel_(shop.Personnel_), Cars_(shop.Cars_), Motorcycles_(shop.Motorcycles_)
 {
     DEBUG_LOG("Shop - k. kopiujacy");
 }
@@ -72,47 +69,34 @@ void Shop::loadFromFile()
     cout<<"ODCZYT Z PLIKU:"<<endl<<endl<<file1<<endl;
 }*/
 
-Shop& Shop::operator+=(const Employee & employee)
-{
-    Personnel_.push_back( employee );
-
-    return *this;
-}
-
-bool Shop::operator == (const Shop &shop)
+/*bool Shop::operator == (const Shop &shop)
 {
     if(income_!= shop.income_)
         return false;
     if(Personnel_.size() != shop.Personnel_.size())
         return false;
-    if(Assortment_.size()!= shop.Assortment_.size())
+    if(Cars_.size()!= shop.Cars_.size())
         return false;
+    if()
 
     return true;
-}
+}*/
 
-bool Shop::operator > (const Shop &shop)
+/*bool Shop::operator > (const Shop &shop)
 {
     return income_ > shop.income_;
-}
+}*/
 
-bool Shop::operator < (const Shop &shop)
+/*bool Shop::operator < (const Shop &shop)
 {
     return !(*this > shop);
-}
-Shop & Shop::operator += (const Shop &shop)
+}*/
+Shop & Shop::operator += (shared_ptr<Person> employee)
 {
-    income_ += shop.income_;
-
-    for(unsigned int i = 0; i< shop.Personnel_.size(); ++i)
-        Personnel_.emplace_back(shop.Personnel_[i]);
-
-    for(unsigned int i = 0; i< shop.Assortment_.size(); ++i)
-        Assortment_.emplace_back(shop.Assortment_[i]);
-
+    Personnel_.emplace_back(employee);
     return *this;
 }
-Shop & Shop::operator += (shared_ptr<Vehicle> car)
+Shop & Shop::operator += (const shared_ptr<Vehicle> car)
 {
     Assortment_.emplace_back(car);
     return *this;
@@ -123,14 +107,14 @@ Shop & Shop::operator -= (int i)
     return *this;
 }
 
-Shop & Shop::operator -- ()
+/*Shop & Shop::operator -- ()
 {
     if(Assortment_.size() != 0)
     {
         Assortment_.pop_back();
     }
     return *this;
-}
+}*/
 vector < shared_ptr<Vehicle> > Shop::getAssortment() const
 {
     return Assortment_;
@@ -169,7 +153,7 @@ string Shop::operator [] (unsigned int number)
     else
         return Assortment_[number - 1]->Get_Model();
 }
-Shop & Shop::operator ()(const Customer& customer, int number)
+/*Shop & Shop::operator ()(vector, int number)
 {
     unsigned int whichCar=number-1;
 
@@ -191,8 +175,8 @@ Shop & Shop::operator ()(const Customer& customer, int number)
     }
 
 
-}
-Shop & Shop::operator ()(const Customer& customer, string model)
+}*/
+/*Shop & Shop::operator ()(const Customer& customer, string model)
 {
     for(unsigned int i=0; i<Assortment_.size(); i++)
     {
@@ -216,7 +200,7 @@ Shop & Shop::operator ()(const Customer& customer, string model)
     cout<<"Nie ma takiego auta w salonie"<<endl;
     return *this;
 }
-
+*/
 Shop::~Shop()
 {
 

@@ -10,11 +10,11 @@ Shop::Shop():income_(1000)
 }
 Shop::Shop(int income): income_(income)
 {
-    Personnel_.emplace_back(Person::makeSalesman("Jan Jankowski", 4000, 6));
-    Personnel_.emplace_back(Person::makeSalesman("Anna Bratkowska", 3000, 3));
-    Personnel_.emplace_back(Person::makeMechanic("Adam Mazowiecki", 4200, "xxxxx"));
-    Personnel_.emplace_back(Person::makeMechanic("Juliusz Marski", 3500, "xxxxxx"));
-    Personnel_.emplace_back(Person::makeSalesman("Dariusz Markowski", 5000, 5));
+    //Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
+    //Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
+    Personnel_.emplace_back(Person::makeMechanic("Adam", "Mazowiecki", 4200, "xxxxx"));
+    Personnel_.emplace_back(Person::makeMechanic("Juliusz", "Marski", 3500, "xxxxxx"));
+    //Personnel_.emplace_back(Person::makeSalesman("Dariusz", "Markowski", 5000, 5));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 340i", 320000, 1, "Nowy", "Benzyna", "Manualna"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 550i", 440000, 2, "Używany", "Diesel", "Automatyczna hydrauliczna"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 730d", 370000, 3, "Używany", "Diesel", "Automatyczna bezstopniowa"));

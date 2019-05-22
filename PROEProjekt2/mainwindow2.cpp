@@ -10,6 +10,7 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
+#include "addpersonnel.h"
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),
@@ -83,7 +84,7 @@ void MainWindow2::on_Sprzedaj_Auto_clicked()
         std::stringstream buffer;
             if(salon.getVehicles().size()!= 0)
             {
-                for(int i=0; i<salon.getVehicles().size(); i++)
+                for(unsigned int i=0; i<salon.getVehicles().size(); i++)
                 {
                     buffer << *salon.getVehicles()[i];
                     if(buffer.str()==deletecar.on_pushButton_2_clicked())
@@ -155,7 +156,7 @@ void MainWindow2::on_SprzedajMotocykl_clicked()
         std::stringstream buffer;
         if(salon.getVehicles().size()!= 0)
         {
-            for(int i=0; i<salon.getVehicles().size(); i++)
+            for(unsigned int i=0; i<salon.getVehicles().size(); i++)
             {
                 buffer << *salon.getVehicles()[i];
                 if(buffer.str()==deletecar.on_pushButton_2_clicked())
@@ -177,4 +178,16 @@ void MainWindow2::on_SalonInfo_clicked()
     Dialog1 dial(salon.getVehicles());
     dial.setModal(true);
     dial.exec();
+}
+
+
+void MainWindow2::on_Zatrudnij_nowego_clicked()
+{
+    AddPersonnel addperson;
+    addperson.setModal(true);
+    addperson.exec();
+    if(addperson.on_Anuluj_mechanik_clicked()==false)
+    {
+        salon+=addperson.on_Akceptuj_mechanik_clicked();
+    }
 }

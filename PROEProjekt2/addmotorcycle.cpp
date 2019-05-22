@@ -47,7 +47,7 @@ shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
     take_eng_type = ui->Typ_silnika_wybierz->currentText().toStdString();
-    AddMotorcycle::close();
+    AddMotorcycle::accept();
     return Vehicle::makeMotorcycle(Model, value, ID, take_cond, take_eng, take_eng_type);
 }
 

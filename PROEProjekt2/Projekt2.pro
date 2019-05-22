@@ -33,7 +33,8 @@ SOURCES += \
     showVehicleWindow.cpp \
     welcomeScreen.cpp \
     person.cpp \
-    addmotorcycle.cpp
+    addmotorcycle.cpp \
+    addpersonnel.cpp
 
 HEADERS += \
     addvehicle.h \
@@ -45,7 +46,8 @@ HEADERS += \
     showVehicleWindow.h \
     welcomeScreen.h \
     person.h \
-    addmotorcycle.h
+    addmotorcycle.h \
+    addpersonnel.h
 
 FORMS += \
         addvehicle.ui \
@@ -53,7 +55,8 @@ FORMS += \
         mainwindow2.ui \
     showVehicleWindow.ui \
     welcomeScreen.ui \
-    addmotorcycle.ui
+    addmotorcycle.ui \
+    addpersonnel.ui
 
 OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩ \

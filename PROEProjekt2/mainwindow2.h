@@ -33,6 +33,12 @@ private slots:
     void on_SprzedajMotocykl_clicked();
     void on_SalonInfo_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_Zatrudnieni_pracownicy_clicked();
+
+    void on_Zatrudnij_nowego_clicked();
+
 private:
 
     Ui::MainWindow2 *ui;

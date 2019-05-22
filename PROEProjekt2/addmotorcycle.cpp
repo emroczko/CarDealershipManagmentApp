@@ -7,7 +7,7 @@ AddMotorcycle::AddMotorcycle(QWidget *parent) :
     ui(new Ui::AddMotorcycle)
 {
     ui->setupUi(this);
-    ui->Model_wybierz->addItem("BMW K 1600 Grand America.");
+    ui->Model_wybierz->addItem("BMW K 1600 Grand America");
     ui->Model_wybierz->addItem("BMW R 1250 RS");
     ui->Model_wybierz->addItem("BMW R 1250 RT");
     ui->Model_wybierz->addItem("BMW R 1250 R");

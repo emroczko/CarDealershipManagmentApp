@@ -56,8 +56,6 @@ SOURCES       = ../PROEProjekt2/addvehicle.cpp \
 		../PROEProjekt2/deleteWindow.cpp \
 		../PROEProjekt2/main.cpp \
 		../PROEProjekt2/car.cpp \
-		../PROEProjekt2/customer.cpp \
-		../PROEProjekt2/employee.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
 		../PROEProjekt2/mainwindow2.cpp \
 		../PROEProjekt2/showVehicleWindow.cpp \
@@ -74,8 +72,6 @@ OBJECTS       = addvehicle.o \
 		deleteWindow.o \
 		main.o \
 		car.o \
-		customer.o \
-		employee.o \
 		mainobjectshop.o \
 		mainwindow2.o \
 		showVehicleWindow.o \
@@ -263,22 +259,17 @@ DIST          = ../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/features/lex.prf \
 		../PROEProjekt2/Projekt2.pro ../PROEProjekt2/addvehicle.h \
 		../PROEProjekt2/car.h \
-		../PROEProjekt2/customer.h \
 		../PROEProjekt2/debug.h \
 		../PROEProjekt2/deleteWindow.h \
-		../PROEProjekt2/employee.h \
 		../PROEProjekt2/mainobjectshop.h \
 		../PROEProjekt2/mainwindow2.h \
 		../PROEProjekt2/showVehicleWindow.h \
 		../PROEProjekt2/welcomeScreen.h \
 		../PROEProjekt2/person.h \
-		../PROEProjekt2/addmotorcycle.h \
-		showmotorcyclewindow.h ../PROEProjekt2/addvehicle.cpp \
+		../PROEProjekt2/addmotorcycle.h ../PROEProjekt2/addvehicle.cpp \
 		../PROEProjekt2/deleteWindow.cpp \
 		../PROEProjekt2/main.cpp \
 		../PROEProjekt2/car.cpp \
-		../PROEProjekt2/customer.cpp \
-		../PROEProjekt2/employee.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
 		../PROEProjekt2/mainwindow2.cpp \
 		../PROEProjekt2/showVehicleWindow.cpp \
@@ -693,8 +684,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/pics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.12.3/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/car.h ../PROEProjekt2/customer.h ../PROEProjekt2/debug.h ../PROEProjekt2/deleteWindow.h ../PROEProjekt2/employee.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showVehicleWindow.h ../PROEProjekt2/welcomeScreen.h ../PROEProjekt2/person.h ../PROEProjekt2/addmotorcycle.h showmotorcyclewindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/deleteWindow.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/customer.cpp ../PROEProjekt2/employee.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showVehicleWindow.cpp ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/person.cpp ../PROEProjekt2/addmotorcycle.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/car.h ../PROEProjekt2/debug.h ../PROEProjekt2/deleteWindow.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showVehicleWindow.h ../PROEProjekt2/welcomeScreen.h ../PROEProjekt2/person.h ../PROEProjekt2/addmotorcycle.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/deleteWindow.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showVehicleWindow.cpp ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/person.cpp ../PROEProjekt2/addmotorcycle.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.ui ../PROEProjekt2/deleteWindow.ui ../PROEProjekt2/mainwindow2.ui ../PROEProjekt2/showVehicleWindow.ui ../PROEProjekt2/welcomeScreen.ui ../PROEProjekt2/addmotorcycle.ui $(DISTDIR)/
 
 
@@ -762,13 +753,11 @@ moc_deleteWindow.cpp: ../PROEProjekt2/deleteWindow.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
 		moc_predefs.h \
@@ -779,13 +768,11 @@ moc_mainwindow2.cpp: ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -802,13 +789,11 @@ moc_showVehicleWindow.cpp: ../PROEProjekt2/showVehicleWindow.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		moc_predefs.h \
 		../../Qt/5.12.3/clang_64/bin/moc
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/showVehicleWindow.h -o moc_showVehicleWindow.cpp
@@ -890,13 +875,11 @@ deleteWindow.o: ../PROEProjekt2/deleteWindow.cpp ../PROEProjekt2/deleteWindow.h 
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
 		ui_deletecar.h
@@ -906,13 +889,11 @@ main.o: ../PROEProjekt2/main.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -928,35 +909,23 @@ car.o: ../PROEProjekt2/car.cpp ../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../PROEProjekt2/car.cpp
 
-customer.o: ../PROEProjekt2/customer.cpp ../PROEProjekt2/customer.h \
-		../PROEProjekt2/debug.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o customer.o ../PROEProjekt2/customer.cpp
-
-employee.o: ../PROEProjekt2/employee.cpp ../PROEProjekt2/employee.h \
-		../PROEProjekt2/debug.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o employee.o ../PROEProjekt2/employee.cpp
-
 mainobjectshop.o: ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h
+		../PROEProjekt2/debug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainobjectshop.o ../PROEProjekt2/mainobjectshop.cpp
 
 mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -975,13 +944,11 @@ showVehicleWindow.o: ../PROEProjekt2/showVehicleWindow.cpp ../PROEProjekt2/showV
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../PROEProjekt2/mainobjectshop.h \
-		../PROEProjekt2/locations.h \
-		../PROEProjekt2/debug.h \
-		../PROEProjekt2/employee.h \
+		../PROEProjekt2/person.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../PROEProjekt2/customer.h \
+		../PROEProjekt2/debug.h \
 		ui_dialog1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o showVehicleWindow.o ../PROEProjekt2/showVehicleWindow.cpp
 

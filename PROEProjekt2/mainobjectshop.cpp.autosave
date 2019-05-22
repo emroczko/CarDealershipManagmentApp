@@ -96,17 +96,18 @@ Shop & Shop::operator += (shared_ptr<Person> employee)
     Personnel_.emplace_back(employee);
     return *this;
 }
-Shop & Shop::operator += (const shared_ptr<Vehicle> vehicle)
+Shop & Shop::operator += (const shared_ptr<Vehicle> car)
 {
-    if(typeid(vehicle) == typeid(Car)) Cars_.emplace_back(vehicle);
-    else Motorcycles_.emplace_back(vehicle);
+    
+    Cars_.emplace_back(car);
     return *this;
 }
-/*Shop & Shop::operator -= (int i)
+Shop & Shop::operator -= (int i)
 {
-    Assortment_.erase(Assortment_.begin()+i);
+    Cars_.erase(Cars_.begin()+i);
     return *this;
-}*/
+}
+
 
 /*Shop & Shop::operator -- ()
 {
@@ -116,8 +117,10 @@ Shop & Shop::operator += (const shared_ptr<Vehicle> vehicle)
     }
     return *this;
 }*/
-vector < shared_ptr<Vehicle> > Shop::getCars() const {return Cars_;}
-vector<shared_ptr<Vehicle>> Shop::getMotorcycles() const {return Motorcycles_;}
+vector < shared_ptr<Vehicle> > Shop::getAssortment() const
+{
+    return Cars_;
+}
 ostream& operator<<(ostream& os,const Shop& S)
 {
     os << "Informacje o sklepie:" << endl
@@ -201,12 +204,12 @@ string Shop::operator [] (unsigned int number)
 }
 <<<<<<< HEAD
 */
-=======
+
 int Shop::getIncome()const {
    return income_;
 }
 
->>>>>>> dfbf5e2557c1f8da0b2bf7d0152cedf4f589fe5b
+
 Shop::~Shop()
 {
 

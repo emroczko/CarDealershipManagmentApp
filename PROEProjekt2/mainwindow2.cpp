@@ -2,7 +2,7 @@
 #include "ui_mainwindow2.h"
 #include "addvehicle.h"
 #include "showVehicleWindow.h"
-#include "welcomeScreen.h"
+#include "welcomescreen.h"
 #include "mainobjectshop.h"
 #include "deleteWindow.h"
 #include <sstream>
@@ -21,6 +21,12 @@ MainWindow2::MainWindow2(QWidget *parent) :
     welcomeScreen welcome;
     welcome.setModal(true);
     welcome.exec();
+    if(welcome.on_zacznijOdNowa_clicked()==false)
+    {
+       Shop tempsalon = welcome.pass_the_shop();
+       salon = tempsalon;
+    }
+
     this->showFullScreen();
     this->show();
     //MainWindow2::on_stanKontsa_windowIconTextChanged(salon.getIncome());

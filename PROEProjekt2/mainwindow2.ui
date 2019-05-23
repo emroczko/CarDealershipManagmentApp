@@ -24,17 +24,12 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QWidget" name="verticalWidget" native="true">
-      <layout class="QGridLayout" name="gridLayout_2"/>
-     </widget>
-    </item>
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>3</number>
+         <number>0</number>
         </property>
         <property name="movable">
          <bool>false</bool>
@@ -243,15 +238,15 @@
         </widget>
         <widget class="QWidget" name="Personnel_tab">
          <attribute name="title">
-          <string>Personnel</string>
+          <string>Personel</string>
          </attribute>
          <widget class="QPushButton" name="Zatrudnieni_pracownicy">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>680</y>
+            <x>10</x>
+            <y>670</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="text">
@@ -261,10 +256,10 @@
          <widget class="QPushButton" name="Zatrudnij_nowego">
           <property name="geometry">
            <rect>
-            <x>0</x>
+            <x>10</x>
             <y>720</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="text">
@@ -274,14 +269,33 @@
          <widget class="QPushButton" name="Zwolnij_pracownika">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>760</y>
+            <x>9</x>
+            <y>771</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="text">
            <string>Zwolnij pracownika</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>114</x>
+            <y>10</y>
+            <width>1201</width>
+            <height>533</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="pics.qrc">:/pics/Downloads/BMW-Service-Inclusive-Packages.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </widget>
@@ -297,7 +311,7 @@
      <x>0</x>
      <y>0</y>
      <width>1433</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

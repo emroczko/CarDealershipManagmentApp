@@ -5,7 +5,7 @@
 #include "mainobjectshop.h"
 #include "addvehicle.h"
 #include "showVehicleWindow.h"
-#include "welcomeScreen.h"
+#include "welcomescreen.h"
 #include "addmotorcycle.h"
 #include "showpersonnelwindow.h"
 
@@ -33,11 +33,6 @@ private slots:
     void on_Savetofile_clicked();
     void on_SprzedajMotocykl_clicked();
     void on_SalonInfo_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_Zatrudnieni_pracownicy_clicked();
-
     void on_Zatrudnij_nowego_clicked();
 
 private:

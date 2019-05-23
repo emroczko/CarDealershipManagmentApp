@@ -65,7 +65,7 @@ static const uint qt_meta_data_deleteCar[] = {
 
  // slots: parameters
     0x80000000 | 2,
-    QMetaType::Void,
+    QMetaType::Bool,
     0x80000000 | 2,
 
        0        // eod
@@ -79,7 +79,8 @@ void deleteCar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         switch (_id) {
         case 0: { string _r = _t->on_listWidget_itemClicked();
             if (_a[0]) *reinterpret_cast< string*>(_a[0]) = std::move(_r); }  break;
-        case 1: _t->on_pushButton_clicked(); break;
+        case 1: { bool _r = _t->on_pushButton_clicked();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 2: { string _r = _t->on_pushButton_2_clicked();
             if (_a[0]) *reinterpret_cast< string*>(_a[0]) = std::move(_r); }  break;
         default: ;

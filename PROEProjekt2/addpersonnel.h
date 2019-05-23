@@ -27,6 +27,8 @@ public slots:
     shared_ptr<Person> on_Akceptuj_clicked();
 private:
     int Check;
+    shared_ptr<Person> Create_salesman();
+    shared_ptr<Person> Create_mechanic();
     Ui::AddPersonnel *ui;
 };
 

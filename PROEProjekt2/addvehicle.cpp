@@ -37,10 +37,8 @@ AddVehicle::~AddVehicle()
     delete ui;
 
 }
-
-shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
+shared_ptr<Vehicle> AddVehicle::Create_car()
 {
-    AddVehicle::Check--;
     string Model, take_eng, take_cond, take_transmission;
     Model = ui->Model_wybierz->currentText().toStdString();
     double value;
@@ -50,11 +48,16 @@ shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
     take_transmission = ui->Skrzynia_biegow_wybierz->currentText().toStdString();
-    AddVehicle::accept();
     return Vehicle::makeCar(Model, value, ID, take_cond, take_eng, take_transmission);
+}
+shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
+{  
+    AddVehicle::accept();
+    return Create_car();
 }
 bool AddVehicle::on_Anuluj_clicked()
 {
+    AddVehicle::Check--;
     AddVehicle::reject();
     return AddVehicle::Check;
 }

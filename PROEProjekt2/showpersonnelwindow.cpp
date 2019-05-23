@@ -11,19 +11,6 @@ ShowPersonnelWindow::ShowPersonnelWindow(const vector<shared_ptr<Person>>& perso
     ui->radioMechanik->setCheckable(true);
     ui->radioSprzedawca->setCheckable(true);
     change_text(personnel);
-    /*QString temp;
-    std::stringstream buffer;
-    string people;
-        for(auto & i : personnel)
-        {
-        buffer << *i;
-        people = buffer.str();
-        QString qstr = QString::fromStdString(people);
-        ui->listaPersonnel->addItem(qstr);
-        people.clear();
-        buffer.str(std::string());
-        qstr.clear();
-        }*/
 }
 
 ShowPersonnelWindow::~ShowPersonnelWindow()
@@ -46,7 +33,6 @@ void ShowPersonnelWindow::change_text(const vector<shared_ptr<Person>>& list)
         buffer.str(std::string());
         qstr.clear();
     }
-    //ui->listaPersonnel->update();
 }
 bool ShowPersonnelWindow::on_radioWszyscy_clicked() {
     return ui->radioWszyscy->isChecked();}

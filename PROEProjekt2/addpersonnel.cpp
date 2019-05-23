@@ -28,30 +28,36 @@ bool AddPersonnel::on_Anuluj_sprzedawca_clicked()
 {
    return AddPersonnel::on_Anuluj_mechanik_clicked();
 }
-
-shared_ptr<Person> AddPersonnel::on_Akceptuj_mechanik_clicked()
+shared_ptr<Person> AddPersonnel::Create_mechanic()
 {
-    Check--;
     string get_name, get_surname, get_specialization;
     unsigned int get_salary;
     get_specialization = ui->Spacjalizacja_mechanik_wybierz->currentText().toStdString();
     get_name = ui->Imie_mechanik_pisz->toPlainText().toStdString();
     get_surname = ui->Nazwisko_mechanik_pisz->toPlainText().toStdString();
     get_salary = ui->Wynagrodzenie_mechanik_pisz->toPlainText().toInt();
-    AddPersonnel::accept();
     return Person::makeMechanic(get_name, get_surname, get_salary, get_specialization);
-
 }
-
-shared_ptr<Person> AddPersonnel::on_Akceptuj_clicked()
+shared_ptr<Person> AddPersonnel::Create_salesman()
 {
-    Check--;
     string get_name, get_surname;
     unsigned int get_salary, get_experience;
     get_name = ui->Imie_sprzedawca_pisz->toPlainText().toStdString();
     get_surname = ui->Nazwisko_sprzedawca_pisz->toPlainText().toStdString();
     get_salary = ui->Wynagrodzenie_sprzedawca_pisz->toPlainText().toInt();
     get_experience = ui->Doswiadczenie_sprzedawca_pisz->toPlainText().toInt();
-    AddPersonnel::accept();
     return Person::makeSalesman(get_name, get_surname, get_salary, get_experience);
+}
+shared_ptr<Person> AddPersonnel::on_Akceptuj_mechanik_clicked()
+{
+    Check--;
+    AddPersonnel::accept();
+    return Create_mechanic();
+}
+
+shared_ptr<Person> AddPersonnel::on_Akceptuj_clicked()
+{
+    Check--;
+    AddPersonnel::accept();
+    return Create_salesman();
 }

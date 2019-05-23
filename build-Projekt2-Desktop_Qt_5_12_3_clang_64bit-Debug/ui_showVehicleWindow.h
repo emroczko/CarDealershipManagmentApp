@@ -37,7 +37,7 @@ public:
 
     void retranslateUi(QDialog *Dialog1)
     {
-        Dialog1->setWindowTitle(QApplication::translate("Dialog1", "Posiadane samochody", nullptr));
+        Dialog1->setWindowTitle(QApplication::translate("Dialog1", "Posiadane pojazdy", nullptr));
     } // retranslateUi
 
 };

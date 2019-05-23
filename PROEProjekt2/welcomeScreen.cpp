@@ -31,28 +31,28 @@ void welcomeScreen::on_wczytajStan_clicked()
            return;
        else {
 
-           QFile file(fileName);
+          QFile file(fileName);
 
            if (!file.open(QIODevice::ReadOnly)) {
                QMessageBox::information(this, tr("Unable to open file"),
                    file.errorString());
                return;
            }
-   /*
-           QDataStream in(&file);
-           in.setVersion(QDataStream::Qt_4_5);
-           contacts.clear();   // clear existing contacts
-           in >> contacts;
 
-           if (contacts.isEmpty()) {
-               QMessageBox::information(this, tr("No contacts in file"),
-                   tr("The file you are attempting to open contains no contacts."));
+           QDataStream in(&file);
+           QString wczytajSalon;
+
+           in >> wczytajSalon;
+
+           if (wczytajSalon.isEmpty()) {
+               QMessageBox::information(this, tr("Plik jest pusty"),
+                   tr("Plik jest pusty"));
            } else {
-               QMap<QString, QString>::iterator i = contacts.begin();
-               nameLine->setText(i.key());
-               addressText->setText(i.value());
+               //QMap<QString, QString>::iterator i = contacts.begin();
+               //nameLine->setText(i.key());
+               //addressText->setText(i.value());
            }
        }
-       */
+
 }
-}
+

@@ -10,11 +10,11 @@ Shop::Shop():income_(1000)
 }
 Shop::Shop(int income): income_(income)
 {
-<<<<<<< Updated upstream
+
     Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
     Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
-=======
-   /* //Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
+/*
+    //Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
     //Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
 >>>>>>> Stashed changes
     Personnel_.emplace_back(Person::makeMechanic("Adam", "Mazowiecki", 4200, "xxxxx"));

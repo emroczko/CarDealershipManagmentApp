@@ -34,13 +34,17 @@ private slots:
     void on_SprzedajMotocykl_clicked();
     void on_SalonInfo_clicked();
     void on_Zatrudnij_nowego_clicked();
+    void on_Zatrudnieni_pracownicy_clicked();
 
 private:
     void Add_car();
     void Sell_car();
+    void Add_employee();
+    void Add_motorcycle();
     void Sell_motorcycle();
     void Motorcycles_owned();
     void Cars_owned();
+    void Salon_info();
     Ui::MainWindow2 *ui;
 
 };

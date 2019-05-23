@@ -25,6 +25,10 @@ public slots:
     bool on_Anuluj_sprzedawca_clicked();
     shared_ptr<Person> on_Akceptuj_mechanik_clicked();
     shared_ptr<Person> on_Akceptuj_clicked();
+private slots:
+
+
+
 private:
     int Check;
     shared_ptr<Person> Create_salesman();

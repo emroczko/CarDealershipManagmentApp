@@ -35,14 +35,14 @@ public:
     QPushButton *Anuluj_sprzedawca;
     QGroupBox *formGroupBox;
     QGridLayout *gridLayout;
-    QLabel *Model;
     QTextEdit *Nazwisko_sprzedawca_pisz;
     QLabel *Nazwisko_sprzedawca;
     QLabel *Wynagrodzenie_sprzedawca;
-    QComboBox *Model_wybierz;
-    QTextEdit *Imie_sprzedawca_pisz;
     QLabel *Imie_sprzedawca;
-    QTextEdit *Nazwisko_sprzedawca_pisz_2;
+    QTextEdit *Wynagrodzenie_sprzedawca_pisz;
+    QTextEdit *Imie_sprzedawca_pisz;
+    QTextEdit *Doswiadczenie_sprzedawca_pisz;
+    QLabel *Doswiadczenie_sprzedawca;
     QWidget *Mechanik_tab;
     QGroupBox *horizontalGroupBox_2;
     QHBoxLayout *horizontalLayout_2;
@@ -89,49 +89,53 @@ public:
         formGroupBox->setGeometry(QRect(0, 0, 561, 171));
         gridLayout = new QGridLayout(formGroupBox);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        Model = new QLabel(formGroupBox);
-        Model->setObjectName(QString::fromUtf8("Model"));
-
-        gridLayout->addWidget(Model, 0, 0, 1, 1);
-
         Nazwisko_sprzedawca_pisz = new QTextEdit(formGroupBox);
         Nazwisko_sprzedawca_pisz->setObjectName(QString::fromUtf8("Nazwisko_sprzedawca_pisz"));
         Nazwisko_sprzedawca_pisz->setMaximumSize(QSize(500, 30));
 
-        gridLayout->addWidget(Nazwisko_sprzedawca_pisz, 3, 1, 1, 1);
+        gridLayout->addWidget(Nazwisko_sprzedawca_pisz, 2, 1, 1, 1);
 
         Nazwisko_sprzedawca = new QLabel(formGroupBox);
         Nazwisko_sprzedawca->setObjectName(QString::fromUtf8("Nazwisko_sprzedawca"));
 
-        gridLayout->addWidget(Nazwisko_sprzedawca, 3, 0, 1, 1);
+        gridLayout->addWidget(Nazwisko_sprzedawca, 2, 0, 1, 1);
 
         Wynagrodzenie_sprzedawca = new QLabel(formGroupBox);
         Wynagrodzenie_sprzedawca->setObjectName(QString::fromUtf8("Wynagrodzenie_sprzedawca"));
 
-        gridLayout->addWidget(Wynagrodzenie_sprzedawca, 4, 0, 1, 1);
+        gridLayout->addWidget(Wynagrodzenie_sprzedawca, 3, 0, 1, 1);
 
-        Model_wybierz = new QComboBox(formGroupBox);
-        Model_wybierz->setObjectName(QString::fromUtf8("Model_wybierz"));
+        Imie_sprzedawca = new QLabel(formGroupBox);
+        Imie_sprzedawca->setObjectName(QString::fromUtf8("Imie_sprzedawca"));
 
-        gridLayout->addWidget(Model_wybierz, 0, 1, 1, 1);
+        gridLayout->addWidget(Imie_sprzedawca, 1, 0, 1, 1);
+
+        Wynagrodzenie_sprzedawca_pisz = new QTextEdit(formGroupBox);
+        Wynagrodzenie_sprzedawca_pisz->setObjectName(QString::fromUtf8("Wynagrodzenie_sprzedawca_pisz"));
+        Wynagrodzenie_sprzedawca_pisz->setMaximumSize(QSize(500, 30));
+
+        gridLayout->addWidget(Wynagrodzenie_sprzedawca_pisz, 3, 1, 1, 1);
 
         Imie_sprzedawca_pisz = new QTextEdit(formGroupBox);
         Imie_sprzedawca_pisz->setObjectName(QString::fromUtf8("Imie_sprzedawca_pisz"));
         Imie_sprzedawca_pisz->setMinimumSize(QSize(100, 0));
         Imie_sprzedawca_pisz->setMaximumSize(QSize(500, 30));
+        Imie_sprzedawca_pisz->setFrameShape(QFrame::StyledPanel);
+        Imie_sprzedawca_pisz->setLineWrapMode(QTextEdit::WidgetWidth);
 
-        gridLayout->addWidget(Imie_sprzedawca_pisz, 2, 1, 1, 1);
+        gridLayout->addWidget(Imie_sprzedawca_pisz, 1, 1, 1, 1);
 
-        Imie_sprzedawca = new QLabel(formGroupBox);
-        Imie_sprzedawca->setObjectName(QString::fromUtf8("Imie_sprzedawca"));
+        Doswiadczenie_sprzedawca_pisz = new QTextEdit(formGroupBox);
+        Doswiadczenie_sprzedawca_pisz->setObjectName(QString::fromUtf8("Doswiadczenie_sprzedawca_pisz"));
+        Doswiadczenie_sprzedawca_pisz->setMinimumSize(QSize(100, 0));
+        Doswiadczenie_sprzedawca_pisz->setMaximumSize(QSize(500, 30));
 
-        gridLayout->addWidget(Imie_sprzedawca, 2, 0, 1, 1);
+        gridLayout->addWidget(Doswiadczenie_sprzedawca_pisz, 4, 1, 1, 1);
 
-        Nazwisko_sprzedawca_pisz_2 = new QTextEdit(formGroupBox);
-        Nazwisko_sprzedawca_pisz_2->setObjectName(QString::fromUtf8("Nazwisko_sprzedawca_pisz_2"));
-        Nazwisko_sprzedawca_pisz_2->setMaximumSize(QSize(500, 30));
+        Doswiadczenie_sprzedawca = new QLabel(formGroupBox);
+        Doswiadczenie_sprzedawca->setObjectName(QString::fromUtf8("Doswiadczenie_sprzedawca"));
 
-        gridLayout->addWidget(Nazwisko_sprzedawca_pisz_2, 4, 1, 1, 1);
+        gridLayout->addWidget(Doswiadczenie_sprzedawca, 4, 0, 1, 1);
 
         tabWidget->addTab(Sprzedawca_tab, QString());
         Mechanik_tab = new QWidget();
@@ -216,10 +220,10 @@ public:
         AddPersonnel->setWindowTitle(QApplication::translate("AddPersonnel", "Dialog", nullptr));
         Akceptuj->setText(QApplication::translate("AddPersonnel", "Akceptuj", nullptr));
         Anuluj_sprzedawca->setText(QApplication::translate("AddPersonnel", "Anuluj", nullptr));
-        Model->setText(QApplication::translate("AddPersonnel", "Specjalizacja: ", nullptr));
         Nazwisko_sprzedawca->setText(QApplication::translate("AddPersonnel", "Nazwisko:", nullptr));
         Wynagrodzenie_sprzedawca->setText(QApplication::translate("AddPersonnel", "Warto\305\233\304\207 wynagrodzenia: ", nullptr));
         Imie_sprzedawca->setText(QApplication::translate("AddPersonnel", "Imie: ", nullptr));
+        Doswiadczenie_sprzedawca->setText(QApplication::translate("AddPersonnel", "Do\305\233wiadczenie w latach: ", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Sprzedawca_tab), QApplication::translate("AddPersonnel", "Sprzedawca", nullptr));
         Akceptuj_mechanik->setText(QApplication::translate("AddPersonnel", "Akceptuj", nullptr));
         Anuluj_mechanik->setText(QApplication::translate("AddPersonnel", "Anuluj", nullptr));

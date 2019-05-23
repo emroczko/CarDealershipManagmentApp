@@ -195,21 +195,22 @@ void MainWindow2::on_Zatrudnij_nowego_clicked()
 void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
 {
     std::vector<shared_ptr<Person>> people;
-    for(auto p : salon.getPersonnel())
-    {people.push_back((p));}
-
-    ShowPersonnelWindow win(people);
-    win.setModal(true);
-    win.exec();
-    if(win.on_radioMechanik_clicked()==true)
+    for(auto p : salon.getPersonnel()) {people.push_back((p));}
+    ShowPersonnelWindow showpersonnel(people);
+    showpersonnel.setModal(true);
+    showpersonnel.exec();
+    if(showpersonnel.on_radioMechanik_clicked()==true)
     {
         people.clear();
-        for(auto a : salon.getPersonnel())
+        for(auto m: salon.getPersonnel())
         {
-            if(typeid(a)==typeid(Mechanic))
+            if(typeid(m)==typeid(Mechanic))
             {
-                    people.emplace_back(a);
+               people.emplace_back(m);
             }
         }
+        showpersonnel.change_text(people);
     }
+
+
 }

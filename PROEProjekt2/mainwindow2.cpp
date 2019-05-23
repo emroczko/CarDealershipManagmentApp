@@ -191,3 +191,25 @@ void MainWindow2::on_Zatrudnij_nowego_clicked()
         salon+=addperson.on_Akceptuj_mechanik_clicked();
     }
 }
+
+void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
+{
+    std::vector<shared_ptr<Person>> people;
+    for(auto p : salon.getPersonnel())
+    {people.push_back((p));}
+
+    ShowPersonnelWindow win(people);
+    win.setModal(true);
+    win.exec();
+    if(win.on_radioMechanik_clicked()==true)
+    {
+        people.clear();
+        for(auto a : salon.getPersonnel())
+        {
+            if(typeid(a)==typeid(Mechanic))
+            {
+                    people.emplace_back(a);
+            }
+        }
+    }
+}

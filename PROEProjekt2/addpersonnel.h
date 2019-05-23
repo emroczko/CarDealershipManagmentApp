@@ -22,11 +22,9 @@ public:
 
 public slots:
     bool on_Anuluj_mechanik_clicked();
-
     bool on_Anuluj_sprzedawca_clicked();
-
     shared_ptr<Person> on_Akceptuj_mechanik_clicked();
-
+    shared_ptr<Person> on_Akceptuj_clicked();
 private:
     int Check;
     Ui::AddPersonnel *ui;

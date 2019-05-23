@@ -29,6 +29,7 @@ public:
     void loadFromFile();
     friend ostream& operator<< (ostream& ,const Shop&);
     vector < shared_ptr<Vehicle> > getVehicles() const;
+    vector < shared_ptr<Person> > getPersonnel() const;
     bool operator == (const Shop &shop); //porownuje przychod placowki
     bool operator > (const Shop &shop); //porownuje przychod placowki
     bool operator < (const Shop &shop); //porownuje przychod placowki

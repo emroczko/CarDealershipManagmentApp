@@ -65,14 +65,7 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="Model">
-        <property name="text">
-         <string>Specjalizacja: </string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
+      <item row="2" column="1">
        <widget class="QTextEdit" name="Nazwisko_sprzedawca_pisz">
         <property name="maximumSize">
          <size>
@@ -82,25 +75,61 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="Nazwisko_sprzedawca">
         <property name="text">
          <string>Nazwisko:</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="Wynagrodzenie_sprzedawca">
         <property name="text">
          <string>Wartość wynagrodzenia: </string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="Model_wybierz"/>
+      <item row="1" column="0">
+       <widget class="QLabel" name="Imie_sprzedawca">
+        <property name="text">
+         <string>Imie: </string>
+        </property>
+       </widget>
       </item>
-      <item row="2" column="1">
+      <item row="3" column="1">
+       <widget class="QTextEdit" name="Wynagrodzenie_sprzedawca_pisz">
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
        <widget class="QTextEdit" name="Imie_sprzedawca_pisz">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="lineWrapMode">
+         <enum>QTextEdit::WidgetWidth</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QTextEdit" name="Doswiadczenie_sprzedawca_pisz">
         <property name="minimumSize">
          <size>
           <width>100</width>
@@ -115,20 +144,10 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="Imie_sprzedawca">
+      <item row="4" column="0">
+       <widget class="QLabel" name="Doswiadczenie_sprzedawca">
         <property name="text">
-         <string>Imie: </string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QTextEdit" name="Nazwisko_sprzedawca_pisz_2">
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>30</height>
-         </size>
+         <string>Doświadczenie w latach: </string>
         </property>
        </widget>
       </item>

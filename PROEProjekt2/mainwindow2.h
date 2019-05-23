@@ -7,6 +7,7 @@
 #include "showVehicleWindow.h"
 #include "welcomeScreen.h"
 #include "addmotorcycle.h"
+#include "showpersonnelwindow.h"
 
 namespace Ui {
 class MainWindow2;

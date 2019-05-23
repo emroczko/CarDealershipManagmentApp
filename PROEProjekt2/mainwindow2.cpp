@@ -45,6 +45,26 @@ void MainWindow2::Add_car()
     QString konto = QString::fromStdString(stan+kasa1);
     MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
 }
+void MainWindow2::Add_motorcycle()
+{
+    AddMotorcycle addMotor;
+    addMotor.setModal(true);
+    addMotor.exec();
+    if(addMotor.on_Anuluj_clicked()==false)
+    {
+        salon+=addMotor.on_Akceptuj_clicked();
+    }
+}
+void MainWindow2::Add_employee()
+{
+    AddPersonnel addperson;
+    addperson.setModal(true);
+    addperson.exec();
+    if(addperson.on_Anuluj_mechanik_clicked()==false)
+    {
+        salon+=addperson.on_Akceptuj_mechanik_clicked();
+    }
+}
 void MainWindow2::Sell_car()
 {
     std::vector<shared_ptr<Vehicle>> samochody;
@@ -122,19 +142,15 @@ void MainWindow2::Sell_motorcycle()
         QMessageBox::warning(this, tr("Błąd"), tr("Brak motocykli do usunięcia."));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
     }
 }
-void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
-
-void MainWindow2::on_Posiadane_samochodu_clicked() {Cars_owned();}
-void MainWindow2::on_pushButton_clicked()
+void MainWindow2::Salon_info()
 {
-    AddMotorcycle addMotor;
-    addMotor.setModal(true);
-    addMotor.exec();
-    if(addMotor.on_Anuluj_clicked()==false)
-    {
-        salon+=addMotor.on_Akceptuj_clicked();
-    }
+    Dialog1 dial(salon.getVehicles());
+    dial.setModal(true);
+    dial.exec();
 }
+void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
+void MainWindow2::on_Posiadane_samochodu_clicked() {Cars_owned();}
+void MainWindow2::on_pushButton_clicked() {Add_motorcycle();}
 void MainWindow2::on_Wyjcie_clicked() {MainWindow2::close();}
 void MainWindow2::on_Sprzedaj_Auto_clicked() {Sell_car();}
 void MainWindow2::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}
@@ -166,26 +182,8 @@ void MainWindow2::on_Savetofile_clicked()
 }
 
 void MainWindow2::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
-
-void MainWindow2::on_SalonInfo_clicked()
-{
-    Dialog1 dial(salon.getVehicles());
-    dial.setModal(true);
-    dial.exec();
-}
-
-
-void MainWindow2::on_Zatrudnij_nowego_clicked()
-{
-    AddPersonnel addperson;
-    addperson.setModal(true);
-    addperson.exec();
-    if(addperson.on_Anuluj_mechanik_clicked()==false)
-    {
-        salon+=addperson.on_Akceptuj_mechanik_clicked();
-    }
-}
-
+void MainWindow2::on_SalonInfo_clicked() {Salon_info();}
+void MainWindow2::on_Zatrudnij_nowego_clicked() {Add_employee();}
 void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
 {
     std::vector<shared_ptr<Person>> people;

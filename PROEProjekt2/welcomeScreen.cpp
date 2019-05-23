@@ -11,16 +11,8 @@ welcomeScreen::welcomeScreen(QWidget *parent) :
 {
     ui->setupUi(this);
 }
-
-welcomeScreen::~welcomeScreen()
-{
-    delete ui;
-}
-void welcomeScreen::on_zacznijOdNowa_clicked()
-{
-    this->close();
-
-}
+welcomeScreen::~welcomeScreen() {delete ui;}
+void welcomeScreen::on_zacznijOdNowa_clicked() {this->close();}
 void welcomeScreen::on_wczytajStan_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this,

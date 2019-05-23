@@ -42,10 +42,13 @@ private slots:
 
 private:
     void Add_car();
+    void Add_motorcycle();
+    void Add_employee();
     void Sell_car();
     void Sell_motorcycle();
     void Motorcycles_owned();
     void Cars_owned();
+    void Salon_info();
     Ui::MainWindow2 *ui;
 
 };

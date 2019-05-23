@@ -35,9 +35,8 @@ AddMotorcycle::~AddMotorcycle()
 {
     delete ui;
 }
-shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
+shared_ptr<Vehicle> AddMotorcycle::Create_motorcycle()
 {
-    AddMotorcycle::Check--;
     string Model, take_eng, take_cond, take_eng_type;
     Model = ui->Model_wybierz->currentText().toStdString();
     double value;
@@ -47,8 +46,13 @@ shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
     take_eng = ui->Paliw_wybierz->currentText().toStdString();
     take_cond = ui->Stan_wybierz->currentText().toStdString();
     take_eng_type = ui->Typ_silnika_wybierz->currentText().toStdString();
-    AddMotorcycle::accept();
     return Vehicle::makeMotorcycle(Model, value, ID, take_cond, take_eng, take_eng_type);
+}
+shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
+{
+    AddMotorcycle::Check--;
+    AddMotorcycle::accept();
+    return Create_motorcycle();
 }
 
 bool AddMotorcycle::on_Anuluj_clicked()

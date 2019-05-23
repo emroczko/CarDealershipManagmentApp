@@ -10,7 +10,6 @@ Dialog1::Dialog1(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget 
     ui(new Ui::Dialog1)
 {
        ui->setupUi(this);
-
        QString temp;
        std::stringstream buffer;
        string auta;

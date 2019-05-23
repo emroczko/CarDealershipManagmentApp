@@ -2,7 +2,7 @@
 #include "ui_mainwindow2.h"
 #include "addvehicle.h"
 #include "showVehicleWindow.h"
-#include "welcomescreen.h"
+#include "welcomeScreen.h"
 #include "mainobjectshop.h"
 #include "deleteWindow.h"
 #include <sstream>
@@ -21,12 +21,6 @@ MainWindow2::MainWindow2(QWidget *parent) :
     welcomeScreen welcome;
     welcome.setModal(true);
     welcome.exec();
-    if(welcome.on_zacznijOdNowa_clicked()==false)
-    {
-       Shop tempsalon = welcome.pass_the_shop();
-       salon = tempsalon;
-    }
-
     this->showFullScreen();
     this->show();
     //MainWindow2::on_stanKontsa_windowIconTextChanged(salon.getIncome());
@@ -50,6 +44,16 @@ void MainWindow2::Add_car()
     string stan = "Stan konta:\n";
     QString konto = QString::fromStdString(stan+kasa1);
     MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
+}
+void MainWindow2::Add_motorcycle()
+{
+    AddMotorcycle addMotor;
+    addMotor.setModal(true);
+    addMotor.exec();
+    if(addMotor.on_Anuluj_clicked()==false)
+    {
+        salon+=addMotor.on_Akceptuj_clicked();
+    }
 }
 void MainWindow2::Sell_car()
 {
@@ -129,18 +133,8 @@ void MainWindow2::Sell_motorcycle()
     }
 }
 void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
-
 void MainWindow2::on_Posiadane_samochodu_clicked() {Cars_owned();}
-void MainWindow2::on_pushButton_clicked()
-{
-    AddMotorcycle addMotor;
-    addMotor.setModal(true);
-    addMotor.exec();
-    if(addMotor.on_Anuluj_clicked()==false)
-    {
-        salon+=addMotor.on_Akceptuj_clicked();
-    }
-}
+void MainWindow2::on_pushButton_clicked() {AddMotorcycle;}
 void MainWindow2::on_Wyjcie_clicked() {MainWindow2::close();}
 void MainWindow2::on_Sprzedaj_Auto_clicked() {Sell_car();}
 void MainWindow2::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}

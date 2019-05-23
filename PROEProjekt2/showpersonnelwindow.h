@@ -16,12 +16,14 @@ class ShowPersonnelWindow : public QDialog
 
 public:
     explicit ShowPersonnelWindow(const vector<shared_ptr<Person>>&, QWidget *parent = 0);
+    void change_text(const vector<shared_ptr<Person>>&);
     ~ShowPersonnelWindow();
 
 public slots:
     bool on_radioWszyscy_clicked();
     bool on_radioSprzedawca_clicked();
     bool on_radioMechanik_clicked();
+    bool on_radioSprzedawca_toggled(bool checked);
 private:
     Ui::ShowPersonnelWindow *ui;
 };

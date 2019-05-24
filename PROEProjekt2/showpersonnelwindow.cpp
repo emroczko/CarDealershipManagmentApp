@@ -3,22 +3,50 @@
 
 
 ShowPersonnelWindow::ShowPersonnelWindow(const vector<shared_ptr<Person>>& personnel,QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent), Personnel(personnel),
     ui(new Ui::ShowPersonnelWindow)
 {
-    ui->setupUi(this); 
+    ui->setupUi(this);
     ui->radioWszyscy->setCheckable(true);
     ui->radioMechanik->setCheckable(true);
     ui->radioSprzedawca->setCheckable(true);
-    change_text(personnel);
+    ui->radioWszyscy->setChecked(true);
+
+    showMethod(Personnel);
 }
 
 ShowPersonnelWindow::~ShowPersonnelWindow()
 {
     delete ui;
 }
-void ShowPersonnelWindow::change_text(const vector<shared_ptr<Person>>& list)
-{
+
+bool ShowPersonnelWindow::on_radioWszyscy_clicked() {
+    showMethod(Personnel);
+    return ui->radioWszyscy->isChecked();
+}
+
+bool ShowPersonnelWindow::on_radioSprzedawca_clicked() {
+    vector<shared_ptr<Person>> temp;
+    for(auto & i : Personnel){
+        if(typeid(*i)==typeid(Salesman))
+        {
+        temp.emplace_back(i);
+        }
+    }
+    showMethod(temp);
+    return ui->radioSprzedawca->isChecked();}
+bool ShowPersonnelWindow::on_radioMechanik_clicked() {
+    vector<shared_ptr<Person>> temp;
+    for(auto & i : Personnel){
+        if(typeid(*i)==typeid(Mechanic))
+        {
+        temp.emplace_back(i);
+        }
+    }
+    showMethod(temp);
+    return ui->radioMechanik->isChecked();}
+
+void ShowPersonnelWindow::showMethod(const vector<shared_ptr<Person>>& list){
     QString temp;
     std::stringstream buffer;
     string people;
@@ -34,9 +62,3 @@ void ShowPersonnelWindow::change_text(const vector<shared_ptr<Person>>& list)
         qstr.clear();
     }
 }
-bool ShowPersonnelWindow::on_radioWszyscy_clicked() {
-    return ui->radioWszyscy->isChecked();}
-bool ShowPersonnelWindow::on_radioSprzedawca_clicked() {
-    return ui->radioSprzedawca->isChecked();}
-bool ShowPersonnelWindow::on_radioMechanik_clicked() {
-    return ui->radioMechanik->isChecked();}

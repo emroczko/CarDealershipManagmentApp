@@ -16,7 +16,7 @@ class Shop
 private:
     int income_;
     vector <shared_ptr<Vehicle>> Vehicles_;
-    vector <shared_ptr <Person>> Personnel_;
+    vector <shared_ptr<Person>> Personnel_;
 
 public:
     Shop();
@@ -34,7 +34,7 @@ public:
     bool operator > (const Shop &shop); //porownuje przychod placowki
     bool operator < (const Shop &shop); //porownuje przychod placowki
     Shop & operator += (shared_ptr<Person>); // dodaje pracownika do sklepu
-    Shop & operator += (const Shop &shop); //łączy dwie placówki
+    Shop & operator = (Shop &shop); //łączy dwie placówki
     Shop & operator += (shared_ptr<Vehicle>); // dodaje auto do salonu
     Shop & operator -= (int i);
     Shop & operator -- (); // usuwa ostatnie auto

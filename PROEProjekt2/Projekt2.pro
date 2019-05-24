@@ -66,8 +66,10 @@ OTHER_FILES += \
         2018-bmw-m2-competition-99gallery-1526572314.jpg \
         BMW-motorcycles-on-road-racing.jpg \
         bps_store_front.jpg
+        BMW-Service-Inclusive-Packages.jpg
 
-DISTFILES +=
+DISTFILES += \
+    ../../Downloads/BMW-Service-Inclusive-Packages.jpg
 
 RESOURCES += \
     pics.qrc

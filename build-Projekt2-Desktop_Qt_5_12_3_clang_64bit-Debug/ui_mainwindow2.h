@@ -28,11 +28,9 @@ class Ui_MainWindow2
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QWidget *verticalWidget;
-    QGridLayout *gridLayout_2;
+    QVBoxLayout *verticalLayout_2;
     QTabWidget *tabWidget;
     QWidget *tab_5;
-    QPushButton *Zatrudnieni_pracownicy;
     QPushButton *Savetofile;
     QLabel *label_3;
     QPushButton *Wyjcie;
@@ -48,7 +46,11 @@ public:
     QPushButton *pushButton;
     QPushButton *SprzedajMotocykl;
     QLabel *label_2;
-    QVBoxLayout *verticalLayout_2;
+    QWidget *Personnel_tab;
+    QPushButton *Zatrudnieni_pracownicy;
+    QPushButton *Zatrudnij_nowego;
+    QPushButton *Zwolnij_pracownika;
+    QLabel *label_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,18 +65,13 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        verticalWidget = new QWidget(centralwidget);
-        verticalWidget->setObjectName(QString::fromUtf8("verticalWidget"));
-        gridLayout_2 = new QGridLayout(verticalWidget);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        tabWidget = new QTabWidget(verticalWidget);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setMovable(false);
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
-        Zatrudnieni_pracownicy = new QPushButton(tab_5);
-        Zatrudnieni_pracownicy->setObjectName(QString::fromUtf8("Zatrudnieni_pracownicy"));
-        Zatrudnieni_pracownicy->setGeometry(QRect(0, 680, 1391, 41));
         Savetofile = new QPushButton(tab_5);
         Savetofile->setObjectName(QString::fromUtf8("Savetofile"));
         Savetofile->setGeometry(QRect(0, 720, 1391, 41));
@@ -91,7 +88,7 @@ public:
         stanKontsa->setGeometry(QRect(1260, 580, 111, 31));
         SalonInfo = new QPushButton(tab_5);
         SalonInfo->setObjectName(QString::fromUtf8("SalonInfo"));
-        SalonInfo->setGeometry(QRect(0, 640, 1391, 41));
+        SalonInfo->setGeometry(QRect(0, 680, 1391, 41));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
@@ -127,14 +124,26 @@ public:
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/pics/Downloads/BMW-motorcycles-on-road-racing.jpg")));
         label_2->setScaledContents(true);
         tabWidget->addTab(tab_7, QString());
+        Personnel_tab = new QWidget();
+        Personnel_tab->setObjectName(QString::fromUtf8("Personnel_tab"));
+        Zatrudnieni_pracownicy = new QPushButton(Personnel_tab);
+        Zatrudnieni_pracownicy->setObjectName(QString::fromUtf8("Zatrudnieni_pracownicy"));
+        Zatrudnieni_pracownicy->setGeometry(QRect(10, 670, 1391, 51));
+        Zatrudnij_nowego = new QPushButton(Personnel_tab);
+        Zatrudnij_nowego->setObjectName(QString::fromUtf8("Zatrudnij_nowego"));
+        Zatrudnij_nowego->setGeometry(QRect(10, 720, 1391, 51));
+        Zwolnij_pracownika = new QPushButton(Personnel_tab);
+        Zwolnij_pracownika->setObjectName(QString::fromUtf8("Zwolnij_pracownika"));
+        Zwolnij_pracownika->setGeometry(QRect(9, 771, 1391, 51));
+        label_4 = new QLabel(Personnel_tab);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(114, 10, 1201, 533));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/pics/Downloads/BMW-Service-Inclusive-Packages.jpg")));
+        label_4->setScaledContents(true);
+        tabWidget->addTab(Personnel_tab, QString());
 
-        gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
+        verticalLayout_2->addWidget(tabWidget);
 
-
-        gridLayout->addWidget(verticalWidget, 1, 0, 1, 1);
-
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
 
         gridLayout->addLayout(verticalLayout_2, 0, 0, 1, 1);
 
@@ -158,7 +167,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow2)
     {
         MainWindow2->setWindowTitle(QApplication::translate("MainWindow2", "BMW Dealer Manager", nullptr));
-        Zatrudnieni_pracownicy->setText(QApplication::translate("MainWindow2", "Zatrudnieni pracownicy", nullptr));
         Savetofile->setText(QApplication::translate("MainWindow2", "Zapisz obecny stan salonu", nullptr));
         label_3->setText(QString());
         Wyjcie->setText(QApplication::translate("MainWindow2", "Wyj\305\233cie", nullptr));
@@ -175,6 +183,11 @@ public:
         SprzedajMotocykl->setText(QApplication::translate("MainWindow2", "Usu\305\204 motocykl", nullptr));
         label_2->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow2", "Motocykle", nullptr));
+        Zatrudnieni_pracownicy->setText(QApplication::translate("MainWindow2", "Zatrudnieni pracownicy", nullptr));
+        Zatrudnij_nowego->setText(QApplication::translate("MainWindow2", "Zatrudnij nowego pracownika", nullptr));
+        Zwolnij_pracownika->setText(QApplication::translate("MainWindow2", "Zwolnij pracownika", nullptr));
+        label_4->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(Personnel_tab), QApplication::translate("MainWindow2", "Personel", nullptr));
     } // retranslateUi
 
 };

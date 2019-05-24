@@ -26,11 +26,7 @@ bool welcomeScreen::on_zacznijOdNowa_clicked()
     this->close();
     return Check;
 }
-/*void RemoveLine(std::string& source, std::string& to_remove)
-{
-    /*size_t m = source.find(to_remove);
-    size_t n = source.find_first_of("\n", m + to_remove.length());
-    source.erase(m, n - m + 1);*/
+/*
 void welcomeScreen::on_wczytajStan_clicked()
 {
     Check--;
@@ -114,7 +110,56 @@ void welcomeScreen::on_wczytajStan_clicked()
        }
 
 }
+*/
+void welcomeScreen::on_wczytajStan_clicked()
+{
+    Check--;
+    QString fileName = QFileDialog::getOpenFileName(this,
+           tr("Odtwórz poprzedni stan"), "",
+           tr("Salon (*.txt);;All Files (*)"));
 
+       if (fileName.isEmpty())
+           return ;
+       else {
+
+          QFile file(fileName);
+
+           if (!file.open(QIODevice::ReadOnly)) {
+               QMessageBox::information(this, tr("Unable to open file"),
+                   file.errorString());
+               return ;
+           }
+
+           QTextStream in(&file);
+           QString model, price, id, condition, transmission, engine;
+
+            in>>"Samochody:";
+
+           while (!in.atEnd())
+           {
+           in>>"BMW">>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
+
+           temp+=Vehicle::makeCar(model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
+           }
+           QString line="cos";
+
+           file.close();
+
+
+           if (line.isEmpty()) {
+               QMessageBox::information(this, tr("Plik jest pusty"),
+                   tr("Plik jest pusty"));
+                    return ;
+           } else {
+
+
+               this->close();
+               return;
+            }
+           }
+
+
+}
 Shop welcomeScreen::pass_the_shop() const
 {
     return temp;

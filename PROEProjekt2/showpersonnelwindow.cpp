@@ -10,7 +10,8 @@ ShowPersonnelWindow::ShowPersonnelWindow(const vector<shared_ptr<Person>>& perso
     ui->radioWszyscy->setCheckable(true);
     ui->radioMechanik->setCheckable(true);
     ui->radioSprzedawca->setCheckable(true);
-    ui->radioWszyscy->setEnabled(true);
+    ui->radioWszyscy->setChecked(true);
+
     showMethod(Personnel);
 }
 

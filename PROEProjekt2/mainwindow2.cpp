@@ -21,6 +21,12 @@ MainWindow2::MainWindow2(QWidget *parent) :
     welcomeScreen welcome;
     welcome.setModal(true);
     welcome.exec();
+    if(welcome.on_zacznijOdNowa_clicked()==false)
+        {
+           Shop tempsalon = welcome.pass_the_shop();
+           salon = tempsalon;
+        }
+
     this->showFullScreen();
     this->show();
     //MainWindow2::on_stanKontsa_windowIconTextChanged(salon.getIncome());
@@ -174,7 +180,6 @@ void MainWindow2::on_Savetofile_clicked()
             buffer << salon;
             string auta = buffer.str();
             QTextStream out(&file);
-            //out.setVersion(QTextStream::Qt_4_5);
             QString qstr = QString::fromStdString(auta);
             out << qstr;
 

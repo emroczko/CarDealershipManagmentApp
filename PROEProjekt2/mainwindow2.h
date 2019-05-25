@@ -8,6 +8,13 @@
 #include "welcomeScreen.h"
 #include "addmotorcycle.h"
 #include "showpersonnelwindow.h"
+#include "deleteWindow.h"
+#include <sstream>
+#include <QString>
+#include <QFileDialog>
+#include <QTextStream>
+#include <QMessageBox>
+#include "addpersonnel.h"
 
 namespace Ui {
 class MainWindow2;

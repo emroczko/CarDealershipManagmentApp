@@ -1,13 +1,5 @@
 #include "welcomeScreen.h"
 #include "ui_welcomeScreen.h"
-#include <QMessageBox>
-#include <QString>
-#include <QFileDialog>
-#include <QTextStream>
-#include "mainobjectshop.h"
-#include <cstring>
-#include <sstream>
-
 
 welcomeScreen::welcomeScreen(QWidget *parent) :
     QDialog(parent), temp(1000000),
@@ -19,8 +11,18 @@ welcomeScreen::welcomeScreen(QWidget *parent) :
 welcomeScreen::~welcomeScreen() {delete ui;}
 bool welcomeScreen::on_zacznijOdNowa_clicked()
 {
-    this->close();
+    this->accept();
     return Check;
+}
+void welcomeScreen::closeEvent (QCloseEvent *event)
+{
+    QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", tr("Are you sure?\n"), QMessageBox::No | QMessageBox::Yes);
+    if (resBtn != QMessageBox::Yes) {
+        event->ignore();
+    } else {
+        exit(1);
+    }
+
 }
 /*
 void welcomeScreen::on_wczytajStan_clicked()
@@ -149,7 +151,7 @@ void welcomeScreen::on_wczytajStan_clicked()
            } else {
 
 
-               this->close();
+               this->accept();
                return;
             }
            }

@@ -1,7 +1,6 @@
 #include "deleteWindow.h"
 #include "ui_deletecar.h"
-#include <sstream>
-#include <mainobjectshop.h>
+
 
 deleteCar::deleteCar(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent):
     QDialog(parent),

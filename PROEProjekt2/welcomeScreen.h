@@ -3,6 +3,14 @@
 
 #include <QDialog>
 #include "mainobjectshop.h"
+#include <QMessageBox>
+#include <QString>
+#include <QFileDialog>
+#include <QTextStream>
+#include <cstring>
+#include <sstream>
+#include "mainwindow2.h"
+#include <QCloseEvent>
 
 namespace Ui {
 class welcomeScreen;
@@ -16,16 +24,17 @@ public:
     explicit welcomeScreen(QWidget *parent = nullptr);
     ~welcomeScreen();
     Shop pass_the_shop() const;
-   // void RemoveLine(std::string& source, std::string& to_remove);
-
+private slots:
+    void closeEvent(QCloseEvent *);
 public slots:
    bool on_zacznijOdNowa_clicked();
    void on_wczytajStan_clicked();
 
 private:
+    Shop temp;
     Ui::welcomeScreen *ui;
     int Check;
-    Shop temp;
+
 };
 
 #endif // WELCOMESCREEN_H

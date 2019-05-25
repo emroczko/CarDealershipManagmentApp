@@ -1,16 +1,6 @@
 #include "mainwindow2.h"
 #include "ui_mainwindow2.h"
-#include "addvehicle.h"
-#include "showVehicleWindow.h"
-#include "welcomeScreen.h"
-#include "mainobjectshop.h"
-#include "deleteWindow.h"
-#include <sstream>
-#include <QString>
-#include <QFileDialog>
-#include <QTextStream>
-#include <QMessageBox>
-#include "addpersonnel.h"
+
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),

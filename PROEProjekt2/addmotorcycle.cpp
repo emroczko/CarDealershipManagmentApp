@@ -1,6 +1,5 @@
 #include "addmotorcycle.h"
 #include "ui_addmotorcycle.h"
-#include <string>
 
 AddMotorcycle::AddMotorcycle(QWidget *parent) :
     QDialog(parent),

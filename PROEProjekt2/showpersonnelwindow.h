@@ -26,8 +26,9 @@ public slots:
     bool on_radioMechanik_clicked();
 
 private:
-    Ui::ShowPersonnelWindow *ui;
     const vector<shared_ptr<Person>>& Personnel;
+    Ui::ShowPersonnelWindow *ui;
+
 };
 
 #endif // SHOWPERSONNELWINDOW_H

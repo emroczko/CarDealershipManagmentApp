@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QString>
 #include "car.h"
+#include <string>
 
 namespace Ui {
 class AddMotorcycle;

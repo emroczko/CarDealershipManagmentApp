@@ -1,4 +1,4 @@
-#include "welcomescreen.h"
+#include "welcomeScreen.h"
 #include "ui_welcomeScreen.h"
 #include <QMessageBox>
 #include <QString>
@@ -16,22 +16,13 @@ welcomeScreen::welcomeScreen(QWidget *parent) :
     ui->setupUi(this);
      Check=1;
 }
-<<<<<<< HEAD
 welcomeScreen::~welcomeScreen() {delete ui;}
-void welcomeScreen::on_zacznijOdNowa_clicked() {this->close();}
-=======
-
-welcomeScreen::~welcomeScreen()
-{
-    delete ui;
-}
 bool welcomeScreen::on_zacznijOdNowa_clicked()
 {
     this->close();
     return Check;
 }
 /*
->>>>>>> 8a3d77f65ab08b973c8b4a2bea07aeec3f165239
 void welcomeScreen::on_wczytajStan_clicked()
 {
     Check--;

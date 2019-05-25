@@ -5,7 +5,7 @@
 #include "mainobjectshop.h"
 #include "addvehicle.h"
 #include "showVehicleWindow.h"
-#include "welcomescreen.h"
+#include "welcomeScreen.h"
 #include "addmotorcycle.h"
 #include "showpersonnelwindow.h"
 
@@ -41,8 +41,6 @@ private:
     void Add_motorcycle();
     void Add_employee();
     void Sell_car();
-    void Add_employee();
-    void Add_motorcycle();
     void Sell_motorcycle();
     void Motorcycles_owned();
     void Cars_owned();

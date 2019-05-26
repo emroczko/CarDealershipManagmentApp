@@ -129,36 +129,48 @@ void welcomeScreen::on_wczytajStan_clicked()
            }
 
            QTextStream in(&file);
-           QString model, price, id, condition, transmission, engine, temp_;
+           QString model, price, id, condition, transmission,transmission2, engine, temp_;
 
 
 
            //in>>"Samochody:";
            in>>temp_;
 
-           while (!in.atEnd())
+           while (temp_=="Motocykle:" || !in.atEnd())
            {
 
            //in>>"BMW" >>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
-          in>>temp_ >>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>transmission;
 
-           temp+=Vehicle::makeCar(model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
+           in>>temp_>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
+           if(transmission!="Manualna")
+           {
+               in>>transmission2;
+               temp+=Vehicle::makeCar("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString()+transmission2.toStdString());
            }
-           QString line="cos";
+           else
+           temp+=Vehicle::makeCar("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
+           }
+           in>>temp_;
+           while (temp_=="Personel:" || !in.atEnd())
+           {
+           in>>temp_>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
 
+           temp+=Vehicle::makeCar("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
+           }
+
+           temp_="cos";
            file.close();
 
 
-           if (line.isEmpty()) {
+           if(temp_.isEmpty()) {
                QMessageBox::information(this, tr("Plik jest pusty"),
                    tr("Plik jest pusty"));
                     return ;
            } else {
 
-
                this->accept();
                return;
-            }
+           }
            }
 
 

@@ -30,6 +30,9 @@ public:
         if (ShowPersonnelWindow->objectName().isEmpty())
             ShowPersonnelWindow->setObjectName(QString::fromUtf8("ShowPersonnelWindow"));
         ShowPersonnelWindow->resize(600, 407);
+        QFont font;
+        font.setFamily(QString::fromUtf8("Avenir Next"));
+        ShowPersonnelWindow->setFont(font);
         listaPersonnel = new QListWidget(ShowPersonnelWindow);
         listaPersonnel->setObjectName(QString::fromUtf8("listaPersonnel"));
         listaPersonnel->setGeometry(QRect(40, 60, 511, 301));

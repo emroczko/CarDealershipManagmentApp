@@ -49,6 +49,9 @@ public:
         if (AddVehicle->objectName().isEmpty())
             AddVehicle->setObjectName(QString::fromUtf8("AddVehicle"));
         AddVehicle->resize(583, 423);
+        QFont font;
+        font.setFamily(QString::fromUtf8("Avenir Next"));
+        AddVehicle->setFont(font);
         formGroupBox = new QGroupBox(AddVehicle);
         formGroupBox->setObjectName(QString::fromUtf8("formGroupBox"));
         formGroupBox->setGeometry(QRect(9, 10, 561, 261));

@@ -56,32 +56,40 @@ public:
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         Stan_wybierz = new QComboBox(formGroupBox);
         Stan_wybierz->setObjectName(QString::fromUtf8("Stan_wybierz"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Avenir Next"));
+        Stan_wybierz->setFont(font);
 
         gridLayout->addWidget(Stan_wybierz, 4, 1, 1, 1);
 
         Model = new QLabel(formGroupBox);
         Model->setObjectName(QString::fromUtf8("Model"));
+        Model->setFont(font);
 
         gridLayout->addWidget(Model, 0, 0, 1, 1);
 
         ID_pisz = new QTextEdit(formGroupBox);
         ID_pisz->setObjectName(QString::fromUtf8("ID_pisz"));
         ID_pisz->setMaximumSize(QSize(500, 30));
+        ID_pisz->setFont(font);
 
         gridLayout->addWidget(ID_pisz, 3, 1, 1, 1);
 
         ID = new QLabel(formGroupBox);
         ID->setObjectName(QString::fromUtf8("ID"));
+        ID->setFont(font);
 
         gridLayout->addWidget(ID, 3, 0, 1, 1);
 
         Stan = new QLabel(formGroupBox);
         Stan->setObjectName(QString::fromUtf8("Stan"));
+        Stan->setFont(font);
 
         gridLayout->addWidget(Stan, 4, 0, 1, 1);
 
         Model_wybierz = new QComboBox(formGroupBox);
         Model_wybierz->setObjectName(QString::fromUtf8("Model_wybierz"));
+        Model_wybierz->setFont(font);
 
         gridLayout->addWidget(Model_wybierz, 0, 1, 1, 1);
 
@@ -89,32 +97,38 @@ public:
         Cena_pisz->setObjectName(QString::fromUtf8("Cena_pisz"));
         Cena_pisz->setMinimumSize(QSize(100, 0));
         Cena_pisz->setMaximumSize(QSize(500, 30));
+        Cena_pisz->setFont(font);
 
         gridLayout->addWidget(Cena_pisz, 2, 1, 1, 1);
 
         Cena = new QLabel(formGroupBox);
         Cena->setObjectName(QString::fromUtf8("Cena"));
+        Cena->setFont(font);
 
         gridLayout->addWidget(Cena, 2, 0, 1, 1);
 
         Paliw_wybierz = new QComboBox(formGroupBox);
         Paliw_wybierz->setObjectName(QString::fromUtf8("Paliw_wybierz"));
+        Paliw_wybierz->setFont(font);
 
         gridLayout->addWidget(Paliw_wybierz, 5, 1, 1, 1);
 
         Paliwo = new QLabel(formGroupBox);
         Paliwo->setObjectName(QString::fromUtf8("Paliwo"));
+        Paliwo->setFont(font);
 
         gridLayout->addWidget(Paliwo, 5, 0, 1, 1);
 
         Typ_silnika_wybierz = new QComboBox(formGroupBox);
         Typ_silnika_wybierz->setObjectName(QString::fromUtf8("Typ_silnika_wybierz"));
         Typ_silnika_wybierz->setMaximumSize(QSize(500, 16777215));
+        Typ_silnika_wybierz->setFont(font);
 
         gridLayout->addWidget(Typ_silnika_wybierz, 6, 1, 1, 1);
 
         Typ_silnika = new QLabel(formGroupBox);
         Typ_silnika->setObjectName(QString::fromUtf8("Typ_silnika"));
+        Typ_silnika->setFont(font);
 
         gridLayout->addWidget(Typ_silnika, 6, 0, 1, 1);
 
@@ -125,11 +139,13 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         Akceptuj = new QPushButton(horizontalGroupBox);
         Akceptuj->setObjectName(QString::fromUtf8("Akceptuj"));
+        Akceptuj->setFont(font);
 
         horizontalLayout->addWidget(Akceptuj);
 
         Anuluj = new QPushButton(horizontalGroupBox);
         Anuluj->setObjectName(QString::fromUtf8("Anuluj"));
+        Anuluj->setFont(font);
 
         horizontalLayout->addWidget(Anuluj);
 

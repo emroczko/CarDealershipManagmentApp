@@ -63,7 +63,7 @@ void MainWindow2::Income()
 {
     int kasa = salon.getIncome();
     string kasa1 = std::to_string(kasa);
-    string stan = "Stan konta:\n";
+    string stan = "Stan konta: ";
     QString konto = QString::fromStdString(stan+kasa1);
     MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
 }

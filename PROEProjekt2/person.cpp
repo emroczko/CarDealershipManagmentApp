@@ -13,7 +13,7 @@ string Mechanic::Get_Surname() const {return surname_;}
 unsigned int Mechanic::Get_Salary() const {return salary_;}
 ostream& Mechanic::print(ostream &os) const
 {
-    os<<"Imie: "<<Get_Name()<<"  Nazwosko: "<<Get_Surname()<<"  Salary: "<<Get_Salary()<<"  Specializacja: "<<specialization_;
+    os<<"Imie: "<<Get_Name()<<"  Nazwisko: "<<Get_Surname()<<"  Wynagrodzenie: "<<Get_Salary()<<"  Specializacja: "<<specialization_;
     return os;
 }
 string Salesman::Get_Name() const  {return name_;}
@@ -21,6 +21,6 @@ string Salesman::Get_Surname() const {return surname_;}
 unsigned int Salesman::Get_Salary() const {return salary_;}
 ostream& Salesman::print(ostream &os) const
 {
-    os<<"Imie: "<<Get_Name()<<"  Nazwosko: "<<Get_Surname()<<"  Salary: "<<Get_Salary()<<"  Doświadczenie(lata): "<<experience_;
+    os<<"Imie: "<<Get_Name()<<"  Nazwisko: "<<Get_Surname()<<"  Wynagrodzenie: "<<Get_Salary()<<"  Doświadczenie(lata): "<<experience_;
     return os;
 }

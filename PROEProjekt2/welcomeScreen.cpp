@@ -16,7 +16,7 @@ bool welcomeScreen::on_zacznijOdNowa_clicked()
 }
 void welcomeScreen::closeEvent (QCloseEvent *event)
 {
-    QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", tr("Are you sure?\n"), QMessageBox::No | QMessageBox::Yes);
+    QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", tr("Czy jesteś pewny?\n"), QMessageBox::No | QMessageBox::Yes);
     if (resBtn != QMessageBox::Yes) {
         event->ignore();
     } else {

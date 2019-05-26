@@ -209,7 +209,6 @@ void MainWindow2::Salon_info()
 void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
 void MainWindow2::on_Posiadane_samochodu_clicked() {Cars_owned();}
 void MainWindow2::on_pushButton_clicked() {Add_motorcycle();}
-void MainWindow2::on_Wyjcie_clicked() {MainWindow2::close();}
 void MainWindow2::on_Sprzedaj_Auto_clicked() {Sell_car();}
 void MainWindow2::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText) {ui->stanKontsa->setText(iconText);}
@@ -265,3 +264,5 @@ void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
 
 
 }
+
+void MainWindow2::on_Wyjscie_clicked() {MainWindow2::close();}

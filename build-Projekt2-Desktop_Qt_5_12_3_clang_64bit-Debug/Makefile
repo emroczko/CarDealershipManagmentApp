@@ -94,6 +94,7 @@ OBJECTS       = addvehicle.o \
 		moc_addpersonnel.o \
 		moc_showpersonnelwindow.o
 DIST          = ../../Downloads/BMW-Service-Inclusive-Packages.jpg \
+		../PROEProjekt2/BMW-Service-Inclusive-Packages.jpg \
 		../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/qdevice.pri \
 		../../Qt/5.12.3/clang_64/mkspecs/features/device_config.prf \

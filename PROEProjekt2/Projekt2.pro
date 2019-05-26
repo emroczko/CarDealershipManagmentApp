@@ -69,6 +69,6 @@ OTHER_FILES += \
         BMW-Service-Inclusive-Packages.jpg
 
 DISTFILES += \
+
 RESOURCES += \
     pics.qrc
-

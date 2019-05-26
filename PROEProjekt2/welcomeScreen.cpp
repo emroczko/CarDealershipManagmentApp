@@ -129,14 +129,18 @@ void welcomeScreen::on_wczytajStan_clicked()
            }
 
            QTextStream in(&file);
-           QString model, price, id, condition, transmission, engine;
+           QString model, price, id, condition, transmission, engine, temp_;
 
 
-            in>>"Samochody:";
+
+           //in>>"Samochody:";
+           in>>temp_;
 
            while (!in.atEnd())
            {
-           in>>"BMW" >>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
+
+           //in>>"BMW" >>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
+          in>>temp_ >>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>transmission;
 
            temp+=Vehicle::makeCar(model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
            }

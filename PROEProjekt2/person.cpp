@@ -24,6 +24,3 @@ ostream& Salesman::print(ostream &os) const
     os<<"Imie: "<<Get_Name()<<"  Nazwosko: "<<Get_Surname()<<"  Salary: "<<Get_Salary()<<"  Doświadczenie(lata): "<<experience_;
     return os;
 }
-
-
-//Salesman::~Salesman(){

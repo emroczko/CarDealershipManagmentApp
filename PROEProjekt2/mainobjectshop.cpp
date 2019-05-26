@@ -12,9 +12,8 @@ Shop::Shop(int income): income_(income)
     Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
     Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
 /*
-    //Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
-    //Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
->>>>>>> Stashed changes
+    Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
+    Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
     Personnel_.emplace_back(Person::makeMechanic("Adam", "Mazowiecki", 4200, "xxxxx"));
     Personnel_.emplace_back(Person::makeMechanic("Juliusz", "Marski", 3500, "xxxxxx"));
     Personnel_.emplace_back(Person::makeSalesman("Dariusz", "Markowski", 5000, 5));
@@ -39,26 +38,6 @@ Shop::Shop(const Shop& shop):income_(shop.income_),Vehicles_(shop.Vehicles_) ,Pe
 
 }
 
-
-/*
-void Shop::loadFromFile()
-{
-    string filename="save.txt";
-    fstream file;
-    file.open(filename.c_str(), ios::in);
-    string file1;
-    string line;
-    if (file.is_open()) {
-        while(getline(file, line))
-        {
-            file1+=line;
-            file1+="\n";
-        }
-    }
-
-    cout<<endl<<endl<<endl<<"################"<<endl<<endl;
-    cout<<"ODCZYT Z PLIKU:"<<endl<<endl<<file1<<endl;
-}*/
 Shop & Shop::operator += (shared_ptr<Person> employee)
 {
     Personnel_.emplace_back(employee);
@@ -74,14 +53,7 @@ Shop & Shop::operator -= (int i)
     Vehicles_.erase(Vehicles_.begin()+i);
     return *this;
 }
-/*Shop & Shop::operator -- ()
-{
-    if(Assortment_.size() != 0)
-    {
-        Assortment_.pop_back();
-    }
-    return *this;
-}*/
+
 vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
 vector < shared_ptr<Person> > Shop::getPersonnel() const {return Personnel_;}
 ostream& operator<<(ostream& os,const Shop& S)
@@ -132,64 +104,6 @@ Shop & Shop::operator = (Shop &shop)
     return *this;
 }
 
-/*string Shop::operator [] (unsigned int number)
-{
-    if(number >= Assortment_.size())
-        return "U tego dealera nie ma tylu aut";
-
-    else if(number == 0)
-        return "Podano zla liczbe!";
-    else
-        return Assortment_[number - 1]->Get_Model();
-}*/
-/*Shop & Shop::operator ()(vector, int number)
-{
-    unsigned int whichCar=number-1;
-
-    if(whichCar>=Assortment_.size())
-    {
-        cout<<"Nie ma tylu aut w salonie"<<endl;
-        return *this;
-    }
-    if(customer.getWallet()>=Assortment_[whichCar]->Get_Price()){
-        cout<<"Klient kupuje "<<Assortment_[whichCar]->Get_Model()<<
-        " za cenę "<<Assortment_[whichCar]->Get_Price()<<" zl"<<endl;
-        Assortment_.erase(Assortment_.begin()+whichCar);
-         return *this;
-    }
-    else
-    {
-        cout<<"Klient nie ma pieniędzy na "<<Assortment_[whichCar]->Get_Model()<<endl;
-        return *this;
-    }
-
-
-}*/
-/*Shop & Shop::operator ()(const Customer& customer, string model)
-{
-    for(unsigned int i=0; i<Assortment_.size(); i++)
-    {
-    if(model==Assortment_[i]->Get_Model())
-    {
-        if(customer.getWallet()>=Assortment_[i]->Get_Price())
-        {
-            cout<<"Klient kupuje "<<Assortment_[i]->Get_Model()<<
-            " za cenę "<<Assortment_[i]->Get_Price()<<" zl"<<endl;
-            Assortment_.erase(Assortment_.begin()+i);
-        return *this;
-        }
-        else
-        {
-            cout<<"Klient nie ma pieniędzy na "<<Assortment_[i]->Get_Model()<<endl;
-            return *this;
-        }
-    }
-
-}
-    cout<<"Nie ma takiego auta w salonie"<<endl;
-    return *this;
-}
-*/
 int Shop::getIncome()const {
    return income_;
 }

@@ -19,7 +19,6 @@ MainWindow2::MainWindow2(QWidget *parent) :
     MainWindow2::Income();
     this->showFullScreen();
     this->show();
-    //MainWindow2::on_stanKontsa_windowIconTextChanged(salon.getIncome());
 }
 
 MainWindow2::~MainWindow2()
@@ -78,8 +77,36 @@ void MainWindow2::Add_motorcycle()
     addMotor.exec();
     if(addMotor.on_Anuluj_clicked()==false)
     {
-        salon+=addMotor.on_Akceptuj_clicked();
+        shared_ptr<Vehicle> tmp = addMotor.on_Akceptuj_clicked();
+        if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
+            if(resBtn==QMessageBox::No)
+            {
+                addMotor.reject();
+            }
+            else
+            {
+                addMotor.accept();
+                salon += tmp;
+            }
+        }
+        else
+        {
+
+            if(salon.getIncome()-tmp->Get_Price()>=0)
+            {
+                salon.Set_income(salon.getIncome()-tmp->Get_Price());
+                salon += tmp;
+            }
+            else
+            {
+                QMessageBox::warning(this, "", "Nie wystarczające środki");
+            }
+        }
     }
+    MainWindow2::Income();
+
 }
 void MainWindow2::Add_employee()
 {
@@ -102,26 +129,27 @@ void MainWindow2::Sell_car()
     {
         deletecar.exec();
         std::stringstream buffer;
-            if(salon.getVehicles().size()!= 0)
+        if(salon.getVehicles().size()!= 0)
+        {
+            for(unsigned int i=0; i<salon.getVehicles().size(); i++)
             {
-                for(unsigned int i=0; i<salon.getVehicles().size(); i++)
+                buffer << *salon.getVehicles()[i];
+                if(buffer.str()==deletecar.on_pushButton_2_clicked())
                 {
-                    buffer << *salon.getVehicles()[i];
-                    if(buffer.str()==deletecar.on_pushButton_2_clicked())
-                    {
-                        shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
-                        int val =salon.getIncome()+tmp->Get_Price()*1.2;
-                        salon.Set_income(val);
-                        salon-=i;
-                    }
-                    buffer.str(std::string());
+                    shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
+                    int val =salon.getIncome()+tmp->Get_Price()*1.2;
+                    salon.Set_income(val);
+                    salon-=i;
                 }
+                buffer.str(std::string());
             }
+        }
     }
     else
     {
         QMessageBox::warning(this, tr("Błąd"), tr("Brak samochodów do usunięcia."));
     }
+    MainWindow2::Income();
 }
 void MainWindow2::Motorcycles_owned()
 {
@@ -160,6 +188,9 @@ void MainWindow2::Sell_motorcycle()
                 buffer << *salon.getVehicles()[i];
                 if(buffer.str()==deletecar.on_pushButton_2_clicked())
                 {
+                    shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
+                    int val =salon.getIncome()+tmp->Get_Price()*1.2;
+                    salon.Set_income(val);
                     salon-=i;
                 }
                 buffer.str(std::string());
@@ -170,6 +201,7 @@ void MainWindow2::Sell_motorcycle()
     {
         QMessageBox::warning(this, tr("Błąd"), tr("Brak motocykli do usunięcia."));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
     }
+    MainWindow2::Income();
 }
 void MainWindow2::Salon_info()
 {

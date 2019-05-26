@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_welcomeScreen_t {
-    QByteArrayData data[4];
-    char stringdata0[63];
+    QByteArrayData data[6];
+    char stringdata0[87];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,13 +32,16 @@ struct qt_meta_stringdata_welcomeScreen_t {
 static const qt_meta_stringdata_welcomeScreen_t qt_meta_stringdata_welcomeScreen = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "welcomeScreen"
-QT_MOC_LITERAL(1, 14, 24), // "on_zacznijOdNowa_clicked"
-QT_MOC_LITERAL(2, 39, 0), // ""
-QT_MOC_LITERAL(3, 40, 22) // "on_wczytajStan_clicked"
+QT_MOC_LITERAL(1, 14, 10), // "closeEvent"
+QT_MOC_LITERAL(2, 25, 0), // ""
+QT_MOC_LITERAL(3, 26, 12), // "QCloseEvent*"
+QT_MOC_LITERAL(4, 39, 24), // "on_zacznijOdNowa_clicked"
+QT_MOC_LITERAL(5, 64, 22) // "on_wczytajStan_clicked"
 
     },
-    "welcomeScreen\0on_zacznijOdNowa_clicked\0"
-    "\0on_wczytajStan_clicked"
+    "welcomeScreen\0closeEvent\0\0QCloseEvent*\0"
+    "on_zacznijOdNowa_clicked\0"
+    "on_wczytajStan_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +51,7 @@ static const uint qt_meta_data_welcomeScreen[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,10 +59,12 @@ static const uint qt_meta_data_welcomeScreen[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x0a /* Public */,
-       3,    0,   25,    2, 0x0a /* Public */,
+       1,    1,   29,    2, 0x08 /* Private */,
+       4,    0,   32,    2, 0x0a /* Public */,
+       5,    0,   33,    2, 0x0a /* Public */,
 
  // slots: parameters
+    QMetaType::Void, 0x80000000 | 3,    2,
     QMetaType::Bool,
     QMetaType::Void,
 
@@ -72,9 +77,10 @@ void welcomeScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<welcomeScreen *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { bool _r = _t->on_zacznijOdNowa_clicked();
+        case 0: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
+        case 1: { bool _r = _t->on_zacznijOdNowa_clicked();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 1: _t->on_wczytajStan_clicked(); break;
+        case 2: _t->on_wczytajStan_clicked(); break;
         default: ;
         }
     }
@@ -109,13 +115,13 @@ int welcomeScreen::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

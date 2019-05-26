@@ -93,7 +93,7 @@ OBJECTS       = addvehicle.o \
 		moc_addmotorcycle.o \
 		moc_addpersonnel.o \
 		moc_showpersonnelwindow.o
-DIST          = ../../Downloads/BMW-Service-Inclusive-Packages.jpg \
+DIST          = ../../Projekt2/BMW-Service-Inclusive-Packages.jpg \
 		../PROEProjekt2/BMW-Service-Inclusive-Packages.jpg \
 		../../Qt/5.12.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.12.3/clang_64/mkspecs/qdevice.pri \
@@ -738,7 +738,6 @@ qrc_pics.cpp: ../PROEProjekt2/pics.qrc \
 		../../Downloads/DESERT.jpg \
 		../PROEProjekt2/117682899_37k1L8Im.jpg \
 		../../Downloads/BMW-motorcycles-on-road-racing.jpg \
-		../../Downloads/BMW-CoolantFlush-Special.jpg \
 		../../Downloads/bps_store_front.jpg \
 		../../Downloads/BMW-Service-Inclusive-Packages.jpg \
 		../../Downloads/2018-bmw-m2-competition-99gallery-1526572314.jpg
@@ -758,6 +757,8 @@ moc_addvehicle.cpp: ../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
@@ -794,10 +795,24 @@ moc_mainwindow2.cpp: ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../PROEProjekt2/showVehicleWindow.h \
-		../PROEProjekt2/welcomescreen.h \
+		ui_dialog1.h \
+		../PROEProjekt2/welcomeScreen.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		../PROEProjekt2/mainwindow2.h \
 		../PROEProjekt2/addmotorcycle.h \
 		../PROEProjekt2/showpersonnelwindow.h \
+		../PROEProjekt2/deleteWindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../PROEProjekt2/addpersonnel.h \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/QCloseEvent \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		moc_predefs.h \
 		../../Qt/5.12.3/clang_64/bin/moc
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/mainwindow2.h -o moc_mainwindow2.cpp
@@ -811,6 +826,7 @@ moc_showVehicleWindow.cpp: ../PROEProjekt2/showVehicleWindow.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../PROEProjekt2/debug.h \
+		ui_dialog1.h \
 		moc_predefs.h \
 		../../Qt/5.12.3/clang_64/bin/moc
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/showVehicleWindow.h -o moc_showVehicleWindow.cpp
@@ -824,6 +840,29 @@ moc_welcomeScreen.cpp: ../PROEProjekt2/welcomeScreen.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../PROEProjekt2/debug.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		../PROEProjekt2/mainwindow2.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../PROEProjekt2/addvehicle.h \
+		../PROEProjekt2/showVehicleWindow.h \
+		ui_dialog1.h \
+		../PROEProjekt2/welcomeScreen.h \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/QCloseEvent \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../PROEProjekt2/addmotorcycle.h \
+		../PROEProjekt2/showpersonnelwindow.h \
+		../PROEProjekt2/deleteWindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../PROEProjekt2/addpersonnel.h \
 		moc_predefs.h \
 		../../Qt/5.12.3/clang_64/bin/moc
 	/Users/erykmroczko/Qt/5.12.3/clang_64/bin/moc $(DEFINES) --include /Users/erykmroczko/PROE/build-Projekt2-Desktop_Qt_5_12_3_clang_64bit-Debug/moc_predefs.h -I/Users/erykmroczko/Qt/5.12.3/clang_64/mkspecs/macx-clang -I/Users/erykmroczko/PROE/PROEProjekt2 -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtGui.framework/Headers -I/Users/erykmroczko/Qt/5.12.3/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/erykmroczko/Qt/5.12.3/clang_64/lib ../PROEProjekt2/welcomeScreen.h -o moc_welcomeScreen.cpp
@@ -917,6 +956,8 @@ addvehicle.o: ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/addvehicle.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../PROEProjekt2/car.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
@@ -951,10 +992,23 @@ main.o: ../PROEProjekt2/main.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../PROEProjekt2/showVehicleWindow.h \
-		../PROEProjekt2/welcomescreen.h \
+		ui_dialog1.h \
+		../PROEProjekt2/welcomeScreen.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/QCloseEvent \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../PROEProjekt2/addmotorcycle.h \
-		../PROEProjekt2/showpersonnelwindow.h
+		../PROEProjekt2/showpersonnelwindow.h \
+		../PROEProjekt2/deleteWindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../PROEProjekt2/addpersonnel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../PROEProjekt2/main.cpp
 
 car.o: ../PROEProjekt2/car.cpp ../PROEProjekt2/car.h \
@@ -984,22 +1038,24 @@ mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../PROEProjekt2/showVehicleWindow.h \
-		../PROEProjekt2/welcomescreen.h \
-		../PROEProjekt2/addmotorcycle.h \
-		../PROEProjekt2/showpersonnelwindow.h \
-		ui_mainwindow2.h \
+		ui_dialog1.h \
 		../PROEProjekt2/welcomeScreen.h \
-		../PROEProjekt2/deleteWindow.h \
-		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
-		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QTextStream \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
-		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../PROEProjekt2/addpersonnel.h
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/QCloseEvent \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../PROEProjekt2/addmotorcycle.h \
+		../PROEProjekt2/showpersonnelwindow.h \
+		../PROEProjekt2/deleteWindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../PROEProjekt2/addpersonnel.h \
+		ui_mainwindow2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow2.o ../PROEProjekt2/mainwindow2.cpp
 
 showVehicleWindow.o: ../PROEProjekt2/showVehicleWindow.cpp ../PROEProjekt2/showVehicleWindow.h \
@@ -1014,7 +1070,7 @@ showVehicleWindow.o: ../PROEProjekt2/showVehicleWindow.cpp ../PROEProjekt2/showV
 		ui_dialog1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o showVehicleWindow.o ../PROEProjekt2/showVehicleWindow.cpp
 
-welcomeScreen.o: ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/welcomescreen.h \
+welcomeScreen.o: ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/welcomeScreen.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../PROEProjekt2/mainobjectshop.h \
@@ -1023,7 +1079,6 @@ welcomeScreen.o: ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/welcomescreen
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../PROEProjekt2/debug.h \
-		ui_welcomeScreen.h \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QString \
@@ -1031,7 +1086,22 @@ welcomeScreen.o: ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/welcomescreen
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
 		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
 		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/QTextStream \
-		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qtextstream.h
+		../../Qt/5.12.3/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		../PROEProjekt2/mainwindow2.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../PROEProjekt2/addvehicle.h \
+		../PROEProjekt2/showVehicleWindow.h \
+		ui_dialog1.h \
+		../PROEProjekt2/addmotorcycle.h \
+		../PROEProjekt2/showpersonnelwindow.h \
+		../PROEProjekt2/deleteWindow.h \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/QListWidgetItem \
+		../../Qt/5.12.3/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../PROEProjekt2/addpersonnel.h \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/QCloseEvent \
+		../../Qt/5.12.3/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		ui_welcomeScreen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o welcomeScreen.o ../PROEProjekt2/welcomeScreen.cpp
 
 person.o: ../PROEProjekt2/person.cpp ../PROEProjekt2/person.h

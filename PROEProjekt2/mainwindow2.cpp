@@ -1,6 +1,6 @@
 #include "mainwindow2.h"
 #include "ui_mainwindow2.h"
-
+#include <QMessageBox>
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent), salon(1000000),
@@ -33,8 +33,21 @@ void MainWindow2::Add_car()
     addCar.exec();
     if(addCar.on_Anuluj_clicked()==false)
     {
-        salon+=addCar.on_Akceptuj_clicked();
-    }
+        shared_ptr<Vehicle> tmp = addCar.on_Akceptuj_clicked();
+        if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
+            if(resBtn==QMessageBox::No)
+            {
+                addCar.reject();
+            }
+            else
+            {
+                addCar.accept();
+                salon +=addCar.on_Akceptuj_clicked();
+            }
+        }
+     }
     int kasa = salon.getIncome();
     string kasa1 = std::to_string(kasa);
     string stan = "Stan konta:\n";

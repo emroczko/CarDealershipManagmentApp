@@ -15,7 +15,7 @@ public:
     static shared_ptr<Person> makeMechanic(string, string, unsigned int, string);
     static shared_ptr<Person> makeSalesman(string, string, unsigned int, unsigned int);
     virtual string Get_Name() const = 0;
-    //virtual string Get_Surname() const = 0;
+    virtual string Get_Surname() const = 0;
     virtual unsigned int Get_Salary() const = 0;
     virtual ostream& print(ostream& os) const = 0;
     friend ostream& operator<< (ostream& os, const Person& p) {return p.print(os);}

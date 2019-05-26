@@ -36,10 +36,7 @@ void MainWindow2::Add_car()
         if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
         {
             QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
-            if(resBtn==QMessageBox::No)
-            {
-                addCar.reject();
-            }
+            if(resBtn==QMessageBox::No)  {addCar.reject();}
             else
             {
                 addCar.accept();
@@ -80,7 +77,7 @@ void MainWindow2::Add_motorcycle()
         shared_ptr<Vehicle> tmp = addMotor.on_Akceptuj_clicked();
         if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
         {
-            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
+            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID mogą być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
             if(resBtn==QMessageBox::No)
             {
                 addMotor.reject();

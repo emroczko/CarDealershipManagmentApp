@@ -141,7 +141,11 @@ void welcomeScreen::on_wczytajStan_clicked()
 
            //in>>"BMW" >>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
 
-           in>>temp_>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
+           in>>temp_;
+           if(temp_=="Motocykle:")
+               break;
+
+           in>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
            if(transmission!="Manualna")
            {
                in>>transmission2;
@@ -149,19 +153,17 @@ void welcomeScreen::on_wczytajStan_clicked()
            }
            else
            temp+=Vehicle::makeCar("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
-           if(temp_=="Motocykle:")
-               break;
            }
 
-           in>>temp_;
-           while (temp_=="Personel:" || !in.atEnd())
+
+           while (!in.atEnd())
            {
            in>>temp_>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
 
-           temp+=Vehicle::makeCar("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
+           temp+=Vehicle::makeMotorcycle("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
            }
 
-           temp_="cos";
+
            file.close();
 
 

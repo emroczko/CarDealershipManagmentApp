@@ -27,6 +27,7 @@ public:
 
     void saveToFile(const Shop & shop);
     void loadFromFile();
+    void Set_income(int);
     friend ostream& operator<< (ostream& ,const Shop&);
     vector < shared_ptr<Vehicle> > getVehicles() const;
     vector < shared_ptr<Person> > getPersonnel() const;

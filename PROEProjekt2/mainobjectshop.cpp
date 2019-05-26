@@ -4,10 +4,8 @@
 
 using namespace std;
 
-Shop::Shop():income_(1000)
-{
-
-}
+Shop::Shop():income_(1000) {}
+void Shop::Set_income(int val) {income_=val;}
 Shop::Shop(int income): income_(income)
 {
 

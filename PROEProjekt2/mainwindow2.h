@@ -44,6 +44,7 @@ private slots:
     void on_Zatrudnieni_pracownicy_clicked();
 
 private:
+    void Income();
     void Add_car();
     void Add_motorcycle();
     void Add_employee();

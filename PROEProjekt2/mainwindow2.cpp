@@ -16,7 +16,7 @@ MainWindow2::MainWindow2(QWidget *parent) :
            Shop tempsalon = welcome.pass_the_shop();
            salon = tempsalon;
         }
-
+    MainWindow2::Income();
     this->showFullScreen();
     this->show();
     //MainWindow2::on_stanKontsa_windowIconTextChanged(salon.getIncome());
@@ -44,10 +44,27 @@ void MainWindow2::Add_car()
             else
             {
                 addCar.accept();
-                salon +=addCar.on_Akceptuj_clicked();
+                salon += tmp;
+            }
+        }
+        else
+        {
+
+            if(salon.getIncome()-tmp->Get_Price()>=0)
+            {
+                salon.Set_income(salon.getIncome()-tmp->Get_Price());
+                salon += tmp;
+            }
+            else
+            {
+                QMessageBox::warning(this, "", "Nie wystarczające środki");
             }
         }
      }
+    MainWindow2::Income();
+}
+void MainWindow2::Income()
+{
     int kasa = salon.getIncome();
     string kasa1 = std::to_string(kasa);
     string stan = "Stan konta:\n";
@@ -92,6 +109,9 @@ void MainWindow2::Sell_car()
                     buffer << *salon.getVehicles()[i];
                     if(buffer.str()==deletecar.on_pushButton_2_clicked())
                     {
+                        shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
+                        int val =salon.getIncome()+tmp->Get_Price()*1.2;
+                        salon.Set_income(val);
                         salon-=i;
                     }
                     buffer.str(std::string());

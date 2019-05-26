@@ -26,7 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     addvehicle.cpp \
     deleteWindow.cpp \
-        main.cpp \
+    main.cpp \
     car.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
@@ -52,9 +52,9 @@ HEADERS += \
     showpersonnelwindow.h
 
 FORMS += \
-        addvehicle.ui \
+    addvehicle.ui \
     deleteWindow.ui \
-        mainwindow2.ui \
+    mainwindow2.ui \
     showVehicleWindow.ui \
     welcomeScreen.ui \
     addmotorcycle.ui \
@@ -66,9 +66,11 @@ OTHER_FILES += \
         2018-bmw-m2-competition-99gallery-1526572314.jpg \
         BMW-motorcycles-on-road-racing.jpg \
         bps_store_front.jpg \
-        BMW-Service-Inclusive-Packages.jpg
+        BMW-Service-Inclusive-Packages.jpg \
 
 DISTFILES += \
+   ../../Projekt2/BMW-Service-Inclusive-Packages.jpg \
+    BMW-Service-Inclusive-Packages.jpg \
 
 RESOURCES += \
     pics.qrc

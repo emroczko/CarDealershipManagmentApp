@@ -1,8 +1,5 @@
 #include "showVehicleWindow.h"
-#include "ui_dialog1.h"
-#include <sstream>
-#include <mainobjectshop.h>
-#include "car.h"
+
 
 
 Dialog1::Dialog1(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent) :

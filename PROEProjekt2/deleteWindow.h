@@ -4,9 +4,7 @@
 #include <QDialog>
 #include "mainobjectshop.h"
 #include <QListWidgetItem>
-
-
-
+#include <sstream>
 
 namespace Ui {
 class deleteCar;

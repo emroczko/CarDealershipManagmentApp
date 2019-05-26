@@ -5,9 +5,16 @@
 #include "mainobjectshop.h"
 #include "addvehicle.h"
 #include "showVehicleWindow.h"
-#include "welcomescreen.h"
+#include "welcomeScreen.h"
 #include "addmotorcycle.h"
 #include "showpersonnelwindow.h"
+#include "deleteWindow.h"
+#include <sstream>
+#include <QString>
+#include <QFileDialog>
+#include <QTextStream>
+#include <QMessageBox>
+#include "addpersonnel.h"
 
 namespace Ui {
 class MainWindow2;
@@ -38,9 +45,9 @@ private slots:
 
 private:
     void Add_car();
-    void Sell_car();
-    void Add_employee();
     void Add_motorcycle();
+    void Add_employee();
+    void Sell_car();
     void Sell_motorcycle();
     void Motorcycles_owned();
     void Cars_owned();

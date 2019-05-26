@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include "mainobjectshop.h"
+#include "ui_dialog1.h"
+#include <sstream>
+#include "car.h"
 namespace Ui {
 class Dialog1;
 }

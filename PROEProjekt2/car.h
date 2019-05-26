@@ -4,6 +4,8 @@
 #include <iomanip>
 #include <string>
 #include <memory>
+#include <sstream>
+
 using namespace std;
 
 enum class Vehicle_Type{Car, Motor}; 

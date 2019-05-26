@@ -1,6 +1,4 @@
 #include "car.h"
-#include <sstream>
-#include <iomanip>
 
 using namespace std;
 

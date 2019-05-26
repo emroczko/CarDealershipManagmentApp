@@ -65,13 +65,16 @@ OTHER_FILES += \
         117682899_37k1L8Im.jpg⁩ \
         2018-bmw-m2-competition-99gallery-1526572314.jpg \
         BMW-motorcycles-on-road-racing.jpg \
-        bps_store_front.jpg
+        bps_store_front.jpg \
         BMW-Service-Inclusive-Packages.jpg
 
 DISTFILES += \
+<<<<<<< HEAD
     ../../Downloads/BMW-Service-Inclusive-Packages.jpg \
     BMW-Service-Inclusive-Packages.jpg
 
+=======
+>>>>>>> 03ca67379dde8301d59a15d05ec3f2ea57395c50
 RESOURCES += \
     pics.qrc
 

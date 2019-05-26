@@ -28,8 +28,28 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QTabWidget" name="tabWidget">
+        <property name="font">
+         <font>
+          <family>Avenir</family>
+         </font>
+        </property>
+        <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
         <property name="currentIndex">
          <number>0</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>18</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="elideMode">
+         <enum>Qt::ElideMiddle</enum>
         </property>
         <property name="movable">
          <bool>false</bool>
@@ -42,10 +62,16 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>720</y>
+            <y>700</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>16</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Zapisz obecny stan salonu</string>
@@ -74,10 +100,16 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>760</y>
+            <y>750</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>16</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Wyjście</string>
@@ -86,24 +118,53 @@
          <widget class="QLabel" name="stanKontsa">
           <property name="geometry">
            <rect>
-            <x>1260</x>
+            <x>540</x>
             <y>580</y>
-            <width>111</width>
-            <height>31</height>
+            <width>301</width>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir Next</family>
+            <pointsize>18</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
           </property>
           <property name="text">
            <string>TextLabel</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
          <widget class="QPushButton" name="SalonInfo">
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>680</y>
+            <y>650</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>16</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Wyświetl informacje o salonie</string>
@@ -123,6 +184,12 @@
             <height>41</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Sprzedaj samochód</string>
           </property>
@@ -136,6 +203,12 @@
             <height>41</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Posiadane samochody</string>
           </property>
@@ -148,6 +221,12 @@
             <width>1391</width>
             <height>41</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Kup Samochód</string>
@@ -186,6 +265,12 @@
             <height>41</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Posiadane motocykle</string>
           </property>
@@ -199,8 +284,14 @@
             <height>41</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
-           <string>Dodaj motocykl</string>
+           <string>Kup motocykl</string>
           </property>
          </widget>
          <widget class="QPushButton" name="SprzedajMotocykl">
@@ -213,7 +304,7 @@
            </rect>
           </property>
           <property name="text">
-           <string>Usuń motocykl</string>
+           <string>Sprzedaj motocykl</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_2">
@@ -249,6 +340,12 @@
             <height>51</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Zatrudnieni pracownicy</string>
           </property>
@@ -262,6 +359,12 @@
             <height>51</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Zatrudnij nowego pracownika</string>
           </property>
@@ -274,6 +377,12 @@
             <width>1391</width>
             <height>51</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>15</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Zwolnij pracownika</string>

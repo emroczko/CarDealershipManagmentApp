@@ -14,24 +14,19 @@
    <string>BMW Dealer Manager</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="3" column="0">
-    <widget class="QPushButton" name="zacznijOdNowa">
-     <property name="text">
-      <string>Zacznij od nowa...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QPushButton" name="wczytajStan">
-     <property name="text">
-      <string>Wczytaj stan z pliku...</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Avenir Next</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Witamy w programie BMW Dealer Manager!</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -51,6 +46,30 @@
      </property>
      <property name="wordWrap">
       <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="wczytajStan">
+     <property name="font">
+      <font>
+       <family>Avenir</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>Wczytaj stan z pliku...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="zacznijOdNowa">
+     <property name="font">
+      <font>
+       <family>Avenir</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>Zacznij od nowa...</string>
      </property>
     </widget>
    </item>

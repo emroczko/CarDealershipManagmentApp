@@ -31,6 +31,9 @@ public:
         if (deleteCar->objectName().isEmpty())
             deleteCar->setObjectName(QString::fromUtf8("deleteCar"));
         deleteCar->resize(623, 468);
+        QFont font;
+        font.setFamily(QString::fromUtf8("Avenir Next"));
+        deleteCar->setFont(font);
         verticalLayout = new QVBoxLayout(deleteCar);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         listWidget = new QListWidget(deleteCar);

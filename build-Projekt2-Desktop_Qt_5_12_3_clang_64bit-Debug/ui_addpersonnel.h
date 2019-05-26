@@ -67,6 +67,9 @@ public:
         tabWidget = new QTabWidget(AddPersonnel);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(0, 0, 581, 421));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Avenir Next"));
+        tabWidget->setFont(font);
         Sprzedawca_tab = new QWidget();
         Sprzedawca_tab->setObjectName(QString::fromUtf8("Sprzedawca_tab"));
         horizontalGroupBox = new QGroupBox(Sprzedawca_tab);
@@ -162,6 +165,7 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         Specjalizacja_mechanik = new QLabel(formGroupBox_2);
         Specjalizacja_mechanik->setObjectName(QString::fromUtf8("Specjalizacja_mechanik"));
+        Specjalizacja_mechanik->setFont(font);
 
         gridLayout_2->addWidget(Specjalizacja_mechanik, 0, 0, 1, 1);
 

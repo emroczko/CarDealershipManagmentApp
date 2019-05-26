@@ -24,10 +24,21 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="4" column="1">
-     <widget class="QComboBox" name="Stan_wybierz"/>
+     <widget class="QComboBox" name="Stan_wybierz">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
+     </widget>
     </item>
     <item row="0" column="0">
      <widget class="QLabel" name="Model">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Model:</string>
       </property>
@@ -41,10 +52,20 @@
         <height>30</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
      </widget>
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="ID">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>ID:</string>
       </property>
@@ -52,13 +73,24 @@
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="Stan">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Stan:</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QComboBox" name="Model_wybierz"/>
+     <widget class="QComboBox" name="Model_wybierz">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
      <widget class="QTextEdit" name="Cena_pisz">
@@ -74,20 +106,41 @@
         <height>30</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
      </widget>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="Cena">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Cena:</string>
       </property>
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QComboBox" name="Paliw_wybierz"/>
+     <widget class="QComboBox" name="Paliw_wybierz">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
+     </widget>
     </item>
     <item row="5" column="0">
      <widget class="QLabel" name="Paliwo">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Silnik:</string>
       </property>
@@ -101,10 +154,20 @@
         <height>16777215</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
      </widget>
     </item>
     <item row="6" column="0">
      <widget class="QLabel" name="Typ_silnika">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Typ silnika</string>
       </property>
@@ -124,6 +187,11 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="Akceptuj">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Akceptuj</string>
       </property>
@@ -131,6 +199,11 @@
     </item>
     <item>
      <widget class="QPushButton" name="Anuluj">
+      <property name="font">
+       <font>
+        <family>Avenir Next</family>
+       </font>
+      </property>
       <property name="text">
        <string>Anuluj</string>
       </property>

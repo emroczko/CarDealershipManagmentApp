@@ -9,20 +9,18 @@ void Shop::Set_income(int val) {income_=val;}
 Shop::Shop(int income): income_(income)
 {
 
+
     Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
     Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
-/*
-    Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
-    Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
-    Personnel_.emplace_back(Person::makeMechanic("Adam", "Mazowiecki", 4200, "xxxxx"));
-    Personnel_.emplace_back(Person::makeMechanic("Juliusz", "Marski", 3500, "xxxxxx"));
+    Personnel_.emplace_back(Person::makeMechanic("Adam", "Mazowiecki", 4200, "Mechanik"));
+    Personnel_.emplace_back(Person::makeMechanic("Juliusz", "Marski", 3500, "Wulkanizator"));
     Personnel_.emplace_back(Person::makeSalesman("Dariusz", "Markowski", 5000, 5));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 340i", 320000, 1, "Nowy", "Benzyna", "Manualna"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 550i", 440000, 2, "Używany", "Diesel", "Automatyczna hydrauliczna"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 730d", 370000, 3, "Używany", "Diesel", "Automatyczna bezstopniowa"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 428i", 190000, 4, "Nowy", "Benzyna", "Manualna"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 316d", 142000, 5, "Nowy", "Diesel", "Manualna"));
-    Vehicles_.emplace_back(Vehicle::makeMotorcycle("BMW R 1250 RS", 23000, 1, "Benzyna", "Używany", "Dwusuwowy"));*/
+    Vehicles_.emplace_back(Vehicle::makeMotorcycle("BMW R 1250 RS", 23000, 1, "Benzyna", "Używany", "Dwusuwowy"));
 }
 
 Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector <shared_ptr<Person>> Personnel): income_(income)
@@ -35,7 +33,6 @@ Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector <shared
 
 Shop::Shop(const Shop& shop):income_(shop.income_),Vehicles_(shop.Vehicles_) ,Personnel_(shop.Personnel_)
 {
-
 }
 
 Shop & Shop::operator += (shared_ptr<Person> employee)
@@ -74,17 +71,24 @@ ostream& operator<<(ostream& os,const Shop& S)
             }
         }
     }
-    os<<endl;
-    /*
-    if(S.Personnel_.size()!= 0)
+    if(S.Personnel_.size()!=0)
     {
-        os << "Informacje o pracownikach placowki: " << endl << endl;
-        for(unsigned int i = 0; i < S.Personnel_.size(); ++i)
-        {
-            os<<S.Personnel_[i];
+        os << "Sprzedawcy:"<< endl;
+        for(auto &p : S.Personnel_){
+            if (typeid(*p) == typeid(Salesman)){
+            os << *p << endl;
+            }
         }
+        os << "Mechanik:"<< endl;
+        for(auto &p : S.Personnel_){
+            if (typeid(*p) == typeid(Mechanic)){
+            os << *p << endl;
+            }
+        }
+
     }
-    os<<endl;*/
+
+    os<<endl;
     return os;
 }
 

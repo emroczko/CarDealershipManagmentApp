@@ -6,10 +6,12 @@ AddPersonnel::AddPersonnel(QWidget *parent) :
     ui(new Ui::AddPersonnel)
 {
     ui->setupUi(this);
-    ui->Spacjalizacja_mechanik_wybierz->addItem("");
-    ui->Spacjalizacja_mechanik_wybierz->addItem("");
-    ui->Spacjalizacja_mechanik_wybierz->addItem("");
-    ui->Spacjalizacja_mechanik_wybierz->addItem("");
+    ui->Spacjalizacja_mechanik_wybierz->addItem("Mechanik");
+    ui->Spacjalizacja_mechanik_wybierz->addItem("Blacharz");
+    ui->Spacjalizacja_mechanik_wybierz->addItem("Lakiernik");
+    ui->Spacjalizacja_mechanik_wybierz->addItem("Elektromechanik");
+    ui->Spacjalizacja_mechanik_wybierz->addItem("Wulkanizator");
+    ui->Spacjalizacja_mechanik_wybierz->addItem("Diagnosta");
     Check=1;
 }
 

@@ -136,7 +136,7 @@ void welcomeScreen::on_wczytajStan_clicked()
            //in>>"Samochody:";
            in>>temp_;
 
-           while (temp_=="Motocykle:" || !in.atEnd())
+           while (!in.atEnd())
            {
 
            //in>>"BMW" >>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
@@ -149,7 +149,10 @@ void welcomeScreen::on_wczytajStan_clicked()
            }
            else
            temp+=Vehicle::makeCar("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
+           if(temp_=="Motocykle:")
+               break;
            }
+
            in>>temp_;
            while (temp_=="Personel:" || !in.atEnd())
            {

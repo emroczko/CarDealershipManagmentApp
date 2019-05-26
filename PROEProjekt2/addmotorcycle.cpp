@@ -6,19 +6,19 @@ AddMotorcycle::AddMotorcycle(QWidget *parent) :
     ui(new Ui::AddMotorcycle)
 {
     ui->setupUi(this);
-    ui->Model_wybierz->addItem("BMW K 1600 Grand America");
-    ui->Model_wybierz->addItem("BMW R 1250 RS");
-    ui->Model_wybierz->addItem("BMW R 1250 RT");
-    ui->Model_wybierz->addItem("BMW R 1250 R");
-    ui->Model_wybierz->addItem("BMW R 1250 GS Adventure");
-    ui->Model_wybierz->addItem("BMW S 1000 RR");
-    ui->Model_wybierz->addItem("BMW S 1000 R");
-    ui->Model_wybierz->addItem("BMW S 1000 XR");
-    ui->Model_wybierz->addItem("BMW F 850 GS");
-    ui->Model_wybierz->addItem("BMW F 800 R");
-    ui->Model_wybierz->addItem("BMW F 750 GS");
-    ui->Model_wybierz->addItem("BMW R nineT Scrambler");
-    ui->Model_wybierz->addItem("BMW HP4 RACE");
+    ui->Model_wybierz->addItem("BMW K1600-Grand-America");
+    ui->Model_wybierz->addItem("BMW R1250RS");
+    ui->Model_wybierz->addItem("BMW R1250RT");
+    ui->Model_wybierz->addItem("BMW R1250R");
+    ui->Model_wybierz->addItem("BMW R1250GS");
+    ui->Model_wybierz->addItem("BMW S1000RR");
+    ui->Model_wybierz->addItem("BMW S1000R");
+    ui->Model_wybierz->addItem("BMW S1000XR");
+    ui->Model_wybierz->addItem("BMW F850GS");
+    ui->Model_wybierz->addItem("BMW F800R");
+    ui->Model_wybierz->addItem("BMW F750GS");
+    ui->Model_wybierz->addItem("BMW R-nineT");
+    ui->Model_wybierz->addItem("BMW HP4");
     ui->Paliw_wybierz->addItem("Benzyna");
     ui->Paliw_wybierz->addItem("Diesel");
     ui->Paliw_wybierz->addItem("Elektryczny");

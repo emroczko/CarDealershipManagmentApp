@@ -213,6 +213,7 @@ void MainWindow2::on_Wyjcie_clicked() {MainWindow2::close();}
 void MainWindow2::on_Sprzedaj_Auto_clicked() {Sell_car();}
 void MainWindow2::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText) {ui->stanKontsa->setText(iconText);}
+
 void MainWindow2::on_Savetofile_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
@@ -241,6 +242,7 @@ void MainWindow2::on_Savetofile_clicked()
 void MainWindow2::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
 void MainWindow2::on_SalonInfo_clicked() {Salon_info();}
 void MainWindow2::on_Zatrudnij_nowego_clicked() {Add_employee();}
+
 void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
 {
     std::vector<shared_ptr<Person>> people;

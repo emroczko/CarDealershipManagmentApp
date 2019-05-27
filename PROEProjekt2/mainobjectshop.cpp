@@ -53,6 +53,7 @@ Shop & Shop::operator -= (int i)
 
 vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
 vector < shared_ptr<Person> > Shop::getPersonnel() const {return Personnel_;}
+
 ostream& operator<<(ostream& os,const Shop& S)
 {
 

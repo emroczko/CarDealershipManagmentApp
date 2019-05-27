@@ -2,13 +2,14 @@
 #include "ui_welcomeScreen.h"
 
 welcomeScreen::welcomeScreen(QWidget *parent) :
-    QDialog(parent), temp(1000000),
+    QDialog(parent), tempShop(1000000),
     ui(new Ui::welcomeScreen)
 {
     ui->setupUi(this);
-     Check=1;
+    Check=1;
 }
 welcomeScreen::~welcomeScreen() {delete ui;}
+
 bool welcomeScreen::on_zacznijOdNowa_clicked()
 {
     this->accept();
@@ -31,28 +32,23 @@ void welcomeScreen::on_wczytajStan_clicked()
 
     if (fileName.isEmpty())
         return ;
-    else {
+    else{
 
-        string name1 = fileName.toStdString();
-        ifstream io;
-
-        io.open(name1);
+        ifstream io(fileName.toStdString());
 
         if(!io.is_open()){
                QMessageBox::information(this, tr("Nie można otworzyć!"), tr("Nie można otworzyć!"));
                return ;
            }
-        else{
-               io>>temp;
-               io.close();
-           }
+        io>>tempShop;
+        io.close();
         this->accept();
-        return;
-           }
+        }
 }
+
 Shop welcomeScreen::pass_the_shop() const
 {
-    return temp;
+    return tempShop;
 }
 
 

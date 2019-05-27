@@ -162,7 +162,7 @@ public:
         Wyjscie->setStyleSheet(QString::fromUtf8(""));
         stanKontsa = new QLabel(tab_5);
         stanKontsa->setObjectName(QString::fromUtf8("stanKontsa"));
-        stanKontsa->setGeometry(QRect(540, 590, 301, 51));
+        stanKontsa->setGeometry(QRect(550, 590, 301, 51));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Avenir"));
         font2.setPointSize(18);

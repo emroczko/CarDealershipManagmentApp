@@ -85,11 +85,72 @@ ostream& operator<<(ostream& os,const Shop& S)
             os << *p << endl;
             }
         }
-
     }
-
     os<<endl;
     return os;
+}
+istream & operator >> (istream &in, Shop &shop)
+{
+    string model, condition, transmission,transmission2, engine, temp_;
+    int id, exp;
+    double money, price;
+    string name, surname,  spec;
+
+    in>>temp_;
+
+    while (!in.eof())
+    {
+
+    //in>>"BMW" >>model>>"Cena:">>price>>"zł">>"ID:">>id>>"Stan:">>condition>>"Silnik:">>engine>>"Skrzynia biegów:">>transmission;
+
+    in>>temp_;
+    if(temp_=="Motocykle:")
+        break;
+
+    in>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
+    if(transmission!="Manualna")
+    {
+        in>>transmission2;
+        shop+=Vehicle::makeCar("BMW "+model, price, id, condition, engine, transmission+transmission2);
+    }
+    else
+    shop+=Vehicle::makeCar("BMW "+model, price, id, condition, engine, transmission);
+    }
+
+
+    while (!in.eof())
+    {
+
+    in>>temp_;
+    if(temp_=="Sprzedawcy:")
+        break;
+    in>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
+
+
+    shop+=Vehicle::makeMotorcycle("BMW "+model, price, id, condition, engine, transmission);
+    }
+
+    while (!in.eof())
+    {
+    in>>temp_;
+    if(temp_=="Mechanicy:")
+    break;
+
+    in>>name>>temp_>>surname>>temp_>>money>>temp_>>exp;
+
+    shop+=Person::makeSalesman(name, surname, money, exp);
+    }
+    while (!in.eof())
+    {
+    in>>temp_>>name;
+    if(name=="")
+    break;
+
+    in>>temp_>>surname>>temp_>>money>>temp_>>spec;
+
+    shop+=Person::makeMechanic(name, surname, money, spec);
+    }
+    return in;
 }
 
 Shop & Shop::operator = (Shop &shop)

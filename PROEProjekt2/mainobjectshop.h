@@ -28,20 +28,18 @@ public:
     void saveToFile(const Shop & shop);
     void loadFromFile();
     void Set_income(int);
+    int getIncome() const;
     friend ostream& operator<< (ostream& ,const Shop&);
+    friend istream& operator>> (istream& ,Shop&);
     vector < shared_ptr<Vehicle> > getVehicles() const;
     vector < shared_ptr<Person> > getPersonnel() const;
-    bool operator == (const Shop &shop); //porownuje przychod placowki
-    bool operator > (const Shop &shop); //porownuje przychod placowki
-    bool operator < (const Shop &shop); //porownuje przychod placowki
+    bool operator == (const Shop &shop); //porownuje placówkę
+    bool operator > (const Shop &shop); //porownuje placówkę
+    bool operator < (const Shop &shop); //porownuje placówkę
+    Shop & operator = (Shop &shop); //przenosi zawartość z jednego salonu do drugiego
     Shop & operator += (shared_ptr<Person>); // dodaje pracownika do sklepu
-    Shop & operator = (Shop &shop); //łączy dwie placówki
-    Shop & operator += (shared_ptr<Vehicle>); // dodaje auto do salonu
+    Shop & operator += (shared_ptr<Vehicle>); // dodaje pojazd do salonu
     Shop & operator -= (int i);
-    Shop & operator -- (); // usuwa ostatnie auto
-    //Shop & operator ()(const Customer& customer, int whichCar);//klient kupuje auto o nr podanym indeksie wektora
-    //Shop & operator ()(const Customer& customer, string whichCar);//klient kupuje auto danym modelu
-    //string operator [] (unsigned int number);//pokazuje wybrane (po indeksie) auto z placowki
-    int getIncome() const;
+
 
 };

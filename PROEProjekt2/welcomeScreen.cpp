@@ -27,49 +27,28 @@ void welcomeScreen::closeEvent (QCloseEvent *event)
 void welcomeScreen::on_wczytajStan_clicked()
 {
     Check--;
-    QString fileName = QFileDialog::getOpenFileName(this,
-           tr("Odtwórz poprzedni stan"), "",
-           tr("Salon (*.txt);;All Files (*)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Odtwórz poprzedni stan"), "", tr("Salon (*.txt);;All Files (*)"));
 
-       if (fileName.isEmpty())
-           return ;
-       else {
+    if (fileName.isEmpty())
+        return ;
+    else {
 
-          QFile file(fileName);
+        string name1 = fileName.toStdString();
+        ifstream io;
 
-           string name1 = fileName.toStdString();
+        io.open(name1);
 
-           ifstream io;
-           io.open(name1);
-
-           QString gut;
-
-           if(!io.is_open())
-           {
-               QMessageBox::information(this, tr("Unable to open file"),
-                   file.errorString());
+        if(!io.is_open()){
+               QMessageBox::information(this, tr("Nie można otworzyć!"), tr("Nie można otworzyć!"));
                return ;
            }
-           else {
+        else{
                io>>temp;
                io.close();
-               gut = "dziala";
            }
-
-           file.close();
-
-
-           if(gut.isEmpty()) {
-               QMessageBox::information(this, tr("Plik jest pusty"),
-                   tr("Plik jest pusty"));
-                    return ;
-           } else {
-
-               this->accept();
-               return;
+        this->accept();
+        return;
            }
-           }
-
 }
 Shop welcomeScreen::pass_the_shop() const
 {

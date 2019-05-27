@@ -84,15 +84,15 @@ void welcomeScreen::on_wczytajStan_clicked()
            file.close();
 
 
-           if(temp_.isEmpty()) {
+           /*if(temp_.isEmpty()) {
                QMessageBox::information(this, tr("Plik jest pusty"),
                    tr("Plik jest pusty"));
                     return ;
-           } else {
+           } else {*/
 
                this->accept();
                return;
-           }
+           //}
            }
 
 

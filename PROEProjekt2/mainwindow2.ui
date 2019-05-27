@@ -227,7 +227,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="iconSize">
          <size>
@@ -249,8 +249,8 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>690</y>
-            <width>1391</width>
+            <y>720</y>
+            <width>1411</width>
             <height>51</height>
            </rect>
           </property>
@@ -433,8 +433,7 @@
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(58, 109, 118);
-background-color: rgb(104, 96, 40);</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Zapisz obecny stan salonu</string>
@@ -463,8 +462,8 @@ background-color: rgb(104, 96, 40);</string>
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>750</y>
-            <width>1391</width>
+            <y>770</y>
+            <width>1411</width>
             <height>51</height>
            </rect>
           </property>
@@ -475,8 +474,7 @@ background-color: rgb(104, 96, 40);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(58, 109, 118);
-background-color: rgb(104, 96, 40);</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Wyjście</string>
@@ -486,7 +484,7 @@ background-color: rgb(104, 96, 40);</string>
           <property name="geometry">
            <rect>
             <x>540</x>
-            <y>570</y>
+            <y>590</y>
             <width>301</width>
             <height>51</height>
            </rect>
@@ -522,8 +520,8 @@ background-color: rgb(104, 96, 40);</string>
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>630</y>
-            <width>1391</width>
+            <y>670</y>
+            <width>1411</width>
             <height>51</height>
            </rect>
           </property>
@@ -534,7 +532,7 @@ background-color: rgb(104, 96, 40);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(104, 96, 40);</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Wyświetl informacje o salonie</string>
@@ -549,9 +547,9 @@ background-color: rgb(104, 96, 40);</string>
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>760</y>
+            <y>770</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="font">
@@ -568,9 +566,9 @@ background-color: rgb(104, 96, 40);</string>
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>680</y>
+            <y>670</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="font">
@@ -589,7 +587,7 @@ background-color: rgb(104, 96, 40);</string>
             <x>0</x>
             <y>720</y>
             <width>1391</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="font">
@@ -608,7 +606,7 @@ background-color: rgb(104, 96, 40);</string>
             <x>90</x>
             <y>10</y>
             <width>1201</width>
-            <height>661</height>
+            <height>651</height>
            </rect>
           </property>
           <property name="text">
@@ -619,6 +617,42 @@ background-color: rgb(104, 96, 40);</string>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="stanKontsa_2">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>600</y>
+            <width>301</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir Next</family>
+            <pointsize>18</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </widget>
@@ -796,7 +830,7 @@ background-color: rgb(104, 96, 40);</string>
      <x>0</x>
      <y>0</y>
      <width>1433</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -807,4 +841,3 @@ background-color: rgb(104, 96, 40);</string>
  </resources>
  <connections/>
 </ui>
-

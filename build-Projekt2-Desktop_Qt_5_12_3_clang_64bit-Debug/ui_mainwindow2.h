@@ -41,6 +41,7 @@ public:
     QPushButton *Posiadane_samochodu;
     QPushButton *Dodaj_samochod;
     QLabel *label;
+    QLabel *stanKontsa_2;
     QWidget *tab_7;
     QPushButton *Posiadane_motocykle;
     QPushButton *pushButton;
@@ -116,7 +117,7 @@ public:
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
         Savetofile = new QPushButton(tab_5);
         Savetofile->setObjectName(QString::fromUtf8("Savetofile"));
-        Savetofile->setGeometry(QRect(0, 690, 1391, 51));
+        Savetofile->setGeometry(QRect(0, 720, 1411, 51));
         QPalette palette2;
         QBrush brush6(QColor(104, 96, 40, 255));
         brush6.setStyle(Qt::SolidPattern);
@@ -147,8 +148,7 @@ public:
         font1.setFamily(QString::fromUtf8("Avenir"));
         font1.setPointSize(16);
         Savetofile->setFont(font1);
-        Savetofile->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 109, 118);\n"
-"background-color: rgb(104, 96, 40);"));
+        Savetofile->setStyleSheet(QString::fromUtf8(""));
         label_3 = new QLabel(tab_5);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(10, 10, 1361, 551));
@@ -156,13 +156,12 @@ public:
         label_3->setScaledContents(true);
         Wyjscie = new QPushButton(tab_5);
         Wyjscie->setObjectName(QString::fromUtf8("Wyjscie"));
-        Wyjscie->setGeometry(QRect(0, 750, 1391, 51));
+        Wyjscie->setGeometry(QRect(0, 770, 1411, 51));
         Wyjscie->setFont(font1);
-        Wyjscie->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 109, 118);\n"
-"background-color: rgb(104, 96, 40);"));
+        Wyjscie->setStyleSheet(QString::fromUtf8(""));
         stanKontsa = new QLabel(tab_5);
         stanKontsa->setObjectName(QString::fromUtf8("stanKontsa"));
-        stanKontsa->setGeometry(QRect(540, 570, 301, 51));
+        stanKontsa->setGeometry(QRect(540, 590, 301, 51));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Avenir Next"));
         font2.setPointSize(18);
@@ -176,32 +175,41 @@ public:
         stanKontsa->setAlignment(Qt::AlignCenter);
         SalonInfo = new QPushButton(tab_5);
         SalonInfo->setObjectName(QString::fromUtf8("SalonInfo"));
-        SalonInfo->setGeometry(QRect(0, 630, 1391, 51));
+        SalonInfo->setGeometry(QRect(0, 670, 1411, 51));
         SalonInfo->setFont(font1);
-        SalonInfo->setStyleSheet(QString::fromUtf8("background-color: rgb(104, 96, 40);"));
+        SalonInfo->setStyleSheet(QString::fromUtf8(""));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
         Sprzedaj_Auto = new QPushButton(tab_6);
         Sprzedaj_Auto->setObjectName(QString::fromUtf8("Sprzedaj_Auto"));
-        Sprzedaj_Auto->setGeometry(QRect(0, 760, 1391, 41));
+        Sprzedaj_Auto->setGeometry(QRect(0, 770, 1391, 51));
         QFont font3;
         font3.setFamily(QString::fromUtf8("Avenir"));
         font3.setPointSize(15);
         Sprzedaj_Auto->setFont(font3);
         Posiadane_samochodu = new QPushButton(tab_6);
         Posiadane_samochodu->setObjectName(QString::fromUtf8("Posiadane_samochodu"));
-        Posiadane_samochodu->setGeometry(QRect(0, 680, 1391, 41));
+        Posiadane_samochodu->setGeometry(QRect(0, 670, 1391, 51));
         Posiadane_samochodu->setFont(font3);
         Dodaj_samochod = new QPushButton(tab_6);
         Dodaj_samochod->setObjectName(QString::fromUtf8("Dodaj_samochod"));
-        Dodaj_samochod->setGeometry(QRect(0, 720, 1391, 41));
+        Dodaj_samochod->setGeometry(QRect(0, 720, 1391, 51));
         Dodaj_samochod->setFont(font3);
         label = new QLabel(tab_6);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(90, 10, 1201, 661));
+        label->setGeometry(QRect(90, 10, 1201, 651));
         label->setPixmap(QPixmap(QString::fromUtf8(":/pics/Downloads/2018-bmw-m2-competition-99gallery-1526572314.jpg")));
         label->setScaledContents(true);
+        stanKontsa_2 = new QLabel(tab_6);
+        stanKontsa_2->setObjectName(QString::fromUtf8("stanKontsa_2"));
+        stanKontsa_2->setGeometry(QRect(110, 600, 301, 51));
+        stanKontsa_2->setFont(font2);
+        stanKontsa_2->setCursor(QCursor(Qt::ArrowCursor));
+        stanKontsa_2->setAutoFillBackground(false);
+        stanKontsa_2->setFrameShape(QFrame::Box);
+        stanKontsa_2->setFrameShadow(QFrame::Plain);
+        stanKontsa_2->setAlignment(Qt::AlignCenter);
         tabWidget->addTab(tab_6, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
@@ -255,7 +263,7 @@ public:
         MainWindow2->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow2);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1433, 25));
+        menubar->setGeometry(QRect(0, 0, 1433, 22));
         MainWindow2->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow2);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -263,7 +271,7 @@ public:
 
         retranslateUi(MainWindow2);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow2);
@@ -282,6 +290,7 @@ public:
         Posiadane_samochodu->setText(QApplication::translate("MainWindow2", "Posiadane samochody", nullptr));
         Dodaj_samochod->setText(QApplication::translate("MainWindow2", "Kup Samoch\303\263d", nullptr));
         label->setText(QString());
+        stanKontsa_2->setText(QApplication::translate("MainWindow2", "TextLabel", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow2", "Samochody", nullptr));
         Posiadane_motocykle->setText(QApplication::translate("MainWindow2", "Posiadane motocykle", nullptr));
         pushButton->setText(QApplication::translate("MainWindow2", "Kup motocykl", nullptr));

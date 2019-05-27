@@ -66,6 +66,7 @@ void MainWindow2::Income()
     string stan = "Stan konta: ";
     QString konto = QString::fromStdString(stan+kasa1);
     MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
+    MainWindow2::on_stanKontsa_2_windowIconTextChanged(konto);
 }
 void MainWindow2::Add_motorcycle()
 {
@@ -212,6 +213,7 @@ void MainWindow2::on_pushButton_clicked() {Add_motorcycle();}
 void MainWindow2::on_Sprzedaj_Auto_clicked() {Sell_car();}
 void MainWindow2::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText) {ui->stanKontsa->setText(iconText);}
+void MainWindow2::on_stanKontsa_2_windowIconTextChanged(const QString &iconText) {ui->stanKontsa_2->setText(iconText);}
 
 void MainWindow2::on_Savetofile_clicked()
 {
@@ -266,3 +268,6 @@ void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
 }
 
 void MainWindow2::on_Wyjscie_clicked() {MainWindow2::close();}
+
+
+

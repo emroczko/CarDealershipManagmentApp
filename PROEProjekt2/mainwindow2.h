@@ -42,6 +42,7 @@ private slots:
     void on_Zatrudnij_nowego_clicked();
     void on_Zatrudnieni_pracownicy_clicked();
     void on_Wyjscie_clicked();
+    void on_stanKontsa_2_windowIconTextChanged(const QString &iconText);
 
 private:
     void Income();

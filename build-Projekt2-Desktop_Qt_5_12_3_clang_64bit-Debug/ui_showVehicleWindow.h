@@ -26,6 +26,9 @@ public:
         if (Dialog1->objectName().isEmpty())
             Dialog1->setObjectName(QString::fromUtf8("Dialog1"));
         Dialog1->resize(600, 407);
+        QFont font;
+        font.setFamily(QString::fromUtf8("Avenir Next"));
+        Dialog1->setFont(font);
         listWidget = new QListWidget(Dialog1);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(40, 60, 511, 301));

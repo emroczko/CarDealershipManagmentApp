@@ -79,7 +79,7 @@ void welcomeScreen::on_wczytajStan_clicked()
 
            temp+=Vehicle::makeMotorcycle("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
            }
-
+           temp_="cos co potem naprawie";
 
            file.close();
 

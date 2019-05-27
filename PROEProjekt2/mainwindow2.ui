@@ -10,6 +10,12 @@
     <height>925</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="maximumSize">
    <size>
     <width>1920</width>
@@ -227,7 +233,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="iconSize">
          <size>
@@ -242,6 +248,12 @@
          <bool>false</bool>
         </property>
         <widget class="QWidget" name="tab_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <attribute name="title">
           <string>Salon</string>
          </attribute>
@@ -527,11 +539,16 @@ background-color: rgb(104, 96, 40);</string>
             <height>51</height>
            </rect>
           </property>
+<<<<<<< HEAD
+          <property name="autoFillBackground">
+           <bool>false</bool>
+=======
           <property name="font">
            <font>
             <family>Avenir</family>
             <pointsize>16</pointsize>
            </font>
+>>>>>>> 30aea3fb89925f4bb2912b9b6352eed34304e9f7
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(104, 96, 40);</string>
@@ -542,6 +559,12 @@ background-color: rgb(104, 96, 40);</string>
          </widget>
         </widget>
         <widget class="QWidget" name="tab_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <attribute name="title">
           <string>Samochody</string>
          </attribute>
@@ -554,11 +577,19 @@ background-color: rgb(104, 96, 40);</string>
             <height>41</height>
            </rect>
           </property>
+<<<<<<< HEAD
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+=======
           <property name="font">
            <font>
             <family>Avenir</family>
             <pointsize>15</pointsize>
            </font>
+>>>>>>> 30aea3fb89925f4bb2912b9b6352eed34304e9f7
           </property>
           <property name="text">
            <string>Sprzedaj samochód</string>
@@ -573,11 +604,19 @@ background-color: rgb(104, 96, 40);</string>
             <height>41</height>
            </rect>
           </property>
+<<<<<<< HEAD
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+=======
           <property name="font">
            <font>
             <family>Avenir</family>
             <pointsize>15</pointsize>
            </font>
+>>>>>>> 30aea3fb89925f4bb2912b9b6352eed34304e9f7
           </property>
           <property name="text">
            <string>Posiadane samochody</string>
@@ -592,11 +631,19 @@ background-color: rgb(104, 96, 40);</string>
             <height>41</height>
            </rect>
           </property>
+<<<<<<< HEAD
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+=======
           <property name="font">
            <font>
             <family>Avenir</family>
             <pointsize>15</pointsize>
            </font>
+>>>>>>> 30aea3fb89925f4bb2912b9b6352eed34304e9f7
           </property>
           <property name="text">
            <string>Kup Samochód</string>
@@ -623,6 +670,12 @@ background-color: rgb(104, 96, 40);</string>
          </widget>
         </widget>
         <widget class="QWidget" name="tab_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <attribute name="title">
           <string>Motocykle</string>
          </attribute>
@@ -704,6 +757,12 @@ background-color: rgb(104, 96, 40);</string>
          </widget>
         </widget>
         <widget class="QWidget" name="Personnel_tab">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <attribute name="title">
           <string>Personel</string>
          </attribute>
@@ -716,11 +775,19 @@ background-color: rgb(104, 96, 40);</string>
             <height>51</height>
            </rect>
           </property>
+<<<<<<< HEAD
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+=======
           <property name="font">
            <font>
             <family>Avenir</family>
             <pointsize>15</pointsize>
            </font>
+>>>>>>> 30aea3fb89925f4bb2912b9b6352eed34304e9f7
           </property>
           <property name="text">
            <string>Zatrudnieni pracownicy</string>

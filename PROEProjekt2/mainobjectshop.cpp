@@ -9,7 +9,7 @@ void Shop::Set_income(int val) {income_=val;}
 Shop::Shop(int income): income_(income)
 {
 
-
+/*
     Personnel_.emplace_back(Person::makeSalesman("Jan", "Jankowski", 4000, 6));
     Personnel_.emplace_back(Person::makeSalesman("Anna", "Bratkowska", 3000, 3));
     Personnel_.emplace_back(Person::makeMechanic("Adam", "Mazowiecki", 4200, "Mechanik"));
@@ -20,7 +20,7 @@ Shop::Shop(int income): income_(income)
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 730d", 370000, 3, "Używany", "Diesel", "Automatyczna bezstopniowa"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 428i", 190000, 4, "Nowy", "Benzyna", "Manualna"));
     Vehicles_.emplace_back(Vehicle::makeCar("BMW 316d", 142000, 5, "Nowy", "Diesel", "Manualna"));
-    Vehicles_.emplace_back(Vehicle::makeMotorcycle("BMW R 1250 RS", 23000, 1, "Benzyna", "Używany", "Dwusuwowy"));
+    Vehicles_.emplace_back(Vehicle::makeMotorcycle("BMW R 1250 RS", 23000, 1, "Benzyna", "Używany", "Dwusuwowy"));*/
 }
 
 Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector <shared_ptr<Person>> Personnel): income_(income)
@@ -79,7 +79,7 @@ ostream& operator<<(ostream& os,const Shop& S)
             os << *p << endl;
             }
         }
-        os << "Mechanik:"<< endl;
+        os << "Mechanicy:"<< endl;
         for(auto &p : S.Personnel_){
             if (typeid(*p) == typeid(Mechanic)){
             os << *p << endl;

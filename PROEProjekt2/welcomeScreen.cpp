@@ -46,6 +46,7 @@ void welcomeScreen::on_wczytajStan_clicked()
 
            QTextStream in(&file);
            QString model, price, id, condition, transmission,transmission2, engine, temp_;
+           QString name, surname, money, spec, exp;
 
 
 
@@ -75,10 +76,36 @@ void welcomeScreen::on_wczytajStan_clicked()
            while (!in.atEnd())
            {
 
-           in>>temp_>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
+           in>>temp_;
+           if(temp_=="Sprzedawcy:")
+               break;
+           in>>model>>temp_>>price>>temp_>>temp_>>id>>temp_>>condition>>temp_>>engine>>temp_>>temp_>>transmission;
+
 
            temp+=Vehicle::makeMotorcycle("BMW "+model.toStdString(), price.toInt(), id.toInt(), condition.toStdString(), engine.toStdString(), transmission.toStdString());
            }
+
+           while (!in.atEnd())
+           {
+           in>>temp_;
+           if(temp_=="Mechanicy:")
+           break;
+
+           in>>name>>temp_>>surname>>temp_>>money>>temp_>>exp;
+
+           temp+=Person::makeSalesman(name.toStdString(), surname.toStdString(), money.toInt(), exp.toInt());
+           }
+           while (!in.atEnd())
+           {
+           in>>temp_>>name;
+           if(name=="")
+           break;
+
+           in>>temp_>>surname>>temp_>>money>>temp_>>spec;
+
+           temp+=Person::makeMechanic(name.toStdString(), surname.toStdString(), money.toInt(), spec.toStdString());
+           }
+
            temp_="cos co potem naprawie";
 
            file.close();

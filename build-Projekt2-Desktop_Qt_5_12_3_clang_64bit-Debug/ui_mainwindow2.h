@@ -47,6 +47,7 @@ public:
     QPushButton *pushButton;
     QPushButton *SprzedajMotocykl;
     QLabel *label_2;
+    QLabel *stanKontsa_3;
     QWidget *Personnel_tab;
     QPushButton *Zatrudnieni_pracownicy;
     QPushButton *Zatrudnij_nowego;
@@ -163,7 +164,7 @@ public:
         stanKontsa->setObjectName(QString::fromUtf8("stanKontsa"));
         stanKontsa->setGeometry(QRect(540, 590, 301, 51));
         QFont font2;
-        font2.setFamily(QString::fromUtf8("Avenir Next"));
+        font2.setFamily(QString::fromUtf8("Avenir"));
         font2.setPointSize(18);
         font2.setBold(true);
         font2.setWeight(75);
@@ -203,10 +204,16 @@ public:
         label->setScaledContents(true);
         stanKontsa_2 = new QLabel(tab_6);
         stanKontsa_2->setObjectName(QString::fromUtf8("stanKontsa_2"));
-        stanKontsa_2->setGeometry(QRect(110, 600, 301, 51));
-        stanKontsa_2->setFont(font2);
+        stanKontsa_2->setGeometry(QRect(980, 600, 301, 51));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Avenir"));
+        font4.setPointSize(18);
+        font4.setBold(false);
+        font4.setWeight(50);
+        stanKontsa_2->setFont(font4);
         stanKontsa_2->setCursor(QCursor(Qt::ArrowCursor));
         stanKontsa_2->setAutoFillBackground(false);
+        stanKontsa_2->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
         stanKontsa_2->setFrameShape(QFrame::Box);
         stanKontsa_2->setFrameShadow(QFrame::Plain);
         stanKontsa_2->setAlignment(Qt::AlignCenter);
@@ -224,15 +231,25 @@ public:
         SprzedajMotocykl = new QPushButton(tab_7);
         SprzedajMotocykl->setObjectName(QString::fromUtf8("SprzedajMotocykl"));
         SprzedajMotocykl->setGeometry(QRect(0, 760, 1391, 41));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Avenir Next"));
-        font4.setPointSize(15);
-        SprzedajMotocykl->setFont(font4);
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Avenir Next"));
+        font5.setPointSize(15);
+        SprzedajMotocykl->setFont(font5);
         label_2 = new QLabel(tab_7);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(130, 10, 1141, 661));
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/pics/Downloads/BMW-motorcycles-on-road-racing.jpg")));
         label_2->setScaledContents(true);
+        stanKontsa_3 = new QLabel(tab_7);
+        stanKontsa_3->setObjectName(QString::fromUtf8("stanKontsa_3"));
+        stanKontsa_3->setGeometry(QRect(140, 610, 301, 51));
+        stanKontsa_3->setFont(font4);
+        stanKontsa_3->setCursor(QCursor(Qt::ArrowCursor));
+        stanKontsa_3->setAutoFillBackground(false);
+        stanKontsa_3->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        stanKontsa_3->setFrameShape(QFrame::Box);
+        stanKontsa_3->setFrameShadow(QFrame::Plain);
+        stanKontsa_3->setAlignment(Qt::AlignCenter);
         tabWidget->addTab(tab_7, QString());
         Personnel_tab = new QWidget();
         Personnel_tab->setObjectName(QString::fromUtf8("Personnel_tab"));
@@ -271,7 +288,7 @@ public:
 
         retranslateUi(MainWindow2);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow2);
@@ -296,6 +313,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow2", "Kup motocykl", nullptr));
         SprzedajMotocykl->setText(QApplication::translate("MainWindow2", "Sprzedaj motocykl", nullptr));
         label_2->setText(QString());
+        stanKontsa_3->setText(QApplication::translate("MainWindow2", "TextLabel", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow2", "Motocykle", nullptr));
         Zatrudnieni_pracownicy->setText(QApplication::translate("MainWindow2", "Zatrudnieni pracownicy", nullptr));
         Zatrudnij_nowego->setText(QApplication::translate("MainWindow2", "Zatrudnij nowego pracownika", nullptr));

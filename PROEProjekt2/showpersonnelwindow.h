@@ -19,6 +19,8 @@ public:
     void change_text();
     ~ShowPersonnelWindow();
     void showMethod(const vector<shared_ptr<Person>>&);
+    vector<shared_ptr<Person>> showSpecialized(bool);
+
 
 public slots:
     bool on_radioWszyscy_clicked();

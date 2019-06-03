@@ -25,6 +25,16 @@ MainWindow2::~MainWindow2()
 {
     delete ui;
 }
+void MainWindow2::Income()
+{
+    int kasa = salon.getIncome();
+    string kasa1 = std::to_string(kasa);
+    string stan = "Stan konta: ";
+    QString konto = QString::fromStdString(stan+kasa1);
+    MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
+    MainWindow2::on_stanKontsa_2_windowIconTextChanged(konto);
+    MainWindow2::on_stanKontsa_3_windowIconTextChanged(konto);
+}
 void MainWindow2::Add_car()
 {
     AddVehicle addCar;
@@ -43,32 +53,12 @@ void MainWindow2::Add_car()
                 salon += tmp;
             }
         }
-        else
-        {
+        else{ add(tmp); }
 
-            if(salon.getIncome()-tmp->Get_Price()>=0)
-            {
-                salon.Set_income(salon.getIncome()-tmp->Get_Price());
-                salon += tmp;
-            }
-            else
-            {
-                QMessageBox::warning(this, "", "Nie wystarczające środki");
-            }
-        }
      }
     MainWindow2::Income();
 }
-void MainWindow2::Income()
-{
-    int kasa = salon.getIncome();
-    string kasa1 = std::to_string(kasa);
-    string stan = "Stan konta: ";
-    QString konto = QString::fromStdString(stan+kasa1);
-    MainWindow2::on_stanKontsa_windowIconTextChanged(konto);
-    MainWindow2::on_stanKontsa_2_windowIconTextChanged(konto);
-    MainWindow2::on_stanKontsa_3_windowIconTextChanged(konto);
-}
+
 void MainWindow2::Add_motorcycle()
 {
     AddMotorcycle addMotor;
@@ -90,23 +80,26 @@ void MainWindow2::Add_motorcycle()
                 salon += tmp;
             }
         }
-        else
-        {
+        else{ add(tmp); }
 
-            if(salon.getIncome()-tmp->Get_Price()>=0)
-            {
-                salon.Set_income(salon.getIncome()-tmp->Get_Price());
-                salon += tmp;
-            }
-            else
-            {
-                QMessageBox::warning(this, "", "Nie wystarczające środki");
-            }
-        }
     }
     MainWindow2::Income();
 
 }
+void MainWindow2::add(shared_ptr<Vehicle> tmp)
+{
+    if(salon.getIncome()-tmp->Get_Price()>=0)
+    {
+        salon.Set_income(salon.getIncome()-tmp->Get_Price());
+        salon += tmp;
+    }
+    else
+    {
+        QMessageBox::warning(this, "", "Nie wystarczające środki");
+    }
+
+}
+
 void MainWindow2::Add_employee()
 {
     AddPersonnel addperson;
@@ -117,84 +110,59 @@ void MainWindow2::Add_employee()
         salon+=addperson.on_Akceptuj_mechanik_clicked();
     }
 }
-void MainWindow2::Sell_car()
-{
-    std::vector<shared_ptr<Vehicle>> samochody;
-    for(auto p : salon.getVehicles())
-    if (typeid (*p) == typeid(Car)) samochody.push_back((p));
-    deleteCar deletecar(samochody);
-    deletecar.setModal(true);
-    if(samochody.size()>0)
-    {
-        deletecar.exec();
-        std::stringstream buffer;
-        if(salon.getVehicles().size()!= 0)
-        {
-            for(unsigned int i=0; i<salon.getVehicles().size(); i++)
-            {
-                buffer << *salon.getVehicles()[i];
-                if(buffer.str()==deletecar.on_pushButton_2_clicked())
-                {
-                    shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
-                    int val =salon.getIncome()+tmp->Get_Price()*1.2;
-                    salon.Set_income(val);
-                    salon-=i;
-                }
-                buffer.str(std::string());
-            }
-        }
-    }
-    else
-    {
-        QMessageBox::warning(this, tr("Błąd"), tr("Brak samochodów do usunięcia."));
-    }
-    MainWindow2::Income();
-}
+
 void MainWindow2::Motorcycles_owned()
 {
-    std::vector<shared_ptr<Vehicle>> motory;
-    for(auto p : salon.getVehicles())
-    if (typeid (*p) == typeid(Motorcycle)) motory.push_back((p));
-
-    Dialog1 show(motory);
-    show.setModal(true);
-    show.exec();
+   Vehicles_owned(false);
 }
+
 void MainWindow2::Cars_owned()
 {
-    std::vector<shared_ptr<Vehicle>> samochody;
+   Vehicles_owned(true);
+}
+
+void MainWindow2::Vehicles_owned(bool which)
+{
+    std::vector<shared_ptr<Vehicle>> Vehicles_;
     for(auto p : salon.getVehicles())
-    if (typeid (*p) == typeid(Car)) samochody.push_back((p));
-    Dialog1 dial(samochody);
+    if (which==0 && typeid (*p) == typeid(Motorcycle)) Vehicles_.push_back((p));
+    else if(which==1 && typeid (*p) == typeid(Car)) Vehicles_.push_back((p));
+
+    Dialog1 dial(Vehicles_);
     dial.setModal(true);
     dial.exec();
 }
+void MainWindow2::Sell_car()
+{
+    sell(true);
+}
 void MainWindow2::Sell_motorcycle()
 {
-    std::vector<shared_ptr<Vehicle>> motory;
+    sell(false);
+}
+void MainWindow2::sell(bool whichVehicle)
+{
+    std::vector<shared_ptr<Vehicle>> vehicles_;
     for(auto p : salon.getVehicles())
-    if (typeid (*p) == typeid(Motorcycle)) motory.push_back((p));
-    deleteCar deletecar(motory);
-    deletecar.setModal(true);
-    if(motory.size()>0)
+    if (whichVehicle==0 && typeid (*p) == typeid(Motorcycle)) vehicles_.push_back((p));
+    else if(whichVehicle==1 && typeid (*p) == typeid(Car)) vehicles_.push_back((p));
+
+    deleteWindow deleteVehicle_(vehicles_);
+    deleteVehicle_.setModal(true);
+    if(vehicles_.size()>0)
     {
-        deletecar.exec();
+        deleteVehicle_.exec();
         std::stringstream buffer;
-        if(salon.getVehicles().size()!= 0)
-        {
+
             for(unsigned int i=0; i<salon.getVehicles().size(); i++)
             {
                 buffer << *salon.getVehicles()[i];
-                if(buffer.str()==deletecar.on_pushButton_2_clicked())
+                if(buffer.str()==deleteVehicle_.on_Usun_clicked())
                 {
-                    shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
-                    int val =salon.getIncome()+tmp->Get_Price()*1.2;
-                    salon.Set_income(val);
-                    salon-=i;
+                deleteHelper(i);
                 }
                 buffer.str(std::string());
             }
-        }
     }
     else
     {
@@ -202,12 +170,22 @@ void MainWindow2::Sell_motorcycle()
     }
     MainWindow2::Income();
 }
+
+void MainWindow2::deleteHelper(int i)
+{
+    shared_ptr<Vehicle> tmp =salon.getVehicles()[i];
+    int val =salon.getIncome()+tmp->Get_Price()*1.2;
+    salon.Set_income(val);
+    salon-=i;
+}
+
 void MainWindow2::Salon_info()
 {
     Dialog1 dial(salon.getVehicles());
     dial.setModal(true);
     dial.exec();
 }
+
 void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
 void MainWindow2::on_Posiadane_samochodu_clicked() {Cars_owned();}
 void MainWindow2::on_pushButton_clicked() {Add_motorcycle();}
@@ -225,7 +203,7 @@ void MainWindow2::on_Savetofile_clicked()
 
         if (fileName.isEmpty())
             return;
-        else {
+
             QFile file(fileName);
             if (!file.open(QIODevice::WriteOnly)) {
                 QMessageBox::information(this, tr("Unable to open file"),
@@ -240,7 +218,6 @@ void MainWindow2::on_Savetofile_clicked()
             out << qstr;
 
 }
-}
 
 void MainWindow2::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
 void MainWindow2::on_SalonInfo_clicked() {Salon_info();}
@@ -253,25 +230,8 @@ void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
     ShowPersonnelWindow showpersonnel(people);
     showpersonnel.setModal(true);
     showpersonnel.exec();
-    if(showpersonnel.on_radioMechanik_clicked()==true)
-    {
-        people.clear();
-        for(auto m: salon.getPersonnel())
-        {
-            if(typeid(m)==typeid(Mechanic))
-            {
-               people.emplace_back(m);
-            }
-        }
-        showpersonnel.showMethod(people);
-    }
-
+    showpersonnel.showMethod(people);
 
 }
 
 void MainWindow2::on_Wyjscie_clicked() {MainWindow2::close();}
-
-
-
-
-

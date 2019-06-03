@@ -31,7 +31,7 @@ public slots:
    void on_wczytajStan_clicked();
 
 private:
-    Shop temp;
+    Shop tempShop;
     Ui::welcomeScreen *ui;
     int Check;
 

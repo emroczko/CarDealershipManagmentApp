@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'deleteWindow.ui'
+** Form generated from reading UI file 'deletewindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.3
 **
@@ -18,56 +18,53 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_deleteCar
+class Ui_deleteWindow
 {
 public:
     QVBoxLayout *verticalLayout;
-    QListWidget *listWidget;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QListWidget *lista_do_usuniecia;
+    QPushButton *Usun;
+    QPushButton *Anuluj;
 
-    void setupUi(QDialog *deleteCar)
+    void setupUi(QDialog *deleteWindow)
     {
-        if (deleteCar->objectName().isEmpty())
-            deleteCar->setObjectName(QString::fromUtf8("deleteCar"));
-        deleteCar->resize(623, 468);
-        QFont font;
-        font.setFamily(QString::fromUtf8("Avenir Next"));
-        deleteCar->setFont(font);
-        verticalLayout = new QVBoxLayout(deleteCar);
+        if (deleteWindow->objectName().isEmpty())
+            deleteWindow->setObjectName(QString::fromUtf8("deleteWindow"));
+        deleteWindow->resize(622, 449);
+        verticalLayout = new QVBoxLayout(deleteWindow);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        listWidget = new QListWidget(deleteCar);
-        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        lista_do_usuniecia = new QListWidget(deleteWindow);
+        lista_do_usuniecia->setObjectName(QString::fromUtf8("lista_do_usuniecia"));
 
-        verticalLayout->addWidget(listWidget);
+        verticalLayout->addWidget(lista_do_usuniecia);
 
-        pushButton_2 = new QPushButton(deleteCar);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        Usun = new QPushButton(deleteWindow);
+        Usun->setObjectName(QString::fromUtf8("Usun"));
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(Usun);
 
-        pushButton = new QPushButton(deleteCar);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        Anuluj = new QPushButton(deleteWindow);
+        Anuluj->setObjectName(QString::fromUtf8("Anuluj"));
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(Anuluj);
 
 
-        retranslateUi(deleteCar);
+        retranslateUi(deleteWindow);
 
-        QMetaObject::connectSlotsByName(deleteCar);
+        QMetaObject::connectSlotsByName(deleteWindow);
     } // setupUi
 
-    void retranslateUi(QDialog *deleteCar)
+    void retranslateUi(QDialog *deleteWindow)
     {
-        deleteCar->setWindowTitle(QApplication::translate("deleteCar", "Dialog", nullptr));
-        pushButton_2->setText(QApplication::translate("deleteCar", "Usu\305\204", nullptr));
-        pushButton->setText(QApplication::translate("deleteCar", "Anuluj", nullptr));
+        deleteWindow->setWindowTitle(QApplication::translate("deleteWindow", "Dialog", nullptr));
+        Usun->setText(QApplication::translate("deleteWindow", "Usu\305\204", nullptr));
+        Anuluj->setText(QApplication::translate("deleteWindow", "Anuluj", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class deleteCar: public Ui_deleteCar {};
+    class deleteWindow: public Ui_deleteWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

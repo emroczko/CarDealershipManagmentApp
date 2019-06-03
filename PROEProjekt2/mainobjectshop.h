@@ -6,7 +6,7 @@
 #include <sstream>
 #include "person.h"
 #include "car.h"
-#include "debug.h"
+
 
 
 using namespace std;

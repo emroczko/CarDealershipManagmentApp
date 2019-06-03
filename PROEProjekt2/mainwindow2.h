@@ -8,7 +8,7 @@
 #include "welcomeScreen.h"
 #include "addmotorcycle.h"
 #include "showpersonnelwindow.h"
-#include "deleteWindow.h"
+#include "deletewindow.h"
 #include <sstream>
 #include <QString>
 #include <QFileDialog>
@@ -28,6 +28,10 @@ private:
 public:
     explicit MainWindow2(QWidget *parent = nullptr);
     ~MainWindow2();
+    void sell(bool);
+    void Vehicles_owned(bool);
+    void add(shared_ptr<Vehicle>);
+    void deleteHelper(int);
 
 private slots:
     void on_Dodaj_samochod_clicked();
@@ -44,6 +48,7 @@ private slots:
     void on_Wyjscie_clicked();
     void on_stanKontsa_2_windowIconTextChanged(const QString &iconText);
     void on_stanKontsa_3_windowIconTextChanged(const QString &iconText);
+
 
 private:
     void Income();

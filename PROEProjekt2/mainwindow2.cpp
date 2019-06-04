@@ -35,58 +35,40 @@ void MainWindow2::Income()
     MainWindow2::on_stanKontsa_2_windowIconTextChanged(konto);
     MainWindow2::on_stanKontsa_3_windowIconTextChanged(konto);
 }
-void MainWindow2::Add_car()
+
+template< class T>void MainWindow2::Add()
 {
-    AddVehicle addCar;
-    addCar.setModal(true);
-    addCar.exec();
-    if(addCar.on_Anuluj_clicked()==false)
+    T a;
+    a.setModal(true);
+    a.exec();
+    if(a.on_Anuluj_clicked()==false)
     {
-        shared_ptr<Vehicle> tmp = addCar.on_Akceptuj_clicked();
+        shared_ptr<Vehicle> tmp = a.on_Akceptuj_clicked();
         if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
         {
-            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
-            if(resBtn==QMessageBox::No)  {addCar.reject();}
+            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać pojazd?", QMessageBox::No | QMessageBox::Yes);
+            if(resBtn==QMessageBox::No)  {a.reject();}
             else
             {
-                addCar.accept();
+                a.accept();
                 salon += tmp;
             }
         }
-        else{ add(tmp); }
-
+        else{ add_income(tmp); }
      }
-    MainWindow2::Income();
+}
+
+void MainWindow2::Add_car()
+{
+   Add<AddVehicle>();
 }
 
 void MainWindow2::Add_motorcycle()
 {
-    AddMotorcycle addMotor;
-    addMotor.setModal(true);
-    addMotor.exec();
-    if(addMotor.on_Anuluj_clicked()==false)
-    {
-        shared_ptr<Vehicle> tmp = addMotor.on_Akceptuj_clicked();
-        if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
-        {
-            QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID mogą być nieprawidłowe. Czy jesteś pewien że chcesz dodać samochód?", QMessageBox::No | QMessageBox::Yes);
-            if(resBtn==QMessageBox::No)
-            {
-                addMotor.reject();
-            }
-            else
-            {
-                addMotor.accept();
-                salon += tmp;
-            }
-        }
-        else{ add(tmp); }
-
-    }
-    MainWindow2::Income();
-
+    Add<AddMotorcycle>();
 }
-void MainWindow2::add(shared_ptr<Vehicle> tmp)
+
+void MainWindow2::add_income(shared_ptr<Vehicle> tmp)
 {
     if(salon.getIncome()-tmp->Get_Price()>=0)
     {
@@ -111,41 +93,33 @@ void MainWindow2::Add_employee()
     }
 }
 
-void MainWindow2::Motorcycles_owned()
-{
-   Vehicles_owned(false);
-}
-
-void MainWindow2::Cars_owned()
-{
-   Vehicles_owned(true);
-}
-
-void MainWindow2::Vehicles_owned(bool which)
+template<typename T>
+void MainWindow2::Vehicles_owned()
 {
     std::vector<shared_ptr<Vehicle>> Vehicles_;
     for(auto p : salon.getVehicles())
-    if (which==0 && typeid (*p) == typeid(Motorcycle)) Vehicles_.push_back((p));
-    else if(which==1 && typeid (*p) == typeid(Car)) Vehicles_.push_back((p));
+        if (typeid (*p) == typeid(T)) Vehicles_.push_back((p));
 
     Dialog1 dial(Vehicles_);
     dial.setModal(true);
     dial.exec();
 }
-void MainWindow2::Sell_car()
+void MainWindow2::Motorcycles_owned()
 {
-    sell(true);
+   Vehicles_owned<Motorcycle>();
 }
-void MainWindow2::Sell_motorcycle()
+
+void MainWindow2::Cars_owned()
 {
-    sell(false);
+   Vehicles_owned<Car>();
 }
-void MainWindow2::sell(bool whichVehicle)
+
+template< class T>
+void MainWindow2::sell()
 {
     std::vector<shared_ptr<Vehicle>> vehicles_;
     for(auto p : salon.getVehicles())
-    if (whichVehicle==0 && typeid (*p) == typeid(Motorcycle)) vehicles_.push_back((p));
-    else if(whichVehicle==1 && typeid (*p) == typeid(Car)) vehicles_.push_back((p));
+    if (typeid (*p) == typeid(T)) vehicles_.push_back((p));
 
     deleteWindow deleteVehicle_(vehicles_);
     deleteVehicle_.setModal(true);
@@ -170,6 +144,14 @@ void MainWindow2::sell(bool whichVehicle)
     }
     MainWindow2::Income();
 }
+void MainWindow2::Sell_car()
+{
+    sell<Car>();
+}
+void MainWindow2::Sell_motorcycle()
+{
+    sell<Motorcycle>();
+}
 
 void MainWindow2::deleteHelper(int i)
 {
@@ -185,6 +167,16 @@ void MainWindow2::Salon_info()
     dial.setModal(true);
     dial.exec();
 }
+void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
+{
+    std::vector<shared_ptr<Person>> people;
+    for(auto p : salon.getPersonnel()) {people.push_back((p));}
+    ShowPersonnelWindow showpersonnel(people);
+    showpersonnel.setModal(true);
+    showpersonnel.exec();
+    showpersonnel.showMethod(people);
+
+}
 
 void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
 void MainWindow2::on_Posiadane_samochodu_clicked() {Cars_owned();}
@@ -194,6 +186,10 @@ void MainWindow2::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}
 void MainWindow2::on_stanKontsa_windowIconTextChanged(const QString &iconText) {ui->stanKontsa->setText(iconText);}
 void MainWindow2::on_stanKontsa_2_windowIconTextChanged(const QString &iconText) {ui->stanKontsa_2->setText(iconText);}
 void MainWindow2::on_stanKontsa_3_windowIconTextChanged(const QString &iconText) {ui->stanKontsa_3->setText(iconText);}
+void MainWindow2::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
+void MainWindow2::on_SalonInfo_clicked() {Salon_info();}
+void MainWindow2::on_Zatrudnij_nowego_clicked() {Add_employee();}
+void MainWindow2::on_Wyjscie_clicked() {MainWindow2::close();}
 
 void MainWindow2::on_Savetofile_clicked()
 {
@@ -216,22 +212,4 @@ void MainWindow2::on_Savetofile_clicked()
             QTextStream out(&file);
             QString qstr = QString::fromStdString(auta);
             out << qstr;
-
 }
-
-void MainWindow2::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
-void MainWindow2::on_SalonInfo_clicked() {Salon_info();}
-void MainWindow2::on_Zatrudnij_nowego_clicked() {Add_employee();}
-
-void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
-{
-    std::vector<shared_ptr<Person>> people;
-    for(auto p : salon.getPersonnel()) {people.push_back((p));}
-    ShowPersonnelWindow showpersonnel(people);
-    showpersonnel.setModal(true);
-    showpersonnel.exec();
-    showpersonnel.showMethod(people);
-
-}
-
-void MainWindow2::on_Wyjscie_clicked() {MainWindow2::close();}

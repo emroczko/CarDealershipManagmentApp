@@ -28,23 +28,21 @@ bool ShowPersonnelWindow::on_radioWszyscy_clicked()
 
 bool ShowPersonnelWindow::on_radioSprzedawca_clicked()
 {
-    showMethod(showSpecialized(true));
+    showMethod(showSpecialized<Salesman>());
     return ui->radioSprzedawca->isChecked();
 }
 
 bool ShowPersonnelWindow::on_radioMechanik_clicked()
 {
-    showMethod(showSpecialized(false));
+    showMethod(showSpecialized<Mechanic>());
     return ui->radioMechanik->isChecked();
 }
-
-vector<shared_ptr<Person>> ShowPersonnelWindow::showSpecialized(bool which)
+template<class T>
+vector<shared_ptr<Person>> ShowPersonnelWindow::showSpecialized()
 {
     vector<shared_ptr<Person>> temp;
-    for(auto & i : Personnel){
-        if(which==0 && typeid(*i)==typeid(Mechanic)) temp.emplace_back(i);
-        else if (which==1 && typeid(*i)==typeid(Salesman)) temp.emplace_back(i);
-        }
+    for(auto & i : Personnel)
+    if(typeid(*i)==typeid(T)) temp.emplace_back(i);
     return temp;
 }
 

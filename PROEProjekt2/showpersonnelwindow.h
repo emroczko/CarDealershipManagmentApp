@@ -19,7 +19,7 @@ public:
     void change_text();
     ~ShowPersonnelWindow();
     void showMethod(const vector<shared_ptr<Person>>&);
-    vector<shared_ptr<Person>> showSpecialized(bool);
+    template<class T> vector<shared_ptr<Person>> showSpecialized();
 
 
 public slots:

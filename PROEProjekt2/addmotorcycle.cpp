@@ -34,7 +34,7 @@ AddMotorcycle::~AddMotorcycle()
 {
     delete ui;
 }
-shared_ptr<Vehicle> AddMotorcycle::Create_motorcycle()
+shared_ptr<Vehicle> AddMotorcycle::Create()
 {
     string Model, take_eng, take_cond, take_eng_type;
     Model = ui->Model_wybierz->currentText().toStdString();
@@ -51,7 +51,7 @@ shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
 {
     AddMotorcycle::Check--;
     AddMotorcycle::accept();
-    return Create_motorcycle();
+    return Create();
 }
 
 bool AddMotorcycle::on_Anuluj_clicked()

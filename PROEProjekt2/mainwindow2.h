@@ -28,10 +28,12 @@ private:
 public:
     explicit MainWindow2(QWidget *parent = nullptr);
     ~MainWindow2();
-    void sell(bool);
+    template<class T> void sell();
     void Vehicles_owned(bool);
-    void add(shared_ptr<Vehicle>);
+    void add_income(shared_ptr<Vehicle>);
     void deleteHelper(int);
+    template< class T>void Add();
+    template<typename T> void Vehicles_owned();
 
 private slots:
     void on_Dodaj_samochod_clicked();

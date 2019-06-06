@@ -30,6 +30,7 @@ public:
     void Set_income(int);
     int getIncome() const;
     friend ostream& operator<< (ostream& ,const Shop&);
+    friend ofstream& operator<< (ofstream& ,const Shop&);
     friend istream& operator>> (istream& ,Shop&);
     vector < shared_ptr<Vehicle> > getVehicles() const;
     vector < shared_ptr<Person> > getPersonnel() const;

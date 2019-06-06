@@ -54,7 +54,7 @@ template< class T>void MainWindow2::Add()
                 salon += tmp;
             }
         }
-        else{ add_income(tmp); }
+        else {add_income(tmp);}
      }
 }
 
@@ -72,14 +72,11 @@ void MainWindow2::add_income(shared_ptr<Vehicle> tmp)
 {
     if(salon.getIncome()-tmp->Get_Price()>=0)
     {
-        salon.Set_income(salon.getIncome()-tmp->Get_Price());
-        salon += tmp;
+    salon.Set_income(salon.getIncome()-tmp->Get_Price());
+    salon += tmp;
     }
     else
-    {
-        QMessageBox::warning(this, "", "Nie wystarczające środki");
-    }
-
+    QMessageBox::warning(this, "", "Nie wystarczające środki");
 }
 
 void MainWindow2::Add_employee()
@@ -100,9 +97,9 @@ void MainWindow2::Vehicles_owned()
     for(auto p : salon.getVehicles())
         if (typeid (*p) == typeid(T)) Vehicles_.push_back((p));
 
-    Dialog1 dial(Vehicles_);
-    dial.setModal(true);
-    dial.exec();
+    showvehiclewindow show(Vehicles_);
+    show.setModal(true);
+    show.exec();
 }
 void MainWindow2::Motorcycles_owned()
 {
@@ -121,29 +118,29 @@ void MainWindow2::sell()
     for(auto p : salon.getVehicles())
     if (typeid (*p) == typeid(T)) vehicles_.push_back((p));
 
+    sell_helper(vehicles_);
+    MainWindow2::Income();
+}
+void MainWindow2::sell_helper(std::vector<shared_ptr<Vehicle>> vehicles_)
+{
     deleteWindow deleteVehicle_(vehicles_);
     deleteVehicle_.setModal(true);
     if(vehicles_.size()>0)
     {
-        deleteVehicle_.exec();
-        std::stringstream buffer;
+    deleteVehicle_.exec();
+    std::stringstream buffer;
+        for(unsigned int i=0; i<salon.getVehicles().size(); i++)
+        {
+           buffer << *salon.getVehicles()[i];
+           if(buffer.str()==deleteVehicle_.on_Usun_clicked()) deleteHelper(i);
 
-            for(unsigned int i=0; i<salon.getVehicles().size(); i++)
-            {
-                buffer << *salon.getVehicles()[i];
-                if(buffer.str()==deleteVehicle_.on_Usun_clicked())
-                {
-                deleteHelper(i);
-                }
-                buffer.str(std::string());
-            }
+           buffer.str(std::string());
+        }
     }
     else
-    {
-        QMessageBox::warning(this, tr("Błąd"), tr("Brak motocykli do usunięcia."));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
-    }
-    MainWindow2::Income();
+    QMessageBox::warning(this, tr("Błąd"), tr("Brak motocykli do usunięcia."));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
 }
+
 void MainWindow2::Sell_car()
 {
     sell<Car>();
@@ -163,9 +160,9 @@ void MainWindow2::deleteHelper(int i)
 
 void MainWindow2::Salon_info()
 {
-    Dialog1 dial(salon.getVehicles());
-    dial.setModal(true);
-    dial.exec();
+    showvehiclewindow show(salon.getVehicles());
+    show.setModal(true);
+    show.exec();
 }
 void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
 {
@@ -176,6 +173,32 @@ void MainWindow2::on_Zatrudnieni_pracownicy_clicked()
     showpersonnel.exec();
     showpersonnel.showMethod(people);
 
+}
+void MainWindow2::on_Savetofile_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Zapisz stan"), "",
+            tr("Obecny_stan (*.txt);;All Files (*)"));
+
+        if (fileName.isEmpty())
+            return;
+            ofstream myfile;
+            myfile.open(fileName.toStdString());
+            myfile << salon;
+            myfile.close();
+            /*
+            QFile file(fileName);
+            if (!file.open(QIODevice::WriteOnly)) {
+                QMessageBox::information(this, tr("Unable to open file"),
+                    file.errorString());
+                return;
+            }
+
+            name << salon;
+            QTextStream out(&file);
+            QString qstr = QString::fromStdString(name.str());
+            out << salon;
+            */
 }
 
 void MainWindow2::on_Dodaj_samochod_clicked() {Add_car();}
@@ -190,26 +213,3 @@ void MainWindow2::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
 void MainWindow2::on_SalonInfo_clicked() {Salon_info();}
 void MainWindow2::on_Zatrudnij_nowego_clicked() {Add_employee();}
 void MainWindow2::on_Wyjscie_clicked() {MainWindow2::close();}
-
-void MainWindow2::on_Savetofile_clicked()
-{
-    QString fileName = QFileDialog::getSaveFileName(this,
-            tr("Zapisz stan"), "",
-            tr("Obecny_stan (*.txt);;All Files (*)"));
-
-        if (fileName.isEmpty())
-            return;
-
-            QFile file(fileName);
-            if (!file.open(QIODevice::WriteOnly)) {
-                QMessageBox::information(this, tr("Unable to open file"),
-                    file.errorString());
-                return;
-            }
-            std::stringstream buffer;
-            buffer << salon;
-            string auta = buffer.str();
-            QTextStream out(&file);
-            QString qstr = QString::fromStdString(auta);
-            out << qstr;
-}

@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'showVehicleWindow.ui'
+** Form generated from reading UI file 'showvehiclewindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.3
 **
@@ -12,41 +12,45 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QListWidget>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Dialog1
+class Ui_showvehiclewindow
 {
 public:
-    QListWidget *listWidget;
+    QVBoxLayout *verticalLayout;
+    QTableWidget *tabela_pojazdow;
 
-    void setupUi(QDialog *Dialog1)
+    void setupUi(QDialog *showvehiclewindow)
     {
-        if (Dialog1->objectName().isEmpty())
-            Dialog1->setObjectName(QString::fromUtf8("Dialog1"));
-        Dialog1->resize(600, 407);
-        QFont font;
-        font.setFamily(QString::fromUtf8("Avenir Next"));
-        Dialog1->setFont(font);
-        listWidget = new QListWidget(Dialog1);
-        listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(40, 60, 511, 301));
+        if (showvehiclewindow->objectName().isEmpty())
+            showvehiclewindow->setObjectName(QString::fromUtf8("showvehiclewindow"));
+        showvehiclewindow->resize(679, 458);
+        verticalLayout = new QVBoxLayout(showvehiclewindow);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        tabela_pojazdow = new QTableWidget(showvehiclewindow);
+        tabela_pojazdow->setObjectName(QString::fromUtf8("tabela_pojazdow"));
 
-        retranslateUi(Dialog1);
+        verticalLayout->addWidget(tabela_pojazdow);
 
-        QMetaObject::connectSlotsByName(Dialog1);
+
+        retranslateUi(showvehiclewindow);
+
+        QMetaObject::connectSlotsByName(showvehiclewindow);
     } // setupUi
 
-    void retranslateUi(QDialog *Dialog1)
+    void retranslateUi(QDialog *showvehiclewindow)
     {
-        Dialog1->setWindowTitle(QApplication::translate("Dialog1", "Posiadane pojazdy", nullptr));
+        showvehiclewindow->setWindowTitle(QApplication::translate("showvehiclewindow", "Dialog", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Dialog1: public Ui_Dialog1 {};
+    class showvehiclewindow: public Ui_showvehiclewindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -33,7 +33,6 @@ void welcomeScreen::on_wczytajStan_clicked()
     if (fileName.isEmpty())
         return ;
     else{
-
         ifstream io(fileName.toStdString());
 
         if(!io.is_open()){

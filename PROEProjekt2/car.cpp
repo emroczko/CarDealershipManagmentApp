@@ -22,7 +22,6 @@ string Motorcycle::Get_Condition() const {return condition_;}
 string Motorcycle::Get_Engine() const {return engine_;}
 string Motorcycle::Get_Model() const {return model_;}
 
-
 Car& Car::operator += (unsigned int raisePrice)
 {
     price_ += raisePrice;
@@ -42,13 +41,6 @@ Car & Car::operator -= (unsigned int lowerPrice)
         return *this;
     }
 }
-
-ostream& Car::print(ostream& os) const
-{
-    os<<Get_Model()<<"  Cena: "<<Get_Price()<<" zł  ID: "<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik: "<<Get_Engine()<<"  Skrzynia biegów: "<<transmission_;
-    return os;
-}
-
 Motorcycle& Motorcycle::operator += (unsigned int raisePrice)
 {
     price_ += raisePrice;
@@ -67,9 +59,3 @@ Motorcycle& Motorcycle::operator -= (unsigned int lowerPrice)
         return *this;
     }
 }
-ostream& Motorcycle::print(ostream& os) const
-{
-    os<<Get_Model()<<"  Cena: "<<Get_Price()<<" zł  ID: "<<Get_ID()<<"  Stan: "<<Get_Condition()<<"  Silnik: "<<Get_Engine()<<"  Rodzaj silnika: "<<engine_type_;
-    return os;
-}
-

@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "mainobjectshop.h"
 #include "addvehicle.h"
-#include "showVehicleWindow.h"
+#include "showvehiclewindow.h"
 #include "welcomeScreen.h"
 #include "addmotorcycle.h"
 #include "showpersonnelwindow.h"
@@ -34,6 +34,7 @@ public:
     void deleteHelper(int);
     template< class T>void Add();
     template<typename T> void Vehicles_owned();
+    void sell_helper(std::vector<shared_ptr<Vehicle>>);
 
 private slots:
     void on_Dodaj_samochod_clicked();

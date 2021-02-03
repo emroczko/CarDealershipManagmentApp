@@ -1,7 +1,0 @@
-Samochody: 
-BMW 335d  Cena: 34567 zł  ID: 5  Stan: Nowy  Silnik: Benzyna  Skrzynia biegów: Automatyczna hydrauliczna
-BMW 240i  Cena: 45678 zł  ID: 5  Stan: Nowy  Silnik: Benzyna  Skrzynia biegów: Automatyczna hydrauliczna
-BMW 760Li  Cena: 23456 zł  ID: 4  Stan: Nowy  Silnik: Benzyna  Skrzynia biegów: Automatyczna hydrauliczna
-Motocykle: 
-BMW K1600-Grand-America  Cena: 45678 zł  ID: 5  Stan: Nowy  Silnik: Benzyna  Rodzaj silnika: Dwusuwowy
-

@@ -1,10 +1,8 @@
-#ifndef SHOWVEHICLEWINDOW_H
-#define SHOWVEHICLEWINDOW_H
+#pragma once
 
 #include <QDialog>
 #include <QTableWidget>
 #include "mainobjectshop.h"
-//#include "ui_dialog1.h"
 #include <sstream>
 #include "car.h"
 
@@ -26,6 +24,3 @@ public:
 private:
     Ui::showvehiclewindow *ui;
 };
-
-#endif // SHOWVEHICLEWINDOW_H
-//

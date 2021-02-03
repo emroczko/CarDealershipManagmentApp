@@ -1,5 +1,4 @@
-#ifndef SHOWPERSONNELWINDOW_H
-#define SHOWPERSONNELWINDOW_H
+#pragma once
 
 #include <QDialog>
 #include <sstream>
@@ -33,4 +32,4 @@ private:
 
 };
 
-#endif // SHOWPERSONNELWINDOW_H
+

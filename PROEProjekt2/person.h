@@ -1,5 +1,5 @@
-#ifndef PERSON_H
-#define PERSON_H
+#pragma once
+
 #include <iostream>
 #include <memory>
 #include <fstream>
@@ -104,4 +104,3 @@ public:
     }
 
 };
-#endif // PERSON_H

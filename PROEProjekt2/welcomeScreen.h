@@ -1,6 +1,4 @@
-#ifndef WELCOMESCREEN_H
-#define WELCOMESCREEN_H
-
+#pragma once
 #include <QDialog>
 #include "mainobjectshop.h"
 #include <QMessageBox>
@@ -9,7 +7,7 @@
 #include <QTextStream>
 #include <cstring>
 #include <sstream>
-#include "mainwindow2.h"
+#include "mainwindow.h"
 #include <QCloseEvent>
 
 namespace Ui {
@@ -37,4 +35,4 @@ private:
 
 };
 
-#endif // WELCOMESCREEN_H
+

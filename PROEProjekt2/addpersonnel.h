@@ -1,6 +1,4 @@
-#ifndef ADDPERSONNEL_H
-#define ADDPERSONNEL_H
-
+#pragma once
 #include <string>
 #include <memory>
 #include <QDialog>
@@ -17,7 +15,7 @@ class AddPersonnel : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddPersonnel(QWidget *parent = 0);
+    explicit AddPersonnel(QWidget *parent = nullptr);
     ~AddPersonnel();
 
 public slots:
@@ -36,4 +34,4 @@ private:
     Ui::AddPersonnel *ui;
 };
 
-#endif // ADDPERSONNEL_H
+

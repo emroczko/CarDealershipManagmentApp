@@ -30,7 +30,6 @@ SOURCES += \
     car.cpp \
     mainobjectshop.cpp \
     mainwindow2.cpp \
-    showhelpervehicles.cpp \
     showvehiclewindow.cpp \
     welcomeScreen.cpp \
     person.cpp \
@@ -44,7 +43,6 @@ HEADERS += \
     deletewindow.h \
     mainobjectshop.h \
     mainwindow2.h \
-    showhelpervehicles.h \
     showvehiclewindow.h \
     welcomeScreen.h \
     person.h \

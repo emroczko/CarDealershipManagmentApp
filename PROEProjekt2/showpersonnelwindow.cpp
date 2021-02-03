@@ -41,7 +41,7 @@ template<class T>
 vector<shared_ptr<Person>> ShowPersonnelWindow::showSpecialized()
 {
     vector<shared_ptr<Person>> temp;
-    for(auto & i : Personnel)
+    for(auto  i : Personnel)
     if(typeid(*i)==typeid(T)) temp.emplace_back(i);
     return temp;
 }

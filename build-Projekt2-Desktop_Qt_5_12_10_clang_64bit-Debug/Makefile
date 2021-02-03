@@ -58,7 +58,6 @@ SOURCES       = ../PROEProjekt2/addvehicle.cpp \
 		../PROEProjekt2/car.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
 		../PROEProjekt2/mainwindow2.cpp \
-		../PROEProjekt2/showhelpervehicles.cpp \
 		../PROEProjekt2/showvehiclewindow.cpp \
 		../PROEProjekt2/welcomeScreen.cpp \
 		../PROEProjekt2/person.cpp \
@@ -79,7 +78,6 @@ OBJECTS       = addvehicle.o \
 		car.o \
 		mainobjectshop.o \
 		mainwindow2.o \
-		showhelpervehicles.o \
 		showvehiclewindow.o \
 		welcomeScreen.o \
 		person.o \
@@ -274,7 +272,6 @@ DIST          = ../../Projekt2/BMW-Service-Inclusive-Packages.jpg \
 		../PROEProjekt2/deletewindow.h \
 		../PROEProjekt2/mainobjectshop.h \
 		../PROEProjekt2/mainwindow2.h \
-		../PROEProjekt2/showhelpervehicles.h \
 		../PROEProjekt2/showvehiclewindow.h \
 		../PROEProjekt2/welcomeScreen.h \
 		../PROEProjekt2/person.h \
@@ -286,7 +283,6 @@ DIST          = ../../Projekt2/BMW-Service-Inclusive-Packages.jpg \
 		../PROEProjekt2/car.cpp \
 		../PROEProjekt2/mainobjectshop.cpp \
 		../PROEProjekt2/mainwindow2.cpp \
-		../PROEProjekt2/showhelpervehicles.cpp \
 		../PROEProjekt2/showvehiclewindow.cpp \
 		../PROEProjekt2/welcomeScreen.cpp \
 		../PROEProjekt2/person.cpp \
@@ -701,8 +697,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/pics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/erykmroczko/Qt5.12.10/5.12.10/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/car.h ../PROEProjekt2/deletewindow.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showhelpervehicles.h ../PROEProjekt2/showvehiclewindow.h ../PROEProjekt2/welcomeScreen.h ../PROEProjekt2/person.h ../PROEProjekt2/addmotorcycle.h ../PROEProjekt2/addpersonnel.h ../PROEProjekt2/showpersonnelwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/deletewindow.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showhelpervehicles.cpp ../PROEProjekt2/showvehiclewindow.cpp ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/person.cpp ../PROEProjekt2/addmotorcycle.cpp ../PROEProjekt2/addpersonnel.cpp ../PROEProjekt2/showpersonnelwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.h ../PROEProjekt2/car.h ../PROEProjekt2/deletewindow.h ../PROEProjekt2/mainobjectshop.h ../PROEProjekt2/mainwindow2.h ../PROEProjekt2/showvehiclewindow.h ../PROEProjekt2/welcomeScreen.h ../PROEProjekt2/person.h ../PROEProjekt2/addmotorcycle.h ../PROEProjekt2/addpersonnel.h ../PROEProjekt2/showpersonnelwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.cpp ../PROEProjekt2/deletewindow.cpp ../PROEProjekt2/main.cpp ../PROEProjekt2/car.cpp ../PROEProjekt2/mainobjectshop.cpp ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/showvehiclewindow.cpp ../PROEProjekt2/welcomeScreen.cpp ../PROEProjekt2/person.cpp ../PROEProjekt2/addmotorcycle.cpp ../PROEProjekt2/addpersonnel.cpp ../PROEProjekt2/showpersonnelwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../PROEProjekt2/addvehicle.ui ../PROEProjekt2/deletewindow.ui ../PROEProjekt2/mainwindow2.ui ../PROEProjekt2/showvehiclewindow.ui ../PROEProjekt2/welcomeScreen.ui ../PROEProjekt2/addmotorcycle.ui ../PROEProjekt2/addpersonnel.ui ../PROEProjekt2/showpersonnelwindow.ui $(DISTDIR)/
 
 
@@ -1057,9 +1053,6 @@ mainwindow2.o: ../PROEProjekt2/mainwindow2.cpp ../PROEProjekt2/mainwindow2.h \
 		../PROEProjekt2/addpersonnel.h \
 		ui_mainwindow2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow2.o ../PROEProjekt2/mainwindow2.cpp
-
-showhelpervehicles.o: ../PROEProjekt2/showhelpervehicles.cpp ../PROEProjekt2/showhelpervehicles.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o showhelpervehicles.o ../PROEProjekt2/showhelpervehicles.cpp
 
 showvehiclewindow.o: ../PROEProjekt2/showvehiclewindow.cpp ../PROEProjekt2/showvehiclewindow.h \
 		/Users/erykmroczko/Qt5.12.10/5.12.10/clang_64/lib/QtWidgets.framework/Headers/QDialog \

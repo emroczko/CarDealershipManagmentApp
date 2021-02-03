@@ -1,5 +1,4 @@
-#ifndef DELETECAR_H
-#define DELETECAR_H
+#pragma once
 
 #include <QDialog>
 #include "mainobjectshop.h"
@@ -30,5 +29,3 @@ public slots:
 
 
 };
-
-#endif // DELETEWINDOW_H

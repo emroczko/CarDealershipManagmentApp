@@ -1,5 +1,4 @@
-#ifndef ADDMOTORCYCLE_H
-#define ADDMOTORCYCLE_H
+#pragma once
 
 #include <QDialog>
 #include <QString>
@@ -15,7 +14,7 @@ class AddMotorcycle : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddMotorcycle(QWidget *parent = 0);
+    explicit AddMotorcycle(QWidget *parent = nullptr);
     ~AddMotorcycle();
 public slots:
     bool on_Anuluj_clicked();
@@ -26,4 +25,3 @@ private:
     Ui::AddMotorcycle *ui;
 };
 
-#endif // ADDMOTORCYCLE_H

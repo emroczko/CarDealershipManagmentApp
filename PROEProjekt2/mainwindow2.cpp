@@ -182,10 +182,11 @@ void MainWindow2::on_Savetofile_clicked()
 
         if (fileName.isEmpty())
             return;
-            ofstream myfile;
-            myfile.open(fileName.toStdString());
-            myfile << salon;
-            myfile.close();
+
+    ofstream myfile;
+    myfile.open(fileName.toStdString());
+    myfile << salon;
+    myfile.close();
             /*
             QFile file(fileName);
             if (!file.open(QIODevice::WriteOnly)) {

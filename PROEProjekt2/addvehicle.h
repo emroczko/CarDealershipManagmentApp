@@ -1,6 +1,4 @@
-#ifndef ADDVEHICLE_H
-#define ADDVEHICLE_H
-
+#pragma once
 #include <QDialog>
 #include <QString>
 #include <QMessageBox>
@@ -14,7 +12,7 @@ class AddVehicle : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddVehicle(QWidget *parent = 0);
+    explicit AddVehicle(QWidget *parent = nullptr);
     ~AddVehicle();
     shared_ptr<Vehicle> Create_car();
 public slots:
@@ -27,5 +25,4 @@ private:
     Ui::AddVehicle *ui;
 };
 
-#endif // ADDVEHICLE_H
 

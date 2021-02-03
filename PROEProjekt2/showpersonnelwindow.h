@@ -15,7 +15,7 @@ class ShowPersonnelWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit ShowPersonnelWindow(const vector<shared_ptr<Person>>&, QWidget *parent = 0);
+    explicit ShowPersonnelWindow(const vector<shared_ptr<Person>>&, QWidget *parent = nullptr);
     void change_text();
     ~ShowPersonnelWindow();
     void showMethod(const vector<shared_ptr<Person>>&);

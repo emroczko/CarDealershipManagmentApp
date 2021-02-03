@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QTableWidget>
 #include "mainobjectshop.h"
-#include "ui_dialog1.h"
+//#include "ui_dialog1.h"
 #include <sstream>
 #include "car.h"
 

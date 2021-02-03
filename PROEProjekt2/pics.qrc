@@ -1,16 +1,16 @@
 <RCC>
     <qresource prefix="/pics">
         <file>117682899_37k1L8Im.jpg</file>
-        <file>../../Downloads/2018-bmw-m2-competition-99gallery-1526572314.jpg</file>
-        <file>../../Downloads/BMW-motorcycles-on-road-racing.jpg</file>
-        <file>../../Downloads/bps_store_front.jpg</file>
-        <file>../../Downloads/BMW-Service-Inclusive-Packages.jpg</file>
+        <file>2018-bmw-m2-competition-99gallery-1526572314.jpg</file>
+        <file>berlin-to-get-mega-bmw-dealership-in-may-78874_1.jpg</file>
+        <file>BMW-motorcycles-on-road-racing.jpg</file>
+        <file>BMW-Service-Inclusive-Packages.jpg</file>
+        <file>bps_store_front.jpg</file>
+        <file>DESERT.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>Form.qml</file>
         <file>Page1form.ui.qml</file>
         <file>main.qml</file>
-        <file>../../Downloads/DESERT.jpg</file>
     </qresource>
 </RCC>
-

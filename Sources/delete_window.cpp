@@ -13,7 +13,7 @@ deleteWindow::deleteWindow(const std::vector<std::shared_ptr<Vehicle>>& vehicles
       {
       buffer << *i;
       QString qstr = QString::fromStdString(buffer.str());
-      ui->lista_do_usuniecia->addItem(qstr);
+      ui->list_to_delete->addItem(qstr);
       buffer.str(std::string());
       qstr.clear();
       }
@@ -25,23 +25,23 @@ deleteWindow::~deleteWindow()
     delete ui;
 }
 
-string deleteWindow::on_Usun_clicked()
+string deleteWindow::on_delete_2_clicked()
 {
-    string whichToDelete = deleteWindow::on_lista_do_usuniecia_itemClicked();
+    string whichToDelete = deleteWindow::on_list_to_delete_itemClicked();
     deleteWindow::reject();
     Check--;
     return whichToDelete;
 }
 
-bool deleteWindow::on_Anuluj_clicked()
+bool deleteWindow::on_cancel_clicked()
 {
     deleteWindow::close();
     return Check;
 }
 
-string deleteWindow::on_lista_do_usuniecia_itemClicked()
+string deleteWindow::on_list_to_delete_itemClicked()
 {
     QString temp;
-    temp += ui->lista_do_usuniecia->currentItem()->text();
+    temp += ui->list_to_delete->currentItem()->text();
     return temp.toStdString();
 }

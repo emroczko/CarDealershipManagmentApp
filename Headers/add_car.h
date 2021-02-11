@@ -15,14 +15,14 @@ class AddVehicle : public QDialog
 public:
     explicit AddVehicle(QWidget *parent = nullptr);
     ~AddVehicle();
-    shared_ptr<Vehicle> Create_car();
+    shared_ptr<Vehicle> create_car();
+
 public slots:
-    shared_ptr<Vehicle> on_Akceptuj_clicked();
-    bool on_Anuluj_clicked();
+    shared_ptr<Vehicle> on_accept_clicked();
+    bool on_cancel_clicked();
 
 private:
-    int Check;
-
+    int check_;
     Ui::AddVehicle *ui;
 };
 

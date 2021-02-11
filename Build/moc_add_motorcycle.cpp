@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AddMotorcycle_t {
     QByteArrayData data[5];
-    char stringdata0[73];
+    char stringdata0[71];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,14 +32,14 @@ struct qt_meta_stringdata_AddMotorcycle_t {
 static const qt_meta_stringdata_AddMotorcycle_t qt_meta_stringdata_AddMotorcycle = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "AddMotorcycle"
-QT_MOC_LITERAL(1, 14, 17), // "on_Anuluj_clicked"
+QT_MOC_LITERAL(1, 14, 17), // "on_cancel_clicked"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 19), // "on_Akceptuj_clicked"
-QT_MOC_LITERAL(4, 53, 19) // "shared_ptr<Vehicle>"
+QT_MOC_LITERAL(3, 33, 17), // "on_accept_clicked"
+QT_MOC_LITERAL(4, 51, 19) // "shared_ptr<Vehicle>"
 
     },
-    "AddMotorcycle\0on_Anuluj_clicked\0\0"
-    "on_Akceptuj_clicked\0shared_ptr<Vehicle>"
+    "AddMotorcycle\0on_cancel_clicked\0\0"
+    "on_accept_clicked\0shared_ptr<Vehicle>"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,9 +73,9 @@ void AddMotorcycle::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<AddMotorcycle *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { bool _r = _t->on_Anuluj_clicked();
+        case 0: { bool _r = _t->on_cancel_clicked();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 1: { shared_ptr<Vehicle> _r = _t->on_Akceptuj_clicked();
+        case 1: { shared_ptr<Vehicle> _r = _t->on_accept_clicked();
             if (_a[0]) *reinterpret_cast< shared_ptr<Vehicle>*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }

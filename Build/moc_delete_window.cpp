@@ -32,15 +32,16 @@ struct qt_meta_stringdata_deleteWindow_t {
 static const qt_meta_stringdata_deleteWindow_t qt_meta_stringdata_deleteWindow = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "deleteWindow"
-QT_MOC_LITERAL(1, 13, 15), // "on_Usun_clicked"
-QT_MOC_LITERAL(2, 29, 6), // "string"
-QT_MOC_LITERAL(3, 36, 0), // ""
-QT_MOC_LITERAL(4, 37, 17), // "on_Anuluj_clicked"
-QT_MOC_LITERAL(5, 55, 33) // "on_lista_do_usuniecia_itemCli..."
+QT_MOC_LITERAL(1, 13, 19), // "on_delete_2_clicked"
+QT_MOC_LITERAL(2, 33, 6), // "string"
+QT_MOC_LITERAL(3, 40, 0), // ""
+QT_MOC_LITERAL(4, 41, 17), // "on_cancel_clicked"
+QT_MOC_LITERAL(5, 59, 29) // "on_list_to_delete_itemClicked"
 
     },
-    "deleteWindow\0on_Usun_clicked\0string\0"
-    "\0on_Anuluj_clicked\0on_lista_do_usuniecia_itemClicked"
+    "deleteWindow\0on_delete_2_clicked\0"
+    "string\0\0on_cancel_clicked\0"
+    "on_list_to_delete_itemClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -76,11 +77,11 @@ void deleteWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<deleteWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { string _r = _t->on_Usun_clicked();
+        case 0: { string _r = _t->on_delete_2_clicked();
             if (_a[0]) *reinterpret_cast< string*>(_a[0]) = std::move(_r); }  break;
-        case 1: { bool _r = _t->on_Anuluj_clicked();
+        case 1: { bool _r = _t->on_cancel_clicked();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 2: { string _r = _t->on_lista_do_usuniecia_itemClicked();
+        case 2: { string _r = _t->on_list_to_delete_itemClicked();
             if (_a[0]) *reinterpret_cast< string*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }

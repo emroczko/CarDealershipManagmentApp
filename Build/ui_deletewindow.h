@@ -22,9 +22,9 @@ class Ui_deleteWindow
 {
 public:
     QVBoxLayout *verticalLayout;
-    QListWidget *lista_do_usuniecia;
-    QPushButton *Usun;
-    QPushButton *Anuluj;
+    QListWidget *list_to_delete;
+    QPushButton *delete_2;
+    QPushButton *cancel;
 
     void setupUi(QDialog *deleteWindow)
     {
@@ -33,20 +33,20 @@ public:
         deleteWindow->resize(622, 449);
         verticalLayout = new QVBoxLayout(deleteWindow);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        lista_do_usuniecia = new QListWidget(deleteWindow);
-        lista_do_usuniecia->setObjectName(QString::fromUtf8("lista_do_usuniecia"));
+        list_to_delete = new QListWidget(deleteWindow);
+        list_to_delete->setObjectName(QString::fromUtf8("list_to_delete"));
 
-        verticalLayout->addWidget(lista_do_usuniecia);
+        verticalLayout->addWidget(list_to_delete);
 
-        Usun = new QPushButton(deleteWindow);
-        Usun->setObjectName(QString::fromUtf8("Usun"));
+        delete_2 = new QPushButton(deleteWindow);
+        delete_2->setObjectName(QString::fromUtf8("delete_2"));
 
-        verticalLayout->addWidget(Usun);
+        verticalLayout->addWidget(delete_2);
 
-        Anuluj = new QPushButton(deleteWindow);
-        Anuluj->setObjectName(QString::fromUtf8("Anuluj"));
+        cancel = new QPushButton(deleteWindow);
+        cancel->setObjectName(QString::fromUtf8("cancel"));
 
-        verticalLayout->addWidget(Anuluj);
+        verticalLayout->addWidget(cancel);
 
 
         retranslateUi(deleteWindow);
@@ -57,8 +57,8 @@ public:
     void retranslateUi(QDialog *deleteWindow)
     {
         deleteWindow->setWindowTitle(QApplication::translate("deleteWindow", "Dialog", nullptr));
-        Usun->setText(QApplication::translate("deleteWindow", "Usu\305\204", nullptr));
-        Anuluj->setText(QApplication::translate("deleteWindow", "Anuluj", nullptr));
+        delete_2->setText(QApplication::translate("deleteWindow", "Usu\305\204", nullptr));
+        cancel->setText(QApplication::translate("deleteWindow", "Anuluj", nullptr));
     } // retranslateUi
 
 };

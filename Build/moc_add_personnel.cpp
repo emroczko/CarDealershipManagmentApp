@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AddPersonnel_t {
     QByteArrayData data[7];
-    char stringdata0[138];
+    char stringdata0[141];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,18 +32,18 @@ struct qt_meta_stringdata_AddPersonnel_t {
 static const qt_meta_stringdata_AddPersonnel_t qt_meta_stringdata_AddPersonnel = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "AddPersonnel"
-QT_MOC_LITERAL(1, 13, 26), // "on_Anuluj_mechanik_clicked"
+QT_MOC_LITERAL(1, 13, 26), // "on_cancel_mechanic_clicked"
 QT_MOC_LITERAL(2, 40, 0), // ""
-QT_MOC_LITERAL(3, 41, 28), // "on_Anuluj_sprzedawca_clicked"
-QT_MOC_LITERAL(4, 70, 28), // "on_Akceptuj_mechanik_clicked"
-QT_MOC_LITERAL(5, 99, 18), // "shared_ptr<Person>"
-QT_MOC_LITERAL(6, 118, 19) // "on_Akceptuj_clicked"
+QT_MOC_LITERAL(3, 41, 26), // "on_cancel_salesman_clicked"
+QT_MOC_LITERAL(4, 68, 26), // "on_accept_mechanic_clicked"
+QT_MOC_LITERAL(5, 95, 18), // "shared_ptr<Person>"
+QT_MOC_LITERAL(6, 114, 26) // "on_accept_salesman_clicked"
 
     },
-    "AddPersonnel\0on_Anuluj_mechanik_clicked\0"
-    "\0on_Anuluj_sprzedawca_clicked\0"
-    "on_Akceptuj_mechanik_clicked\0"
-    "shared_ptr<Person>\0on_Akceptuj_clicked"
+    "AddPersonnel\0on_cancel_mechanic_clicked\0"
+    "\0on_cancel_salesman_clicked\0"
+    "on_accept_mechanic_clicked\0"
+    "shared_ptr<Person>\0on_accept_salesman_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -81,13 +81,13 @@ void AddPersonnel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<AddPersonnel *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { bool _r = _t->on_Anuluj_mechanik_clicked();
+        case 0: { bool _r = _t->on_cancel_mechanic_clicked();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 1: { bool _r = _t->on_Anuluj_sprzedawca_clicked();
+        case 1: { bool _r = _t->on_cancel_salesman_clicked();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 2: { shared_ptr<Person> _r = _t->on_Akceptuj_mechanik_clicked();
+        case 2: { shared_ptr<Person> _r = _t->on_accept_mechanic_clicked();
             if (_a[0]) *reinterpret_cast< shared_ptr<Person>*>(_a[0]) = std::move(_r); }  break;
-        case 3: { shared_ptr<Person> _r = _t->on_Akceptuj_clicked();
+        case 3: { shared_ptr<Person> _r = _t->on_accept_salesman_clicked();
             if (_a[0]) *reinterpret_cast< shared_ptr<Person>*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }

@@ -21,11 +21,11 @@ public:
     ~deleteWindow();
 
 public slots:
-    string on_Usun_clicked();
+    string on_delete_2_clicked();
 
-    bool on_Anuluj_clicked();
+    bool on_cancel_clicked();
 
-    string on_lista_do_usuniecia_itemClicked();
+    string on_list_to_delete_itemClicked();
 
 
 };

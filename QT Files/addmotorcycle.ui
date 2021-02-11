@@ -186,7 +186,7 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPushButton" name="Akceptuj">
+     <widget class="QPushButton" name="accept">
       <property name="font">
        <font>
         <family>Avenir Next</family>
@@ -198,7 +198,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="Anuluj">
+     <widget class="QPushButton" name="cancel">
       <property name="font">
        <font>
         <family>Avenir Next</family>

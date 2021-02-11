@@ -31,8 +31,8 @@ public:
     QWidget *Sprzedawca_tab;
     QGroupBox *horizontalGroupBox;
     QHBoxLayout *horizontalLayout;
-    QPushButton *Akceptuj;
-    QPushButton *Anuluj_sprzedawca;
+    QPushButton *accept_salesman;
+    QPushButton *cancel_salesman;
     QGroupBox *formGroupBox;
     QGridLayout *gridLayout;
     QTextEdit *Nazwisko_sprzedawca_pisz;
@@ -46,8 +46,8 @@ public:
     QWidget *Mechanik_tab;
     QGroupBox *horizontalGroupBox_2;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *Akceptuj_mechanik;
-    QPushButton *Anuluj_mechanik;
+    QPushButton *accept_mechanic;
+    QPushButton *cancel_mechanic;
     QGroupBox *formGroupBox_2;
     QGridLayout *gridLayout_2;
     QLabel *Specjalizacja_mechanik;
@@ -77,15 +77,15 @@ public:
         horizontalGroupBox->setGeometry(QRect(30, 290, 501, 71));
         horizontalLayout = new QHBoxLayout(horizontalGroupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        Akceptuj = new QPushButton(horizontalGroupBox);
-        Akceptuj->setObjectName(QString::fromUtf8("Akceptuj"));
+        accept_salesman = new QPushButton(horizontalGroupBox);
+        accept_salesman->setObjectName(QString::fromUtf8("accept_salesman"));
 
-        horizontalLayout->addWidget(Akceptuj);
+        horizontalLayout->addWidget(accept_salesman);
 
-        Anuluj_sprzedawca = new QPushButton(horizontalGroupBox);
-        Anuluj_sprzedawca->setObjectName(QString::fromUtf8("Anuluj_sprzedawca"));
+        cancel_salesman = new QPushButton(horizontalGroupBox);
+        cancel_salesman->setObjectName(QString::fromUtf8("cancel_salesman"));
 
-        horizontalLayout->addWidget(Anuluj_sprzedawca);
+        horizontalLayout->addWidget(cancel_salesman);
 
         formGroupBox = new QGroupBox(Sprzedawca_tab);
         formGroupBox->setObjectName(QString::fromUtf8("formGroupBox"));
@@ -148,15 +148,15 @@ public:
         horizontalGroupBox_2->setGeometry(QRect(30, 290, 501, 71));
         horizontalLayout_2 = new QHBoxLayout(horizontalGroupBox_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        Akceptuj_mechanik = new QPushButton(horizontalGroupBox_2);
-        Akceptuj_mechanik->setObjectName(QString::fromUtf8("Akceptuj_mechanik"));
+        accept_mechanic = new QPushButton(horizontalGroupBox_2);
+        accept_mechanic->setObjectName(QString::fromUtf8("accept_mechanic"));
 
-        horizontalLayout_2->addWidget(Akceptuj_mechanik);
+        horizontalLayout_2->addWidget(accept_mechanic);
 
-        Anuluj_mechanik = new QPushButton(horizontalGroupBox_2);
-        Anuluj_mechanik->setObjectName(QString::fromUtf8("Anuluj_mechanik"));
+        cancel_mechanic = new QPushButton(horizontalGroupBox_2);
+        cancel_mechanic->setObjectName(QString::fromUtf8("cancel_mechanic"));
 
-        horizontalLayout_2->addWidget(Anuluj_mechanik);
+        horizontalLayout_2->addWidget(cancel_mechanic);
 
         formGroupBox_2 = new QGroupBox(Mechanik_tab);
         formGroupBox_2->setObjectName(QString::fromUtf8("formGroupBox_2"));
@@ -222,15 +222,15 @@ public:
     void retranslateUi(QDialog *AddPersonnel)
     {
         AddPersonnel->setWindowTitle(QApplication::translate("AddPersonnel", "Dialog", nullptr));
-        Akceptuj->setText(QApplication::translate("AddPersonnel", "Akceptuj", nullptr));
-        Anuluj_sprzedawca->setText(QApplication::translate("AddPersonnel", "Anuluj", nullptr));
+        accept_salesman->setText(QApplication::translate("AddPersonnel", "Akceptuj", nullptr));
+        cancel_salesman->setText(QApplication::translate("AddPersonnel", "Anuluj", nullptr));
         Nazwisko_sprzedawca->setText(QApplication::translate("AddPersonnel", "Nazwisko:", nullptr));
         Wynagrodzenie_sprzedawca->setText(QApplication::translate("AddPersonnel", "Warto\305\233\304\207 wynagrodzenia: ", nullptr));
         Imie_sprzedawca->setText(QApplication::translate("AddPersonnel", "Imie: ", nullptr));
         Doswiadczenie_sprzedawca->setText(QApplication::translate("AddPersonnel", "Do\305\233wiadczenie w latach: ", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Sprzedawca_tab), QApplication::translate("AddPersonnel", "Sprzedawca", nullptr));
-        Akceptuj_mechanik->setText(QApplication::translate("AddPersonnel", "Akceptuj", nullptr));
-        Anuluj_mechanik->setText(QApplication::translate("AddPersonnel", "Anuluj", nullptr));
+        accept_mechanic->setText(QApplication::translate("AddPersonnel", "Akceptuj", nullptr));
+        cancel_mechanic->setText(QApplication::translate("AddPersonnel", "Anuluj", nullptr));
         Specjalizacja_mechanik->setText(QApplication::translate("AddPersonnel", "Specjalizacja: ", nullptr));
         Nazwisko_mechanik->setText(QApplication::translate("AddPersonnel", "Nazwisko: ", nullptr));
         Wynagrodzenie_mechanik->setText(QApplication::translate("AddPersonnel", "Warto\305\233\304\207 wynagrodzenia: ", nullptr));

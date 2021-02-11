@@ -29,7 +29,7 @@ AddVehicle::AddVehicle(QWidget *parent) :
     ui->Skrzynia_biegow_wybierz->addItem("Automatyczna dwusprzęgłowa");
     ui->Skrzynia_biegow_wybierz->addItem("Manualna");
     ui->Skrzynia_biegow_wybierz->addItem("Półautomatyczna");
-    Check=1;
+    check_=1;
 }
 
 AddVehicle::~AddVehicle()
@@ -37,7 +37,7 @@ AddVehicle::~AddVehicle()
     delete ui;
 
 }
-shared_ptr<Vehicle> AddVehicle::Create_car()
+shared_ptr<Vehicle> AddVehicle::create_car()
 {
     string Model, take_eng, take_cond, take_transmission;
     Model = ui->Model_wybierz->currentText().toStdString();
@@ -50,14 +50,16 @@ shared_ptr<Vehicle> AddVehicle::Create_car()
     take_transmission = ui->Skrzynia_biegow_wybierz->currentText().toStdString();
     return Vehicle::makeCar(Model, value, ID, take_cond, take_eng, take_transmission);
 }
-shared_ptr<Vehicle> AddVehicle::on_Akceptuj_clicked()
+shared_ptr<Vehicle> AddVehicle::on_accept_clicked()
 {  
     AddVehicle::accept();
-    return Create_car();
+    return create_car();
 }
-bool AddVehicle::on_Anuluj_clicked()
+bool AddVehicle::on_cancel_clicked()
 {
-    AddVehicle::Check--;
+    AddVehicle::check_--;
     AddVehicle::reject();
-    return AddVehicle::Check;
+    return AddVehicle::check_;
 }
+
+

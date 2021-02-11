@@ -6,9 +6,7 @@ using namespace std;
 
 Shop::Shop():income_(1000) {}
 
-void Shop::Set_income(int val) {
-    income_=val;
-}
+
 
 Shop::Shop(int income): income_(income)
 {
@@ -30,39 +28,48 @@ Shop::Shop(int income): income_(income)
 Shop::Shop(int income, vector < shared_ptr<Vehicle> > assortment, vector <shared_ptr<Person>> Personnel): income_(income)
  {
     for(auto x: assortment)
-        Vehicles_.emplace_back(x);
+        vehicles_.emplace_back(x);
     for(auto i: Personnel)
-        Personnel_.emplace_back(i);
+        personnel_.emplace_back(i);
 }
 
-Shop::Shop(const Shop& shop):income_(shop.income_),Vehicles_(shop.Vehicles_) ,Personnel_(shop.Personnel_)
+Shop::Shop(const Shop& shop):income_(shop.income_),vehicles_(shop.vehicles_) ,personnel_(shop.personnel_)
 {
 }
 
 Shop & Shop::operator += (shared_ptr<Person> employee)
 {
-    Personnel_.emplace_back(employee);
+    personnel_.emplace_back(employee);
     return *this;
 }
 Shop & Shop::operator += (const shared_ptr<Vehicle> vehicle)
 {
-    Vehicles_.emplace_back(vehicle);
+    vehicles_.emplace_back(vehicle);
     return *this;
 }
 Shop & Shop::operator -= (int i)
 {
-    Vehicles_.erase(Vehicles_.begin()+i);
+    vehicles_.erase(vehicles_.begin()+i);
     return *this;
 }
 
-vector < shared_ptr<Vehicle> > Shop::getVehicles() const {return Vehicles_;}
-vector < shared_ptr<Person> > Shop::getPersonnel() const {return Personnel_;}
+void Shop::set_income(int val) {
+    income_=val;
+}
+
+vector < shared_ptr<Vehicle> > Shop::get_vehicles() const {
+    return vehicles_;
+}
+
+vector < shared_ptr<Person> > Shop::get_personnel() const {
+    return personnel_;
+}
 
 ostream& operator<<(ostream& os,const Shop& S)
 {
-    for(auto &p : S.Vehicles_)
+    for(auto &p : S.vehicles_)
         os << *p<<endl;
-    for(auto &p : S.Vehicles_)
+    for(auto &p : S.vehicles_)
         os << *p<<endl;
 
     os<<endl;
@@ -70,9 +77,9 @@ ostream& operator<<(ostream& os,const Shop& S)
 }
 ofstream& operator<<(ofstream& os,const Shop& S)
 {
-    for(auto &p : S.Vehicles_)
+    for(auto &p : S.vehicles_)
         os << *p<<endl;
-    for(auto &p : S.Vehicles_)
+    for(auto &p : S.vehicles_)
         os << *p<<endl;
 
     os<<endl;
@@ -110,19 +117,19 @@ Shop & Shop::operator = (Shop &shop)
 {
     income_ = shop.income_;
 
-    Personnel_.clear();
-    Vehicles_.clear();
+    personnel_.clear();
+    vehicles_.clear();
 
-    for(unsigned int i = 0; i< shop.Personnel_.size(); ++i)
-        Personnel_.emplace_back(shop.Personnel_[i]);
+    for(unsigned int i = 0; i< shop.personnel_.size(); ++i)
+        personnel_.emplace_back(shop.personnel_[i]);
 
-    for(unsigned int i = 0; i< shop.Vehicles_.size(); ++i)
-        Vehicles_.emplace_back(shop.Vehicles_[i]);
+    for(unsigned int i = 0; i< shop.vehicles_.size(); ++i)
+        vehicles_.emplace_back(shop.vehicles_[i]);
 
     return *this;
 }
 
-int Shop::getIncome()const {
+int Shop::get_income()const {
    return income_;
 }
 Shop::~Shop()

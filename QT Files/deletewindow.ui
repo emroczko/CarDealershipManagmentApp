@@ -15,17 +15,17 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QListWidget" name="lista_do_usuniecia"/>
+    <widget class="QListWidget" name="list_to_delete"/>
    </item>
    <item>
-    <widget class="QPushButton" name="Usun">
+    <widget class="QPushButton" name="delete_2">
      <property name="text">
       <string>Usuń</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="Anuluj">
+    <widget class="QPushButton" name="cancel">
      <property name="text">
       <string>Anuluj</string>
      </property>

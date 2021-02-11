@@ -27,14 +27,14 @@ AddMotorcycle::AddMotorcycle(QWidget *parent) :
     ui->Typ_silnika_wybierz->addItem("Dwusuwowy");
     ui->Typ_silnika_wybierz->addItem("Czterosuwowy");
     ui->Typ_silnika_wybierz->addItem("Elektryczny");
-    Check=1;
+    check_=1;
 }
 
 AddMotorcycle::~AddMotorcycle()
 {
     delete ui;
 }
-shared_ptr<Vehicle> AddMotorcycle::Create()
+shared_ptr<Vehicle> AddMotorcycle::create_motorcycle()
 {
     string Model, take_eng, take_cond, take_eng_type;
     Model = ui->Model_wybierz->currentText().toStdString();
@@ -47,17 +47,19 @@ shared_ptr<Vehicle> AddMotorcycle::Create()
     take_eng_type = ui->Typ_silnika_wybierz->currentText().toStdString();
     return Vehicle::makeMotorcycle(Model, value, ID, take_cond, take_eng, take_eng_type);
 }
-shared_ptr<Vehicle> AddMotorcycle::on_Akceptuj_clicked()
+shared_ptr<Vehicle> AddMotorcycle::on_accept_clicked()
 {
-    AddMotorcycle::Check--;
+    AddMotorcycle::check_--;
     AddMotorcycle::accept();
-    return Create();
+    return create_motorcycle();
 }
 
-bool AddMotorcycle::on_Anuluj_clicked()
+bool AddMotorcycle::on_cancel_clicked()
 {
     AddMotorcycle::reject();
-    return Check;
+    return check_;
 }
+
+
 
 

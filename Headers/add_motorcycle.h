@@ -16,12 +16,14 @@ class AddMotorcycle : public QDialog
 public:
     explicit AddMotorcycle(QWidget *parent = nullptr);
     ~AddMotorcycle();
+
 public slots:
-    bool on_Anuluj_clicked();
-    shared_ptr<Vehicle> on_Akceptuj_clicked();
+    bool on_cancel_clicked();
+    shared_ptr<Vehicle> on_accept_clicked();
+
 private:
-    int Check;
-    shared_ptr<Vehicle> Create();
+    int check_;
+    shared_ptr<Vehicle> create_motorcycle();
     Ui::AddMotorcycle *ui;
 };
 

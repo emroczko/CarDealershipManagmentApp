@@ -7,7 +7,6 @@
 #include <QTextStream>
 #include <cstring>
 #include <sstream>
-#include "main_window.h"
 #include <QCloseEvent>
 
 namespace Ui {

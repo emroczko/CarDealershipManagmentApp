@@ -5,34 +5,32 @@
 using namespace std;
 
 
-Employee::Employee():name("Eryk Mroczko"), profession("Szef"), salary(50000){
-   // DEBUG_LOG("Employee - k. domyslny");
-}
-
-Employee::Employee(string n, string p, unsigned int s){
-    name = n;
-    profession = p;
-    salary = s;
-   // DEBUG_LOG("Employee - k. z parametrami");
+Employee::Employee():name_("Eryk Mroczko"), profession_("Szef"), salary_(50000){
 
 }
-Employee::Employee(const Employee &employee) : name(employee.name), profession(employee.profession), salary(employee.salary)
+
+Employee::Employee(string name, string profession, unsigned int salary){
+    name_ = name;
+    profession_ = profession;
+    salary_ = salary;
+
+
+}
+Employee::Employee(const Employee &employee) : name_(employee.name_), profession_(employee.profession_), salary_(employee.salary_)
 {
-   //DEBUG_LOG("Employee - k. kopiujacy");
 }
 
 Employee::~Employee()
 {
-  //  DEBUG_LOG("Employee - destruktor");
 }
 
 bool Employee::operator == (const Employee &employee)
 {
-    if(name != employee.name)
+    if(name_ != employee.name_)
         return false;
-    if(profession != employee.profession)
+    if(profession_ != employee.profession_)
         return false;
-    if(salary != employee.salary)
+    if(salary_ != employee.salary_)
         return false;
     return true;
 }
@@ -42,29 +40,29 @@ bool Employee::operator != (const Employee &employee)
     return !(*this == employee);
 }
 
-Employee & Employee::operator += (unsigned int salaryRaise)
+Employee & Employee::operator += (unsigned int salary_raise)
 {
-    salary += salaryRaise;
+    salary_ += salary_raise;
     return *this;
 }
 
-Employee & Employee::operator -= (unsigned int salaryReduction)
+Employee & Employee::operator -= (unsigned int salary_reduction)
 {
-    if(salary - salaryReduction < 0)
+    if(salary_ - salary_reduction < 0)
     {
         cout<< "Blad! Pensja nie moze byc mniejsza od 0" <<endl;
         return *this;
     }
     else
     {
-        salary -= salaryReduction;
+        salary_ -= salary_reduction;
         return *this;
     }
 }
 
 
-ostream& operator<<(ostream& os,const Employee& e)
+ostream& operator<<(ostream& os,const Employee& employee)
 {
-    os<<e.name<<" - "<<e.profession<<" - Zarobki: "<<e.salary<<endl;
+    os<<employee.name_<<" - "<<employee.profession_<<" - Zarobki: "<<employee.salary_<<endl;
     return os;
 }

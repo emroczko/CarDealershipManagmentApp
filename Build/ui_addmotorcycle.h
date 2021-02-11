@@ -41,8 +41,8 @@ public:
     QLabel *Typ_silnika;
     QGroupBox *horizontalGroupBox;
     QHBoxLayout *horizontalLayout;
-    QPushButton *Akceptuj;
-    QPushButton *Anuluj;
+    QPushButton *accept;
+    QPushButton *cancel;
 
     void setupUi(QDialog *AddMotorcycle)
     {
@@ -137,17 +137,17 @@ public:
         horizontalGroupBox->setGeometry(QRect(30, 330, 501, 71));
         horizontalLayout = new QHBoxLayout(horizontalGroupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        Akceptuj = new QPushButton(horizontalGroupBox);
-        Akceptuj->setObjectName(QString::fromUtf8("Akceptuj"));
-        Akceptuj->setFont(font);
+        accept = new QPushButton(horizontalGroupBox);
+        accept->setObjectName(QString::fromUtf8("accept"));
+        accept->setFont(font);
 
-        horizontalLayout->addWidget(Akceptuj);
+        horizontalLayout->addWidget(accept);
 
-        Anuluj = new QPushButton(horizontalGroupBox);
-        Anuluj->setObjectName(QString::fromUtf8("Anuluj"));
-        Anuluj->setFont(font);
+        cancel = new QPushButton(horizontalGroupBox);
+        cancel->setObjectName(QString::fromUtf8("cancel"));
+        cancel->setFont(font);
 
-        horizontalLayout->addWidget(Anuluj);
+        horizontalLayout->addWidget(cancel);
 
 
         retranslateUi(AddMotorcycle);
@@ -164,8 +164,8 @@ public:
         Cena->setText(QApplication::translate("AddMotorcycle", "Cena:", nullptr));
         Paliwo->setText(QApplication::translate("AddMotorcycle", "Silnik:", nullptr));
         Typ_silnika->setText(QApplication::translate("AddMotorcycle", "Typ silnika", nullptr));
-        Akceptuj->setText(QApplication::translate("AddMotorcycle", "Akceptuj", nullptr));
-        Anuluj->setText(QApplication::translate("AddMotorcycle", "Anuluj", nullptr));
+        accept->setText(QApplication::translate("AddMotorcycle", "Akceptuj", nullptr));
+        cancel->setText(QApplication::translate("AddMotorcycle", "Anuluj", nullptr));
     } // retranslateUi
 
 };

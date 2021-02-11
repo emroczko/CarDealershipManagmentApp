@@ -41,8 +41,8 @@ public:
     QLabel *Skrzyni_biegow;
     QGroupBox *horizontalGroupBox;
     QHBoxLayout *horizontalLayout;
-    QPushButton *Akceptuj;
-    QPushButton *Anuluj;
+    QPushButton *accept;
+    QPushButton *cancel;
 
     void setupUi(QDialog *AddVehicle)
     {
@@ -124,15 +124,15 @@ public:
         horizontalGroupBox->setGeometry(QRect(30, 330, 501, 71));
         horizontalLayout = new QHBoxLayout(horizontalGroupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        Akceptuj = new QPushButton(horizontalGroupBox);
-        Akceptuj->setObjectName(QString::fromUtf8("Akceptuj"));
+        accept = new QPushButton(horizontalGroupBox);
+        accept->setObjectName(QString::fromUtf8("accept"));
 
-        horizontalLayout->addWidget(Akceptuj);
+        horizontalLayout->addWidget(accept);
 
-        Anuluj = new QPushButton(horizontalGroupBox);
-        Anuluj->setObjectName(QString::fromUtf8("Anuluj"));
+        cancel = new QPushButton(horizontalGroupBox);
+        cancel->setObjectName(QString::fromUtf8("cancel"));
 
-        horizontalLayout->addWidget(Anuluj);
+        horizontalLayout->addWidget(cancel);
 
 
         retranslateUi(AddVehicle);
@@ -149,8 +149,8 @@ public:
         Stan->setText(QApplication::translate("AddVehicle", "Stan:", nullptr));
         ID->setText(QApplication::translate("AddVehicle", "ID:", nullptr));
         Skrzyni_biegow->setText(QApplication::translate("AddVehicle", "Skrzynia bieg\303\263w:", nullptr));
-        Akceptuj->setText(QApplication::translate("AddVehicle", "Akceptuj", nullptr));
-        Anuluj->setText(QApplication::translate("AddVehicle", "Anuluj", nullptr));
+        accept->setText(QApplication::translate("AddVehicle", "Akceptuj", nullptr));
+        cancel->setText(QApplication::translate("AddVehicle", "Anuluj", nullptr));
     } // retranslateUi
 
 };

@@ -12,7 +12,7 @@ AddPersonnel::AddPersonnel(QWidget *parent) :
     ui->Spacjalizacja_mechanik_wybierz->addItem("Elektromechanik");
     ui->Spacjalizacja_mechanik_wybierz->addItem("Wulkanizator");
     ui->Spacjalizacja_mechanik_wybierz->addItem("Diagnosta");
-    Check=1;
+    check_=1;
 }
 
 AddPersonnel::~AddPersonnel()
@@ -20,17 +20,17 @@ AddPersonnel::~AddPersonnel()
     delete ui;
 }
 
-bool AddPersonnel::on_Anuluj_mechanik_clicked()
+bool AddPersonnel::on_cancel_mechanic_clicked()
 {
     AddPersonnel::reject();
-    return Check;
+    return check_;
 }
 
-bool AddPersonnel::on_Anuluj_sprzedawca_clicked()
+bool AddPersonnel::on_cancel_salesman_clicked()
 {
-   return AddPersonnel::on_Anuluj_mechanik_clicked();
+   return AddPersonnel::on_cancel_mechanic_clicked();
 }
-shared_ptr<Person> AddPersonnel::Create_mechanic()
+shared_ptr<Person> AddPersonnel::create_mechanic()
 {
     string get_name, get_surname, get_specialization;
     unsigned int get_salary;
@@ -40,7 +40,7 @@ shared_ptr<Person> AddPersonnel::Create_mechanic()
     get_salary = ui->Wynagrodzenie_mechanik_pisz->toPlainText().toInt();
     return Person::makeMechanic(get_name, get_surname, get_salary, get_specialization);
 }
-shared_ptr<Person> AddPersonnel::Create_salesman()
+shared_ptr<Person> AddPersonnel::create_salesman()
 {
     string get_name, get_surname;
     unsigned int get_salary, get_experience;
@@ -50,16 +50,16 @@ shared_ptr<Person> AddPersonnel::Create_salesman()
     get_experience = ui->Doswiadczenie_sprzedawca_pisz->toPlainText().toInt();
     return Person::makeSalesman(get_name, get_surname, get_salary, get_experience);
 }
-shared_ptr<Person> AddPersonnel::on_Akceptuj_mechanik_clicked()
+shared_ptr<Person> AddPersonnel::on_accept_mechanic_clicked()
 {
-    Check--;
+    check_--;
     AddPersonnel::accept();
-    return Create_mechanic();
+    return create_mechanic();
 }
 
-shared_ptr<Person> AddPersonnel::on_Akceptuj_clicked()
+shared_ptr<Person> AddPersonnel::on_accept_salesman_clicked()
 {
-    Check--;
+    check_--;
     AddPersonnel::accept();
-    return Create_salesman();
+    return create_salesman();
 }

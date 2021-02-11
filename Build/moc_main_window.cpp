@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[17];
-    char stringdata0[420];
+    char stringdata0[497];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,36 +32,38 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 25), // "on_Dodaj_samochod_clicked"
+QT_MOC_LITERAL(1, 11, 25), // "on_add_car_button_clicked"
 QT_MOC_LITERAL(2, 37, 0), // ""
-QT_MOC_LITERAL(3, 38, 30), // "on_Posiadane_samochodu_clicked"
-QT_MOC_LITERAL(4, 69, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(5, 91, 24), // "on_Sprzedaj_Auto_clicked"
-QT_MOC_LITERAL(6, 116, 30), // "on_Posiadane_motocykle_clicked"
-QT_MOC_LITERAL(7, 147, 35), // "on_stanKontsa_windowIconTextC..."
-QT_MOC_LITERAL(8, 183, 8), // "iconText"
-QT_MOC_LITERAL(9, 192, 21), // "on_Savetofile_clicked"
-QT_MOC_LITERAL(10, 214, 27), // "on_SprzedajMotocykl_clicked"
-QT_MOC_LITERAL(11, 242, 20), // "on_SalonInfo_clicked"
-QT_MOC_LITERAL(12, 263, 27), // "on_Zatrudnij_nowego_clicked"
-QT_MOC_LITERAL(13, 291, 33), // "on_Zatrudnieni_pracownicy_cli..."
-QT_MOC_LITERAL(14, 325, 18), // "on_Wyjscie_clicked"
-QT_MOC_LITERAL(15, 344, 37), // "on_stanKontsa_2_windowIconTex..."
-QT_MOC_LITERAL(16, 382, 37) // "on_stanKontsa_3_windowIconTex..."
+QT_MOC_LITERAL(3, 38, 28), // "on_cars_owned_button_clicked"
+QT_MOC_LITERAL(4, 67, 33), // "on_add_motorcycles_button_cli..."
+QT_MOC_LITERAL(5, 101, 26), // "on_sell_car_button_clicked"
+QT_MOC_LITERAL(6, 128, 35), // "on_motorcycles_owned_button_c..."
+QT_MOC_LITERAL(7, 164, 30), // "on_save_to_file_button_clicked"
+QT_MOC_LITERAL(8, 195, 33), // "on_sell_motorcycle_button_cli..."
+QT_MOC_LITERAL(9, 229, 28), // "on_salon_info_button_clicked"
+QT_MOC_LITERAL(10, 258, 30), // "on_add_employee_button_clicked"
+QT_MOC_LITERAL(11, 289, 27), // "on_employees_button_clicked"
+QT_MOC_LITERAL(12, 317, 22), // "on_exit_button_clicked"
+QT_MOC_LITERAL(13, 340, 46), // "on_cash_level_label_main_wind..."
+QT_MOC_LITERAL(14, 387, 8), // "iconText"
+QT_MOC_LITERAL(15, 396, 46), // "on_cash_level_label_cars_wind..."
+QT_MOC_LITERAL(16, 443, 53) // "on_cash_level_label_motorcycl..."
 
     },
-    "MainWindow\0on_Dodaj_samochod_clicked\0"
-    "\0on_Posiadane_samochodu_clicked\0"
-    "on_pushButton_clicked\0on_Sprzedaj_Auto_clicked\0"
-    "on_Posiadane_motocykle_clicked\0"
-    "on_stanKontsa_windowIconTextChanged\0"
-    "iconText\0on_Savetofile_clicked\0"
-    "on_SprzedajMotocykl_clicked\0"
-    "on_SalonInfo_clicked\0on_Zatrudnij_nowego_clicked\0"
-    "on_Zatrudnieni_pracownicy_clicked\0"
-    "on_Wyjscie_clicked\0"
-    "on_stanKontsa_2_windowIconTextChanged\0"
-    "on_stanKontsa_3_windowIconTextChanged"
+    "MainWindow\0on_add_car_button_clicked\0"
+    "\0on_cars_owned_button_clicked\0"
+    "on_add_motorcycles_button_clicked\0"
+    "on_sell_car_button_clicked\0"
+    "on_motorcycles_owned_button_clicked\0"
+    "on_save_to_file_button_clicked\0"
+    "on_sell_motorcycle_button_clicked\0"
+    "on_salon_info_button_clicked\0"
+    "on_add_employee_button_clicked\0"
+    "on_employees_button_clicked\0"
+    "on_exit_button_clicked\0"
+    "on_cash_level_label_main_windowIconTextChanged\0"
+    "iconText\0on_cash_level_label_cars_windowIconTextChanged\0"
+    "on_cash_level_label_motorcycles_windowIconTextChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,13 +86,13 @@ static const uint qt_meta_data_MainWindow[] = {
        4,    0,   86,    2, 0x08 /* Private */,
        5,    0,   87,    2, 0x08 /* Private */,
        6,    0,   88,    2, 0x08 /* Private */,
-       7,    1,   89,    2, 0x08 /* Private */,
-       9,    0,   92,    2, 0x08 /* Private */,
-      10,    0,   93,    2, 0x08 /* Private */,
-      11,    0,   94,    2, 0x08 /* Private */,
-      12,    0,   95,    2, 0x08 /* Private */,
-      13,    0,   96,    2, 0x08 /* Private */,
-      14,    0,   97,    2, 0x08 /* Private */,
+       7,    0,   89,    2, 0x08 /* Private */,
+       8,    0,   90,    2, 0x08 /* Private */,
+       9,    0,   91,    2, 0x08 /* Private */,
+      10,    0,   92,    2, 0x08 /* Private */,
+      11,    0,   93,    2, 0x08 /* Private */,
+      12,    0,   94,    2, 0x08 /* Private */,
+      13,    1,   95,    2, 0x08 /* Private */,
       15,    1,   98,    2, 0x08 /* Private */,
       16,    1,  101,    2, 0x08 /* Private */,
 
@@ -100,15 +102,15 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    8,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    8,
-    QMetaType::Void, QMetaType::QString,    8,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   14,
 
        0        // eod
 };
@@ -119,20 +121,20 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_Dodaj_samochod_clicked(); break;
-        case 1: _t->on_Posiadane_samochodu_clicked(); break;
-        case 2: _t->on_pushButton_clicked(); break;
-        case 3: _t->on_Sprzedaj_Auto_clicked(); break;
-        case 4: _t->on_Posiadane_motocykle_clicked(); break;
-        case 5: _t->on_stanKontsa_windowIconTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 6: _t->on_Savetofile_clicked(); break;
-        case 7: _t->on_SprzedajMotocykl_clicked(); break;
-        case 8: _t->on_SalonInfo_clicked(); break;
-        case 9: _t->on_Zatrudnij_nowego_clicked(); break;
-        case 10: _t->on_Zatrudnieni_pracownicy_clicked(); break;
-        case 11: _t->on_Wyjscie_clicked(); break;
-        case 12: _t->on_stanKontsa_2_windowIconTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 13: _t->on_stanKontsa_3_windowIconTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 0: _t->on_add_car_button_clicked(); break;
+        case 1: _t->on_cars_owned_button_clicked(); break;
+        case 2: _t->on_add_motorcycles_button_clicked(); break;
+        case 3: _t->on_sell_car_button_clicked(); break;
+        case 4: _t->on_motorcycles_owned_button_clicked(); break;
+        case 5: _t->on_save_to_file_button_clicked(); break;
+        case 6: _t->on_sell_motorcycle_button_clicked(); break;
+        case 7: _t->on_salon_info_button_clicked(); break;
+        case 8: _t->on_add_employee_button_clicked(); break;
+        case 9: _t->on_employees_button_clicked(); break;
+        case 10: _t->on_exit_button_clicked(); break;
+        case 11: _t->on_cash_level_label_main_windowIconTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 12: _t->on_cash_level_label_cars_windowIconTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 13: _t->on_cash_level_label_motorcycles_windowIconTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }

@@ -227,7 +227,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="iconSize">
          <size>
@@ -245,7 +245,7 @@
          <attribute name="title">
           <string>Salon</string>
          </attribute>
-         <widget class="QPushButton" name="Savetofile">
+         <widget class="QPushButton" name="save_to_file_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -458,7 +458,7 @@
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="Wyjscie">
+         <widget class="QPushButton" name="exit_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -480,7 +480,7 @@
            <string>Wyjście</string>
           </property>
          </widget>
-         <widget class="QLabel" name="stanKontsa">
+         <widget class="QLabel" name="cash_level_label_main">
           <property name="geometry">
            <rect>
             <x>550</x>
@@ -516,7 +516,7 @@
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QPushButton" name="SalonInfo">
+         <widget class="QPushButton" name="salon_info_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -543,7 +543,7 @@
          <attribute name="title">
           <string>Samochody</string>
          </attribute>
-         <widget class="QPushButton" name="Sprzedaj_Auto">
+         <widget class="QPushButton" name="sell_car_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -562,7 +562,7 @@
            <string>Sprzedaj samochód</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="Posiadane_samochodu">
+         <widget class="QPushButton" name="cars_owned_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -581,7 +581,7 @@
            <string>Posiadane samochody</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="Dodaj_samochod">
+         <widget class="QPushButton" name="add_car_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -619,7 +619,7 @@
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLabel" name="stanKontsa_2">
+         <widget class="QLabel" name="cash_level_label_cars">
           <property name="geometry">
            <rect>
             <x>980</x>
@@ -663,7 +663,7 @@
          <attribute name="title">
           <string>Motocykle</string>
          </attribute>
-         <widget class="QPushButton" name="Posiadane_motocykle">
+         <widget class="QPushButton" name="motorcycles_owned_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -682,7 +682,7 @@
            <string>Posiadane motocykle</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="add_motorcycle_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -701,7 +701,7 @@
            <string>Kup motocykl</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="SprzedajMotocykl">
+         <widget class="QPushButton" name="sell_motorcycle_button">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -739,7 +739,7 @@
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLabel" name="stanKontsa_3">
+         <widget class="QLabel" name="cash_level_label_motorcycles">
           <property name="geometry">
            <rect>
             <x>140</x>
@@ -783,7 +783,7 @@
          <attribute name="title">
           <string>Personel</string>
          </attribute>
-         <widget class="QPushButton" name="Zatrudnieni_pracownicy">
+         <widget class="QPushButton" name="show_employees_button">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -802,7 +802,7 @@
            <string>Zatrudnieni pracownicy</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="Zatrudnij_nowego">
+         <widget class="QPushButton" name="add_employe_button">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -821,7 +821,7 @@
            <string>Zatrudnij nowego pracownika</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="Zwolnij_pracownika">
+         <widget class="QPushButton" name="delete_employee_button">
           <property name="geometry">
            <rect>
             <x>9</x>

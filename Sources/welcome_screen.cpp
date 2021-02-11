@@ -2,18 +2,18 @@
 #include "ui_welcomeScreen.h"
 
 welcomeScreen::welcomeScreen(QWidget *parent) :
-    QDialog(parent), tempShop(1000000),
+    QDialog(parent), tempShop_(1000000),
     ui(new Ui::welcomeScreen)
 {
     ui->setupUi(this);
-    Check=1;
+    check_=1;
 }
 welcomeScreen::~welcomeScreen() {delete ui;}
 
 bool welcomeScreen::on_zacznijOdNowa_clicked()
 {
     this->accept();
-    return Check;
+    return check_;
 }
 void welcomeScreen::closeEvent (QCloseEvent *event)
 {
@@ -27,7 +27,7 @@ void welcomeScreen::closeEvent (QCloseEvent *event)
 }
 void welcomeScreen::on_wczytajStan_clicked()
 {
-    Check--;
+    check_--;
     QString fileName = QFileDialog::getOpenFileName(this, tr("Odtwórz poprzedni stan"), "", tr("Salon (*.txt);;All Files (*)"));
 
     if (fileName.isEmpty())
@@ -39,7 +39,7 @@ void welcomeScreen::on_wczytajStan_clicked()
                QMessageBox::information(this, tr("Nie można otworzyć!"), tr("Nie można otworzyć!"));
                return ;
            }
-        io>>tempShop;
+        io>>tempShop_;
         io.close();
         this->accept();
         }
@@ -47,7 +47,7 @@ void welcomeScreen::on_wczytajStan_clicked()
 
 Shop welcomeScreen::pass_the_shop() const
 {
-    return tempShop;
+    return tempShop_;
 }
 
 

@@ -3,60 +3,60 @@
 
 using namespace std;
 
-shared_ptr<Vehicle> Vehicle::makeCar(string mod, double price, int ID, string cond, string eng, string trans)
+shared_ptr<Vehicle> Vehicle::make_car(string mod, double price, int ID, string cond, string eng, string trans)
 {
     return shared_ptr<Vehicle>(new Car(mod, price, ID, cond, eng, trans));
 }
-shared_ptr<Vehicle> Vehicle::makeMotorcycle(string mod, double price, int ID, string cond, string eng, string eng_type)
+shared_ptr<Vehicle> Vehicle::make_motorcycle(string mod, double price, int ID, string cond, string eng, string eng_type)
 {
     return shared_ptr<Vehicle>(new Motorcycle(mod, price, ID, cond, eng, eng_type));
 }
-int Car::Get_Price() const {return price_;}
-int Car::Get_ID() const {return ID_;}
-string Car::Get_Condition() const {return condition_;}
-string Car::Get_Engine() const {return engine_;}
-string Car::Get_Model() const {return model_;}
+int Car::get_price() const {return price_;}
+int Car::get_ID() const {return ID_;}
+string Car::get_condition() const {return condition_;}
+string Car::get_engine() const {return engine_;}
+string Car::get_model() const {return model_;}
 
-int Motorcycle::Get_Price() const {return price_;}
-int Motorcycle::Get_ID() const {return ID_;}
-string Motorcycle::Get_Condition() const {return condition_;}
-string Motorcycle::Get_Engine() const {return engine_;}
-string Motorcycle::Get_Model() const {return model_;}
+int Motorcycle::get_price() const {return price_;}
+int Motorcycle::get_ID() const {return ID_;}
+string Motorcycle::get_condition() const {return condition_;}
+string Motorcycle::get_engine() const {return engine_;}
+string Motorcycle::get_model() const {return model_;}
 
-Car& Car::operator += (unsigned int raisePrice)
+Car& Car::operator += (unsigned int raiseprice)
 {
-    price_ += raisePrice;
+    price_ += raiseprice;
     return *this;
 }
 
-Car & Car::operator -= (unsigned int lowerPrice)
+Car & Car::operator -= (unsigned int lower_price)
 {
-    if(price_ - lowerPrice < 0)
+    if(price_ - lower_price < 0)
     {
         cout<< "Blad! Cena nie moze byc mniejsza od 0" <<endl;
         return *this;
     }
     else
     {
-        price_ -= lowerPrice;
+        price_ -= lower_price;
         return *this;
     }
 }
-Motorcycle& Motorcycle::operator += (unsigned int raisePrice)
+Motorcycle& Motorcycle::operator += (unsigned int raise_price)
 {
-    price_ += raisePrice;
+    price_ += raise_price;
     return *this;
 }
-Motorcycle& Motorcycle::operator -= (unsigned int lowerPrice)
+Motorcycle& Motorcycle::operator -= (unsigned int lower_price)
 {
-    if(price_ - lowerPrice < 0)
+    if(price_ - lower_price < 0)
     {
         cout<< "Blad! Cena nie moze byc mniejsza od 0" <<endl;
         return *this;
     }
     else
     {
-        price_ -= lowerPrice;
+        price_ -= lower_price;
         return *this;
     }
 }

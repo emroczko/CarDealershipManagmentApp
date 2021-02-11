@@ -18,39 +18,39 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_showvehiclewindow
+class Ui_showVehicleWindow
 {
 public:
     QVBoxLayout *verticalLayout;
     QTableWidget *tabela_pojazdow;
 
-    void setupUi(QDialog *showvehiclewindow)
+    void setupUi(QDialog *showVehicleWindow)
     {
-        if (showvehiclewindow->objectName().isEmpty())
-            showvehiclewindow->setObjectName(QString::fromUtf8("showvehiclewindow"));
-        showvehiclewindow->resize(679, 458);
-        verticalLayout = new QVBoxLayout(showvehiclewindow);
+        if (showVehicleWindow->objectName().isEmpty())
+            showVehicleWindow->setObjectName(QString::fromUtf8("showVehicleWindow"));
+        showVehicleWindow->resize(679, 458);
+        verticalLayout = new QVBoxLayout(showVehicleWindow);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        tabela_pojazdow = new QTableWidget(showvehiclewindow);
+        tabela_pojazdow = new QTableWidget(showVehicleWindow);
         tabela_pojazdow->setObjectName(QString::fromUtf8("tabela_pojazdow"));
 
         verticalLayout->addWidget(tabela_pojazdow);
 
 
-        retranslateUi(showvehiclewindow);
+        retranslateUi(showVehicleWindow);
 
-        QMetaObject::connectSlotsByName(showvehiclewindow);
+        QMetaObject::connectSlotsByName(showVehicleWindow);
     } // setupUi
 
-    void retranslateUi(QDialog *showvehiclewindow)
+    void retranslateUi(QDialog *showVehicleWindow)
     {
-        showvehiclewindow->setWindowTitle(QApplication::translate("showvehiclewindow", "Dialog", nullptr));
+        showVehicleWindow->setWindowTitle(QApplication::translate("showVehicleWindow", "Dialog", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class showvehiclewindow: public Ui_showvehiclewindow {};
+    class showVehicleWindow: public Ui_showVehicleWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -7,20 +7,20 @@
 #include "vehicle.h"
 
 namespace Ui {
-class showvehiclewindow;
+class showVehicleWindow;
 }
 
-class showvehiclewindow : public QDialog
+class showVehicleWindow : public QDialog
 {
     Q_OBJECT
     void resizeEvent(QResizeEvent *event) override;
 public:
-    explicit showvehiclewindow(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent=nullptr);
-    ~showvehiclewindow();
+    explicit showVehicleWindow(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent=nullptr);
+    ~showVehicleWindow();
     void show(const std::vector<std::shared_ptr<Vehicle>>&);
     void parser(int,std::string);
 
 
 private:
-    Ui::showvehiclewindow *ui;
+    Ui::showVehicleWindow *ui;
 };

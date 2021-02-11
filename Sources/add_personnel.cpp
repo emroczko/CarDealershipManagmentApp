@@ -38,7 +38,7 @@ shared_ptr<Person> AddPersonnel::create_mechanic()
     get_name = ui->Imie_mechanik_pisz->toPlainText().toStdString();
     get_surname = ui->Nazwisko_mechanik_pisz->toPlainText().toStdString();
     get_salary = ui->Wynagrodzenie_mechanik_pisz->toPlainText().toInt();
-    return Person::makeMechanic(get_name, get_surname, get_salary, get_specialization);
+    return Person::make_mechanic(get_name, get_surname, get_salary, get_specialization);
 }
 shared_ptr<Person> AddPersonnel::create_salesman()
 {
@@ -48,7 +48,7 @@ shared_ptr<Person> AddPersonnel::create_salesman()
     get_surname = ui->Nazwisko_sprzedawca_pisz->toPlainText().toStdString();
     get_salary = ui->Wynagrodzenie_sprzedawca_pisz->toPlainText().toInt();
     get_experience = ui->Doswiadczenie_sprzedawca_pisz->toPlainText().toInt();
-    return Person::makeSalesman(get_name, get_surname, get_salary, get_experience);
+    return Person::make_salesman(get_name, get_surname, get_salary, get_experience);
 }
 shared_ptr<Person> AddPersonnel::on_accept_mechanic_clicked()
 {

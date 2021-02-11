@@ -1,9 +1,9 @@
 #include "../Headers/show_vehicle_window.h"
-#include "ui_showvehiclewindow.h"
+#include "ui_showVehicleWindow.h"
 
-showvehiclewindow::showvehiclewindow(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent) :
+showVehicleWindow::showVehicleWindow(const std::vector<std::shared_ptr<Vehicle>>& vehicles, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::showvehiclewindow)
+    ui(new Ui::showVehicleWindow)
 {
     ui->setupUi(this);
     ui->tabela_pojazdow->setColumnCount(7); // ustawiam liczbę kolumn
@@ -17,11 +17,11 @@ showvehiclewindow::showvehiclewindow(const std::vector<std::shared_ptr<Vehicle>>
 }
 
 
-showvehiclewindow::~showvehiclewindow()
+showVehicleWindow::~showVehicleWindow()
 {
     delete ui;
 }
-void showvehiclewindow::show(const std::vector<std::shared_ptr<Vehicle>>& vehicles)
+void showVehicleWindow::show(const std::vector<std::shared_ptr<Vehicle>>& vehicles)
 {  QString temp;
     int row =0;
 
@@ -35,7 +35,7 @@ void showvehiclewindow::show(const std::vector<std::shared_ptr<Vehicle>>& vehicl
     }
 }
 
-void showvehiclewindow::parser(int row, std::string buffer)
+void showVehicleWindow::parser(int row, std::string buffer)
 {
     std::istringstream iss( buffer );
     int column=0;
@@ -47,7 +47,7 @@ void showvehiclewindow::parser(int row, std::string buffer)
         column++;
     }
 }
-void showvehiclewindow::resizeEvent(QResizeEvent *event){
+void showVehicleWindow::resizeEvent(QResizeEvent *event){
     QWidget::resizeEvent(event);
 
     QRect size= ui->tabela_pojazdow->geometry();

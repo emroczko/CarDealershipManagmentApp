@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
            Shop tempsalon = welcome.pass_the_shop();
            salon = tempsalon;
         }
-    MainWindow::Income();
+    MainWindow::income();
     this->showFullScreen();
     this->show();
 }
@@ -25,18 +25,18 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::Income()
+void MainWindow::income()
 {
     int kasa = salon.get_income();
     string kasa1 = std::to_string(kasa);
     string stan = "Stan konta: ";
     QString konto = QString::fromStdString(stan+kasa1);
-    MainWindow::on_stanKontsa_windowIconTextChanged(konto);
-    MainWindow::on_stanKontsa_2_windowIconTextChanged(konto);
-    MainWindow::on_stanKontsa_3_windowIconTextChanged(konto);
+    MainWindow::on_cash_level_label_main_windowIconTextChanged(konto);
+    MainWindow::on_cash_level_label_cars_windowIconTextChanged(konto);
+    MainWindow::on_cash_level_label_motorcycles_windowIconTextChanged(konto);
 }
 
-template< class T>void MainWindow::Add()
+template< class T>void MainWindow::add()
 {
     T a;
     a.setModal(true);
@@ -44,7 +44,7 @@ template< class T>void MainWindow::Add()
     if(a.on_cancel_clicked()==false)
     {
         shared_ptr<Vehicle> tmp = a.on_accept_clicked();
-        if(tmp->Get_Price()<=0 || tmp->Get_ID()<0)
+        if(tmp->get_price()<=0 || tmp->get_ID()<0)
         {
             QMessageBox::StandardButton resBtn = QMessageBox::question( this, " ", "Podana cena lub ID moga być nieprawidłowe. Czy jesteś pewien że chcesz dodać pojazd?", QMessageBox::No | QMessageBox::Yes);
             if(resBtn==QMessageBox::No)  {a.reject();}
@@ -58,31 +58,31 @@ template< class T>void MainWindow::Add()
      }
 }
 
-void MainWindow::Add_car()
+void MainWindow::add_car()
 {
-   Add<AddVehicle>();
+   add<AddVehicle>();
 }
 
-void MainWindow::Add_motorcycle()
+void MainWindow::add_motorcycle()
 {
-    Add<AddMotorcycle>();
+    add<AddMotorcycle>();
 }
 
 void MainWindow::add_income(shared_ptr<Vehicle> tmp)
 {
-    if(salon.get_income()-tmp->Get_Price()>=0)
+    if(salon.get_income()-tmp->get_price()>=0)
 
     {
-        salon.set_income(salon.get_income()-tmp->Get_Price());
+        salon.set_income(salon.get_income()-tmp->get_price());
         salon += tmp;
 
-        MainWindow::Income();
+        MainWindow::income();
     }
     else
     QMessageBox::warning(this, "", "Nie wystarczające środki");
 }
 
-void MainWindow::Add_employee()
+void MainWindow::add_employee()
 {
     AddPersonnel addperson;
     addperson.setModal(true);
@@ -94,24 +94,24 @@ void MainWindow::Add_employee()
 }
 
 template<typename T>
-void MainWindow::Vehicles_owned()
+void MainWindow::vehicles_owned()
 {
     std::vector<shared_ptr<Vehicle>> Vehicles_;
     for(auto p : salon.get_vehicles())
         if (typeid (*p) == typeid(T)) Vehicles_.push_back((p));
 
-    showvehiclewindow show(Vehicles_);
+    showVehicleWindow show(Vehicles_);
     show.setModal(true);
     show.exec();
 }
-void MainWindow::Motorcycles_owned()
+void MainWindow::motorcycles_owned()
 {
-   Vehicles_owned<Motorcycle>();
+   vehicles_owned<Motorcycle>();
 }
 
-void MainWindow::Cars_owned()
+void MainWindow::cars_owned()
 {
-   Vehicles_owned<Car>();
+   vehicles_owned<Car>();
 }
 
 template< class T>
@@ -122,7 +122,7 @@ void MainWindow::sell()
     if (typeid (*p) == typeid(T)) vehicles_.push_back((p));
 
     sell_helper(vehicles_);
-    MainWindow::Income();
+    MainWindow::income();
 }
 void MainWindow::sell_helper(std::vector<shared_ptr<Vehicle>> vehicles_)
 {
@@ -135,7 +135,7 @@ void MainWindow::sell_helper(std::vector<shared_ptr<Vehicle>> vehicles_)
         for(unsigned int i=0; i<salon.get_vehicles().size(); i++)
         {
            buffer << *salon.get_vehicles()[i];
-           if(buffer.str()==deleteVehicle_.on_delete_2_clicked()) deleteHelper(i);
+           if(buffer.str()==deleteVehicle_.on_delete_2_clicked()) delete_helper(i);
 
            buffer.str(std::string());
         }
@@ -144,40 +144,40 @@ void MainWindow::sell_helper(std::vector<shared_ptr<Vehicle>> vehicles_)
     QMessageBox::warning(this, tr("Błąd"), tr("Brak motocykli do usunięcia."));   //(*this, tr("Problem"), tr("Nie ma pojazdów do usunięcia"));
 }
 
-void MainWindow::Sell_car()
+void MainWindow::sell_car()
 {
     sell<Car>();
 }
-void MainWindow::Sell_motorcycle()
+void MainWindow::sell_motorcycle()
 {
     sell<Motorcycle>();
 }
 
-void MainWindow::deleteHelper(int i)
+void MainWindow::delete_helper(int i)
 {
     shared_ptr<Vehicle> tmp =salon.get_vehicles()[i];
-    int val = salon.get_income()+tmp->Get_Price()*1.2;
+    int val = salon.get_income()+tmp->get_price()*1.2;
     salon.set_income(val);
     salon-=i;
 }
 
-void MainWindow::Salon_info()
+void MainWindow::salon_info()
 {
-    showvehiclewindow show(salon.get_vehicles());
+    showVehicleWindow show(salon.get_vehicles());
     show.setModal(true);
     show.exec();
 }
-void MainWindow::on_Zatrudnieni_pracownicy_clicked()
+void MainWindow::on_employees_button_clicked()
 {
     std::vector<shared_ptr<Person>> people;
     for(auto p : salon.get_personnel()) {people.push_back((p));}
     ShowPersonnelWindow showpersonnel(people);
     showpersonnel.setModal(true);
     showpersonnel.exec();
-    showpersonnel.showMethod(people);
+    showpersonnel.show_method(people);
 
 }
-void MainWindow::on_Savetofile_clicked()
+void MainWindow::on_save_to_file_button_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
             tr("Zapisz stan"), "",
@@ -205,15 +205,44 @@ void MainWindow::on_Savetofile_clicked()
             */
 }
 
-void MainWindow::on_Dodaj_samochod_clicked() {Add_car();}
-void MainWindow::on_Posiadane_samochodu_clicked() {Cars_owned();}
-void MainWindow::on_pushButton_clicked() {Add_motorcycle();}
-void MainWindow::on_Sprzedaj_Auto_clicked() {Sell_car();}
-void MainWindow::on_Posiadane_motocykle_clicked() {Motorcycles_owned();}
-void MainWindow::on_stanKontsa_windowIconTextChanged(const QString &iconText) {ui->stanKontsa->setText(iconText);}
-void MainWindow::on_stanKontsa_2_windowIconTextChanged(const QString &iconText) {ui->stanKontsa_2->setText(iconText);}
-void MainWindow::on_stanKontsa_3_windowIconTextChanged(const QString &iconText) {ui->stanKontsa_3->setText(iconText);}
-void MainWindow::on_SprzedajMotocykl_clicked() {Sell_motorcycle();}
-void MainWindow::on_SalonInfo_clicked() {Salon_info();}
-void MainWindow::on_Zatrudnij_nowego_clicked() {Add_employee();}
-void MainWindow::on_Wyjscie_clicked() {MainWindow::close();}
+void MainWindow::on_cars_owned_button_clicked() {
+    cars_owned();
+}
+void MainWindow::on_add_car_button_clicked() {
+    add_car();
+}
+void MainWindow::on_sell_car_button_clicked() {
+    sell_car();
+}
+
+void MainWindow::on_motorcycles_owned_button_clicked() {
+    motorcycles_owned();
+}
+void MainWindow::on_add_motorcycles_button_clicked() {
+    add_motorcycle();
+}
+void MainWindow::on_sell_motorcycle_button_clicked() {
+    sell_motorcycle();
+}
+
+void MainWindow::on_salon_info_button_clicked() {
+    salon_info();
+}
+void MainWindow::on_add_employee_button_clicked() {
+    add_employee();
+}
+void MainWindow::on_exit_button_clicked() {
+    MainWindow::close();
+}
+
+void MainWindow::on_cash_level_label_main_windowIconTextChanged(const QString &icon_text) {
+    ui->cash_level_label_main->setText(icon_text);
+}
+
+void MainWindow::on_cash_level_label_cars_windowIconTextChanged(const QString &icon_text) {
+    ui->cash_level_label_cars->setText(icon_text);
+}
+
+void MainWindow::on_cash_level_label_motorcycles_windowIconTextChanged(const QString &icon_text) {
+    ui->cash_level_label_motorcycles->setText(icon_text);
+}

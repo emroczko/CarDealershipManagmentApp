@@ -17,8 +17,8 @@ public:
     explicit ShowPersonnelWindow(const vector<shared_ptr<Person>>&, QWidget *parent = nullptr);
     void change_text();
     ~ShowPersonnelWindow();
-    void showMethod(const vector<shared_ptr<Person>>&);
-    template<class T> vector<shared_ptr<Person>> showSpecialized();
+    void show_method(const vector<shared_ptr<Person>>&);
+    template<class T> vector<shared_ptr<Person>> show_specialized();
 
 
 public slots:
@@ -27,7 +27,7 @@ public slots:
     bool on_radioMechanik_clicked();
 
 private:
-    const vector<shared_ptr<Person>>& Personnel;
+    const vector<shared_ptr<Person>>& personnel_;
     Ui::ShowPersonnelWindow *ui;
 
 };

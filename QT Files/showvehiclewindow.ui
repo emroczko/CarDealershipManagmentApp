@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>showvehiclewindow</class>
- <widget class="QDialog" name="showvehiclewindow">
+ <class>showVehicleWindow</class>
+ <widget class="QDialog" name="showVehicleWindow">
   <property name="geometry">
    <rect>
     <x>0</x>

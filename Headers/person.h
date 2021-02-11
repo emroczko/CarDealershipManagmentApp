@@ -13,12 +13,12 @@ protected:
     string surname_;
     unsigned int salary_;
 public:
-    Person(string name, string surname,  unsigned int money) {name_=name; surname_=surname; salary_=money;}
-    static shared_ptr<Person> makeMechanic(string, string, unsigned int, string);
-    static shared_ptr<Person> makeSalesman(string, string, unsigned int, unsigned int);
-    virtual string Get_Name() const = 0;
-    virtual string Get_Surname() const = 0;
-    virtual unsigned int Get_Salary() const = 0;
+    Person(string name, string surname,  unsigned int money) {name_ = name; surname_ = surname; salary_ = money;}
+    static shared_ptr<Person> make_mechanic(string, string, unsigned int, string);
+    static shared_ptr<Person> make_salesman(string, string, unsigned int, unsigned int);
+    virtual string get_name() const = 0;
+    virtual string get_surname() const = 0;
+    virtual unsigned int get_salary() const = 0;
     virtual string type_identifier() const = 0;
     virtual ofstream& save(ofstream& os) const
     {
@@ -57,9 +57,9 @@ private:
 public:
     Mechanic(string name, string surname, unsigned int money, string spec): Person(name, surname, money) {specialization_ = spec;}
     Mechanic(): Person("Eryk", "Mroczko", 20000) {specialization_= "Blacharz";}
-    virtual string Get_Name() const override;
-    virtual string Get_Surname() const override;
-    virtual unsigned int Get_Salary() const override;
+    virtual string get_name() const override;
+    virtual string get_surname() const override;
+    virtual unsigned int get_salary() const override;
     virtual ostream& print(ostream& os) const override;
     string type_identifier() const override {return "Mechanicy";}
     ostream& save(ostream& os) const override
@@ -85,9 +85,9 @@ public:
     Salesman(): Person("Eryk", "Mroczko", 20000) {experience_ = 10;}
     Salesman &operator += (unsigned int salaryRaise) {this->salary_+=salaryRaise; return *this;}
     Salesman &operator -= (unsigned int salaryReduction) {this->salary_-=salaryReduction; return *this;}
-    virtual string Get_Name() const override;
-    virtual string Get_Surname() const override;
-    virtual unsigned int Get_Salary() const override;
+    virtual string get_name() const override;
+    virtual string get_surname() const override;
+    virtual unsigned int get_salary() const override;
     virtual ostream& print(ostream& os) const override;
     string type_identifier() const override {return "Sprzedawcy";}
     ostream& save(ostream& os) const override

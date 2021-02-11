@@ -20,25 +20,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_showvehiclewindow_t {
+struct qt_meta_stringdata_showVehicleWindow_t {
     QByteArrayData data[1];
     char stringdata0[18];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_showvehiclewindow_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_showVehicleWindow_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_showvehiclewindow_t qt_meta_stringdata_showvehiclewindow = {
+static const qt_meta_stringdata_showVehicleWindow_t qt_meta_stringdata_showVehicleWindow = {
     {
-QT_MOC_LITERAL(0, 0, 17) // "showvehiclewindow"
+QT_MOC_LITERAL(0, 0, 17) // "showVehicleWindow"
 
     },
-    "showvehiclewindow"
+    "showVehicleWindow"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_showvehiclewindow[] = {
+static const uint qt_meta_data_showVehicleWindow[] = {
 
  // content:
        8,       // revision
@@ -54,7 +54,7 @@ static const uint qt_meta_data_showvehiclewindow[] = {
        0        // eod
 };
 
-void showvehiclewindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void showVehicleWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -62,30 +62,30 @@ void showvehiclewindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject showvehiclewindow::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject showVehicleWindow::staticMetaObject = { {
     &QDialog::staticMetaObject,
-    qt_meta_stringdata_showvehiclewindow.data,
-    qt_meta_data_showvehiclewindow,
+    qt_meta_stringdata_showVehicleWindow.data,
+    qt_meta_data_showVehicleWindow,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *showvehiclewindow::metaObject() const
+const QMetaObject *showVehicleWindow::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *showvehiclewindow::qt_metacast(const char *_clname)
+void *showVehicleWindow::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_showvehiclewindow.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_showVehicleWindow.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int showvehiclewindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int showVehicleWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     return _id;
